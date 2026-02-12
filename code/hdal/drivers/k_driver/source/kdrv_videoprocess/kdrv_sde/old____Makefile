@@ -1,0 +1,48 @@
+MODULE_NAME = kdrv_sde
+KDRV_INC_PATH = $(NVT_HDAL_DIR)/drivers/k_driver
+VENDOR_DRV_INC_PATH=$(NVT_HDAL_DIR)/vendor/cv/drivers/
+C_CFLAGS  += -D_ARCH_ARM_=1 -D_ARCH_MIPS_=0 -D_ARCH_=$(_ARCH_ARM_)
+C_CFLAGS  += -D__LINUX -Werror
+EXTRA_INCLUDE += -I$(KDRV_INC_PATH)/include/
+EXTRA_INCLUDE += -I$(VENDOR_DRV_INC_PATH)/include/kdrv_sde/
+EXTRA_INCLUDE += -I$(VENDOR_DRV_INC_PATH)/source/kdrv_sde/include/
+EXTRA_CFLAGS += $(C_CFLAGS) $(EXTRA_INCLUDE) -Wno-date-time -D__SOC_680_PLATFORM__ -I$(src)/include -DDEBUG
+KBUILD_EXTRA_SYMBOLS = $(shell find $(NVT_HDAL_DIR)/drivers -name Module.symvers)
+ccflags-y  := $(EXTRA_CFLAGS)
+
+obj-m += $(MODULE_NAME).o
+$(MODULE_NAME)-objs := sde_main.o sde_proc.o sde_drv.o sde_api.o sde.o kdrv_sde_config.o  kdrv_sde_api.o
+
+
+ifeq ($(KERNELRELEASE),)
+PWD := $(shell pwd)
+KERVER ?= $(NVT_LINUX_VER)
+KDIR ?= $(KERNELDIR)
+MDIR ?= $(KERNELDIR)/_install_modules/lib/modules/$(KERVER)/hdal
+MODPATH := $(shell echo $(PWD) | awk -F'source/' '{print $$NF}')
+MODNAME := $(shell echo $(obj-m:.o=.ko))
+
+modules:
+	@$(MAKE) -C $(KDIR) M=$(PWD) modules
+
+modules_install:
+	@if [ -z $(NVT_MOD_INSTALL) ]; then \
+		rm -f $(MDIR)/$(MODPATH)/$(MODNAME); \
+		install -m644 -b -D $(MODNAME) ${MDIR}/$(MODPATH)/$(MODNAME); \
+		cd $(KDIR)/_install_modules/lib/modules/$(KERVER)/; depmod -b $(KDIR)/_install_modules/ -a $(KERVER); \
+	else \
+		mkdir -p $(NVT_MOD_INSTALL)/lib/modules/$(KERVER); \
+		install -m644 -b -D $(MODNAME) $(NVT_MOD_INSTALL)/lib/modules/$(KERVER)/hdal/$(MODPATH)/$(MODNAME); \
+	fi
+
+clean:
+	@SRC="`find . -name  "*.c" ! -name "*.mod.c"`"; \
+	if [ "$$SRC" ]; then \
+		rm -rf .tmp_versions Module.symvers modules.order `find . -type f -name "*.mod.c" -o -name ".*.cmd" -o -name "*.o" -o -name "*.ko" -o -name "modules.order" -o -name *~`; \
+		echo ">>> Clean"; \
+	else \
+		echo ">>> Skip"; \
+	fi \
+
+.PHONY: modules modules_install clean
+endif

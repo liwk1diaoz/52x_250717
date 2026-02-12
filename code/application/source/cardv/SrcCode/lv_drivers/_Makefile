@@ -1,0 +1,81 @@
+include $(NVT_PRJCFG_MODEL_CFG)
+#--------- ENVIRONMENT SETTING --------------------
+PWD 	:= $(shell pwd)
+
+#CROSS_COMPILE =
+CC     	:= $(CROSS_COMPILE)gcc
+CXX   	:= $(CROSS_COMPILE)g++
+AS	   	:= $(CROSS_COMPILE)as
+AR    	:= $(CROSS_COMPILE)ar
+LD     	:= $(CROSS_COMPILE)ld
+RANLIB 	:= $(CROSS_COMPILE)ranlib
+OBJDUMP	:= $(CROSS_COMPILE)objdump
+OBJCOPY := $(CROSS_COMPILE)objcopy
+STRIP  	:= $(CROSS_COMPILE)strip
+
+#编译主程序
+BINARY  := littlevgl
+OBJ_DIR := ./
+
+INCS 	:= -I ./ -I./lvgl/src/
+#CFLAGS= -Wall -g  -std=c99 -fno-common -fsanitize=address  -fno-stack-protector -fno-omit-frame-pointer -fno-var-tracking
+CFLAGS 	= -Wall -g -std=c99 -D__LINUX\
+		  -I$(LIBRARY_DIR)/include \
+		  -I$(NVT_HDAL_DIR)/include \
+		  -I$(NVT_HDAL_DIR)/vendor/media/include
+
+LIB=$(NVT_HDAL_DIR)/source
+ISP_LIB=$(NVT_HDAL_DIR)/vendor/isp/source
+CV_LIB=$(NVT_HDAL_DIR)/vendor/cv/source
+MEDIA_LIB=$(NVT_HDAL_DIR)/vendor/media/source
+HDAL_LIB_PATH = $(NVT_HDAL_DIR)/output
+
+LDFLAGS += -L$(LIB) -L$(ISP_LIB) -L$(CV_LIB) -L$(MEDIA_LIB) -L$(HDAL_LIB_PATH) -L${VOS_LIB_PATH} -ldl -lm -lpthread -lhdal -lvendor_isp -lvendor_cv -lvendor_media
+
+#****************************************************************************
+# Source files
+#****************************************************************************
+SRC_C	= $(shell find . -name "*.c")
+
+OBJ_C	= $(patsubst %.c, %.o, $(SRC_C))
+
+SRCS   := $(SRC_C) $(SRC_C)
+
+OBJS   := $(OBJ_C)
+
+#LDSCRIPT= -lasan
+LDSCRIPT=
+LDFLAGS	+= -Llibs
+
+.PHONY: all clean install
+
+ifeq ("$(wildcard *.c */*.c)","")
+all:
+	@echo ">>> Skip"
+clean:
+	@echo ">>> Skip"
+else
+all:  prebuild  $(BINARY)
+
+prebuild:
+	@echo Building app...
+
+$(BINARY) : $(OBJS)
+	@echo Generating ...
+	$(CC) -o $(BINARY) $(OBJS) $(LDFLAGS) $(LDFLAGS) $(LDSCRIPT)
+	@echo OK!
+
+$(OBJ_DIR)%.o : %.c
+	$(CC) -c $(CFLAGS) $(INCS) $< -o  $@
+
+clean:
+	rm -vf $(BINARY) $(OBJ_DIR)*.o *.o *.a *.so*
+	find . -name "*.[od]" |xargs rm
+	@
+endif
+
+install:
+	@echo ">>>>>>>>>>>>>>>>>>> $@ >>>>>>>>>>>>>>>>>>>"
+	@mkdir -p $(APP_DIR)/output
+	@cp -avf $(BINARY) $(APP_DIR)/output
+	@cp -af $(BINARY) $(ROOTFS_DIR)/rootfs/bin/

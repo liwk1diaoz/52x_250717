@@ -1,0 +1,17 @@
+/*
+ * Novatek Ltd. NA51055 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+&nand {
+	partition_loader {      label = "loader";       reg = <0x0 0x0000000 0x0 0x40000>;  }; /* Fixed */
+	partition_fdt {	        label = "fdt";	        reg = <0x0 0x40000   0x0 0x40000>;  }; /* Fixed */
+	partition_fdt.restore {	label = "fdt.restore";	reg = <0x0 0x80000   0x0 0x40000>;  }; /* Fixed */
+	partition_fdt.app {     label = "fdt.app";      reg = <0x0 0xC0000   0x0 0x40000>;  };
+	partition_uboot {       label = "uboot";        reg = <0x0 0x100000  0x0 0x1C0000>; };
+	partition_uenv {        label = "uenv";         reg = <0x0 0x2C0000  0x0 0x40000>;  };
+	partition_rtos {        label = "rtos";         reg = <0x0 0x300000  0x0 0xA00000>; };
+	partition_pstore {      label = "pstore";       reg = <0x0 0xD00000  0x0 0x300000>; };
+};

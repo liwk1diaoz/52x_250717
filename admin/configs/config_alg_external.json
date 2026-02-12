@@ -1,0 +1,17 @@
+{"nvt_packcfg": {
+    "bsp_name": "NA51023_BSP",
+    "prev_tag": "",
+    "customer": "alg_ext",
+    "rev": "",
+    "multi_model": "ModelConfig_IPCAM1_EVB.txt ModelConfig_IPCAM2_EVB.txt ModelConfig_DVCAM1_EVB.txt ModelConfig_DVCAM2_EVB.txt",
+    "release_linux_src": "off",
+    "release_linux_app_exclude_list": "",
+    "release_linux_app_list": "",
+    "release_linux_lib_exclude_list": "",
+    "release_linux_lib_list": "nvtdevinfo",
+    "release_linux_lib_remove_list": "",
+    "release_linux_supplement_list": "crypto",
+    "release_linux_supplement_remove_list": "",
+    "release_itron_script": "sdk-maker-alg.sh",
+    "exclude_bin_list": ""
+}}

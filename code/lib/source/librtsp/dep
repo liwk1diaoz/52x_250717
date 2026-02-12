@@ -1,0 +1,49 @@
+rtp-h264.o: rtp-h264.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h rtp-h264.h gm_memory.h
+rtp-h265.o: rtp-h265.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h rtp-h265.h gm_memory.h
+rtp-mp4.o: rtp-mp4.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h priv.h gm_memory.h
+rtp-jpeg.o: rtp-jpeg.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h priv.h gm_memory.h
+rtp-mpa.o: rtp-mpa.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h priv.h gm_memory.h
+rtp-aac.o: rtp-aac.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h gm_memory.h
+rtp-amr.o: rtp-amr.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h gm_memory.h
+rtp-rawaudio.o: rtp-rawaudio.c sysdef.h librtsp.h frame.h event.h log.h \
+ frame.h stream.h rtp.h rtp_media.h gm_memory.h
+rtp-g711.o: rtp-g711.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h gm_memory.h
+rtp-g726.o: rtp-g726.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h gm_memory.h
+tcp.o: tcp.c sysdef.h librtsp.h frame.h event.h log.h frame.h stream.h \
+ pmsg.h rtp.h base64_table.h live.h tcp.h gm_memory.h
+rtp.o: rtp.c sysdef.h librtsp.h frame.h event.h log.h frame.h stream.h \
+ rtp.h rtp_media.h live.h gm_memory.h
+rtsp.o: rtsp.c sysdef.h librtsp.h frame.h event.h log.h frame.h stream.h \
+ pmsg.h rtp.h live.h gm_memory.h
+http.o: http.c sysdef.h librtsp.h frame.h event.h log.h frame.h stream.h \
+ pmsg.h rtp.h gm_memory.h
+live.o: live.c sysdef.h librtsp.h frame.h event.h log.h frame.h stream.h \
+ rtp.h rtp_media.h live.h gm_memory.h
+session.o: session.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h rtp_media.h gm_memory.h
+spook.o: spook.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h rtp.h config.h
+rtspman.o: rtspman.c sysdef.h librtsp.h frame.h event.h rtp.h live.h \
+ stream.h rtp_media.h tcp.h gm_memory.h
+http-auth.o: http-auth.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h pmsg.h rtp.h rtsp-md5.h
+rtsp-md5.o: rtsp-md5.c rtsp-md5.h
+stream.o: stream.c sysdef.h librtsp.h frame.h event.h log.h frame.h \
+ stream.h gm_memory.h
+event.o: event.c sysdef.h librtsp.h frame.h event.h gm_memory.h
+pmsg.o: pmsg.c sysdef.h librtsp.h frame.h pmsg.h config.h log.h \
+ gm_memory.h
+priv.o: priv.c sysdef.h librtsp.h frame.h event.h log.h frame.h stream.h \
+ rtp.h rtp_media.h
+log.o: log.c sysdef.h librtsp.h frame.h gm_memory.h
+gm_memory.o: gm_memory.c
+sdp_param_encode.o: sdp_param_encode.c

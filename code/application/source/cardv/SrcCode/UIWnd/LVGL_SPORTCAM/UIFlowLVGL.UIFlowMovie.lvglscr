@@ -1,0 +1,864 @@
+{
+    "event callback": "UIFlowMovieEventCallback",
+    "name": "UIFlowMovie",
+    "screen color": "0x551f57",
+    "widgets": [
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 280,
+                "y": 170
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_storage",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_SD_CARD",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 12,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_mode_video",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_MODE_VIDEO",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 280,
+                "y": 208
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_battery",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_BATTERY_FULL",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Left",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 21,
+                "width": 121,
+                "x": 56,
+                "y": 214
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_date",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "",
+            "widget": "Label"
+        },
+        {
+            "align": "Left",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 21,
+                "width": 87,
+                "x": 182,
+                "y": 214
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_time",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "",
+            "widget": "Label"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 7,
+                "y": 126
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_ev",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_EV_M0P3",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 30,
+                "width": 90,
+                "x": 227,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_rec_time",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "",
+            "widget": "Label"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 18,
+                "width": 18,
+                "x": 52,
+                "y": 11
+            },
+            "hidden": true,
+            "locked": false,
+            "name": "image_rec_ellipse",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_REC_ELLIPSE",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 280,
+                "y": 132
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_pim",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_PIM_ON",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 30,
+                "width": 231,
+                "x": 78,
+                "y": 40
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_size",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp",
+                        "text_sel_bg_color": "0x00b495",
+                        "text_sel_color": "0x3c3c3c"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "Size",
+            "widget": "Label"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 12,
+                "y": 38
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_cyclic_rec",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_CYCLIC_REC_1MIN",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 80,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_hdr",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_HDR",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 115,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_wifi",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_WIFI_OFF",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 12,
+                "y": 71
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_MotionDetect",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_MOTION_DET_ON",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Left",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 28,
+                "width": 60,
+                "x": 76,
+                "y": 168
+            },
+            "hidden": true,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_zoom",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "Text",
+            "widget": "Label"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 30,
+                "width": 90,
+                "x": 227,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_maxtime",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "",
+            "widget": "Label"
+        }
+    ]
+}

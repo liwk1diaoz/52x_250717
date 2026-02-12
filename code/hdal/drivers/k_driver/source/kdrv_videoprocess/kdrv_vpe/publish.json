@@ -1,0 +1,13 @@
+{
+	"jsontype": "module_publish",
+	"publish_src": [
+		"vpe_drv.c",
+		"vpe_kit.c",
+		"vpe_api.c",
+		"vpe_main.c",
+		"vpe_proc.c",
+		"vpe_platform.c",
+		"vpe_ll_base.c",
+		"vpe_tasklet.c"
+	]
+}

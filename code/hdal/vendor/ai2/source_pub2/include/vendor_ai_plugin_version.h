@@ -1,0 +1,1 @@
+../../source_pub/include/vendor_ai_plugin_version.h

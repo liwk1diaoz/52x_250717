@@ -1,0 +1,11 @@
+{
+	"jsontype": "module_publish",
+	"publish_src": [
+		"kflow_ai_net/linux/kflow_ai_net_ioctl.c",
+		"kflow_ai_net/linux/kflow_ai_net_proc.c",
+		"kflow_ai_net/linux/kflow_ai_net_platform.c",
+		"kflow_ai_net/debug_util/graph_debug_log.c",
+		"kflow_cpu/kflow_cpu_platform.c",
+		"kflow_dsp/kflow_dsp_platform.c"
+	]
+}

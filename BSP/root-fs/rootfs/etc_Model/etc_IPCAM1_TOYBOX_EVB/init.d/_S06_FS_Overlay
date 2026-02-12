@@ -1,0 +1,73 @@
+#!/bin/sh
+overlay_files()
+{
+	if [ ! -f /mnt/overlay_rw0/rootfs/.fileexisted ]; then
+		mkdir /mnt/overlay_rw0/rootfs
+		cp -arf /etc /mnt/overlay_rw0/rootfs
+		cp -arf /var /mnt/overlay_rw0/rootfs
+		sync
+		mkdir /mnt/overlay_rw0/rootfs/lib
+		cp -arf /lib/modules /mnt/overlay_rw0/rootfs/lib/modules
+		sync;
+		touch /mnt/overlay_rw0/rootfs/.fileexisted
+		sync;
+	fi
+	mount /mnt/overlay_rw0/rootfs/etc /etc
+	mount /mnt/overlay_rw0/rootfs/var /var
+	mount /mnt/overlay_rw0/rootfs/lib/modules /lib/modules
+}
+
+echo "/sbin/mdev" > /proc/sys/kernel/hotplug
+mdev -s
+
+if [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_UBI" ]; then
+	num=`cat /proc/mtd | grep rootfs1 | awk -F' ' '{print $1}' | tr -d 'mtd' | tr -d ':'`;
+	if [ ! -z "$num" ]; then
+		ubiattach /dev/ubi_ctrl -m $num
+		x=0
+		timeout=5
+		while [ "$x" -lt "$timeout" -a ! -e /dev/ubi1_0 ]; do
+			x=$((x+1))
+			sleep .1
+		done
+		if [ "$x" -ge "$timeout" ]; then
+			echo "It can't find /dev/ubi1_0 device"
+			exit -1
+		fi
+		if [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_RAMDISK" ]; then
+			mount -t ubifs /dev/ubi1_0 /lib/modules;
+		elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_UBI" ]; then
+			mount -t ubifs /dev/ubi1_0 /mnt/overlay_rw0;
+			overlay_files;
+		else
+			echo "mount footfs1 fail root type:$NVT_ROOTFS_TYPE";
+		fi
+	fi
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_RAMDISK" ] && [ "$EMBMEM" != "EMBMEM_NONE" ]; then
+	echo "ramdisk mount rootfs1"
+	num=`cat /proc/mtd | grep rootfs1 | awk -F' ' '{print $1}' | tr -d 'mtd' | tr -d ':'`;
+	if [ ! -z "$num" ]; then
+		ubiattach /dev/ubi_ctrl -m $num
+		x=0
+		timeout=5
+		while [ "$x" -lt "$timeout" -a ! -e /dev/ubi0_0 ]; do
+			x=$((x+1))
+			sleep .1
+		done
+		if [ "$x" -ge "$timeout" ]; then
+			echo "It can't find /dev/ubi0_0 device"
+			exit -1
+		fi
+		mount -t ubifs /dev/ubi0_0 /lib/modules;
+		mount /lib/modules/usr/bin/ /usr/bin/;
+		mount /lib/modules/usr/lib/ /usr/lib/;
+	fi
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_JFFS2" ]; then
+	num=`cat /proc/mtd | grep rootfs1 | awk -F' ' '{print $1}' | tr -d 'mtd' | tr -d ':'`;
+	if [ ! -z "$num" ]; then
+		mount -t jffs2 /dev/mtdblock$num /mnt/overlay_rw0
+		overlay_files;
+	fi
+else
+	echo "Only R/O rootfs partition found."
+fi

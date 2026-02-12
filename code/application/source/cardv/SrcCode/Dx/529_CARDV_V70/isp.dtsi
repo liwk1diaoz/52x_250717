@@ -1,0 +1,31 @@
+/ {
+	isp {
+		sensor@0 {
+			ae_path                 = "/isp/ae/imx678_ae_0";
+			awb_path                = "/isp/awb/imx678_awb_0";
+			iq_path                 = "/isp/iq/imx678_iq_0";
+			iq_hdr_path             = "/isp/iq/imx678_iq_hdr_0";
+			iq_cap_path				= "/isp/iq/imx678_iq_0_cap";
+			iq_hdr_cap_path			= "/isp/iq/imx678_iq_hdr_0_cap";
+			iq_shading_path			= "/isp/iq/imx678_iq_shading_0";
+		};
+		sensor@1 {
+		};
+		/* label for ae, awb, iq table */
+		ae: ae {
+		};
+		awb: awb {
+		};
+		iq: iq {
+		};
+	};
+};
+
+/* Note: put include files in the tail since label should be declared first. */
+#include "imx678_ae_0.dtsi"
+#include "imx678_awb_0.dtsi"
+#include "imx678_iq_0.dtsi"
+#include "imx678_iq_0_cap.dtsi"
+#include "imx678_iq_shading_0.dtsi"
+#include "imx678_iq_hdr_0.dtsi"
+#include "imx678_iq_hdr_0_cap.dtsi"

@@ -1,0 +1,9 @@
+/*
+ * Novatek Ltd. NA51000 BSP part of dts
+ * Cortex-A53 MPCore
+ *
+ */
+
+/dts-v1/;
+#include "sensor.dtsi"
+

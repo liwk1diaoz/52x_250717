@@ -1,0 +1,61 @@
+/*
+ * Novatek Ltd. NA51055 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+/ {
+	/* Uboot/loader memory layout */
+	nvt_memory_cfg {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		dram {    reg = <0x00000000 0x04000000>; };
+		fdt {     reg = <0x00000100 0x00007D00>; }; /* always exists */
+		shmem{    reg = <0x00007E00 0x00000200>; }; /* always exists */
+		rtos {    reg = <0x00008000 0x00DF8000>; }; /* always exists and cannot overlap with hdal-memory */
+		loader {  reg = <0x01000000 0x00100000>; }; /* recycled after uboot started */
+		linuxtmp{ reg = <0x01100000 0x02800000>; }; /* recycled after rtos started */
+		uboot{    reg = <0x03900000 0x006C0000>; }; /* recycled after rtos started */
+	};
+
+	/* Linux system memory region*/
+	memory { device_type = "memory"; reg = <0x00000000 0x00800000>; };
+
+	/*
+	 * rtos libc heap expected minimum size
+	 * becasue remain of rtos memory will be the libc heap,
+	 * if it too small on your expectation, a assert will occur on boot.
+	 */
+	libc-heap { size = <0xEA000>; };
+
+	hdal-memory {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		media { reg = <0x00E00000 0x01800000>; };
+	};
+
+	hdal-maxpath-cfg {
+		/* First is for VCAP0, second for VCAP1 and so on.*/
+		vdocap_active_list   = <1 0 0 0 0 0 0 0>;
+		vdoprc_maxdevice   = <1>;
+		vdoenc_maxpath   = <1>;
+		vdodec_maxpath   = <1>;
+		vdoout_maxdevice   = <1>;
+		adocap_maxdevice   = <1>;
+		adoout_maxdevice   = <1>;
+		adoenc_maxpath   = <1>;
+		adodec_maxpath   = <1>;
+		/* gfx job list */
+		gfx_maxjob       = <1>;
+		/* stamp max img buffer number */
+		stamp_maximg     = <0>;
+		/* First is internal stamp number, second is external stamp number */
+		vdoprc_maxstamp  = <0  0>;
+		/* First is internal mask number, second is external mask number */
+		vdoprc_maxmask   = <0  0>;
+		vdoenc_maxstamp  = <0 0>;
+		vdoenc_maxmask   = <0  0>;
+		vdoout_maxstamp  = <0  0>;
+		vdoout_maxmask   = <0  0>;
+	};
+};

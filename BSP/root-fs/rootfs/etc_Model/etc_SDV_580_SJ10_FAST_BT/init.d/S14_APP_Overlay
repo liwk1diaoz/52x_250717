@@ -1,0 +1,68 @@
+#!/bin/sh
+wait_dev_or_exit()
+{
+	x=0
+	timeout=5
+	while [ "$x" -lt "$timeout" -a ! -e $1 ]; do
+		x=$((x+1))
+		sleep .1
+	done
+	if [ "$x" -ge "$timeout" ]; then
+		echo "[app overlay] $1 not found"
+		exit -1
+	fi
+}
+
+# if /proc/mtd not exist, exit
+if [ "$EMBMEM" == "EMBMEM_EMMC" ]; then
+	# if /proc/mtd not exist, exit
+	if [ ! -f /proc/nvt_info/emmc ]; then
+		echo "[app overlay] /proc/nvt_info/emmc not ready"
+		exit -1
+	fi
+	mmcblkpn=`cat /proc/nvt_info/emmc | grep ^app | awk -F' ' '{print $NF}'`;
+	mknod /dev/$mmcblkpn b `cat /sys/class/block/$mmcblkpn/dev | sed "s/:/\ /g"`
+else
+	if [ ! -f /proc/mtd ]; then
+		echo "[app overlay] /proc/mtd not ready"
+		exit -1
+	fi
+	# if the partition not found, exit
+	num=`cat /proc/mtd | grep \"app\" | awk -F' ' '{print $1}' | tr -d 'mtd' | tr -d ':'`;
+	if [ -z "$num" ]; then
+		echo "[app overlay] no app partition"
+		exit 0
+	fi
+	mknod /dev/mtdblock$num b `cat /sys/block/mtdblock$num/dev | sed "s/:/\ /g"`
+fi
+
+# mount app partition by type
+if [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_UBI" ]; then
+	echo "[app overlay] ubi mount app"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi2_0
+	mount -t ubifs /dev/ubi2_0 /mnt/app;
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_SQUASH" ] && [ "$EMBMEM" != "EMBMEM_SPI_NOR" ]; then
+	echo "[app overlay] squash mount app"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi2_0
+	mount -t ubifs /dev/ubi2_0 /mnt/app;
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_RAMDISK" ] && [ "$EMBMEM" != "EMBMEM_NONE" ]; then
+	if [ "$EMBMEM" == "EMBMEM_SPI_NAND" ]; then
+		echo "[app overlay] ubi mount app"
+		ubiattach /dev/ubi_ctrl -m $num
+		mknod /dev/ubi1_0 c `cat /sys/class/ubi/ubi1_0/dev | sed "s/:/\ /g"`
+		wait_dev_or_exit /dev/ubi1_0
+		mount -t ubifs /dev/ubi1_0 /mnt/app;
+	elif [ "$EMBMEM" == "EMBMEM_EMMC" ]; then
+		echo "[app overlay] ext4 mount app"
+		mount -t ext4 /dev/$mmcblkpn /mnt/app;
+	else
+		mount -t squashfs /dev/mtdblock$num /mnt/app;
+	fi
+else
+	echo "[app overlay] jffs2 mount app"
+	mount -t jffs2 /dev/mtdblock$num /mnt/app;
+fi
+
+

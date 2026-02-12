@@ -1,0 +1,12 @@
+/*
+ * Novatek Ltd. NA51000 BSP part of dts
+ *
+ * Cortex-A53 MPCore
+ *
+ */
+
+/ {
+	sensor@1 { dev_name = "nvt_sen_imx291"; cfg = "sen_imx291_cfg1", "sen_imx291_cfg2"; sie = <0  1>; }; /* AHD sensor needing 2 sie */
+	sensor@2 { dev_name = "nvt_sen_imx323"; cfg = "sen_imx323_cfg1";                    sie = <3>;    };
+};
+

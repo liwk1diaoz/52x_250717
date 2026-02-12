@@ -1,0 +1,644 @@
+#ifndef _SDE_REG_H_
+#define _SDE_REG_H_
+
+
+#include "sde_platform.h"
+#if 0
+#ifdef __KERNEL__
+#include "mach/rcw_macro.h"
+#include "kwrap/type.h"
+#else
+#include "DrvCommon.h"
+#endif
+
+#ifdef __KERNEL__
+extern UINT32 _SDE_REG_BASE_ADDR;
+#define SDE_REG_ADDR(ofs)        (_SDE_REG_BASE_ADDR+(ofs))
+#define SDE_SETREG(ofs, value)   iowrite32(value, (void *)(_SDE_REG_BASE_ADDR + ofs))
+#define SDE_GETREG(ofs)          ioread32((void *)(_SDE_REG_BASE_ADDR + ofs))
+#else
+#define _SDE_REG_BASE_ADDR       (0xF0D90000)
+#define SDE_REG_ADDR(ofs)        (_SDE_REG_BASE_ADDR+(ofs))
+#define SDE_SETREG(ofs, value)   OUTW((_SDE_REG_BASE_ADDR + ofs), value)
+#define SDE_GETREG(ofs)          INW(_SDE_REG_BASE_ADDR + ofs)
+#endif
+#endif
+
+/*
+    SDE_SW_RST          :    [0x0, 0x1],			bits : 0
+    SDE_START           :    [0x0, 0x1],			bits : 1
+    SDE_BURST_LENGTH_SEL:    [0x0, 0x3],			bits : 3_2
+    LL_FIRE             :    [0x0, 0x1],			bits : 28
+*/
+#define ENGINE_CONTROL_REGISTER_OFS 0x0000
+REGDEF_BEGIN(ENGINE_CONTROL_REGISTER)
+	REGDEF_BIT(SDE_SW_RST          ,        1)
+	REGDEF_BIT(SDE_START           ,        1)
+	REGDEF_BIT(SDE_BURST_LENGTH_SEL,        2)
+	REGDEF_BIT(                    ,        24)
+	REGDEF_BIT(LL_FIRE             ,        1)
+REGDEF_END(ENGINE_CONTROL_REGISTER)
+
+
+/*
+    INTS_ENABLE    :    [0x0, 0x1],			bits : 0
+    INTE_LL_END    :    [0x0, 0x1],			bits : 8
+    INTE_LL_ERROR  :    [0x0, 0x1],			bits : 9
+    INTE_LL_JOB_END:    [0x0, 0x1],			bits : 10
+*/
+#define SDE_INTERRUPT_ENABLE_REGISTER_OFS 0x0004
+REGDEF_BEGIN(SDE_INTERRUPT_ENABLE_REGISTER)
+	REGDEF_BIT(INTS_ENABLE    ,        1)
+	REGDEF_BIT(               ,        7)
+	REGDEF_BIT(INTE_LL_END    ,        1)
+	REGDEF_BIT(INTE_LL_ERROR  ,        1)
+	REGDEF_BIT(INTE_LL_JOB_END,        1)
+REGDEF_END(SDE_INTERRUPT_ENABLE_REGISTER)
+
+
+/*
+    INTS_FRM_END   :    [0x0, 0x1],			bits : 0
+    INTS_LL_END    :    [0x0, 0x1],			bits : 8
+    INTS_LL_ERROR  :    [0x0, 0x1],			bits : 9
+    INTS_LL_JOB_END:    [0x0, 0x1],			bits : 10
+*/
+#define SDE_INTERRUPT_STATUS_REGISTER_OFS 0x0008
+REGDEF_BEGIN(SDE_INTERRUPT_STATUS_REGISTER)
+	REGDEF_BIT(INTS_FRM_END   ,        1)
+	REGDEF_BIT(               ,        7)
+	REGDEF_BIT(INTS_LL_END    ,        1)
+	REGDEF_BIT(INTS_LL_ERROR  ,        1)
+	REGDEF_BIT(INTS_LL_JOB_END,        1)
+REGDEF_END(SDE_INTERRUPT_STATUS_REGISTER)
+
+
+/*
+    INVALID_COUNT:    [0x0, 0xffffffff],			bits : 31_0
+*/
+#define SDE_INFORMATION_REGISTER_OFS 0x000c
+REGDEF_BEGIN(SDE_INFORMATION_REGISTER)
+	REGDEF_BIT(INVALID_COUNT,        32)
+REGDEF_END(SDE_INFORMATION_REGISTER)
+
+
+/*
+    SDE_SCAN_MODE          :    [0x0, 0x1],			bits : 0
+    SDE_PATH2_INPUT_EN     :    [0x0, 0x1],			bits : 1
+    SDE_OUT_SEL            :    [0x0, 0x1],			bits : 2
+    SDE_COST_COMP_MODE     :    [0x0, 0x1],			bits : 3
+    SDE_SCAN_FUN_EN        :    [0x0, 0x1],			bits : 4
+    SDE_DIAG_FUN_EN        :    [0x0, 0x1],			bits : 5
+    SDE_H_FLIP01           :    [0x0, 0x1],			bits : 6
+    SDE_V_FLIP01           :    [0x0, 0x1],			bits : 7
+    SDE_H_FLIP2            :    [0x0, 0x1],			bits : 8
+    SDE_V_FLIP2            :    [0x0, 0x1],			bits : 9
+    SDE_SCAN_FUN_SEL       :    [0x0, 0x7],			bits : 12_10
+    DISP_INVALID_VAL_SEL   :    [0x0, 0x3],			bits : 14_13
+    SDE_DISP_VAL_MODE      :    [0x0, 0x1],			bits : 15
+    SDE_CONDITIONAL_DISP_EN:    [0x0, 0x1],			bits : 16
+    SDE_CONF_OUT2_EN       :    [0x0, 0x1],			bits : 17
+    SDE_CONF_OUT2_MODE_SEL :    [0x0, 0x1],			bits : 18
+    SDE_CONF_MIN2_SEL      :    [0x0, 0x1],			bits : 19
+*/
+#define SDE_FUNCTION_CONTROL_REGISTER_OFS 0x0010
+REGDEF_BEGIN(SDE_FUNCTION_CONTROL_REGISTER)
+	REGDEF_BIT(SDE_SCAN_MODE          ,        1)
+	REGDEF_BIT(SDE_PATH2_INPUT_EN     ,        1)
+	REGDEF_BIT(SDE_OUT_SEL            ,        1)
+	REGDEF_BIT(SDE_COST_COMP_MODE     ,        1)
+	REGDEF_BIT(SDE_SCAN_FUN_EN        ,        1)
+	REGDEF_BIT(SDE_DIAG_FUN_EN        ,        1)
+	REGDEF_BIT(SDE_H_FLIP01           ,        1)
+	REGDEF_BIT(SDE_V_FLIP01           ,        1)
+	REGDEF_BIT(SDE_H_FLIP2            ,        1)
+	REGDEF_BIT(SDE_V_FLIP2            ,        1)
+	REGDEF_BIT(SDE_SCAN_FUN_SEL       ,        3)
+	REGDEF_BIT(DISP_INVALID_VAL_SEL   ,        2)
+	REGDEF_BIT(SDE_DISP_VAL_MODE      ,        1)
+	REGDEF_BIT(SDE_CONDITIONAL_DISP_EN,        1)
+	REGDEF_BIT(SDE_CONF_OUT2_EN       ,        1)
+	REGDEF_BIT(SDE_CONF_OUT2_MODE_SEL ,        1)
+	REGDEF_BIT(SDE_CONF_MIN2_SEL      ,        1)
+REGDEF_END(SDE_FUNCTION_CONTROL_REGISTER)
+
+
+/*
+    DRAM_IN_SADDR0:    [0x0, 0x3fffffff],			bits : 31_2
+*/
+#define DMA_TO_SDE_INPUT_IMAGE_LEFT_OFS 0x0014
+REGDEF_BEGIN(DMA_TO_SDE_INPUT_IMAGE_LEFT)
+	REGDEF_BIT(              ,        2)
+	REGDEF_BIT(DRAM_IN_SADDR0,        30)
+REGDEF_END(DMA_TO_SDE_INPUT_IMAGE_LEFT)
+
+
+/*
+    DRAM_IN_LOFST0:    [0x0, 0x1ffff],			bits : 18_2
+*/
+#define DMA_TO_SDE_INPUT_IMAGE_LEFT_LINE_OFFSET_OFS 0x0018
+REGDEF_BEGIN(DMA_TO_SDE_INPUT_IMAGE_LEFT_LINE_OFFSET)
+	REGDEF_BIT(              ,        2)
+	REGDEF_BIT(DRAM_IN_LOFST0,        17)
+REGDEF_END(DMA_TO_SDE_INPUT_IMAGE_LEFT_LINE_OFFSET)
+
+
+/*
+    DRAM_IN_SADDR1:    [0x0, 0x3fffffff],			bits : 31_2
+*/
+#define DMA_TO_SDE_INPUT_IMAGE_RIGHT_OFS 0x001c
+REGDEF_BEGIN(DMA_TO_SDE_INPUT_IMAGE_RIGHT)
+	REGDEF_BIT(              ,        2)
+	REGDEF_BIT(DRAM_IN_SADDR1,        30)
+REGDEF_END(DMA_TO_SDE_INPUT_IMAGE_RIGHT)
+
+
+/*
+    DRAM_IN_LOFST1:    [0x0, 0x1ffff],			bits : 18_2
+*/
+#define DMA_TO_SDE_INPUT_IMAGE_RIGHT_LINE_OFFSET_OFS 0x0020
+REGDEF_BEGIN(DMA_TO_SDE_INPUT_IMAGE_RIGHT_LINE_OFFSET)
+	REGDEF_BIT(              ,        2)
+	REGDEF_BIT(DRAM_IN_LOFST1,        17)
+REGDEF_END(DMA_TO_SDE_INPUT_IMAGE_RIGHT_LINE_OFFSET)
+
+
+/*
+    DRAM_IN_SADDR2:    [0x0, 0x3fffffff],			bits : 31_2
+*/
+#define DMA_TO_SDE_SCAN_SLICE_INVERTED_OUTPUT_RESULT_OFS 0x0024
+REGDEF_BEGIN(DMA_TO_SDE_SCAN_SLICE_INVERTED_OUTPUT_RESULT)
+	REGDEF_BIT(              ,        2)
+	REGDEF_BIT(DRAM_IN_SADDR2,        30)
+REGDEF_END(DMA_TO_SDE_SCAN_SLICE_INVERTED_OUTPUT_RESULT)
+
+
+/*
+    DRAM_IN_LOFST2:    [0x0, 0x1ffff],			bits : 18_2
+*/
+#define DMA_TO_SDE_SCAN_SLICE_INVERTED_OUTPUT_RESULT_LINE_OFFSET_OFS 0x0028
+REGDEF_BEGIN(DMA_TO_SDE_SCAN_SLICE_INVERTED_OUTPUT_RESULT_LINE_OFFSET)
+	REGDEF_BIT(              ,        2)
+	REGDEF_BIT(DRAM_IN_LOFST2,        17)
+REGDEF_END(DMA_TO_SDE_SCAN_SLICE_INVERTED_OUTPUT_RESULT_LINE_OFFSET)
+
+
+/*
+    DRAM_OUT_SADDR:    [0x0, 0x3fffffff],			bits : 31_2
+*/
+#define DMA_TO_SDE_OUTPUT_DISPARITY_MAP_OFS 0x002c
+REGDEF_BEGIN(DMA_TO_SDE_OUTPUT_DISPARITY_MAP)
+	REGDEF_BIT(              ,        2)
+	REGDEF_BIT(DRAM_OUT_SADDR,        30)
+REGDEF_END(DMA_TO_SDE_OUTPUT_DISPARITY_MAP)
+
+
+/*
+    DRAM_OUT_LOFST:    [0x0, 0x1ffff],			bits : 18_2
+*/
+#define DMA_TO_SDE_OUTPUT_DISPARITY_MAP_LINE_OFFSET_OFS 0x0030
+REGDEF_BEGIN(DMA_TO_SDE_OUTPUT_DISPARITY_MAP_LINE_OFFSET)
+	REGDEF_BIT(              ,        2)
+	REGDEF_BIT(DRAM_OUT_LOFST,        17)
+REGDEF_END(DMA_TO_SDE_OUTPUT_DISPARITY_MAP_LINE_OFFSET)
+
+
+/*
+    IMG_WIDTH :    [0x0, 0x7ff],			bits : 10_0
+    IMG_HEIGHT:    [0x0, 0x3ff],			bits : 25_16
+*/
+#define INPUT_IMAGE_SIZE_REGISTER_OFS 0x0034
+REGDEF_BEGIN(INPUT_IMAGE_SIZE_REGISTER)
+	REGDEF_BIT(IMG_WIDTH ,        11)
+	REGDEF_BIT(          ,        5)
+	REGDEF_BIT(IMG_HEIGHT,        10)
+REGDEF_END(INPUT_IMAGE_SIZE_REGISTER)
+
+
+/*
+    AD_BOUND_UPPER    :    [0x0, 0x3f],			bits : 5_0
+    AD_BOUND_LOWER    :    [0x0, 0x3f],			bits : 11_6
+    CENSUS_BOUND_UPPER:    [0x0, 0x1f],			bits : 16_12
+    CENSUS_BOUND_LOWER:    [0x0, 0x1f],			bits : 21_17
+    CENSUS_AD_RATIO   :    [0x0, 0xff],			bits : 29_22
+*/
+#define DIFF_CLAMP_LUT_REGISTER_OFS 0x0038
+REGDEF_BEGIN(DIFF_CLAMP_LUT_REGISTER)
+	REGDEF_BIT(AD_BOUND_UPPER    ,        6)
+	REGDEF_BIT(AD_BOUND_LOWER    ,        6)
+	REGDEF_BIT(CENSUS_BOUND_UPPER,        5)
+	REGDEF_BIT(CENSUS_BOUND_LOWER,        5)
+	REGDEF_BIT(CENSUS_AD_RATIO   ,        8)
+REGDEF_END(DIFF_CLAMP_LUT_REGISTER)
+
+
+/*
+    LUMA_THRESH_SATURATED   :    [0x0, 0xff],			bits : 7_0
+    COST_SATURATED_MATCH    :    [0x0, 0xf],			bits : 11_8
+    DELTA_LUMA_SMOOTH_THRESH:    [0x0, 0x3f],			bits : 17_12
+*/
+#define LUMA_RELATED_THRESHOLD_REGISTER_OFS 0x003c
+REGDEF_BEGIN(LUMA_RELATED_THRESHOLD_REGISTER)
+	REGDEF_BIT(LUMA_THRESH_SATURATED   ,        8)
+	REGDEF_BIT(COST_SATURATED_MATCH    ,        4)
+	REGDEF_BIT(DELTA_LUMA_SMOOTH_THRESH,        6)
+REGDEF_END(LUMA_RELATED_THRESHOLD_REGISTER)
+
+
+/*
+    SCAN_PENALTY_NONSMOOTH:    [0x0, 0x1f],			bits : 4_0
+    SCAN_PENALTY_SMOOTH0  :    [0x0, 0x1f],			bits : 12_8
+    SCAN_PENALTY_SMOOTH1  :    [0x0, 0x1f],			bits : 20_16
+    SCAN_PENALTY_SMOOTH2  :    [0x0, 0x1f],			bits : 28_24
+*/
+#define PENALTY_REGISTER_OFS 0x0040
+REGDEF_BEGIN(PENALTY_REGISTER)
+	REGDEF_BIT(SCAN_PENALTY_NONSMOOTH,        5)
+	REGDEF_BIT(                      ,        3)
+	REGDEF_BIT(SCAN_PENALTY_SMOOTH0  ,        5)
+	REGDEF_BIT(                      ,        3)
+	REGDEF_BIT(SCAN_PENALTY_SMOOTH1  ,        5)
+	REGDEF_BIT(                      ,        3)
+	REGDEF_BIT(SCAN_PENALTY_SMOOTH2  ,        5)
+REGDEF_END(PENALTY_REGISTER)
+
+
+/*
+    DELTA_DISP_LUT0:    [0x0, 0xf],			bits : 3_0
+    DELTA_DISP_LUT1:    [0x0, 0x3f],			bits : 9_4
+*/
+#define PENALTY_THRESHOLD_INDEX_REGISTER_OFS 0x0044
+REGDEF_BEGIN(PENALTY_THRESHOLD_INDEX_REGISTER)
+	REGDEF_BIT(DELTA_DISP_LUT0,        4)
+	REGDEF_BIT(DELTA_DISP_LUT1,        6)
+REGDEF_END(PENALTY_THRESHOLD_INDEX_REGISTER)
+
+
+/*
+    DIAG_THRESH_LUT0:    [0x0, 0xf],			bits : 3_0
+    DIAG_THRESH_LUT1:    [0x0, 0xf],			bits : 7_4
+    DIAG_THRESH_LUT2:    [0x0, 0xf],			bits : 11_8
+    DIAG_THRESH_LUT3:    [0x0, 0xf],			bits : 15_12
+    DIAG_THRESH_LUT4:    [0x0, 0xf],			bits : 19_16
+    DIAG_THRESH_LUT5:    [0x0, 0xf],			bits : 23_20
+    DIAG_THRESH_LUT6:    [0x0, 0xf],			bits : 27_24
+*/
+#define DIAGONAL_SEARCH_THRESHOLD_REGISTER_OFS 0x0048
+REGDEF_BEGIN(DIAGONAL_SEARCH_THRESHOLD_REGISTER)
+	REGDEF_BIT(DIAG_THRESH_LUT0,        4)
+	REGDEF_BIT(DIAG_THRESH_LUT1,        4)
+	REGDEF_BIT(DIAG_THRESH_LUT2,        4)
+	REGDEF_BIT(DIAG_THRESH_LUT3,        4)
+	REGDEF_BIT(DIAG_THRESH_LUT4,        4)
+	REGDEF_BIT(DIAG_THRESH_LUT5,        4)
+	REGDEF_BIT(DIAG_THRESH_LUT6,        4)
+REGDEF_END(DIAGONAL_SEARCH_THRESHOLD_REGISTER)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],			bits : 31_0
+*/
+#define RESERVED0_OFS 0x004c
+REGDEF_BEGIN(RESERVED0)
+	REGDEF_BIT(Reserved,        32)
+REGDEF_END(RESERVED0)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],			bits : 31_0
+*/
+#define RESERVED1_OFS 0x0050
+REGDEF_BEGIN(RESERVED1)
+	REGDEF_BIT(Reserved,        32)
+REGDEF_END(RESERVED1)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],			bits : 31_0
+*/
+#define RESERVED2_OFS 0x0054
+REGDEF_BEGIN(RESERVED2)
+	REGDEF_BIT(Reserved,        32)
+REGDEF_END(RESERVED2)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],			bits : 31_0
+*/
+#define RESERVED3_OFS 0x0058
+REGDEF_BEGIN(RESERVED3)
+	REGDEF_BIT(Reserved,        32)
+REGDEF_END(RESERVED3)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],			bits : 31_0
+*/
+#define RESERVED4_OFS 0x005c
+REGDEF_BEGIN(RESERVED4)
+	REGDEF_BIT(Reserved,        32)
+REGDEF_END(RESERVED4)
+
+
+/*
+    CONFIDENCE_TH :    [0x0, 0xff],			bits : 7_0
+    CONFIDENCE_VAL:    [0x0, 0xff],			bits : 15_8
+*/
+#define CONFIDENCE_REGISTER_OFS 0x0060
+REGDEF_BEGIN(CONFIDENCE_REGISTER)
+	REGDEF_BIT(CONFIDENCE_TH ,        8)
+	REGDEF_BIT(CONFIDENCE_VAL,        8)
+REGDEF_END(CONFIDENCE_REGISTER)
+
+
+/*
+    DRAM_OUT2_SADDR:    [0x0, 0x3fffffff],			bits : 31_2
+*/
+#define DMA_TO_SDE_OUTPUT_CONFIDENCE_OFS 0x0064
+REGDEF_BEGIN(DMA_TO_SDE_OUTPUT_CONFIDENCE)
+	REGDEF_BIT(               ,        2)
+	REGDEF_BIT(DRAM_OUT2_SADDR,        30)
+REGDEF_END(DMA_TO_SDE_OUTPUT_CONFIDENCE)
+
+
+/*
+    DRAM_OUT2_LOFST:    [0x0, 0x1ffff],			bits : 18_2
+*/
+#define DMA_TO_SDE_OUTPUT_CONFIDENCE_LINE_OFFSET_OFS 0x0068
+REGDEF_BEGIN(DMA_TO_SDE_OUTPUT_CONFIDENCE_LINE_OFFSET)
+	REGDEF_BIT(               ,        2)
+	REGDEF_BIT(DRAM_OUT2_LOFST,        17)
+REGDEF_END(DMA_TO_SDE_OUTPUT_CONFIDENCE_LINE_OFFSET)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],			bits : 31_0
+*/
+#define RESERVED5_OFS 0x006c
+REGDEF_BEGIN(RESERVED5)
+	REGDEF_BIT(Reserved,        32)
+REGDEF_END(RESERVED5)
+
+
+/*
+    LL_TERMINATE:    [0x0, 0x1],			bits : 0
+*/
+#define LL_REGISTER0_OFS 0x0070
+REGDEF_BEGIN(LL_REGISTER0)
+	REGDEF_BIT(LL_TERMINATE,        1)
+REGDEF_END(LL_REGISTER0)
+
+
+/*
+    DRAM_SAI_LL:    [0x0, 0x3fffffff],			bits : 31_2
+*/
+#define LL_REGISTER1_OFS 0x0074
+REGDEF_BEGIN(LL_REGISTER1)
+	REGDEF_BIT(           ,        2)
+	REGDEF_BIT(DRAM_SAI_LL,        30)
+REGDEF_END(LL_REGISTER1)
+
+
+/*
+    LL_CMD_START_ADDR_INFO:    [0x0, 0xffffffff],			bits : 31_0
+*/
+#define LL_REGISTER2_OFS 0x0078
+REGDEF_BEGIN(LL_REGISTER2)
+	REGDEF_BIT(LL_CMD_START_ADDR_INFO,        32)
+REGDEF_END(LL_REGISTER2)
+
+
+/*
+    LL_CMDPRS_CNT:    [0x0, 0xfffff],			bits : 19_0
+*/
+#define LL_REGISTER3_OFS 0x007c
+REGDEF_BEGIN(LL_REGISTER3)
+	REGDEF_BIT(LL_CMDPRS_CNT,        20)
+REGDEF_END(LL_REGISTER3)
+
+
+/*
+    LL_TABLE_IDX0:    [0x0, 0xff],			bits : 7_0
+    LL_TABLE_IDX1:    [0x0, 0xff],			bits : 15_8
+    LL_TABLE_IDX2:    [0x0, 0xff],			bits : 23_16
+    LL_TABLE_IDX3:    [0x0, 0xff],			bits : 31_24
+*/
+#define LL_REGISTER4_OFS 0x0080
+REGDEF_BEGIN(LL_REGISTER4)
+	REGDEF_BIT(LL_TABLE_IDX0,        8)
+	REGDEF_BIT(LL_TABLE_IDX1,        8)
+	REGDEF_BIT(LL_TABLE_IDX2,        8)
+	REGDEF_BIT(LL_TABLE_IDX3,        8)
+REGDEF_END(LL_REGISTER4)
+
+
+/*
+    LL_TABLE_IDX4:    [0x0, 0xff],			bits : 7_0
+    LL_TABLE_IDX5:    [0x0, 0xff],			bits : 15_8
+    LL_TABLE_IDX6:    [0x0, 0xff],			bits : 23_16
+    LL_TABLE_IDX7:    [0x0, 0xff],			bits : 31_24
+*/
+#define LL_REGISTER5_OFS 0x0084
+REGDEF_BEGIN(LL_REGISTER5)
+	REGDEF_BIT(LL_TABLE_IDX4,        8)
+	REGDEF_BIT(LL_TABLE_IDX5,        8)
+	REGDEF_BIT(LL_TABLE_IDX6,        8)
+	REGDEF_BIT(LL_TABLE_IDX7,        8)
+REGDEF_END(LL_REGISTER5)
+
+
+/*
+    LL_TABLE_IDX8 :    [0x0, 0xff],			bits : 7_0
+    LL_TABLE_IDX9 :    [0x0, 0xff],			bits : 15_8
+    LL_TABLE_IDX10:    [0x0, 0xff],			bits : 23_16
+    LL_TABLE_IDX11:    [0x0, 0xff],			bits : 31_24
+*/
+#define LL_REGISTER6_OFS 0x0088
+REGDEF_BEGIN(LL_REGISTER6)
+	REGDEF_BIT(LL_TABLE_IDX8 ,        8)
+	REGDEF_BIT(LL_TABLE_IDX9 ,        8)
+	REGDEF_BIT(LL_TABLE_IDX10,        8)
+	REGDEF_BIT(LL_TABLE_IDX11,        8)
+REGDEF_END(LL_REGISTER6)
+
+
+/*
+    LL_TABLE_IDX12:    [0x0, 0xff],			bits : 7_0
+    LL_TABLE_IDX13:    [0x0, 0xff],			bits : 15_8
+    LL_TABLE_IDX14:    [0x0, 0xff],			bits : 23_16
+    LL_TABLE_IDX15:    [0x0, 0xff],			bits : 31_24
+*/
+#define LL_REGISTER7_OFS 0x008c
+REGDEF_BEGIN(LL_REGISTER7)
+	REGDEF_BIT(LL_TABLE_IDX12,        8)
+	REGDEF_BIT(LL_TABLE_IDX13,        8)
+	REGDEF_BIT(LL_TABLE_IDX14,        8)
+	REGDEF_BIT(LL_TABLE_IDX15,        8)
+REGDEF_END(LL_REGISTER7)
+
+
+/*
+    CYCLE_CNT :    [0x0, 0x3fffffff],			bits : 29_0
+    DMACH_DIS :    [0x0, 0x1],			bits : 30
+    DMACH_IDLE:    [0x0, 0x1],			bits : 31
+*/
+#define DMA_CHANNEL_REGISTER_OFS 0x0090
+REGDEF_BEGIN(DMA_CHANNEL_REGISTER)
+	REGDEF_BIT(CYCLE_CNT ,        30)
+	REGDEF_BIT(DMACH_DIS ,        1)
+	REGDEF_BIT(DMACH_IDLE,        1)
+REGDEF_END(DMA_CHANNEL_REGISTER)
+
+
+typedef struct
+{
+    //0x0000
+	T_ENGINE_CONTROL_REGISTER
+	SDE_Register_0000;
+
+    //0x0004
+	T_SDE_INTERRUPT_ENABLE_REGISTER
+	SDE_Register_0004;
+
+    //0x0008
+	T_SDE_INTERRUPT_STATUS_REGISTER
+	SDE_Register_0008;
+
+    //0x000c
+	T_SDE_INFORMATION_REGISTER
+	SDE_Register_000c;
+
+    //0x0010
+	T_SDE_FUNCTION_CONTROL_REGISTER
+	SDE_Register_0010;
+
+    //0x0014
+	T_DMA_TO_SDE_INPUT_IMAGE_LEFT
+	SDE_Register_0014;
+
+    //0x0018
+	T_DMA_TO_SDE_INPUT_IMAGE_LEFT_LINE_OFFSET
+	SDE_Register_0018;
+
+    //0x001c
+	T_DMA_TO_SDE_INPUT_IMAGE_RIGHT
+	SDE_Register_001c;
+
+    //0x0020
+	T_DMA_TO_SDE_INPUT_IMAGE_RIGHT_LINE_OFFSET
+	SDE_Register_0020;
+
+    //0x0024
+	T_DMA_TO_SDE_SCAN_SLICE_INVERTED_OUTPUT_RESULT
+	SDE_Register_0024;
+
+    //0x0028
+	T_DMA_TO_SDE_SCAN_SLICE_INVERTED_OUTPUT_RESULT_LINE_OFFSET
+	SDE_Register_0028;
+
+    //0x002c
+	T_DMA_TO_SDE_OUTPUT_DISPARITY_MAP
+	SDE_Register_002c;
+
+    //0x0030
+	T_DMA_TO_SDE_OUTPUT_DISPARITY_MAP_LINE_OFFSET
+	SDE_Register_0030;
+
+    //0x0034
+	T_INPUT_IMAGE_SIZE_REGISTER
+	SDE_Register_0034;
+
+    //0x0038
+	T_DIFF_CLAMP_LUT_REGISTER
+	SDE_Register_0038;
+
+    //0x003c
+	T_LUMA_RELATED_THRESHOLD_REGISTER
+	SDE_Register_003c;
+
+    //0x0040
+	T_PENALTY_REGISTER
+	SDE_Register_0040;
+
+    //0x0044
+	T_PENALTY_THRESHOLD_INDEX_REGISTER
+	SDE_Register_0044;
+
+    //0x0048
+	T_DIAGONAL_SEARCH_THRESHOLD_REGISTER
+	SDE_Register_0048;
+
+    //0x004c
+	T_RESERVED0
+	SDE_Register_004c;
+
+    //0x0050
+	T_RESERVED1
+	SDE_Register_0050;
+
+    //0x0054
+	T_RESERVED2
+	SDE_Register_0054;
+
+    //0x0058
+	T_RESERVED3
+	SDE_Register_0058;
+
+    //0x005c
+	T_RESERVED4
+	SDE_Register_005c;
+
+    //0x0060
+	T_CONFIDENCE_REGISTER
+	SDE_Register_0060;
+
+    //0x0064
+	T_DMA_TO_SDE_OUTPUT_CONFIDENCE
+	SDE_Register_0064;
+
+    //0x0068
+	T_DMA_TO_SDE_OUTPUT_CONFIDENCE_LINE_OFFSET
+	SDE_Register_0068;
+
+    //0x006c
+	T_RESERVED5
+	SDE_Register_006c;
+
+    //0x0070
+	T_LL_REGISTER0
+	SDE_Register_0070;
+
+    //0x0074
+	T_LL_REGISTER1
+	SDE_Register_0074;
+
+    //0x0078
+	T_LL_REGISTER2
+	SDE_Register_0078;
+
+    //0x007c
+	T_LL_REGISTER3
+	SDE_Register_007c;
+
+    //0x0080
+	T_LL_REGISTER4
+	SDE_Register_0080;
+
+    //0x0084
+	T_LL_REGISTER5
+	SDE_Register_0084;
+
+    //0x0088
+	T_LL_REGISTER6
+	SDE_Register_0088;
+
+    //0x008c
+	T_LL_REGISTER7
+	SDE_Register_008c;
+
+    //0x0090
+	T_DMA_CHANNEL_REGISTER
+	SDE_Register_0090;
+
+} NT98528_SDE_REG_STRUCT;
+
+#endif

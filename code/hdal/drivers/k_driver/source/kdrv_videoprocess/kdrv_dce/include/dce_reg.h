@@ -1,0 +1,6452 @@
+#ifndef __DCE_REG_H_
+#define __DCE_REG_H_
+
+#include "dce_platform.h"
+/*
+    CNN_SW_RST  :    [0x0, 0x1],            bits : 0
+    CNN_START   :    [0x0, 0x1],            bits : 1
+    CNN_SRAMCTRL:    [0x0, 0x3],            bits : 25_24
+    LL_FIRE     :    [0x0, 0x1],            bits : 28
+*/
+#define CNN_CONTROL_REGISTER_OFS 0x0000
+REGDEF_BEGIN(CNN_CONTROL_REGISTER)
+REGDEF_BIT(CNN_SW_RST,        1)
+REGDEF_BIT(CNN_START,        1)
+REGDEF_BIT(,        22)
+REGDEF_BIT(CNN_SRAMCTRL,        2)
+REGDEF_BIT(,        2)
+REGDEF_BIT(LL_FIRE,        1)
+REGDEF_END(CNN_CONTROL_REGISTER)
+
+/*
+    DCE_RST          :    [0x0, 0x1],           bits : 0
+    DCE_START        :    [0x0, 0x1],           bits : 1
+    DCE_START_LOAD   :    [0x0, 0x1],           bits : 2
+    DCE_FRMEND_LOAD  :    [0x0, 0x1],           bits : 3
+    DCE_FRMSTART_LOAD:    [0x0, 0x1],           bits : 4
+    LL_FIRE          :    [0x0, 0x1],           bits : 28
+*/
+#define DCE_CONTROL_REGISTER_OFS 0x0000
+REGDEF_BEGIN(DCE_CONTROL_REGISTER)
+REGDEF_BIT(DCE_RST,        1)
+REGDEF_BIT(DCE_START,        1)
+REGDEF_BIT(DCE_START_LOAD,        1)
+REGDEF_BIT(DCE_FRMEND_LOAD,        1)
+REGDEF_BIT(DCE_FRMSTART_LOAD,        1)
+REGDEF_BIT(,        23)
+REGDEF_BIT(LL_FIRE,        1)
+REGDEF_END(DCE_CONTROL_REGISTER)
+
+
+/*
+    DCE_OP                 :    [0x0, 0x3],         bits : 1_0
+    DCE_STP                :    [0x0, 0x1],         bits : 2
+    SRAM_MODE              :    [0x0, 0x1],         bits : 3
+    CFA_EN                 :    [0x0, 0x1],         bits : 4
+    DC_EN                  :    [0x0, 0x1],         bits : 5
+    CAC_EN                 :    [0x0, 0x1],         bits : 6
+    YUV2RGB_EN             :    [0x0, 0x1],         bits : 7
+    TCURVE_EN              :    [0x0, 0x1],         bits : 8
+    WDR_EN                 :    [0x0, 0x1],         bits : 9
+    WDR_SUBIMG_OUT_EN      :    [0x0, 0x1],         bits : 10
+    CFA_SUBIMG_OUT_EN      :    [0x0, 0x1],         bits : 11
+    CFA_SUBIMG_OUT_FLIP_EN :    [0x0, 0x1],         bits : 12
+    CFA_PINKR_EN           :    [0x0, 0x1],         bits : 13
+    HISTOGRAM_EN           :    [0x0, 0x1],         bits : 14
+    HISTOGRAM_SEL          :    [0x0, 0x1],         bits : 15
+    YUV2RGB_FMT            :    [0x0, 0x3],         bits : 17_16
+    CROP_EN                :    [0x0, 0x1],         bits : 18
+    DC_SEL                 :    [0x0, 0x1],         bits : 19
+    CHKSUM_EN              :    [0x0, 0x1],         bits : 20
+    D2DRAND                :    [0x0, 0x1],         bits : 21
+    D2DRAND_RST            :    [0x0, 0x1],         bits : 22
+    FSTR_RST_DISABLE       :    [0x0, 0x1],         bits : 23
+    D2DFMT                 :    [0x0, 0x3],         bits : 25_24
+    D2DUVFILT              :    [0x0, 0x1],         bits : 27
+    D2DIOSTOP              :    [0x0, 0x1],         bits : 28
+    DEBUG_SEL              :    [0x0, 0x7],         bits : 31_29
+*/
+#define DCE_FUNCTION_REGISTER_OFS 0x0004
+REGDEF_BEGIN(DCE_FUNCTION_REGISTER)
+REGDEF_BIT(DCE_OP,        2)
+REGDEF_BIT(DCE_STP,        1)
+REGDEF_BIT(SRAM_MODE,        1)
+REGDEF_BIT(CFA_EN,        1)
+REGDEF_BIT(DC_EN,        1)
+REGDEF_BIT(CAC_EN,        1)
+REGDEF_BIT(YUV2RGB_EN,        1)
+REGDEF_BIT(TCURVE_EN,        1)
+REGDEF_BIT(WDR_EN,        1)
+REGDEF_BIT(WDR_SUBIMG_OUT_EN,        1)
+REGDEF_BIT(CFA_SUBIMG_OUT_EN,        1)
+REGDEF_BIT(CFA_SUBIMG_OUT_FLIP_EN,        1)
+REGDEF_BIT(CFA_PINKR_EN,        1)
+REGDEF_BIT(HISTOGRAM_EN,        1)
+REGDEF_BIT(HISTOGRAM_SEL,        1)
+REGDEF_BIT(YUV2RGB_FMT,        2)
+REGDEF_BIT(CROP_EN,        1)
+REGDEF_BIT(DC_SEL,        1)
+REGDEF_BIT(CHKSUM_EN,        1)
+REGDEF_BIT(D2DRAND,        1)
+REGDEF_BIT(D2DRAND_RST,        1)
+REGDEF_BIT(FSTR_RST_DISABLE,        1)
+REGDEF_BIT(D2DFMT,        2)
+REGDEF_BIT(,        1)
+REGDEF_BIT(D2DUVFILT,        1)
+REGDEF_BIT(D2DIOSTOP,        1)
+REGDEF_BIT(DEBUG_SEL,        3)
+REGDEF_END(DCE_FUNCTION_REGISTER)
+
+
+/*
+    INTE_FRMST    :    [0x0, 0x1],          bits : 0
+    INTE_FRMEND   :    [0x0, 0x1],          bits : 1
+    INTE_STEND    :    [0x0, 0x1],          bits : 2
+    INTE_STP_ERR  :    [0x0, 0x1],          bits : 3
+    INTE_LB_OVF   :    [0x0, 0x1],          bits : 4
+    INTE_STP_OB   :    [0x0, 0x1],          bits : 6
+    INTE_Y_BACK   :    [0x0, 0x1],          bits : 7
+    INTE_LLEND    :    [0x0, 0x1],          bits : 8
+    INTE_LLERROR  :    [0x0, 0x1],          bits : 9
+    INTE_LLERROR2 :    [0x0, 0x1],          bits : 10
+    INTE_LLJOBEND :    [0x0, 0x1],          bits : 11
+    INTE_FRAME_ERR:    [0x0, 0x1],          bits : 12
+*/
+#define DCE_INTERRUPT_ENABLE_REGISTER_OFS 0x0008
+REGDEF_BEGIN(DCE_INTERRUPT_ENABLE_REGISTER)
+REGDEF_BIT(INTE_FRMST,        1)
+REGDEF_BIT(INTE_FRMEND,        1)
+REGDEF_BIT(INTE_STEND,        1)
+REGDEF_BIT(INTE_STP_ERR,        1)
+REGDEF_BIT(INTE_LB_OVF,        1)
+REGDEF_BIT(,        1)
+REGDEF_BIT(INTE_STP_OB,        1)
+REGDEF_BIT(INTE_Y_BACK,        1)
+REGDEF_BIT(INTE_LLEND,        1)
+REGDEF_BIT(INTE_LLERROR,        1)
+REGDEF_BIT(INTE_LLERROR2,        1)
+REGDEF_BIT(INTE_LLJOBEND,        1)
+REGDEF_BIT(INTE_FRAME_ERR,        1)
+REGDEF_END(DCE_INTERRUPT_ENABLE_REGISTER)
+
+
+/*
+    INT_FRMST    :    [0x0, 0x1],           bits : 0
+    INT_FRMEND   :    [0x0, 0x1],           bits : 1
+    INT_STEND    :    [0x0, 0x1],           bits : 2
+    INT_STP_ERR  :    [0x0, 0x1],           bits : 3
+    INT_LB_OVF   :    [0x0, 0x1],           bits : 4
+    INT_STP_OB   :    [0x0, 0x1],           bits : 6
+    INT_Y_BACK   :    [0x0, 0x1],           bits : 7
+    INTS_LLEND   :    [0x0, 0x1],           bits : 8
+    INTS_LLERROR :    [0x0, 0x1],           bits : 9
+    INT_LLERROR2 :    [0x0, 0x1],           bits : 10
+    INT_LLJOBEND :    [0x0, 0x1],           bits : 11
+    INT_FRAME_ERR:    [0x0, 0x1],           bits : 12
+*/
+#define DCE_INTERRUPT_STATUS_REGISTER_OFS 0x000c
+REGDEF_BEGIN(DCE_INTERRUPT_STATUS_REGISTER)
+REGDEF_BIT(INT_FRMST,        1)
+REGDEF_BIT(INT_FRMEND,        1)
+REGDEF_BIT(INT_STEND,        1)
+REGDEF_BIT(INT_STP_ERR,        1)
+REGDEF_BIT(INT_LB_OVF,        1)
+REGDEF_BIT(,        1)
+REGDEF_BIT(INT_STP_OB,        1)
+REGDEF_BIT(INT_Y_BACK,        1)
+REGDEF_BIT(INTS_LLEND,        1)
+REGDEF_BIT(INTS_LLERROR,        1)
+REGDEF_BIT(INT_LLERROR2,        1)
+REGDEF_BIT(INT_LLJOBEND,        1)
+REGDEF_BIT(INT_FRAME_ERR,        1)
+REGDEF_END(DCE_INTERRUPT_STATUS_REGISTER)
+
+
+/*
+    DCE_HSIZEIN :    [0x0, 0x7ff],          bits : 12_2
+    DCE_VSIZEIN :    [0x0, 0xfff],          bits : 28_17
+*/
+#define DCE_INPUT_SIZE_REGISTER_OFS 0x0010
+REGDEF_BEGIN(DCE_INPUT_SIZE_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DCE_HSIZEIN,        11)
+REGDEF_BIT(,        4)
+REGDEF_BIT(DCE_VSIZEIN,        12)
+REGDEF_END(DCE_INPUT_SIZE_REGISTER)
+
+
+/*
+    LL_TERMINATE:    [0x0, 0x1],            bits : 0
+*/
+#define LINKED_LIST_MODE_REGISTER_OFS 0x0014
+REGDEF_BEGIN(LINKED_LIST_MODE_REGISTER)
+REGDEF_BIT(LL_TERMINATE,        1)
+REGDEF_END(LINKED_LIST_MODE_REGISTER)
+
+
+/*
+    DCE_DRAM_OUT0_SINGLE_EN:    [0x0, 0x1],         bits : 0
+    DCE_DRAM_OUT1_SINGLE_EN:    [0x0, 0x1],         bits : 1
+    DCE_DRAM_OUT_MODE      :    [0x0, 0x1],         bits : 4
+*/
+#define DMA_OUTPUT_CHANNEL_ENABLE_REGISTER_OFS 0x0018
+REGDEF_BEGIN(DMA_OUTPUT_CHANNEL_ENABLE_REGISTER)
+REGDEF_BIT(DCE_DRAM_OUT0_SINGLE_EN,        1)
+REGDEF_BIT(DCE_DRAM_OUT1_SINGLE_EN,        1)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DCE_DRAM_OUT_MODE,        1)
+REGDEF_END(DMA_OUTPUT_CHANNEL_ENABLE_REGISTER)
+
+
+/*
+    DCE_DRAM_SAI_LL:    [0x0, 0x3fffffff],          bits : 31_2
+*/
+#define DRAM_LINKED_LIST_REGISTER_OFS 0x001c
+REGDEF_BEGIN(DRAM_LINKED_LIST_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DCE_DRAM_SAI_LL,        30)
+REGDEF_END(DRAM_LINKED_LIST_REGISTER)
+
+
+/*
+    DRAM_SAIY:    [0x0, 0x3fffffff],            bits : 31_2
+*/
+#define DMA_INPUT_Y_CHANNEL_REGISTER_OFS 0x0020
+REGDEF_BEGIN(DMA_INPUT_Y_CHANNEL_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DRAM_SAIY,        30)
+REGDEF_END(DMA_INPUT_Y_CHANNEL_REGISTER)
+
+
+/*
+    DRAM_OFSIY:    [0x0, 0x3ffff],          bits : 19_2
+*/
+#define DMA_INPUT_Y_CHANNEL_LINE_OFFSET_REGISTER_OFS 0x0024
+REGDEF_BEGIN(DMA_INPUT_Y_CHANNEL_LINE_OFFSET_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DRAM_OFSIY,        18)
+REGDEF_END(DMA_INPUT_Y_CHANNEL_LINE_OFFSET_REGISTER)
+
+
+/*
+    DRAM_SAIUV:    [0x0, 0x3fffffff],           bits : 31_2
+*/
+#define DMA_INPUT_UV_CHANNEL_REGISTER_OFS 0x0028
+REGDEF_BEGIN(DMA_INPUT_UV_CHANNEL_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DRAM_SAIUV,        30)
+REGDEF_END(DMA_INPUT_UV_CHANNEL_REGISTER)
+
+
+/*
+    DRAM_OFSIUV:    [0x0, 0x3ffff],         bits : 19_2
+*/
+#define DMA_INPUT_UV_CHANNEL_LINE_OFFSET_REGISTER_OFS 0x002c
+REGDEF_BEGIN(DMA_INPUT_UV_CHANNEL_LINE_OFFSET_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DRAM_OFSIUV,        18)
+REGDEF_END(DMA_INPUT_UV_CHANNEL_LINE_OFFSET_REGISTER)
+
+
+/*
+    DRAM_SAOY:    [0x0, 0x3fffffff],            bits : 31_2
+*/
+#define DMA_OUTPUT_Y_CHANNEL_REGISTER_OFS 0x0030
+REGDEF_BEGIN(DMA_OUTPUT_Y_CHANNEL_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DRAM_SAOY,        30)
+REGDEF_END(DMA_OUTPUT_Y_CHANNEL_REGISTER)
+
+
+/*
+    DRAM_OFSOY:    [0x0, 0x3ffff],          bits : 19_2
+*/
+#define DMA_OUTPUT_Y_CHANNEL_LINE_OFFSET_REGISTER_OFS 0x0034
+REGDEF_BEGIN(DMA_OUTPUT_Y_CHANNEL_LINE_OFFSET_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DRAM_OFSOY,        18)
+REGDEF_END(DMA_OUTPUT_Y_CHANNEL_LINE_OFFSET_REGISTER)
+
+
+/*
+    DRAM_SAOUV:    [0x0, 0x3fffffff],           bits : 31_2
+*/
+#define DMA_OUTPUT_UV_CHANNEL_REGISTER_OFS 0x0038
+REGDEF_BEGIN(DMA_OUTPUT_UV_CHANNEL_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DRAM_SAOUV,        30)
+REGDEF_END(DMA_OUTPUT_UV_CHANNEL_REGISTER)
+
+
+/*
+    DRAM_OFSOUV:    [0x0, 0x3ffff],         bits : 19_2
+*/
+#define DMA_OUTPUT_UV_CHANNEL_LINE_OFFSET_REGISTER_OFS 0x003c
+REGDEF_BEGIN(DMA_OUTPUT_UV_CHANNEL_LINE_OFFSET_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DRAM_OFSOUV,        18)
+REGDEF_END(DMA_OUTPUT_UV_CHANNEL_LINE_OFFSET_REGISTER)
+
+
+/*
+    DCE_STATUS:    [0x0, 0x1],          bits : 0
+    HCNT      :    [0x0, 0x3ff],            bits : 13_4
+*/
+#define DCE_STATUS_REGISTER_OFS 0x0040
+REGDEF_BEGIN(DCE_STATUS_REGISTER)
+REGDEF_BIT(DCE_STATUS,        1)
+REGDEF_BIT(,        3)
+REGDEF_BIT(HCNT,        10)
+REGDEF_END(DCE_STATUS_REGISTER)
+
+
+/*
+    HSTP0:    [0x0, 0x3ff],         bits : 9_0
+    HSTP1:    [0x0, 0x3ff],         bits : 19_10
+    HSTP2:    [0x0, 0x3ff],         bits : 29_20
+*/
+#define DCE_HORIZONTAL_STRIPE_REGISTER0_OFS 0x0044
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_REGISTER0)
+REGDEF_BIT(HSTP0,        10)
+REGDEF_BIT(HSTP1,        10)
+REGDEF_BIT(HSTP2,        10)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_REGISTER0)
+
+
+/*
+    HSTP3:    [0x0, 0x3ff],         bits : 9_0
+    HSTP4:    [0x0, 0x3ff],         bits : 19_10
+    HSTP5:    [0x0, 0x3ff],         bits : 29_20
+*/
+#define DCE_HORIZONTAL_STRIPE_REGISTER1_OFS 0x0048
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_REGISTER1)
+REGDEF_BIT(HSTP3,        10)
+REGDEF_BIT(HSTP4,        10)
+REGDEF_BIT(HSTP5,        10)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_REGISTER1)
+
+
+/*
+    HSTP6:    [0x0, 0x3ff],         bits : 9_0
+    HSTP7:    [0x0, 0x3ff],         bits : 19_10
+    HSTP8:    [0x0, 0x3ff],         bits : 29_20
+*/
+#define DCE_HORIZONTAL_STRIPE_REGISTER2_OFS 0x004c
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_REGISTER2)
+REGDEF_BIT(HSTP6,        10)
+REGDEF_BIT(HSTP7,        10)
+REGDEF_BIT(HSTP8,        10)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_REGISTER2)
+
+
+/*
+    HSTP9 :    [0x0, 0x3ff],            bits : 9_0
+    HSTP10:    [0x0, 0x3ff],            bits : 19_10
+    HSTP11:    [0x0, 0x3ff],            bits : 29_20
+*/
+#define DCE_HORIZONTAL_STRIPE_REGISTER3_OFS 0x0050
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_REGISTER3)
+REGDEF_BIT(HSTP9,        10)
+REGDEF_BIT(HSTP10,        10)
+REGDEF_BIT(HSTP11,        10)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_REGISTER3)
+
+
+/*
+    HSTP12:    [0x0, 0x3ff],            bits : 9_0
+    HSTP13:    [0x0, 0x3ff],            bits : 19_10
+    HSTP14:    [0x0, 0x3ff],            bits : 29_20
+*/
+#define DCE_HORIZONTAL_STRIPE_REGISTER4_OFS 0x0054
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_REGISTER4)
+REGDEF_BIT(HSTP12,        10)
+REGDEF_BIT(HSTP13,        10)
+REGDEF_BIT(HSTP14,        10)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_REGISTER4)
+
+
+/*
+    HSTP15            :    [0x0, 0x3ff],            bits : 9_0
+    LBUF_BACK_RSV_LINE:    [0x0, 0xf],          bits : 15_12
+    HSTP_VMAXDEC      :    [0x0, 0xf],          bits : 19_16
+*/
+#define DCE_HORIZONTAL_STRIPE_REGISTER5_OFS 0x0058
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_REGISTER5)
+REGDEF_BIT(HSTP15,        10)
+REGDEF_BIT(,        2)
+REGDEF_BIT(LBUF_BACK_RSV_LINE,        4)
+REGDEF_BIT(HSTP_VMAXDEC,        4)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_REGISTER5)
+
+
+/*
+    HSTP_MAXINC     :    [0x0, 0xff],           bits : 7_0
+    HSTP_MAXDEC     :    [0x0, 0xff],           bits : 15_8
+    HSTP_INST       :    [0x0, 0x1],            bits : 16
+    HSTP_IPEOLAP_SEL:    [0x0, 0x1],            bits : 18
+    HSTP_IMEOLAP_SEL:    [0x0, 0x3],            bits : 21_20
+    HSTP_IMEOLAP    :    [0x0, 0xff],           bits : 31_24
+*/
+#define DCE_HORIZONTAL_STRIPE_REGISTER6_OFS 0x005c
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_REGISTER6)
+REGDEF_BIT(HSTP_MAXINC,        8)
+REGDEF_BIT(HSTP_MAXDEC,        8)
+REGDEF_BIT(HSTP_INST,        1)
+REGDEF_BIT(,        1)
+REGDEF_BIT(HSTP_IPEOLAP_SEL,        1)
+REGDEF_BIT(,        1)
+REGDEF_BIT(HSTP_IMEOLAP_SEL,        2)
+REGDEF_BIT(,        2)
+REGDEF_BIT(HSTP_IMEOLAP,        8)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_REGISTER6)
+
+
+/*
+    BUFHEIGHT_G  :    [0x0, 0x3ff],         bits : 9_0
+    BUFHEIGHT_RGB:    [0x0, 0x3ff],         bits : 21_12
+    BUFHEIGHT_PIX:    [0x0, 0xff],          bits : 31_24
+*/
+#define DCE_BUFFER_HEIGHT_STATUS_REGISTER_OFS 0x0060
+REGDEF_BEGIN(DCE_BUFFER_HEIGHT_STATUS_REGISTER)
+REGDEF_BIT(BUFHEIGHT_G,        10)
+REGDEF_BIT(,        2)
+REGDEF_BIT(BUFHEIGHT_RGB,        10)
+REGDEF_BIT(,        2)
+REGDEF_BIT(BUFHEIGHT_PIX,        8)
+REGDEF_END(DCE_BUFFER_HEIGHT_STATUS_REGISTER)
+
+
+/*
+    HSTP_STX:    [0x0, 0x1fff],         bits : 12_0
+    HSTP_EDX:    [0x0, 0x1fff],         bits : 28_16
+*/
+#define DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_1_OFS 0x0064
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_1)
+REGDEF_BIT(HSTP_STX,        13)
+REGDEF_BIT(,        3)
+REGDEF_BIT(HSTP_EDX,        13)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_1)
+
+
+/*
+    HSTP_CLM_STX:    [0x0, 0x1fff],         bits : 12_0
+    HSTP_CLM_EDX:    [0x0, 0x1fff],         bits : 28_16
+*/
+#define DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_2_OFS 0x0068
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_2)
+REGDEF_BIT(HSTP_CLM_STX,        13)
+REGDEF_BIT(,        3)
+REGDEF_BIT(HSTP_CLM_EDX,        13)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_2)
+
+
+/*
+    HSTP_BUF_MODE:    [0x0, 0x3f],          bits : 5_0
+*/
+#define DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_3_OFS 0x006c
+REGDEF_BEGIN(DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_3)
+REGDEF_BIT(HSTP_BUF_MODE,        6)
+REGDEF_END(DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_3)
+
+
+/*
+    DMA_IN_BURST :    [0x0, 0x1],           bits : 0
+    DMA_OUT_BURST:    [0x0, 0x1],           bits : 1
+*/
+#define DMA_BURST_LENGTH_REGISTER_OFS 0x0070
+REGDEF_BEGIN(DMA_BURST_LENGTH_REGISTER)
+REGDEF_BIT(DMA_IN_BURST,        1)
+REGDEF_BIT(DMA_OUT_BURST,        1)
+REGDEF_END(DMA_BURST_LENGTH_REGISTER)
+
+
+/*
+    LIGHT_SLEEP_GDC :    [0x0, 0x1],            bits : 0
+    LIGHT_SLEEP_CFA :    [0x0, 0x1],            bits : 1
+    LIGHT_SLEEP_DIN :    [0x0, 0x1],            bits : 4
+    LIGHT_SLEEP_DOUT:    [0x0, 0x1],            bits : 5
+    SHUT_DOWN_GDC   :    [0x0, 0x1],            bits : 8
+    SHUT_DOWN_CFA   :    [0x0, 0x1],            bits : 9
+*/
+#define SRAM_CONTROL_REGISTER_OFS 0x0074
+REGDEF_BEGIN(SRAM_CONTROL_REGISTER)
+REGDEF_BIT(LIGHT_SLEEP_GDC,        1)
+REGDEF_BIT(LIGHT_SLEEP_CFA,        1)
+REGDEF_BIT(,        2)
+REGDEF_BIT(LIGHT_SLEEP_DIN,        1)
+REGDEF_BIT(LIGHT_SLEEP_DOUT,        1)
+REGDEF_BIT(,        2)
+REGDEF_BIT(SHUT_DOWN_GDC,        1)
+REGDEF_BIT(SHUT_DOWN_CFA,        1)
+REGDEF_END(SRAM_CONTROL_REGISTER)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED1_OFS 0x0078
+REGDEF_BEGIN(DCE_RESERVED1)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED1)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED2_OFS 0x007c
+REGDEF_BEGIN(DCE_RESERVED2)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED2)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED3_OFS 0x0080
+REGDEF_BEGIN(DCE_RESERVED3)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED3)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED4_OFS 0x0084
+REGDEF_BEGIN(DCE_RESERVED4)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED4)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED5_OFS 0x0088
+REGDEF_BEGIN(DCE_RESERVED5)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED5)
+
+
+/*
+    CROP_HSIZE:    [0x0, 0x7ff],            bits : 12_2
+*/
+#define OUTPUT_CROP_REGISTER_0_OFS 0x008c
+REGDEF_BEGIN(OUTPUT_CROP_REGISTER_0)
+REGDEF_BIT(,        2)
+REGDEF_BIT(CROP_HSIZE,        11)
+REGDEF_END(OUTPUT_CROP_REGISTER_0)
+
+
+/*
+    CROP_HSTART:    [0x0, 0x1fff],          bits : 12_0
+*/
+#define OUTPUT_CROP_REGISTER_1_OFS 0x0090
+REGDEF_BEGIN(OUTPUT_CROP_REGISTER_1)
+REGDEF_BIT(CROP_HSTART,        13)
+REGDEF_END(OUTPUT_CROP_REGISTER_1)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED8_OFS 0x0094
+REGDEF_BEGIN(DCE_RESERVED8)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED8)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED9_OFS 0x0098
+REGDEF_BEGIN(DCE_RESERVED9)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED9)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED10_OFS 0x009c
+REGDEF_BEGIN(DCE_RESERVED10)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED10)
+
+
+/*
+    CFAPAT      :    [0x0, 0x7],            bits : 2_0
+    BAYER_FORMAT:    [0x0, 0x1],            bits : 3
+*/
+#define COLOR_INTERPOLATION_REGISTER_0_OFS 0x00a0
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER_0)
+REGDEF_BIT(CFAPAT,        3)
+REGDEF_BIT(BAYER_FORMAT,        1)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER_0)
+
+
+/*
+    CFA_SUBIMG_DRAMSAO :    [0x0, 0x3fffffff],          bits : 31_2
+*/
+#define DMA_CFA_IR_PLANE_OUTPUT_CHANNEL_REGISTER_OFS 0x00a4
+REGDEF_BEGIN(DMA_CFA_IR_PLANE_OUTPUT_CHANNEL_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(CFA_SUBIMG_DRAMSAO,        30)
+REGDEF_END(DMA_CFA_IR_PLANE_OUTPUT_CHANNEL_REGISTER)
+
+
+/*
+    CFA_SUBIMG_LOFSO :    [0x0, 0x3ffff],           bits : 19_2
+    CFA_SUBIMG_CHSEL :    [0x0, 0x3],           bits : 27_26
+    CFA_SUBIMG_BIT   :    [0x0, 0x3],           bits : 29_28
+    CFA_SUBIMG_BYTE  :    [0x0, 0x1],           bits : 30
+*/
+#define DMA_CFA_IR_PLANE_OUTPUT_CHANNEL_LINEOFFSET_REGISTER_OFS 0x00a8
+REGDEF_BEGIN(DMA_CFA_IR_PLANE_OUTPUT_CHANNEL_LINEOFFSET_REGISTER)
+REGDEF_BIT(,        2)
+REGDEF_BIT(CFA_SUBIMG_LOFSO,        18)
+REGDEF_BIT(,        6)
+REGDEF_BIT(CFA_SUBIMG_CHSEL,        2)
+REGDEF_BIT(CFA_SUBIMG_BIT,        2)
+REGDEF_BIT(CFA_SUBIMG_BYTE,        1)
+REGDEF_END(DMA_CFA_IR_PLANE_OUTPUT_CHANNEL_LINEOFFSET_REGISTER)
+
+
+/*
+    CFA_EDGE_DTH :    [0x0, 0xfff],         bits : 11_0
+    CFA_EDGE_DTH2:    [0x0, 0xfff],         bits : 23_12
+*/
+#define COLOR_INTERPOLATION_REGISTER1_OFS 0x00ac
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER1)
+REGDEF_BIT(CFA_EDGE_DTH,        12)
+REGDEF_BIT(CFA_EDGE_DTH2,        12)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER1)
+
+
+/*
+    CFA_RBCTH1:    [0x0, 0x3ff],            bits : 9_0
+    CFA_RBCTH2:    [0x0, 0x3ff],            bits : 25_16
+    CFA_RBCEN :    [0x0, 0x1],          bits : 31
+*/
+#define COLOR_INTERPOLATION_REGISTER2_OFS 0x00b0
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER2)
+REGDEF_BIT(CFA_RBCTH1,        10)
+REGDEF_BIT(,        6)
+REGDEF_BIT(CFA_RBCTH2,        10)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CFA_RBCEN,        1)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER2)
+
+
+/*
+    CFA_FREQBLEND_LUT0:    [0x0, 0xf],          bits : 3_0
+    CFA_FREQBLEND_LUT1:    [0x0, 0xf],          bits : 7_4
+    CFA_FREQBLEND_LUT2:    [0x0, 0xf],          bits : 11_8
+    CFA_FREQBLEND_LUT3:    [0x0, 0xf],          bits : 15_12
+    CFA_FREQBLEND_LUT4:    [0x0, 0xf],          bits : 19_16
+    CFA_FREQBLEND_LUT5:    [0x0, 0xf],          bits : 23_20
+    CFA_FREQBLEND_LUT6:    [0x0, 0xf],          bits : 27_24
+    CFA_FREQBLEND_LUT7:    [0x0, 0xf],          bits : 31_28
+*/
+#define COLOR_INTERPOLATION_REGISTER3_OFS 0x00b4
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER3)
+REGDEF_BIT(CFA_FREQBLEND_LUT0,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT1,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT2,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT3,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT4,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT5,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT6,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT7,        4)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER3)
+
+
+/*
+    CFA_FREQBLEND_LUT8 :    [0x0, 0xf],         bits : 3_0
+    CFA_FREQBLEND_LUT9 :    [0x0, 0xf],         bits : 7_4
+    CFA_FREQBLEND_LUT10:    [0x0, 0xf],         bits : 11_8
+    CFA_FREQBLEND_LUT11:    [0x0, 0xf],         bits : 15_12
+    CFA_FREQBLEND_LUT12:    [0x0, 0xf],         bits : 19_16
+    CFA_FREQBLEND_LUT13:    [0x0, 0xf],         bits : 23_20
+    CFA_FREQBLEND_LUT14:    [0x0, 0xf],         bits : 27_24
+    CFA_FREQBLEND_LUT15:    [0x0, 0xf],         bits : 31_28
+*/
+#define COLOR_INTERPOLATION_REGISTER4_OFS 0x00b8
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER4)
+REGDEF_BIT(CFA_FREQBLEND_LUT8,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT9,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT10,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT11,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT12,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT13,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT14,        4)
+REGDEF_BIT(CFA_FREQBLEND_LUT15,        4)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER4)
+
+
+/*
+    CFA_LUMA_WEIGHT0:    [0x0, 0xff],           bits : 7_0
+    CFA_LUMA_WEIGHT1:    [0x0, 0xff],           bits : 15_8
+    CFA_LUMA_WEIGHT2:    [0x0, 0xff],           bits : 23_16
+    CFA_LUMA_WEIGHT3:    [0x0, 0xff],           bits : 31_24
+*/
+#define COLOR_INTERPOLATION_REGISTER5_OFS 0x00bc
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER5)
+REGDEF_BIT(CFA_LUMA_WEIGHT0,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT1,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT2,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT3,        8)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER5)
+
+
+/*
+    CFA_LUMA_WEIGHT4:    [0x0, 0xff],           bits : 7_0
+    CFA_LUMA_WEIGHT5:    [0x0, 0xff],           bits : 15_8
+    CFA_LUMA_WEIGHT6:    [0x0, 0xff],           bits : 23_16
+    CFA_LUMA_WEIGHT7:    [0x0, 0xff],           bits : 31_24
+*/
+#define COLOR_INTERPOLATION_REGISTER6_OFS 0x00c0
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER6)
+REGDEF_BIT(CFA_LUMA_WEIGHT4,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT5,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT6,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT7,        8)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER6)
+
+
+/*
+    CFA_LUMA_WEIGHT8 :    [0x0, 0xff],          bits : 7_0
+    CFA_LUMA_WEIGHT9 :    [0x0, 0xff],          bits : 15_8
+    CFA_LUMA_WEIGHT10:    [0x0, 0xff],          bits : 23_16
+    CFA_LUMA_WEIGHT11:    [0x0, 0xff],          bits : 31_24
+*/
+#define COLOR_INTERPOLATION_REGISTER7_OFS 0x00c4
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER7)
+REGDEF_BIT(CFA_LUMA_WEIGHT8,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT9,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT10,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT11,        8)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER7)
+
+
+/*
+    CFA_LUMA_WEIGHT12:    [0x0, 0xff],          bits : 7_0
+    CFA_LUMA_WEIGHT13:    [0x0, 0xff],          bits : 15_8
+    CFA_LUMA_WEIGHT14:    [0x0, 0xff],          bits : 23_16
+    CFA_LUMA_WEIGHT15:    [0x0, 0xff],          bits : 31_24
+*/
+#define COLOR_INTERPOLATION_REGISTER8_OFS 0x00c8
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER8)
+REGDEF_BIT(CFA_LUMA_WEIGHT12,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT13,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT14,        8)
+REGDEF_BIT(CFA_LUMA_WEIGHT15,        8)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER8)
+
+
+/*
+    CFA_LUMA_WEIGHT16:    [0x0, 0xff],          bits : 7_0
+    CFA_FREQ_TH      :    [0x0, 0xfff],         bits : 27_16
+*/
+#define COLOR_INTERPOLATION_REGISTER9_OFS 0x00cc
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER9)
+REGDEF_BIT(CFA_LUMA_WEIGHT16,        8)
+REGDEF_BIT(,        8)
+REGDEF_BIT(CFA_FREQ_TH,        12)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER9)
+
+
+/*
+    CFA_FCS_CORING:    [0x0, 0xff],         bits : 7_0
+    CFA_FCS_WEIGHT:    [0x0, 0xff],         bits : 15_8
+    CFA_FCS_DIRSEL:    [0x0, 0x1],          bits : 16
+*/
+#define COLOR_INTERPOLATION_REGISTER10_OFS 0x00d0
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER10)
+REGDEF_BIT(CFA_FCS_CORING,        8)
+REGDEF_BIT(CFA_FCS_WEIGHT,        8)
+REGDEF_BIT(CFA_FCS_DIRSEL,        1)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER10)
+
+
+/*
+    CFA_FCS_STRENGTH0:    [0x0, 0xf],           bits : 3_0
+    CFA_FCS_STRENGTH1:    [0x0, 0xf],           bits : 7_4
+    CFA_FCS_STRENGTH2:    [0x0, 0xf],           bits : 11_8
+    CFA_FCS_STRENGTH3:    [0x0, 0xf],           bits : 15_12
+    CFA_FCS_STRENGTH4:    [0x0, 0xf],           bits : 19_16
+    CFA_FCS_STRENGTH5:    [0x0, 0xf],           bits : 23_20
+    CFA_FCS_STRENGTH6:    [0x0, 0xf],           bits : 27_24
+    CFA_FCS_STRENGTH7:    [0x0, 0xf],           bits : 31_28
+*/
+#define COLOR_INTERPOLATION_REGISTER11_OFS 0x00d4
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER11)
+REGDEF_BIT(CFA_FCS_STRENGTH0,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH1,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH2,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH3,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH4,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH5,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH6,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH7,        4)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER11)
+
+
+/*
+    CFA_FCS_STRENGTH8 :    [0x0, 0xf],          bits : 3_0
+    CFA_FCS_STRENGTH9 :    [0x0, 0xf],          bits : 7_4
+    CFA_FCS_STRENGTH10:    [0x0, 0xf],          bits : 11_8
+    CFA_FCS_STRENGTH11:    [0x0, 0xf],          bits : 15_12
+    CFA_FCS_STRENGTH12:    [0x0, 0xf],          bits : 19_16
+    CFA_FCS_STRENGTH13:    [0x0, 0xf],          bits : 23_20
+    CFA_FCS_STRENGTH14:    [0x0, 0xf],          bits : 27_24
+    CFA_FCS_STRENGTH15:    [0x0, 0xf],          bits : 31_28
+*/
+#define COLOR_INTERPOLATION_REGISTER12_OFS 0x00d8
+REGDEF_BEGIN(COLOR_INTERPOLATION_REGISTER12)
+REGDEF_BIT(CFA_FCS_STRENGTH8,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH9,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH10,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH11,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH12,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH13,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH14,        4)
+REGDEF_BIT(CFA_FCS_STRENGTH15,        4)
+REGDEF_END(COLOR_INTERPOLATION_REGISTER12)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED11_OFS 0x00dc
+REGDEF_BEGIN(DCE_RESERVED11)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED11)
+
+
+/*
+    CFA_RGBIR_CL_EN       :    [0x0, 0x1],          bits : 0
+    CFA_RGBIR_HF_EN       :    [0x0, 0x1],          bits : 1
+    CFA_RGBIR_AVG_MODE    :    [0x0, 0x1],          bits : 2
+    CFA_RGBIR_CL_SEL      :    [0x0, 0x1],          bits : 3
+    CFA_RGBIR_CL_THR      :    [0x0, 0xff],         bits : 15_8
+    CFA_RGBIR_GEDGE_TH    :    [0x0, 0x3ff],            bits : 25_16
+    CFA_RGBIR_RB_CSTRENGTH:    [0x0, 0x7],          bits : 30_28
+*/
+#define RGBIR_COLOR_INTERPOLATION_REGISTER0_OFS 0x00e0
+REGDEF_BEGIN(RGBIR_COLOR_INTERPOLATION_REGISTER0)
+REGDEF_BIT(CFA_RGBIR_CL_EN,        1)
+REGDEF_BIT(CFA_RGBIR_HF_EN,        1)
+REGDEF_BIT(CFA_RGBIR_AVG_MODE,        1)
+REGDEF_BIT(CFA_RGBIR_CL_SEL,        1)
+REGDEF_BIT(,        4)
+REGDEF_BIT(CFA_RGBIR_CL_THR,        8)
+REGDEF_BIT(CFA_RGBIR_GEDGE_TH,        10)
+REGDEF_BIT(,        2)
+REGDEF_BIT(CFA_RGBIR_RB_CSTRENGTH,        3)
+REGDEF_END(RGBIR_COLOR_INTERPOLATION_REGISTER0)
+
+
+/*
+    CFA_RGBIR_HF_GTHR:    [0x0, 0x7],           bits : 2_0
+    CFA_RGBIR_HF_DIFF:    [0x0, 0xff],          bits : 15_8
+    CFA_RGBIR_HF_ETHR:    [0x0, 0xff],          bits : 23_16
+*/
+#define RGBIR_COLOR_INTERPOLATION_REGISTER1_OFS 0x00e4
+REGDEF_BEGIN(RGBIR_COLOR_INTERPOLATION_REGISTER1)
+REGDEF_BIT(CFA_RGBIR_HF_GTHR,        3)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CFA_RGBIR_HF_DIFF,        8)
+REGDEF_BIT(CFA_RGBIR_HF_ETHR,        8)
+REGDEF_END(RGBIR_COLOR_INTERPOLATION_REGISTER1)
+
+
+/*
+    IRSUB_R:    [0x0, 0xfff],           bits : 11_0
+    IRSUB_G:    [0x0, 0xfff],           bits : 27_16
+*/
+#define RGBIR_COLOR_INTERPOLATION_REGISTER2_OFS 0x00e8
+REGDEF_BEGIN(RGBIR_COLOR_INTERPOLATION_REGISTER2)
+REGDEF_BIT(IRSUB_R,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(IRSUB_G,        12)
+REGDEF_END(RGBIR_COLOR_INTERPOLATION_REGISTER2)
+
+
+/*
+    IRSUB_B           :    [0x0, 0xfff],            bits : 11_0
+    IRSUB_WEIGHT_RANGE:    [0x0, 0x3],          bits : 15_14
+    IRSUB_WEIGHT_LB   :    [0x0, 0xff],         bits : 23_16
+    IRSUB_TH          :    [0x0, 0xff],         bits : 31_24
+*/
+#define RGBIR_COLOR_INTERPOLATION_REGISTER3_OFS 0x00ec
+REGDEF_BEGIN(RGBIR_COLOR_INTERPOLATION_REGISTER3)
+REGDEF_BIT(IRSUB_B,        12)
+REGDEF_BIT(,        2)
+REGDEF_BIT(IRSUB_WEIGHT_RANGE,        2)
+REGDEF_BIT(IRSUB_WEIGHT_LB,        8)
+REGDEF_BIT(IRSUB_TH,        8)
+REGDEF_END(RGBIR_COLOR_INTERPOLATION_REGISTER3)
+
+
+/*
+    CGAIN_R:    [0x0, 0x3ff],           bits : 9_0
+    CGAIN_G:    [0x0, 0x3ff],           bits : 25_16
+*/
+#define COLOR_GAIN_REGISTER_1_OFS 0x00f0
+REGDEF_BEGIN(COLOR_GAIN_REGISTER_1)
+REGDEF_BIT(CGAIN_R,        10)
+REGDEF_BIT(,        6)
+REGDEF_BIT(CGAIN_G,        10)
+REGDEF_END(COLOR_GAIN_REGISTER_1)
+
+
+/*
+    CGAIN_B    :    [0x0, 0x3ff],           bits : 9_0
+    CGAIN_RANGE:    [0x0, 0x1],         bits : 16
+*/
+#define COLOR_GAIN_REGISTER_2_OFS 0x00f4
+REGDEF_BEGIN(COLOR_GAIN_REGISTER_2)
+REGDEF_BIT(CGAIN_B,        10)
+REGDEF_BIT(,        6)
+REGDEF_BIT(CGAIN_RANGE,        1)
+REGDEF_END(COLOR_GAIN_REGISTER_2)
+
+
+/*
+    CFA_SAT_GAIN:    [0x0, 0x3ff],          bits : 9_0
+    PINKR_MODE  :    [0x0, 0x1],            bits : 16
+*/
+#define CFA_SATURATION_GAIN_OFS 0x00f8
+REGDEF_BEGIN(CFA_SATURATION_GAIN)
+REGDEF_BIT(CFA_SAT_GAIN,        10)
+REGDEF_BIT(,        6)
+REGDEF_BIT(PINKR_MODE,        1)
+REGDEF_END(CFA_SATURATION_GAIN)
+
+
+/*
+    PINKR_THR1:    [0x0, 0xff],         bits : 7_0
+    PINKR_THR2:    [0x0, 0xff],         bits : 15_8
+    PINKR_THR3:    [0x0, 0xff],         bits : 23_16
+    PINKR_THR4:    [0x0, 0xff],         bits : 31_24
+*/
+#define PINK_REDUCTION_REGISTER_OFS 0x00fc
+REGDEF_BEGIN(PINK_REDUCTION_REGISTER)
+REGDEF_BIT(PINKR_THR1,        8)
+REGDEF_BIT(PINKR_THR2,        8)
+REGDEF_BIT(PINKR_THR3,        8)
+REGDEF_BIT(PINKR_THR4,        8)
+REGDEF_END(PINK_REDUCTION_REGISTER)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED12_OFS 0x0100
+REGDEF_BEGIN(DCE_RESERVED12)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED12)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED13_OFS 0x0104
+REGDEF_BEGIN(DCE_RESERVED13)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED13)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED14_OFS 0x0108
+REGDEF_BEGIN(DCE_RESERVED14)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED14)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED15_OFS 0x010c
+REGDEF_BEGIN(DCE_RESERVED15)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED15)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED16_OFS 0x0110
+REGDEF_BEGIN(DCE_RESERVED16)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED16)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED17_OFS 0x0114
+REGDEF_BEGIN(DCE_RESERVED17)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED17)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED18_OFS 0x0118
+REGDEF_BEGIN(DCE_RESERVED18)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED18)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED19_OFS 0x011c
+REGDEF_BEGIN(DCE_RESERVED19)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED19)
+
+
+/*
+    WDR_SUBIMG_WIDTH  :    [0x0, 0x1f],         bits : 4_0
+    WDR_SUBIMG_HEIGHT :    [0x0, 0x1f],         bits : 9_5
+    WDR_RAND_RESET    :    [0x0, 0x1],          bits : 10
+    WDR_RAND_SEL      :    [0x0, 0x3],          bits : 12_11
+*/
+#define WDR_SUBIMAGE_REGISTER_0_OFS 0x0120
+REGDEF_BEGIN(WDR_SUBIMAGE_REGISTER_0)
+REGDEF_BIT(WDR_SUBIMG_WIDTH,        5)
+REGDEF_BIT(WDR_SUBIMG_HEIGHT,        5)
+REGDEF_BIT(WDR_RAND_RESET,        1)
+REGDEF_BIT(WDR_RAND_SEL,        2)
+REGDEF_END(WDR_SUBIMAGE_REGISTER_0)
+
+
+/*
+    WDR_SUBIMG_DRAMSAI :    [0x0, 0x3fffffff],          bits : 31_2
+*/
+#define WDR_SUBIMAGE_REGISTER_1_OFS 0x0124
+REGDEF_BEGIN(WDR_SUBIMAGE_REGISTER_1)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_SUBIMG_DRAMSAI,        30)
+REGDEF_END(WDR_SUBIMAGE_REGISTER_1)
+
+
+/*
+    WDR_SUBIMG_LOFSI :    [0x0, 0x3fff],            bits : 15_2
+*/
+#define WDR_SUBIMAGE_REGISTER_2_OFS 0x0128
+REGDEF_BEGIN(WDR_SUBIMAGE_REGISTER_2)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_SUBIMG_LOFSI,        14)
+REGDEF_END(WDR_SUBIMAGE_REGISTER_2)
+
+
+/*
+    WDR_SUBIMG_DRAMSAO :    [0x0, 0x3fffffff],          bits : 31_2
+*/
+#define WDR_SUBIMAGE_REGISTER_3_OFS 0x012c
+REGDEF_BEGIN(WDR_SUBIMAGE_REGISTER_3)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_SUBIMG_DRAMSAO,        30)
+REGDEF_END(WDR_SUBIMAGE_REGISTER_3)
+
+
+/*
+    WDR_SUBIMG_LOFSO :    [0x0, 0x3fff],            bits : 15_2
+*/
+#define WDR_SUBIMAGE_REGISTER_4_OFS 0x0130
+REGDEF_BEGIN(WDR_SUBIMAGE_REGISTER_4)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_SUBIMG_LOFSO,        14)
+REGDEF_END(WDR_SUBIMAGE_REGISTER_4)
+
+
+/*
+    WDR_SUBIMG_HFACTOR:    [0x0, 0xffff],           bits : 15_0
+    WDR_SUBIMG_VFACTOR:    [0x0, 0xffff],           bits : 31_16
+*/
+#define WDR_SUBIMAGE_REGISTER_5_OFS 0x0134
+REGDEF_BEGIN(WDR_SUBIMAGE_REGISTER_5)
+REGDEF_BIT(WDR_SUBIMG_HFACTOR,        16)
+REGDEF_BIT(WDR_SUBIMG_VFACTOR,        16)
+REGDEF_END(WDR_SUBIMAGE_REGISTER_5)
+
+
+/*
+    WDR_SUB_BLK_SIZEH    :    [0x0, 0x3ff],         bits : 9_0
+    WDR_BLK_CENT_HFACTOR :    [0x0, 0x3fffff],          bits : 31_10
+*/
+#define WDR_SUBIMAGE_REGISTER_6_OFS 0x0138
+REGDEF_BEGIN(WDR_SUBIMAGE_REGISTER_6)
+REGDEF_BIT(WDR_SUB_BLK_SIZEH,        10)
+REGDEF_BIT(WDR_BLK_CENT_HFACTOR,        22)
+REGDEF_END(WDR_SUBIMAGE_REGISTER_6)
+
+
+/*
+    WDR_SUB_BLK_SIZEV    :    [0x0, 0x3ff],         bits : 9_0
+    WDR_BLK_CENT_VFACTOR :    [0x0, 0x3fffff],          bits : 31_10
+*/
+#define WDR_SUBIMAGE_REGISTER_7_OFS 0x013c
+REGDEF_BEGIN(WDR_SUBIMAGE_REGISTER_7)
+REGDEF_BIT(WDR_SUB_BLK_SIZEV,        10)
+REGDEF_BIT(WDR_BLK_CENT_VFACTOR,        22)
+REGDEF_END(WDR_SUBIMAGE_REGISTER_7)
+
+
+/*
+    reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED20_OFS 0x0140
+REGDEF_BEGIN(DCE_RESERVED20)
+REGDEF_BIT(reserved,        32)
+REGDEF_END(DCE_RESERVED20)
+
+
+/*
+    WDR_INPUT_BLDRTO0 :    [0x0, 0xff],         bits : 7_0
+    WDR_INPUT_BLDRTO1 :    [0x0, 0xff],         bits : 15_8
+    WDR_INPUT_BLDRTO2 :    [0x0, 0xff],         bits : 23_16
+    WDR_INPUT_BLDRTO3 :    [0x0, 0xff],         bits : 31_24
+*/
+#define WDR_INPUT_BLENDING_REGISTER0_OFS 0x0144
+REGDEF_BEGIN(WDR_INPUT_BLENDING_REGISTER0)
+REGDEF_BIT(WDR_INPUT_BLDRTO0,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO1,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO2,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO3,        8)
+REGDEF_END(WDR_INPUT_BLENDING_REGISTER0)
+
+
+/*
+    WDR_INPUT_BLDRTO4  :    [0x0, 0xff],            bits : 7_0
+    WDR_INPUT_BLDRTO5  :    [0x0, 0xff],            bits : 15_8
+    WDR_INPUT_BLDRTO6  :    [0x0, 0xff],            bits : 23_16
+    WDR_INPUT_BLDRTO7  :    [0x0, 0xff],            bits : 31_24
+*/
+#define WDR_INPUT_BLENDING_REGISTER1_OFS 0x0148
+REGDEF_BEGIN(WDR_INPUT_BLENDING_REGISTER1)
+REGDEF_BIT(WDR_INPUT_BLDRTO4,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO5,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO6,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO7,        8)
+REGDEF_END(WDR_INPUT_BLENDING_REGISTER1)
+
+
+/*
+    WDR_INPUT_BLDRTO8  :    [0x0, 0xff],            bits : 7_0
+    WDR_INPUT_BLDRTO9  :    [0x0, 0xff],            bits : 15_8
+    WDR_INPUT_BLDRTO10 :    [0x0, 0xff],            bits : 23_16
+    WDR_INPUT_BLDRTO11 :    [0x0, 0xff],            bits : 31_24
+*/
+#define WDR_INPUT_BLENDING_REGISTER2_OFS 0x014c
+REGDEF_BEGIN(WDR_INPUT_BLENDING_REGISTER2)
+REGDEF_BIT(WDR_INPUT_BLDRTO8,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO9,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO10,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO11,        8)
+REGDEF_END(WDR_INPUT_BLENDING_REGISTER2)
+
+
+/*
+    WDR_INPUT_BLDRTO12  :    [0x0, 0xff],           bits : 7_0
+    WDR_INPUT_BLDRTO13  :    [0x0, 0xff],           bits : 15_8
+    WDR_INPUT_BLDRTO14  :    [0x0, 0xff],           bits : 23_16
+    WDR_INPUT_BLDRTO15  :    [0x0, 0xff],           bits : 31_24
+*/
+#define WDR_INPUT_BLENDING_REGISTER3_OFS 0x0150
+REGDEF_BEGIN(WDR_INPUT_BLENDING_REGISTER3)
+REGDEF_BIT(WDR_INPUT_BLDRTO12,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO13,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO14,        8)
+REGDEF_BIT(WDR_INPUT_BLDRTO15,        8)
+REGDEF_END(WDR_INPUT_BLENDING_REGISTER3)
+
+
+/*
+    WDR_INPUT_BLDRTO16   :    [0x0, 0xff],          bits : 7_0
+    WDR_INPUT_BLDSRC_SEL :    [0x0, 0x3],           bits : 27_26
+    WDR_INPUT_BLDWT      :    [0x0, 0xf],           bits : 31_28
+*/
+#define WDR_INPUT_BLENDING_REGISTER4_OFS 0x0154
+REGDEF_BEGIN(WDR_INPUT_BLENDING_REGISTER4)
+REGDEF_BIT(WDR_INPUT_BLDRTO16,        8)
+REGDEF_BIT(,        18)
+REGDEF_BIT(WDR_INPUT_BLDSRC_SEL,        2)
+REGDEF_BIT(WDR_INPUT_BLDWT,        4)
+REGDEF_END(WDR_INPUT_BLENDING_REGISTER4)
+
+
+/*
+    WDR_LPF_C0 :    [0x0, 0x7],         bits : 2_0
+    WDR_LPF_C1 :    [0x0, 0x7],         bits : 5_3
+    WDR_LPF_C2 :    [0x0, 0x7],         bits : 8_6
+*/
+#define WDR_SUBIMG_LPF_REGISTER_OFS 0x0158
+REGDEF_BEGIN(WDR_SUBIMG_LPF_REGISTER)
+REGDEF_BIT(WDR_LPF_C0,        3)
+REGDEF_BIT(WDR_LPF_C1,        3)
+REGDEF_BIT(WDR_LPF_C2,        3)
+REGDEF_END(WDR_SUBIMG_LPF_REGISTER)
+
+
+/*
+    WDR_COEFF1:    [0x0, 0x1fff],           bits : 12_0
+    WDR_COEFF2:    [0x0, 0x1fff],           bits : 28_16
+*/
+#define WDR_PARAMETER_REGISTER0_OFS 0x015c
+REGDEF_BEGIN(WDR_PARAMETER_REGISTER0)
+REGDEF_BIT(WDR_COEFF1,        13)
+REGDEF_BIT(,        3)
+REGDEF_BIT(WDR_COEFF2,        13)
+REGDEF_END(WDR_PARAMETER_REGISTER0)
+
+
+/*
+    WDR_COEFF3:    [0x0, 0x1fff],           bits : 12_0
+    WDR_COEFF4:    [0x0, 0x1fff],           bits : 28_16
+*/
+#define WDR_PARAMETER_REGISTER1_OFS 0x0160
+REGDEF_BEGIN(WDR_PARAMETER_REGISTER1)
+REGDEF_BIT(WDR_COEFF3,        13)
+REGDEF_BIT(,        3)
+REGDEF_BIT(WDR_COEFF4,        13)
+REGDEF_END(WDR_PARAMETER_REGISTER1)
+
+
+/*
+    WDR_OUTBLD_TABLE_EN :    [0x0, 0x1],            bits : 0
+    WDR_GAINCTRL_EN     :    [0x0, 0x1],            bits : 1
+    WDR_MAXGAIN         :    [0x0, 0xff],           bits : 23_16
+    WDR_MINGAIN         :    [0x0, 0xff],           bits : 31_24
+*/
+#define WDR_CONTROL_REGISTER_OFS 0x0164
+REGDEF_BEGIN(WDR_CONTROL_REGISTER)
+REGDEF_BIT(WDR_OUTBLD_TABLE_EN,        1)
+REGDEF_BIT(WDR_GAINCTRL_EN,        1)
+REGDEF_BIT(,        14)
+REGDEF_BIT(WDR_MAXGAIN,        8)
+REGDEF_BIT(WDR_MINGAIN,        8)
+REGDEF_END(WDR_CONTROL_REGISTER)
+
+
+/*
+    WDR_TCURVE_INDEX_LUT0:    [0x0, 0x3f],          bits : 5_0
+    WDR_TCURVE_INDEX_LUT1:    [0x0, 0x3f],          bits : 13_8
+    WDR_TCURVE_INDEX_LUT2:    [0x0, 0x3f],          bits : 21_16
+    WDR_TCURVE_INDEX_LUT3:    [0x0, 0x3f],          bits : 29_24
+*/
+#define WDR_TONE_CURVE_REGISTER0_OFS 0x0168
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER0)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT0,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT1,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT2,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT3,        6)
+REGDEF_END(WDR_TONE_CURVE_REGISTER0)
+
+
+/*
+    WDR_TCURVE_INDEX_LUT4:    [0x0, 0x3f],          bits : 5_0
+    WDR_TCURVE_INDEX_LUT5:    [0x0, 0x3f],          bits : 13_8
+    WDR_TCURVE_INDEX_LUT6:    [0x0, 0x3f],          bits : 21_16
+    WDR_TCURVE_INDEX_LUT7:    [0x0, 0x3f],          bits : 29_24
+*/
+#define WDR_TONE_CURVE_REGISTER1_OFS 0x016c
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER1)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT4,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT5,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT6,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT7,        6)
+REGDEF_END(WDR_TONE_CURVE_REGISTER1)
+
+
+/*
+    WDR_TCURVE_INDEX_LUT8 :    [0x0, 0x3f],         bits : 5_0
+    WDR_TCURVE_INDEX_LUT9 :    [0x0, 0x3f],         bits : 13_8
+    WDR_TCURVE_INDEX_LUT10:    [0x0, 0x3f],         bits : 21_16
+    WDR_TCURVE_INDEX_LUT11:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_TONE_CURVE_REGISTER2_OFS 0x0170
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT8,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT9,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT10,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT11,        6)
+REGDEF_END(WDR_TONE_CURVE_REGISTER2)
+
+
+/*
+    WDR_TCURVE_INDEX_LUT12:    [0x0, 0x3f],         bits : 5_0
+    WDR_TCURVE_INDEX_LUT13:    [0x0, 0x3f],         bits : 13_8
+    WDR_TCURVE_INDEX_LUT14:    [0x0, 0x3f],         bits : 21_16
+    WDR_TCURVE_INDEX_LUT15:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_TONE_CURVE_REGISTER3_OFS 0x0174
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER3)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT12,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT13,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT14,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT15,        6)
+REGDEF_END(WDR_TONE_CURVE_REGISTER3)
+
+
+/*
+    WDR_TCURVE_INDEX_LUT16:    [0x0, 0x3f],         bits : 5_0
+    WDR_TCURVE_INDEX_LUT17:    [0x0, 0x3f],         bits : 13_8
+    WDR_TCURVE_INDEX_LUT18:    [0x0, 0x3f],         bits : 21_16
+    WDR_TCURVE_INDEX_LUT19:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_TONE_CURVE_REGISTER4_OFS 0x0178
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER4)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT16,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT17,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT18,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT19,        6)
+REGDEF_END(WDR_TONE_CURVE_REGISTER4)
+
+
+/*
+    WDR_TCURVE_INDEX_LUT20:    [0x0, 0x3f],         bits : 5_0
+    WDR_TCURVE_INDEX_LUT21:    [0x0, 0x3f],         bits : 13_8
+    WDR_TCURVE_INDEX_LUT22:    [0x0, 0x3f],         bits : 21_16
+    WDR_TCURVE_INDEX_LUT23:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_TONE_CURVE_REGISTER5_OFS 0x017c
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER5)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT20,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT21,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT22,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT23,        6)
+REGDEF_END(WDR_TONE_CURVE_REGISTER5)
+
+
+/*
+    WDR_TCURVE_INDEX_LUT24:    [0x0, 0x3f],         bits : 5_0
+    WDR_TCURVE_INDEX_LUT25:    [0x0, 0x3f],         bits : 13_8
+    WDR_TCURVE_INDEX_LUT26:    [0x0, 0x3f],         bits : 21_16
+    WDR_TCURVE_INDEX_LUT27:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_TONE_CURVE_REGISTER6_OFS 0x0180
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER6)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT24,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT25,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT26,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT27,        6)
+REGDEF_END(WDR_TONE_CURVE_REGISTER6)
+
+
+/*
+    WDR_TCURVE_INDEX_LUT28:    [0x0, 0x3f],         bits : 5_0
+    WDR_TCURVE_INDEX_LUT29:    [0x0, 0x3f],         bits : 13_8
+    WDR_TCURVE_INDEX_LUT30:    [0x0, 0x3f],         bits : 21_16
+    WDR_TCURVE_INDEX_LUT31:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_TONE_CURVE_REGISTER7_OFS 0x0184
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER7)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT28,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT29,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT30,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_TCURVE_INDEX_LUT31,        6)
+REGDEF_END(WDR_TONE_CURVE_REGISTER7)
+
+
+/*
+    WDR_TCURVE_SPLIT_LUT0  :    [0x0, 0x3],         bits : 1_0
+    WDR_TCURVE_SPLIT_LUT1  :    [0x0, 0x3],         bits : 3_2
+    WDR_TCURVE_SPLIT_LUT2  :    [0x0, 0x3],         bits : 5_4
+    WDR_TCURVE_SPLIT_LUT3  :    [0x0, 0x3],         bits : 7_6
+    WDR_TCURVE_SPLIT_LUT4  :    [0x0, 0x3],         bits : 9_8
+    WDR_TCURVE_SPLIT_LUT5  :    [0x0, 0x3],         bits : 11_10
+    WDR_TCURVE_SPLIT_LUT6  :    [0x0, 0x3],         bits : 13_12
+    WDR_TCURVE_SPLIT_LUT7  :    [0x0, 0x3],         bits : 15_14
+    WDR_TCURVE_SPLIT_LUT8  :    [0x0, 0x3],         bits : 17_16
+    WDR_TCURVE_SPLIT_LUT9  :    [0x0, 0x3],         bits : 19_18
+    WDR_TCURVE_SPLIT_LUT10 :    [0x0, 0x3],         bits : 21_20
+    WDR_TCURVE_SPLIT_LUT11 :    [0x0, 0x3],         bits : 23_22
+    WDR_TCURVE_SPLIT_LUT12 :    [0x0, 0x3],         bits : 25_24
+    WDR_TCURVE_SPLIT_LUT13 :    [0x0, 0x3],         bits : 27_26
+    WDR_TCURVE_SPLIT_LUT14 :    [0x0, 0x3],         bits : 29_28
+    WDR_TCURVE_SPLIT_LUT15 :    [0x0, 0x3],         bits : 31_30
+*/
+#define WDR_TONE_CURVE_REGISTER8_OFS 0x0188
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER8)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT0,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT1,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT2,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT3,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT4,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT5,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT6,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT7,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT8,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT9,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT10,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT11,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT12,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT13,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT14,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT15,        2)
+REGDEF_END(WDR_TONE_CURVE_REGISTER8)
+
+
+/*
+    WDR_TCURVE_SPLIT_LUT16  :    [0x0, 0x3],            bits : 1_0
+    WDR_TCURVE_SPLIT_LUT17  :    [0x0, 0x3],            bits : 3_2
+    WDR_TCURVE_SPLIT_LUT18  :    [0x0, 0x3],            bits : 5_4
+    WDR_TCURVE_SPLIT_LUT19  :    [0x0, 0x3],            bits : 7_6
+    WDR_TCURVE_SPLIT_LUT20  :    [0x0, 0x3],            bits : 9_8
+    WDR_TCURVE_SPLIT_LUT21  :    [0x0, 0x3],            bits : 11_10
+    WDR_TCURVE_SPLIT_LUT22  :    [0x0, 0x3],            bits : 13_12
+    WDR_TCURVE_SPLIT_LUT23  :    [0x0, 0x3],            bits : 15_14
+    WDR_TCURVE_SPLIT_LUT24  :    [0x0, 0x3],            bits : 17_16
+    WDR_TCURVE_SPLIT_LUT25  :    [0x0, 0x3],            bits : 19_18
+    WDR_TCURVE_SPLIT_LUT26  :    [0x0, 0x3],            bits : 21_20
+    WDR_TCURVE_SPLIT_LUT27  :    [0x0, 0x3],            bits : 23_22
+    WDR_TCURVE_SPLIT_LUT28  :    [0x0, 0x3],            bits : 25_24
+    WDR_TCURVE_SPLIT_LUT29  :    [0x0, 0x3],            bits : 27_26
+    WDR_TCURVE_SPLIT_LUT30  :    [0x0, 0x3],            bits : 29_28
+    WDR_TCURVE_SPLIT_LUT31  :    [0x0, 0x3],            bits : 31_30
+*/
+#define WDR_TONE_CURVE_REGISTER9_OFS 0x018c
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER9)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT16,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT17,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT18,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT19,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT20,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT21,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT22,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT23,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT24,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT25,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT26,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT27,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT28,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT29,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT30,        2)
+REGDEF_BIT(WDR_TCURVE_SPLIT_LUT31,        2)
+REGDEF_END(WDR_TONE_CURVE_REGISTER9)
+
+
+/*
+    WDR_TCURVE_VAL_LUT0:    [0x0, 0xfff],           bits : 11_0
+    WDR_TCURVE_VAL_LUT1:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER10_OFS 0x0190
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER10)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT0,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT1,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER10)
+
+
+/*
+    WDR_TCURVE_VAL_LUT2:    [0x0, 0xfff],           bits : 11_0
+    WDR_TCURVE_VAL_LUT3:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER11_OFS 0x0194
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER11)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT2,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT3,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER11)
+
+
+/*
+    WDR_TCURVE_VAL_LUT4:    [0x0, 0xfff],           bits : 11_0
+    WDR_TCURVE_VAL_LUT5:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER12_OFS 0x0198
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER12)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT4,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT5,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER12)
+
+
+/*
+    WDR_TCURVE_VAL_LUT6:    [0x0, 0xfff],           bits : 11_0
+    WDR_TCURVE_VAL_LUT7:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER13_OFS 0x019c
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER13)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT6,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT7,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER13)
+
+
+/*
+    WDR_TCURVE_VAL_LUT8:    [0x0, 0xfff],           bits : 11_0
+    WDR_TCURVE_VAL_LUT9:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER14_OFS 0x01a0
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER14)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT8,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT9,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER14)
+
+
+/*
+    WDR_TCURVE_VAL_LUT10:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT11:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER15_OFS 0x01a4
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER15)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT10,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT11,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER15)
+
+
+/*
+    WDR_TCURVE_VAL_LUT12:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT13:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER16_OFS 0x01a8
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER16)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT12,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT13,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER16)
+
+
+/*
+    WDR_TCURVE_VAL_LUT14:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT15:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER17_OFS 0x01ac
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER17)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT14,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT15,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER17)
+
+
+/*
+    WDR_TCURVE_VAL_LUT16:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT17:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER18_OFS 0x01b0
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER18)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT16,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT17,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER18)
+
+
+/*
+    WDR_TCURVE_VAL_LUT18:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT19:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER19_OFS 0x01b4
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER19)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT18,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT19,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER19)
+
+
+/*
+    WDR_TCURVE_VAL_LUT20:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT21:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER20_OFS 0x01b8
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER20)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT20,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT21,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER20)
+
+
+/*
+    WDR_TCURVE_VAL_LUT22:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT23:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER21_OFS 0x01bc
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER21)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT22,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT23,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER21)
+
+
+/*
+    WDR_TCURVE_VAL_LUT24:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT25:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER22_OFS 0x01c0
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER22)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT24,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT25,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER22)
+
+
+/*
+    WDR_TCURVE_VAL_LUT26:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT27:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER23_OFS 0x01c4
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER23)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT26,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT27,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER23)
+
+
+/*
+    WDR_TCURVE_VAL_LUT28:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT29:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER24_OFS 0x01c8
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER24)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT28,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT29,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER24)
+
+
+/*
+    WDR_TCURVE_VAL_LUT30:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT31:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER25_OFS 0x01cc
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER25)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT30,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT31,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER25)
+
+
+/*
+    WDR_TCURVE_VAL_LUT32:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT33:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER26_OFS 0x01d0
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER26)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT32,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT33,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER26)
+
+
+/*
+    WDR_TCURVE_VAL_LUT34:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT35:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER27_OFS 0x01d4
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER27)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT34,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT35,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER27)
+
+
+/*
+    WDR_TCURVE_VAL_LUT36:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT37:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER28_OFS 0x01d8
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER28)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT36,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT37,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER28)
+
+
+/*
+    WDR_TCURVE_VAL_LUT38:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT39:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER29_OFS 0x01dc
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER29)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT38,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT39,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER29)
+
+
+/*
+    WDR_TCURVE_VAL_LUT40:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT41:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER30_OFS 0x01e0
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER30)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT40,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT41,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER30)
+
+
+/*
+    WDR_TCURVE_VAL_LUT42:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT43:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER31_OFS 0x01e4
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER31)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT42,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT43,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER31)
+
+
+/*
+    WDR_TCURVE_VAL_LUT44:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT45:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER32_OFS 0x01e8
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER32)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT44,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT45,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER32)
+
+
+/*
+    WDR_TCURVE_VAL_LUT46:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT47:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER33_OFS 0x01ec
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER33)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT46,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT47,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER33)
+
+
+/*
+    WDR_TCURVE_VAL_LUT48:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT49:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER34_OFS 0x01f0
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER34)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT48,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT49,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER34)
+
+
+/*
+    WDR_TCURVE_VAL_LUT50:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT51:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER35_OFS 0x01f4
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER35)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT50,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT51,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER35)
+
+
+/*
+    WDR_TCURVE_VAL_LUT52:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT53:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER36_OFS 0x01f8
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER36)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT52,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT53,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER36)
+
+
+/*
+    WDR_TCURVE_VAL_LUT54:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT55:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER37_OFS 0x01fc
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER37)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT54,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT55,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER37)
+
+
+/*
+    WDR_TCURVE_VAL_LUT56:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT57:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER38_OFS 0x0200
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER38)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT56,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT57,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER38)
+
+
+/*
+    WDR_TCURVE_VAL_LUT58:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT59:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER39_OFS 0x0204
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER39)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT58,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT59,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER39)
+
+
+/*
+    WDR_TCURVE_VAL_LUT60:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT61:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER40_OFS 0x0208
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER40)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT60,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT61,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER40)
+
+
+/*
+    WDR_TCURVE_VAL_LUT62:    [0x0, 0xfff],          bits : 11_0
+    WDR_TCURVE_VAL_LUT63:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_TONE_CURVE_REGISTER41_OFS 0x020c
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER41)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT62,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT63,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER41)
+
+
+/*
+    WDR_TCURVE_VAL_LUT64:    [0x0, 0xfff],          bits : 11_0
+*/
+#define WDR_TONE_CURVE_REGISTER42_OFS 0x0210
+REGDEF_BEGIN(WDR_TONE_CURVE_REGISTER42)
+REGDEF_BIT(WDR_TCURVE_VAL_LUT64,        12)
+REGDEF_END(WDR_TONE_CURVE_REGISTER42)
+
+
+/*
+    WDR_OUTBLD_INDEX_LUT0:    [0x0, 0x3f],          bits : 5_0
+    WDR_OUTBLD_INDEX_LUT1:    [0x0, 0x3f],          bits : 13_8
+    WDR_OUTBLD_INDEX_LUT2:    [0x0, 0x3f],          bits : 21_16
+    WDR_OUTBLD_INDEX_LUT3:    [0x0, 0x3f],          bits : 29_24
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER0_OFS 0x0214
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER0)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT0,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT1,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT2,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT3,        6)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER0)
+
+
+/*
+    WDR_OUTBLD_INDEX_LUT4:    [0x0, 0x3f],          bits : 5_0
+    WDR_OUTBLD_INDEX_LUT5:    [0x0, 0x3f],          bits : 13_8
+    WDR_OUTBLD_INDEX_LUT6:    [0x0, 0x3f],          bits : 21_16
+    WDR_OUTBLD_INDEX_LUT7:    [0x0, 0x3f],          bits : 29_24
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER1_OFS 0x0218
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER1)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT4,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT5,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT6,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT7,        6)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER1)
+
+
+/*
+    WDR_OUTBLD_INDEX_LUT8 :    [0x0, 0x3f],         bits : 5_0
+    WDR_OUTBLD_INDEX_LUT9 :    [0x0, 0x3f],         bits : 13_8
+    WDR_OUTBLD_INDEX_LUT10:    [0x0, 0x3f],         bits : 21_16
+    WDR_OUTBLD_INDEX_LUT11:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER2_OFS 0x021c
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT8,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT9,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT10,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT11,        6)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER2)
+
+
+/*
+    WDR_OUTBLD_INDEX_LUT12:    [0x0, 0x3f],         bits : 5_0
+    WDR_OUTBLD_INDEX_LUT13:    [0x0, 0x3f],         bits : 13_8
+    WDR_OUTBLD_INDEX_LUT14:    [0x0, 0x3f],         bits : 21_16
+    WDR_OUTBLD_INDEX_LUT15:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER3_OFS 0x0220
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER3)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT12,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT13,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT14,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT15,        6)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER3)
+
+
+/*
+    WDR_OUTBLD_INDEX_LUT16:    [0x0, 0x3f],         bits : 5_0
+    WDR_OUTBLD_INDEX_LUT17:    [0x0, 0x3f],         bits : 13_8
+    WDR_OUTBLD_INDEX_LUT18:    [0x0, 0x3f],         bits : 21_16
+    WDR_OUTBLD_INDEX_LUT19:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER4_OFS 0x0224
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER4)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT16,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT17,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT18,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT19,        6)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER4)
+
+
+/*
+    WDR_OUTBLD_INDEX_LUT20:    [0x0, 0x3f],         bits : 5_0
+    WDR_OUTBLD_INDEX_LUT21:    [0x0, 0x3f],         bits : 13_8
+    WDR_OUTBLD_INDEX_LUT22:    [0x0, 0x3f],         bits : 21_16
+    WDR_OUTBLD_INDEX_LUT23:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER5_OFS 0x0228
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER5)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT20,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT21,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT22,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT23,        6)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER5)
+
+
+/*
+    WDR_OUTBLD_INDEX_LUT24:    [0x0, 0x3f],         bits : 5_0
+    WDR_OUTBLD_INDEX_LUT25:    [0x0, 0x3f],         bits : 13_8
+    WDR_OUTBLD_INDEX_LUT26:    [0x0, 0x3f],         bits : 21_16
+    WDR_OUTBLD_INDEX_LUT27:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER6_OFS 0x022c
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER6)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT24,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT25,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT26,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT27,        6)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER6)
+
+
+/*
+    WDR_OUTBLD_INDEX_LUT28:    [0x0, 0x3f],         bits : 5_0
+    WDR_OUTBLD_INDEX_LUT29:    [0x0, 0x3f],         bits : 13_8
+    WDR_OUTBLD_INDEX_LUT30:    [0x0, 0x3f],         bits : 21_16
+    WDR_OUTBLD_INDEX_LUT31:    [0x0, 0x3f],         bits : 29_24
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER7_OFS 0x0230
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER7)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT28,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT29,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT30,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(WDR_OUTBLD_INDEX_LUT31,        6)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER7)
+
+
+/*
+    WDR_OUTBLD_SPLIT_LUT0 :    [0x0, 0x3],          bits : 1_0
+    WDR_OUTBLD_SPLIT_LUT1 :    [0x0, 0x3],          bits : 3_2
+    WDR_OUTBLD_SPLIT_LUT2 :    [0x0, 0x3],          bits : 5_4
+    WDR_OUTBLD_SPLIT_LUT3 :    [0x0, 0x3],          bits : 7_6
+    WDR_OUTBLD_SPLIT_LUT4 :    [0x0, 0x3],          bits : 9_8
+    WDR_OUTBLD_SPLIT_LUT5 :    [0x0, 0x3],          bits : 11_10
+    WDR_OUTBLD_SPLIT_LUT6 :    [0x0, 0x3],          bits : 13_12
+    WDR_OUTBLD_SPLIT_LUT7 :    [0x0, 0x3],          bits : 15_14
+    WDR_OUTBLD_SPLIT_LUT8 :    [0x0, 0x3],          bits : 17_16
+    WDR_OUTBLD_SPLIT_LUT9 :    [0x0, 0x3],          bits : 19_18
+    WDR_OUTBLD_SPLIT_LUT10:    [0x0, 0x3],          bits : 21_20
+    WDR_OUTBLD_SPLIT_LUT11:    [0x0, 0x3],          bits : 23_22
+    WDR_OUTBLD_SPLIT_LUT12:    [0x0, 0x3],          bits : 25_24
+    WDR_OUTBLD_SPLIT_LUT13:    [0x0, 0x3],          bits : 27_26
+    WDR_OUTBLD_SPLIT_LUT14:    [0x0, 0x3],          bits : 29_28
+    WDR_OUTBLD_SPLIT_LUT15:    [0x0, 0x3],          bits : 31_30
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER8_OFS 0x0234
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER8)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT0,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT1,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT2,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT3,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT4,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT5,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT6,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT7,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT8,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT9,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT10,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT11,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT12,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT13,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT14,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT15,        2)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER8)
+
+
+/*
+    WDR_OUTBLD_SPLIT_LUT16:    [0x0, 0x3],          bits : 1_0
+    WDR_OUTBLD_SPLIT_LUT17:    [0x0, 0x3],          bits : 3_2
+    WDR_OUTBLD_SPLIT_LUT18:    [0x0, 0x3],          bits : 5_4
+    WDR_OUTBLD_SPLIT_LUT19:    [0x0, 0x3],          bits : 7_6
+    WDR_OUTBLD_SPLIT_LUT20:    [0x0, 0x3],          bits : 9_8
+    WDR_OUTBLD_SPLIT_LUT21:    [0x0, 0x3],          bits : 11_10
+    WDR_OUTBLD_SPLIT_LUT22:    [0x0, 0x3],          bits : 13_12
+    WDR_OUTBLD_SPLIT_LUT23:    [0x0, 0x3],          bits : 15_14
+    WDR_OUTBLD_SPLIT_LUT24:    [0x0, 0x3],          bits : 17_16
+    WDR_OUTBLD_SPLIT_LUT25:    [0x0, 0x3],          bits : 19_18
+    WDR_OUTBLD_SPLIT_LUT26:    [0x0, 0x3],          bits : 21_20
+    WDR_OUTBLD_SPLIT_LUT27:    [0x0, 0x3],          bits : 23_22
+    WDR_OUTBLD_SPLIT_LUT28:    [0x0, 0x3],          bits : 25_24
+    WDR_OUTBLD_SPLIT_LUT29:    [0x0, 0x3],          bits : 27_26
+    WDR_OUTBLD_SPLIT_LUT30:    [0x0, 0x3],          bits : 29_28
+    WDR_OUTBLD_SPLIT_LUT31:    [0x0, 0x3],          bits : 31_30
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER9_OFS 0x0238
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER9)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT16,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT17,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT18,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT19,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT20,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT21,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT22,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT23,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT24,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT25,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT26,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT27,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT28,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT29,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT30,        2)
+REGDEF_BIT(WDR_OUTBLD_SPLIT_LUT31,        2)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER9)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT0:    [0x0, 0xfff],           bits : 11_0
+    WDR_OUTBLD_VAL_LUT1:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER10_OFS 0x023c
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER10)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT0,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT1,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER10)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT2:    [0x0, 0xfff],           bits : 11_0
+    WDR_OUTBLD_VAL_LUT3:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER11_OFS 0x0240
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER11)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT2,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT3,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER11)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT4:    [0x0, 0xfff],           bits : 11_0
+    WDR_OUTBLD_VAL_LUT5:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER12_OFS 0x0244
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER12)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT4,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT5,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER12)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT6:    [0x0, 0xfff],           bits : 11_0
+    WDR_OUTBLD_VAL_LUT7:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER13_OFS 0x0248
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER13)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT6,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT7,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER13)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT8:    [0x0, 0xfff],           bits : 11_0
+    WDR_OUTBLD_VAL_LUT9:    [0x0, 0xfff],           bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER14_OFS 0x024c
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER14)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT8,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT9,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER14)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT10:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT11:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER15_OFS 0x0250
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER15)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT10,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT11,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER15)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT12:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT13:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER16_OFS 0x0254
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER16)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT12,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT13,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER16)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT14:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT15:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER17_OFS 0x0258
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER17)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT14,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT15,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER17)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT16:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT17:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER18_OFS 0x025c
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER18)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT16,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT17,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER18)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT18:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT19:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER19_OFS 0x0260
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER19)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT18,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT19,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER19)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT20:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT21:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER20_OFS 0x0264
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER20)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT20,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT21,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER20)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT22:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT23:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER21_OFS 0x0268
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER21)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT22,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT23,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER21)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT24:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT25:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER22_OFS 0x026c
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER22)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT24,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT25,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER22)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT26:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT27:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER23_OFS 0x0270
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER23)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT26,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT27,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER23)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT28:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT29:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER24_OFS 0x0274
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER24)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT28,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT29,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER24)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT30:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT31:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER25_OFS 0x0278
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER25)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT30,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT31,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER25)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT32:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT33:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER26_OFS 0x027c
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER26)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT32,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT33,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER26)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT34:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT35:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER27_OFS 0x0280
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER27)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT34,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT35,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER27)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT36:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT37:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER28_OFS 0x0284
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER28)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT36,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT37,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER28)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT38:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT39:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER29_OFS 0x0288
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER29)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT38,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT39,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER29)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT40:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT41:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER30_OFS 0x028c
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER30)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT40,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT41,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER30)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT42:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT43:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER31_OFS 0x0290
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER31)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT42,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT43,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER31)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT44:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT45:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER32_OFS 0x0294
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER32)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT44,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT45,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER32)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT46:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT47:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER33_OFS 0x0298
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER33)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT46,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT47,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER33)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT48:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT49:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER34_OFS 0x029c
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER34)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT48,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT49,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER34)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT50:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT51:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER35_OFS 0x02a0
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER35)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT50,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT51,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER35)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT52:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT53:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER36_OFS 0x02a4
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER36)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT52,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT53,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER36)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT54:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT55:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER37_OFS 0x02a8
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER37)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT54,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT55,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER37)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT56:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT57:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER38_OFS 0x02ac
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER38)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT56,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT57,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER38)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT58:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT59:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER39_OFS 0x02b0
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER39)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT58,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT59,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER39)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT60:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT61:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER40_OFS 0x02b4
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER40)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT60,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT61,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER40)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT62:    [0x0, 0xfff],          bits : 11_0
+    WDR_OUTBLD_VAL_LUT63:    [0x0, 0xfff],          bits : 27_16
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER41_OFS 0x02b8
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER41)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT62,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT63,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER41)
+
+
+/*
+    WDR_OUTBLD_VAL_LUT64:    [0x0, 0xfff],          bits : 11_0
+*/
+#define WDR_OUTPUT_BLENDING_CURVE_REGISTER42_OFS 0x02bc
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_CURVE_REGISTER42)
+REGDEF_BIT(WDR_OUTBLD_VAL_LUT64,        12)
+REGDEF_END(WDR_OUTPUT_BLENDING_CURVE_REGISTER42)
+
+
+/*
+    WDR_STRENGTH :    [0x0, 0xff],          bits : 7_0
+    WDR_CONTRAST :    [0x0, 0xff],          bits : 15_8
+*/
+#define WDR_OUTPUT_BLENDING_REGISTER_OFS 0x02c0
+REGDEF_BEGIN(WDR_OUTPUT_BLENDING_REGISTER)
+REGDEF_BIT(WDR_STRENGTH,        8)
+REGDEF_BIT(WDR_CONTRAST,        8)
+REGDEF_END(WDR_OUTPUT_BLENDING_REGISTER)
+
+
+/*
+    WDR_SAT_TH    :    [0x0, 0xfff],            bits : 11_0
+    WDR_SAT_WT_LOW:    [0x0, 0xff],         bits : 23_16
+    WDR_SAT_DELTA :    [0x0, 0xff],         bits : 31_24
+*/
+#define WDR_SATURATION_REDUCTION_REGISTER_OFS 0x02c4
+REGDEF_BEGIN(WDR_SATURATION_REDUCTION_REGISTER)
+REGDEF_BIT(WDR_SAT_TH,        12)
+REGDEF_BIT(,        4)
+REGDEF_BIT(WDR_SAT_WT_LOW,        8)
+REGDEF_BIT(WDR_SAT_DELTA,        8)
+REGDEF_END(WDR_SATURATION_REDUCTION_REGISTER)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED22_OFS 0x02c8
+REGDEF_BEGIN(DCE_RESERVED22)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED22)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED23_OFS 0x02cc
+REGDEF_BEGIN(DCE_RESERVED23)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED23)
+
+
+/*
+    HISTOGRAM_H_STEP:    [0x0, 0x1f],           bits : 4_0
+    HISTOGRAM_V_STEP:    [0x0, 0x1f],           bits : 20_16
+*/
+#define HISTOGRAM_REGISTER0_OFS 0x02d0
+REGDEF_BEGIN(HISTOGRAM_REGISTER0)
+REGDEF_BIT(HISTOGRAM_H_STEP,        5)
+REGDEF_BIT(,        11)
+REGDEF_BIT(HISTOGRAM_V_STEP,        5)
+REGDEF_END(HISTOGRAM_REGISTER0)
+
+
+/*
+    HISTOGRAM_BIN0:    [0x0, 0xffff],           bits : 15_0
+    HISTOGRAM_BIN1:    [0x0, 0xffff],           bits : 31_16
+*/
+#define HISTOGRAM_REGISTER1_OFS 0x02d4
+REGDEF_BEGIN(HISTOGRAM_REGISTER1)
+REGDEF_BIT(HISTOGRAM_BIN0,        16)
+REGDEF_BIT(HISTOGRAM_BIN1,        16)
+REGDEF_END(HISTOGRAM_REGISTER1)
+
+
+/*
+    HISTOGRAM_BIN2:    [0x0, 0xffff],           bits : 15_0
+    HISTOGRAM_BIN3:    [0x0, 0xffff],           bits : 31_16
+*/
+#define HISTOGRAM_REGISTER2_OFS 0x02d8
+REGDEF_BEGIN(HISTOGRAM_REGISTER2)
+REGDEF_BIT(HISTOGRAM_BIN2,        16)
+REGDEF_BIT(HISTOGRAM_BIN3,        16)
+REGDEF_END(HISTOGRAM_REGISTER2)
+
+
+/*
+    HISTOGRAM_BIN4:    [0x0, 0xffff],           bits : 15_0
+    HISTOGRAM_BIN5:    [0x0, 0xffff],           bits : 31_16
+*/
+#define HISTOGRAM_REGISTER3_OFS 0x02dc
+REGDEF_BEGIN(HISTOGRAM_REGISTER3)
+REGDEF_BIT(HISTOGRAM_BIN4,        16)
+REGDEF_BIT(HISTOGRAM_BIN5,        16)
+REGDEF_END(HISTOGRAM_REGISTER3)
+
+
+/*
+    HISTOGRAM_BIN6:    [0x0, 0xffff],           bits : 15_0
+    HISTOGRAM_BIN7:    [0x0, 0xffff],           bits : 31_16
+*/
+#define HISTOGRAM_REGISTER4_OFS 0x02e0
+REGDEF_BEGIN(HISTOGRAM_REGISTER4)
+REGDEF_BIT(HISTOGRAM_BIN6,        16)
+REGDEF_BIT(HISTOGRAM_BIN7,        16)
+REGDEF_END(HISTOGRAM_REGISTER4)
+
+
+/*
+    HISTOGRAM_BIN8:    [0x0, 0xffff],           bits : 15_0
+    HISTOGRAM_BIN9:    [0x0, 0xffff],           bits : 31_16
+*/
+#define HISTOGRAM_REGISTER5_OFS 0x02e4
+REGDEF_BEGIN(HISTOGRAM_REGISTER5)
+REGDEF_BIT(HISTOGRAM_BIN8,        16)
+REGDEF_BIT(HISTOGRAM_BIN9,        16)
+REGDEF_END(HISTOGRAM_REGISTER5)
+
+
+/*
+    HISTOGRAM_BIN10:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN11:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER6_OFS 0x02e8
+REGDEF_BEGIN(HISTOGRAM_REGISTER6)
+REGDEF_BIT(HISTOGRAM_BIN10,        16)
+REGDEF_BIT(HISTOGRAM_BIN11,        16)
+REGDEF_END(HISTOGRAM_REGISTER6)
+
+
+/*
+    HISTOGRAM_BIN12:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN13:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER7_OFS 0x02ec
+REGDEF_BEGIN(HISTOGRAM_REGISTER7)
+REGDEF_BIT(HISTOGRAM_BIN12,        16)
+REGDEF_BIT(HISTOGRAM_BIN13,        16)
+REGDEF_END(HISTOGRAM_REGISTER7)
+
+
+/*
+    HISTOGRAM_BIN14:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN15:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER8_OFS 0x02f0
+REGDEF_BEGIN(HISTOGRAM_REGISTER8)
+REGDEF_BIT(HISTOGRAM_BIN14,        16)
+REGDEF_BIT(HISTOGRAM_BIN15,        16)
+REGDEF_END(HISTOGRAM_REGISTER8)
+
+
+/*
+    HISTOGRAM_BIN16:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN17:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER9_OFS 0x02f4
+REGDEF_BEGIN(HISTOGRAM_REGISTER9)
+REGDEF_BIT(HISTOGRAM_BIN16,        16)
+REGDEF_BIT(HISTOGRAM_BIN17,        16)
+REGDEF_END(HISTOGRAM_REGISTER9)
+
+
+/*
+    HISTOGRAM_BIN18:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN19:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER10_OFS 0x02f8
+REGDEF_BEGIN(HISTOGRAM_REGISTER10)
+REGDEF_BIT(HISTOGRAM_BIN18,        16)
+REGDEF_BIT(HISTOGRAM_BIN19,        16)
+REGDEF_END(HISTOGRAM_REGISTER10)
+
+
+/*
+    HISTOGRAM_BIN20:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN21:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER11_OFS 0x02fc
+REGDEF_BEGIN(HISTOGRAM_REGISTER11)
+REGDEF_BIT(HISTOGRAM_BIN20,        16)
+REGDEF_BIT(HISTOGRAM_BIN21,        16)
+REGDEF_END(HISTOGRAM_REGISTER11)
+
+
+/*
+    HISTOGRAM_BIN22:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN23:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER12_OFS 0x0300
+REGDEF_BEGIN(HISTOGRAM_REGISTER12)
+REGDEF_BIT(HISTOGRAM_BIN22,        16)
+REGDEF_BIT(HISTOGRAM_BIN23,        16)
+REGDEF_END(HISTOGRAM_REGISTER12)
+
+
+/*
+    HISTOGRAM_BIN24:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN25:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER13_OFS 0x0304
+REGDEF_BEGIN(HISTOGRAM_REGISTER13)
+REGDEF_BIT(HISTOGRAM_BIN24,        16)
+REGDEF_BIT(HISTOGRAM_BIN25,        16)
+REGDEF_END(HISTOGRAM_REGISTER13)
+
+
+/*
+    HISTOGRAM_BIN26:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN27:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER14_OFS 0x0308
+REGDEF_BEGIN(HISTOGRAM_REGISTER14)
+REGDEF_BIT(HISTOGRAM_BIN26,        16)
+REGDEF_BIT(HISTOGRAM_BIN27,        16)
+REGDEF_END(HISTOGRAM_REGISTER14)
+
+
+/*
+    HISTOGRAM_BIN28:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN29:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER15_OFS 0x030c
+REGDEF_BEGIN(HISTOGRAM_REGISTER15)
+REGDEF_BIT(HISTOGRAM_BIN28,        16)
+REGDEF_BIT(HISTOGRAM_BIN29,        16)
+REGDEF_END(HISTOGRAM_REGISTER15)
+
+
+/*
+    HISTOGRAM_BIN30:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN31:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER16_OFS 0x0310
+REGDEF_BEGIN(HISTOGRAM_REGISTER16)
+REGDEF_BIT(HISTOGRAM_BIN30,        16)
+REGDEF_BIT(HISTOGRAM_BIN31,        16)
+REGDEF_END(HISTOGRAM_REGISTER16)
+
+
+/*
+    HISTOGRAM_BIN32:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN33:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER17_OFS 0x0314
+REGDEF_BEGIN(HISTOGRAM_REGISTER17)
+REGDEF_BIT(HISTOGRAM_BIN32,        16)
+REGDEF_BIT(HISTOGRAM_BIN33,        16)
+REGDEF_END(HISTOGRAM_REGISTER17)
+
+
+/*
+    HISTOGRAM_BIN34:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN35:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER18_OFS 0x0318
+REGDEF_BEGIN(HISTOGRAM_REGISTER18)
+REGDEF_BIT(HISTOGRAM_BIN34,        16)
+REGDEF_BIT(HISTOGRAM_BIN35,        16)
+REGDEF_END(HISTOGRAM_REGISTER18)
+
+
+/*
+    HISTOGRAM_BIN36:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN37:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER19_OFS 0x031c
+REGDEF_BEGIN(HISTOGRAM_REGISTER19)
+REGDEF_BIT(HISTOGRAM_BIN36,        16)
+REGDEF_BIT(HISTOGRAM_BIN37,        16)
+REGDEF_END(HISTOGRAM_REGISTER19)
+
+
+/*
+    HISTOGRAM_BIN38:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN39:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER20_OFS 0x0320
+REGDEF_BEGIN(HISTOGRAM_REGISTER20)
+REGDEF_BIT(HISTOGRAM_BIN38,        16)
+REGDEF_BIT(HISTOGRAM_BIN39,        16)
+REGDEF_END(HISTOGRAM_REGISTER20)
+
+
+/*
+    HISTOGRAM_BIN40:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN41:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER21_OFS 0x0324
+REGDEF_BEGIN(HISTOGRAM_REGISTER21)
+REGDEF_BIT(HISTOGRAM_BIN40,        16)
+REGDEF_BIT(HISTOGRAM_BIN41,        16)
+REGDEF_END(HISTOGRAM_REGISTER21)
+
+
+/*
+    HISTOGRAM_BIN42:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN43:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER22_OFS 0x0328
+REGDEF_BEGIN(HISTOGRAM_REGISTER22)
+REGDEF_BIT(HISTOGRAM_BIN42,        16)
+REGDEF_BIT(HISTOGRAM_BIN43,        16)
+REGDEF_END(HISTOGRAM_REGISTER22)
+
+
+/*
+    HISTOGRAM_BIN44:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN45:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER23_OFS 0x032c
+REGDEF_BEGIN(HISTOGRAM_REGISTER23)
+REGDEF_BIT(HISTOGRAM_BIN44,        16)
+REGDEF_BIT(HISTOGRAM_BIN45,        16)
+REGDEF_END(HISTOGRAM_REGISTER23)
+
+
+/*
+    HISTOGRAM_BIN46:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN47:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER24_OFS 0x0330
+REGDEF_BEGIN(HISTOGRAM_REGISTER24)
+REGDEF_BIT(HISTOGRAM_BIN46,        16)
+REGDEF_BIT(HISTOGRAM_BIN47,        16)
+REGDEF_END(HISTOGRAM_REGISTER24)
+
+
+/*
+    HISTOGRAM_BIN48:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN49:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER25_OFS 0x0334
+REGDEF_BEGIN(HISTOGRAM_REGISTER25)
+REGDEF_BIT(HISTOGRAM_BIN48,        16)
+REGDEF_BIT(HISTOGRAM_BIN49,        16)
+REGDEF_END(HISTOGRAM_REGISTER25)
+
+
+/*
+    HISTOGRAM_BIN50:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN51:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER26_OFS 0x0338
+REGDEF_BEGIN(HISTOGRAM_REGISTER26)
+REGDEF_BIT(HISTOGRAM_BIN50,        16)
+REGDEF_BIT(HISTOGRAM_BIN51,        16)
+REGDEF_END(HISTOGRAM_REGISTER26)
+
+
+/*
+    HISTOGRAM_BIN52:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN53:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER27_OFS 0x033c
+REGDEF_BEGIN(HISTOGRAM_REGISTER27)
+REGDEF_BIT(HISTOGRAM_BIN52,        16)
+REGDEF_BIT(HISTOGRAM_BIN53,        16)
+REGDEF_END(HISTOGRAM_REGISTER27)
+
+
+/*
+    HISTOGRAM_BIN54:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN55:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER28_OFS 0x0340
+REGDEF_BEGIN(HISTOGRAM_REGISTER28)
+REGDEF_BIT(HISTOGRAM_BIN54,        16)
+REGDEF_BIT(HISTOGRAM_BIN55,        16)
+REGDEF_END(HISTOGRAM_REGISTER28)
+
+
+/*
+    HISTOGRAM_BIN56:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN57:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER29_OFS 0x0344
+REGDEF_BEGIN(HISTOGRAM_REGISTER29)
+REGDEF_BIT(HISTOGRAM_BIN56,        16)
+REGDEF_BIT(HISTOGRAM_BIN57,        16)
+REGDEF_END(HISTOGRAM_REGISTER29)
+
+
+/*
+    HISTOGRAM_BIN58:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN59:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER30_OFS 0x0348
+REGDEF_BEGIN(HISTOGRAM_REGISTER30)
+REGDEF_BIT(HISTOGRAM_BIN58,        16)
+REGDEF_BIT(HISTOGRAM_BIN59,        16)
+REGDEF_END(HISTOGRAM_REGISTER30)
+
+
+/*
+    HISTOGRAM_BIN60:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN61:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER31_OFS 0x034c
+REGDEF_BEGIN(HISTOGRAM_REGISTER31)
+REGDEF_BIT(HISTOGRAM_BIN60,        16)
+REGDEF_BIT(HISTOGRAM_BIN61,        16)
+REGDEF_END(HISTOGRAM_REGISTER31)
+
+
+/*
+    HISTOGRAM_BIN62:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN63:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER32_OFS 0x0350
+REGDEF_BEGIN(HISTOGRAM_REGISTER32)
+REGDEF_BIT(HISTOGRAM_BIN62,        16)
+REGDEF_BIT(HISTOGRAM_BIN63,        16)
+REGDEF_END(HISTOGRAM_REGISTER32)
+
+
+/*
+    HISTOGRAM_BIN64:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN65:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER33_OFS 0x0354
+REGDEF_BEGIN(HISTOGRAM_REGISTER33)
+REGDEF_BIT(HISTOGRAM_BIN64,        16)
+REGDEF_BIT(HISTOGRAM_BIN65,        16)
+REGDEF_END(HISTOGRAM_REGISTER33)
+
+
+/*
+    HISTOGRAM_BIN66:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN67:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER34_OFS 0x0358
+REGDEF_BEGIN(HISTOGRAM_REGISTER34)
+REGDEF_BIT(HISTOGRAM_BIN66,        16)
+REGDEF_BIT(HISTOGRAM_BIN67,        16)
+REGDEF_END(HISTOGRAM_REGISTER34)
+
+
+/*
+    HISTOGRAM_BIN68:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN69:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER35_OFS 0x035c
+REGDEF_BEGIN(HISTOGRAM_REGISTER35)
+REGDEF_BIT(HISTOGRAM_BIN68,        16)
+REGDEF_BIT(HISTOGRAM_BIN69,        16)
+REGDEF_END(HISTOGRAM_REGISTER35)
+
+
+/*
+    HISTOGRAM_BIN70:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN71:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER36_OFS 0x0360
+REGDEF_BEGIN(HISTOGRAM_REGISTER36)
+REGDEF_BIT(HISTOGRAM_BIN70,        16)
+REGDEF_BIT(HISTOGRAM_BIN71,        16)
+REGDEF_END(HISTOGRAM_REGISTER36)
+
+
+/*
+    HISTOGRAM_BIN72:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN73:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER37_OFS 0x0364
+REGDEF_BEGIN(HISTOGRAM_REGISTER37)
+REGDEF_BIT(HISTOGRAM_BIN72,        16)
+REGDEF_BIT(HISTOGRAM_BIN73,        16)
+REGDEF_END(HISTOGRAM_REGISTER37)
+
+
+/*
+    HISTOGRAM_BIN74:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN75:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER38_OFS 0x0368
+REGDEF_BEGIN(HISTOGRAM_REGISTER38)
+REGDEF_BIT(HISTOGRAM_BIN74,        16)
+REGDEF_BIT(HISTOGRAM_BIN75,        16)
+REGDEF_END(HISTOGRAM_REGISTER38)
+
+
+/*
+    HISTOGRAM_BIN76:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN77:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER39_OFS 0x036c
+REGDEF_BEGIN(HISTOGRAM_REGISTER39)
+REGDEF_BIT(HISTOGRAM_BIN76,        16)
+REGDEF_BIT(HISTOGRAM_BIN77,        16)
+REGDEF_END(HISTOGRAM_REGISTER39)
+
+
+/*
+    HISTOGRAM_BIN78:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN79:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER40_OFS 0x0370
+REGDEF_BEGIN(HISTOGRAM_REGISTER40)
+REGDEF_BIT(HISTOGRAM_BIN78,        16)
+REGDEF_BIT(HISTOGRAM_BIN79,        16)
+REGDEF_END(HISTOGRAM_REGISTER40)
+
+
+/*
+    HISTOGRAM_BIN80:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN81:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER41_OFS 0x0374
+REGDEF_BEGIN(HISTOGRAM_REGISTER41)
+REGDEF_BIT(HISTOGRAM_BIN80,        16)
+REGDEF_BIT(HISTOGRAM_BIN81,        16)
+REGDEF_END(HISTOGRAM_REGISTER41)
+
+
+/*
+    HISTOGRAM_BIN82:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN83:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER42_OFS 0x0378
+REGDEF_BEGIN(HISTOGRAM_REGISTER42)
+REGDEF_BIT(HISTOGRAM_BIN82,        16)
+REGDEF_BIT(HISTOGRAM_BIN83,        16)
+REGDEF_END(HISTOGRAM_REGISTER42)
+
+
+/*
+    HISTOGRAM_BIN84:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN85:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER43_OFS 0x037c
+REGDEF_BEGIN(HISTOGRAM_REGISTER43)
+REGDEF_BIT(HISTOGRAM_BIN84,        16)
+REGDEF_BIT(HISTOGRAM_BIN85,        16)
+REGDEF_END(HISTOGRAM_REGISTER43)
+
+
+/*
+    HISTOGRAM_BIN86:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN87:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER44_OFS 0x0380
+REGDEF_BEGIN(HISTOGRAM_REGISTER44)
+REGDEF_BIT(HISTOGRAM_BIN86,        16)
+REGDEF_BIT(HISTOGRAM_BIN87,        16)
+REGDEF_END(HISTOGRAM_REGISTER44)
+
+
+/*
+    HISTOGRAM_BIN88:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN89:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER45_OFS 0x0384
+REGDEF_BEGIN(HISTOGRAM_REGISTER45)
+REGDEF_BIT(HISTOGRAM_BIN88,        16)
+REGDEF_BIT(HISTOGRAM_BIN89,        16)
+REGDEF_END(HISTOGRAM_REGISTER45)
+
+
+/*
+    HISTOGRAM_BIN90:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN91:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER46_OFS 0x0388
+REGDEF_BEGIN(HISTOGRAM_REGISTER46)
+REGDEF_BIT(HISTOGRAM_BIN90,        16)
+REGDEF_BIT(HISTOGRAM_BIN91,        16)
+REGDEF_END(HISTOGRAM_REGISTER46)
+
+
+/*
+    HISTOGRAM_BIN92:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN93:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER47_OFS 0x038c
+REGDEF_BEGIN(HISTOGRAM_REGISTER47)
+REGDEF_BIT(HISTOGRAM_BIN92,        16)
+REGDEF_BIT(HISTOGRAM_BIN93,        16)
+REGDEF_END(HISTOGRAM_REGISTER47)
+
+
+/*
+    HISTOGRAM_BIN94:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN95:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER48_OFS 0x0390
+REGDEF_BEGIN(HISTOGRAM_REGISTER48)
+REGDEF_BIT(HISTOGRAM_BIN94,        16)
+REGDEF_BIT(HISTOGRAM_BIN95,        16)
+REGDEF_END(HISTOGRAM_REGISTER48)
+
+
+/*
+    HISTOGRAM_BIN96:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN97:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER49_OFS 0x0394
+REGDEF_BEGIN(HISTOGRAM_REGISTER49)
+REGDEF_BIT(HISTOGRAM_BIN96,        16)
+REGDEF_BIT(HISTOGRAM_BIN97,        16)
+REGDEF_END(HISTOGRAM_REGISTER49)
+
+
+/*
+    HISTOGRAM_BIN98:    [0x0, 0xffff],          bits : 15_0
+    HISTOGRAM_BIN99:    [0x0, 0xffff],          bits : 31_16
+*/
+#define HISTOGRAM_REGISTER50_OFS 0x0398
+REGDEF_BEGIN(HISTOGRAM_REGISTER50)
+REGDEF_BIT(HISTOGRAM_BIN98,        16)
+REGDEF_BIT(HISTOGRAM_BIN99,        16)
+REGDEF_END(HISTOGRAM_REGISTER50)
+
+
+/*
+    HISTOGRAM_BIN100:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN101:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER51_OFS 0x039c
+REGDEF_BEGIN(HISTOGRAM_REGISTER51)
+REGDEF_BIT(HISTOGRAM_BIN100,        16)
+REGDEF_BIT(HISTOGRAM_BIN101,        16)
+REGDEF_END(HISTOGRAM_REGISTER51)
+
+
+/*
+    HISTOGRAM_BIN102:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN103:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER52_OFS 0x03a0
+REGDEF_BEGIN(HISTOGRAM_REGISTER52)
+REGDEF_BIT(HISTOGRAM_BIN102,        16)
+REGDEF_BIT(HISTOGRAM_BIN103,        16)
+REGDEF_END(HISTOGRAM_REGISTER52)
+
+
+/*
+    HISTOGRAM_BIN104:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN105:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER53_OFS 0x03a4
+REGDEF_BEGIN(HISTOGRAM_REGISTER53)
+REGDEF_BIT(HISTOGRAM_BIN104,        16)
+REGDEF_BIT(HISTOGRAM_BIN105,        16)
+REGDEF_END(HISTOGRAM_REGISTER53)
+
+
+/*
+    HISTOGRAM_BIN106:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN107:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER54_OFS 0x03a8
+REGDEF_BEGIN(HISTOGRAM_REGISTER54)
+REGDEF_BIT(HISTOGRAM_BIN106,        16)
+REGDEF_BIT(HISTOGRAM_BIN107,        16)
+REGDEF_END(HISTOGRAM_REGISTER54)
+
+
+/*
+    HISTOGRAM_BIN108:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN109:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER55_OFS 0x03ac
+REGDEF_BEGIN(HISTOGRAM_REGISTER55)
+REGDEF_BIT(HISTOGRAM_BIN108,        16)
+REGDEF_BIT(HISTOGRAM_BIN109,        16)
+REGDEF_END(HISTOGRAM_REGISTER55)
+
+
+/*
+    HISTOGRAM_BIN110:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN111:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER56_OFS 0x03b0
+REGDEF_BEGIN(HISTOGRAM_REGISTER56)
+REGDEF_BIT(HISTOGRAM_BIN110,        16)
+REGDEF_BIT(HISTOGRAM_BIN111,        16)
+REGDEF_END(HISTOGRAM_REGISTER56)
+
+
+/*
+    HISTOGRAM_BIN112:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN113:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER57_OFS 0x03b4
+REGDEF_BEGIN(HISTOGRAM_REGISTER57)
+REGDEF_BIT(HISTOGRAM_BIN112,        16)
+REGDEF_BIT(HISTOGRAM_BIN113,        16)
+REGDEF_END(HISTOGRAM_REGISTER57)
+
+
+/*
+    HISTOGRAM_BIN114:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN115:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER58_OFS 0x03b8
+REGDEF_BEGIN(HISTOGRAM_REGISTER58)
+REGDEF_BIT(HISTOGRAM_BIN114,        16)
+REGDEF_BIT(HISTOGRAM_BIN115,        16)
+REGDEF_END(HISTOGRAM_REGISTER58)
+
+
+/*
+    HISTOGRAM_BIN116:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN117:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER59_OFS 0x03bc
+REGDEF_BEGIN(HISTOGRAM_REGISTER59)
+REGDEF_BIT(HISTOGRAM_BIN116,        16)
+REGDEF_BIT(HISTOGRAM_BIN117,        16)
+REGDEF_END(HISTOGRAM_REGISTER59)
+
+
+/*
+    HISTOGRAM_BIN118:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN119:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER60_OFS 0x03c0
+REGDEF_BEGIN(HISTOGRAM_REGISTER60)
+REGDEF_BIT(HISTOGRAM_BIN118,        16)
+REGDEF_BIT(HISTOGRAM_BIN119,        16)
+REGDEF_END(HISTOGRAM_REGISTER60)
+
+
+/*
+    HISTOGRAM_BIN120:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN121:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER61_OFS 0x03c4
+REGDEF_BEGIN(HISTOGRAM_REGISTER61)
+REGDEF_BIT(HISTOGRAM_BIN120,        16)
+REGDEF_BIT(HISTOGRAM_BIN121,        16)
+REGDEF_END(HISTOGRAM_REGISTER61)
+
+
+/*
+    HISTOGRAM_BIN122:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN123:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER62_OFS 0x03c8
+REGDEF_BEGIN(HISTOGRAM_REGISTER62)
+REGDEF_BIT(HISTOGRAM_BIN122,        16)
+REGDEF_BIT(HISTOGRAM_BIN123,        16)
+REGDEF_END(HISTOGRAM_REGISTER62)
+
+
+/*
+    HISTOGRAM_BIN124:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN125:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER63_OFS 0x03cc
+REGDEF_BEGIN(HISTOGRAM_REGISTER63)
+REGDEF_BIT(HISTOGRAM_BIN124,        16)
+REGDEF_BIT(HISTOGRAM_BIN125,        16)
+REGDEF_END(HISTOGRAM_REGISTER63)
+
+
+/*
+    HISTOGRAM_BIN126:    [0x0, 0xffff],         bits : 15_0
+    HISTOGRAM_BIN127:    [0x0, 0xffff],         bits : 31_16
+*/
+#define HISTOGRAM_REGISTER64_OFS 0x03d0
+REGDEF_BEGIN(HISTOGRAM_REGISTER64)
+REGDEF_BIT(HISTOGRAM_BIN126,        16)
+REGDEF_BIT(HISTOGRAM_BIN127,        16)
+REGDEF_END(HISTOGRAM_REGISTER64)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED24_OFS 0x03d4
+REGDEF_BEGIN(DCE_RESERVED24)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED24)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED25_OFS 0x03d8
+REGDEF_BEGIN(DCE_RESERVED25)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED25)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED26_OFS 0x03dc
+REGDEF_BEGIN(DCE_RESERVED26)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED26)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED27_OFS 0x03e0
+REGDEF_BEGIN(DCE_RESERVED27)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED27)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED28_OFS 0x03e4
+REGDEF_BEGIN(DCE_RESERVED28)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED28)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED29_OFS 0x03e8
+REGDEF_BEGIN(DCE_RESERVED29)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED29)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED30_OFS 0x03ec
+REGDEF_BEGIN(DCE_RESERVED30)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED30)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED31_OFS 0x03f0
+REGDEF_BEGIN(DCE_RESERVED31)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED31)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED32_OFS 0x03f4
+REGDEF_BEGIN(DCE_RESERVED32)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED32)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED33_OFS 0x03f8
+REGDEF_BEGIN(DCE_RESERVED33)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED33)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED34_OFS 0x03fc
+REGDEF_BEGIN(DCE_RESERVED34)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED34)
+
+
+/*
+    GDC_MODE:    [0x0, 0x1],            bits : 1
+*/
+#define GDC_REGISTER_OFS 0x0400
+REGDEF_BEGIN(GDC_REGISTER)
+REGDEF_BIT(,        1)
+REGDEF_BIT(GDC_MODE,        1)
+REGDEF_END(GDC_REGISTER)
+
+
+/*
+    GDC_CENTX:    [0x0, 0x3fff],            bits : 13_0
+    GDC_CENTY:    [0x0, 0x3fff],            bits : 29_16
+*/
+#define GEO_CENTER_REGISTER_OFS 0x0404
+REGDEF_BEGIN(GEO_CENTER_REGISTER)
+REGDEF_BIT(GDC_CENTX,        14)
+REGDEF_BIT(,        2)
+REGDEF_BIT(GDC_CENTY,        14)
+REGDEF_END(GEO_CENTER_REGISTER)
+
+
+/*
+    GDC_XDIST:    [0x0, 0xfff],         bits : 11_0
+    GDC_YDIST:    [0x0, 0xfff],         bits : 23_12
+*/
+#define GEO_AXIS_DISTANCE_REGISTER_OFS 0x0408
+REGDEF_BEGIN(GEO_AXIS_DISTANCE_REGISTER)
+REGDEF_BIT(GDC_XDIST,        12)
+REGDEF_BIT(GDC_YDIST,        12)
+REGDEF_END(GEO_AXIS_DISTANCE_REGISTER)
+
+
+/*
+    GDC_NORMFACT:    [0x0, 0xff],           bits : 7_0
+    GDC_NORMBIT :    [0x0, 0x1f],           bits : 12_8
+*/
+#define GEO_DISTANCE_NORMALIZATION_REGISTER_OFS 0x040c
+REGDEF_BEGIN(GEO_DISTANCE_NORMALIZATION_REGISTER)
+REGDEF_BIT(GDC_NORMFACT,        8)
+REGDEF_BIT(GDC_NORMBIT,        5)
+REGDEF_BIT(,        3)
+REGDEF_BIT(GDC_NORMFACT_10B,        10)
+REGDEF_BIT(,        2)
+REGDEF_BIT(GDC_NORMFACT_SEL,        1)
+REGDEF_END(GEO_DISTANCE_NORMALIZATION_REGISTER)
+
+
+/*
+    GDC_FOVGAIN :    [0x0, 0xfff],          bits : 11_0
+    GDC_FOVBOUND:    [0x0, 0x1],            bits : 12
+*/
+#define GDC_FOV_REGISTER_OFS 0x0410
+REGDEF_BEGIN(GDC_FOV_REGISTER)
+REGDEF_BIT(GDC_FOVGAIN,        12)
+REGDEF_BIT(GDC_FOVBOUND,        1)
+REGDEF_END(GDC_FOV_REGISTER)
+
+
+/*
+    GDC_BOUNDR:    [0x0, 0x3ff],            bits : 9_0
+    GDC_BOUNDG:    [0x0, 0x3ff],            bits : 19_10
+    GDC_BOUNDB:    [0x0, 0x3ff],            bits : 29_20
+*/
+#define GDC_FOV_BOUNDARY_REGISTER_OFS 0x0414
+REGDEF_BEGIN(GDC_FOV_BOUNDARY_REGISTER)
+REGDEF_BIT(GDC_BOUNDR,        10)
+REGDEF_BIT(GDC_BOUNDG,        10)
+REGDEF_BIT(GDC_BOUNDB,        10)
+REGDEF_END(GDC_FOV_BOUNDARY_REGISTER)
+
+
+/*
+    CAC_RLUTGAIN:    [0x0, 0x1fff],         bits : 12_0
+    CAC_GLUTGAIN:    [0x0, 0x1fff],         bits : 28_16
+*/
+#define GEO_ABERRATION_REGISTER0_OFS 0x0418
+REGDEF_BEGIN(GEO_ABERRATION_REGISTER0)
+REGDEF_BIT(CAC_RLUTGAIN,        13)
+REGDEF_BIT(,        3)
+REGDEF_BIT(CAC_GLUTGAIN,        13)
+REGDEF_END(GEO_ABERRATION_REGISTER0)
+
+
+/*
+    CAC_BLUTGAIN:    [0x0, 0x1fff],         bits : 12_0
+    CAC_SEL     :    [0x0, 0x1],            bits : 16
+*/
+#define GEO_ABERRATION_REGISTER1_OFS 0x041c
+REGDEF_BEGIN(GEO_ABERRATION_REGISTER1)
+REGDEF_BIT(CAC_BLUTGAIN,        13)
+REGDEF_BIT(,        3)
+REGDEF_BIT(CAC_SEL,        1)
+REGDEF_END(GEO_ABERRATION_REGISTER1)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED37_OFS 0x0420
+REGDEF_BEGIN(DCE_RESERVED37)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED37)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED38_OFS 0x0424
+REGDEF_BEGIN(DCE_RESERVED38)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED38)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED39_OFS 0x0428
+REGDEF_BEGIN(DCE_RESERVED39)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED39)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED40_OFS 0x042c
+REGDEF_BEGIN(DCE_RESERVED40)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED40)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED41_OFS 0x0430
+REGDEF_BEGIN(DCE_RESERVED41)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED41)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED42_OFS 0x0434
+REGDEF_BEGIN(DCE_RESERVED42)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED42)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED43_OFS 0x0438
+REGDEF_BEGIN(DCE_RESERVED43)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED43)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED44_OFS 0x043c
+REGDEF_BEGIN(DCE_RESERVED44)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED44)
+
+
+/*
+    GDC_LUTG0:    [0x0, 0xffff],            bits : 15_0
+    GDC_LUTG1:    [0x0, 0xffff],            bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG1_OFS 0x0440
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG1)
+REGDEF_BIT(GDC_LUTG0,        16)
+REGDEF_BIT(GDC_LUTG1,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG1)
+
+
+/*
+    GDC_LUTG2:    [0x0, 0xffff],            bits : 15_0
+    GDC_LUTG3:    [0x0, 0xffff],            bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG2_OFS 0x0444
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG2)
+REGDEF_BIT(GDC_LUTG2,        16)
+REGDEF_BIT(GDC_LUTG3,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG2)
+
+
+/*
+    GDC_LUTG4:    [0x0, 0xffff],            bits : 15_0
+    GDC_LUTG5:    [0x0, 0xffff],            bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG3_OFS 0x0448
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG3)
+REGDEF_BIT(GDC_LUTG4,        16)
+REGDEF_BIT(GDC_LUTG5,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG3)
+
+
+/*
+    GDC_LUTG6:    [0x0, 0xffff],            bits : 15_0
+    GDC_LUTG7:    [0x0, 0xffff],            bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG4_OFS 0x044c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG4)
+REGDEF_BIT(GDC_LUTG6,        16)
+REGDEF_BIT(GDC_LUTG7,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG4)
+
+
+/*
+    GDC_LUTG8:    [0x0, 0xffff],            bits : 15_0
+    GDC_LUTG9:    [0x0, 0xffff],            bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG5_OFS 0x0450
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG5)
+REGDEF_BIT(GDC_LUTG8,        16)
+REGDEF_BIT(GDC_LUTG9,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG5)
+
+
+/*
+    GDC_LUTG10:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG11:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG6_OFS 0x0454
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG6)
+REGDEF_BIT(GDC_LUTG10,        16)
+REGDEF_BIT(GDC_LUTG11,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG6)
+
+
+/*
+    GDC_LUTG12:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG13:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG7_OFS 0x0458
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG7)
+REGDEF_BIT(GDC_LUTG12,        16)
+REGDEF_BIT(GDC_LUTG13,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG7)
+
+
+/*
+    GDC_LUTG14:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG15:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG8_OFS 0x045c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG8)
+REGDEF_BIT(GDC_LUTG14,        16)
+REGDEF_BIT(GDC_LUTG15,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG8)
+
+
+/*
+    GDC_LUTG16:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG17:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG9_OFS 0x0460
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG9)
+REGDEF_BIT(GDC_LUTG16,        16)
+REGDEF_BIT(GDC_LUTG17,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG9)
+
+
+/*
+    GDC_LUTG18:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG19:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG10_OFS 0x0464
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG10)
+REGDEF_BIT(GDC_LUTG18,        16)
+REGDEF_BIT(GDC_LUTG19,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG10)
+
+
+/*
+    GDC_LUTG20:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG21:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG11_OFS 0x0468
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG11)
+REGDEF_BIT(GDC_LUTG20,        16)
+REGDEF_BIT(GDC_LUTG21,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG11)
+
+
+/*
+    GDC_LUTG22:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG23:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG12_OFS 0x046c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG12)
+REGDEF_BIT(GDC_LUTG22,        16)
+REGDEF_BIT(GDC_LUTG23,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG12)
+
+
+/*
+    GDC_LUTG24:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG25:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG13_OFS 0x0470
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG13)
+REGDEF_BIT(GDC_LUTG24,        16)
+REGDEF_BIT(GDC_LUTG25,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG13)
+
+
+/*
+    GDC_LUTG26:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG27:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG14_OFS 0x0474
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG14)
+REGDEF_BIT(GDC_LUTG26,        16)
+REGDEF_BIT(GDC_LUTG27,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG14)
+
+
+/*
+    GDC_LUTG28:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG29:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG15_OFS 0x0478
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG15)
+REGDEF_BIT(GDC_LUTG28,        16)
+REGDEF_BIT(GDC_LUTG29,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG15)
+
+
+/*
+    GDC_LUTG30:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG31:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG16_OFS 0x047c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG16)
+REGDEF_BIT(GDC_LUTG30,        16)
+REGDEF_BIT(GDC_LUTG31,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG16)
+
+
+/*
+    GDC_LUTG32:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG33:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG17_OFS 0x0480
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG17)
+REGDEF_BIT(GDC_LUTG32,        16)
+REGDEF_BIT(GDC_LUTG33,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG17)
+
+
+/*
+    GDC_LUTG34:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG35:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG18_OFS 0x0484
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG18)
+REGDEF_BIT(GDC_LUTG34,        16)
+REGDEF_BIT(GDC_LUTG35,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG18)
+
+
+/*
+    GDC_LUTG36:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG37:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG19_OFS 0x0488
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG19)
+REGDEF_BIT(GDC_LUTG36,        16)
+REGDEF_BIT(GDC_LUTG37,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG19)
+
+
+/*
+    GDC_LUTG38:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG39:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG20_OFS 0x048c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG20)
+REGDEF_BIT(GDC_LUTG38,        16)
+REGDEF_BIT(GDC_LUTG39,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG20)
+
+
+/*
+    GDC_LUTG40:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG41:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG21_OFS 0x0490
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG21)
+REGDEF_BIT(GDC_LUTG40,        16)
+REGDEF_BIT(GDC_LUTG41,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG21)
+
+
+/*
+    GDC_LUTG42:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG43:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG22_OFS 0x0494
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG22)
+REGDEF_BIT(GDC_LUTG42,        16)
+REGDEF_BIT(GDC_LUTG43,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG22)
+
+
+/*
+    GDC_LUTG44:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG45:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG23_OFS 0x0498
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG23)
+REGDEF_BIT(GDC_LUTG44,        16)
+REGDEF_BIT(GDC_LUTG45,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG23)
+
+
+/*
+    GDC_LUTG46:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG47:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG24_OFS 0x049c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG24)
+REGDEF_BIT(GDC_LUTG46,        16)
+REGDEF_BIT(GDC_LUTG47,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG24)
+
+
+/*
+    GDC_LUTG48:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG49:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG25_OFS 0x04a0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG25)
+REGDEF_BIT(GDC_LUTG48,        16)
+REGDEF_BIT(GDC_LUTG49,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG25)
+
+
+/*
+    GDC_LUTG50:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG51:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG26_OFS 0x04a4
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG26)
+REGDEF_BIT(GDC_LUTG50,        16)
+REGDEF_BIT(GDC_LUTG51,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG26)
+
+
+/*
+    GDC_LUTG52:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG53:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG27_OFS 0x04a8
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG27)
+REGDEF_BIT(GDC_LUTG52,        16)
+REGDEF_BIT(GDC_LUTG53,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG27)
+
+
+/*
+    GDC_LUTG54:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG55:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG28_OFS 0x04ac
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG28)
+REGDEF_BIT(GDC_LUTG54,        16)
+REGDEF_BIT(GDC_LUTG55,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG28)
+
+
+/*
+    GDC_LUTG56:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG57:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG29_OFS 0x04b0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG29)
+REGDEF_BIT(GDC_LUTG56,        16)
+REGDEF_BIT(GDC_LUTG57,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG29)
+
+
+/*
+    GDC_LUTG58:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG59:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG30_OFS 0x04b4
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG30)
+REGDEF_BIT(GDC_LUTG58,        16)
+REGDEF_BIT(GDC_LUTG59,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG30)
+
+
+/*
+    GDC_LUTG60:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG61:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG31_OFS 0x04b8
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG31)
+REGDEF_BIT(GDC_LUTG60,        16)
+REGDEF_BIT(GDC_LUTG61,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG31)
+
+
+/*
+    GDC_LUTG62:    [0x0, 0xffff],           bits : 15_0
+    GDC_LUTG63:    [0x0, 0xffff],           bits : 31_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG32_OFS 0x04bc
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG32)
+REGDEF_BIT(GDC_LUTG62,        16)
+REGDEF_BIT(GDC_LUTG63,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG32)
+
+
+/*
+    GDC_LUTG64:    [0x0, 0xffff],           bits : 15_0
+*/
+#define GEOMETRIC_LOOK_UP_TABLEG33_OFS 0x04c0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEG33)
+REGDEF_BIT(GDC_LUTG64,        16)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEG33)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED45_OFS 0x04c4
+REGDEF_BEGIN(DCE_RESERVED45)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED45)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED46_OFS 0x04c8
+REGDEF_BEGIN(DCE_RESERVED46)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED46)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED47_OFS 0x04cc
+REGDEF_BEGIN(DCE_RESERVED47)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED47)
+
+
+/*
+    CAC_LUTR0:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTR1:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER1_OFS 0x04d0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER1)
+REGDEF_BIT(CAC_LUTR0,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR1,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER1)
+
+
+/*
+    CAC_LUTR2:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTR3:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER2_OFS 0x04d4
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER2)
+REGDEF_BIT(CAC_LUTR2,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR3,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER2)
+
+
+/*
+    CAC_LUTR4:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTR5:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER3_OFS 0x04d8
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER3)
+REGDEF_BIT(CAC_LUTR4,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR5,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER3)
+
+
+/*
+    CAC_LUTR6:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTR7:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER4_OFS 0x04dc
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER4)
+REGDEF_BIT(CAC_LUTR6,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR7,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER4)
+
+
+/*
+    CAC_LUTR8:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTR9:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER5_OFS 0x04e0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER5)
+REGDEF_BIT(CAC_LUTR8,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR9,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER5)
+
+
+/*
+    CAC_LUTR10:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR11:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER6_OFS 0x04e4
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER6)
+REGDEF_BIT(CAC_LUTR10,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR11,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER6)
+
+
+/*
+    CAC_LUTR12:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR13:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER7_OFS 0x04e8
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER7)
+REGDEF_BIT(CAC_LUTR12,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR13,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER7)
+
+
+/*
+    CAC_LUTR14:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR15:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER8_OFS 0x04ec
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER8)
+REGDEF_BIT(CAC_LUTR14,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR15,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER8)
+
+
+/*
+    CAC_LUTR16:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR17:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER9_OFS 0x04f0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER9)
+REGDEF_BIT(CAC_LUTR16,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR17,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER9)
+
+
+/*
+    CAC_LUTR18:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR19:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER10_OFS 0x04f4
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER10)
+REGDEF_BIT(CAC_LUTR18,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR19,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER10)
+
+
+/*
+    CAC_LUTR20:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR21:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER11_OFS 0x04f8
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER11)
+REGDEF_BIT(CAC_LUTR20,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR21,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER11)
+
+
+/*
+    CAC_LUTR22:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR23:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER12_OFS 0x04fc
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER12)
+REGDEF_BIT(CAC_LUTR22,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR23,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER12)
+
+
+/*
+    CAC_LUTR24:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR25:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER13_OFS 0x0500
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER13)
+REGDEF_BIT(CAC_LUTR24,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR25,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER13)
+
+
+/*
+    CAC_LUTR26:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR27:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER14_OFS 0x0504
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER14)
+REGDEF_BIT(CAC_LUTR26,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR27,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER14)
+
+
+/*
+    CAC_LUTR28:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR29:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER15_OFS 0x0508
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER15)
+REGDEF_BIT(CAC_LUTR28,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR29,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER15)
+
+
+/*
+    CAC_LUTR30:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR31:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER16_OFS 0x050c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER16)
+REGDEF_BIT(CAC_LUTR30,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR31,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER16)
+
+
+/*
+    CAC_LUTR32:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR33:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER17_OFS 0x0510
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER17)
+REGDEF_BIT(CAC_LUTR32,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR33,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER17)
+
+
+/*
+    CAC_LUTR34:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR35:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER18_OFS 0x0514
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER18)
+REGDEF_BIT(CAC_LUTR34,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR35,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER18)
+
+
+/*
+    CAC_LUTR36:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR37:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER19_OFS 0x0518
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER19)
+REGDEF_BIT(CAC_LUTR36,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR37,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER19)
+
+
+/*
+    CAC_LUTR38:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR39:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER20_OFS 0x051c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER20)
+REGDEF_BIT(CAC_LUTR38,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR39,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER20)
+
+
+/*
+    CAC_LUTR40:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR41:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER21_OFS 0x0520
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER21)
+REGDEF_BIT(CAC_LUTR40,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR41,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER21)
+
+
+/*
+    CAC_LUTR42:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR43:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER22_OFS 0x0524
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER22)
+REGDEF_BIT(CAC_LUTR42,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR43,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER22)
+
+
+/*
+    CAC_LUTR44:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR45:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER23_OFS 0x0528
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER23)
+REGDEF_BIT(CAC_LUTR44,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR45,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER23)
+
+
+/*
+    CAC_LUTR46:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR47:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER24_OFS 0x052c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER24)
+REGDEF_BIT(CAC_LUTR46,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR47,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER24)
+
+
+/*
+    CAC_LUTR48:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR49:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER25_OFS 0x0530
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER25)
+REGDEF_BIT(CAC_LUTR48,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR49,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER25)
+
+
+/*
+    CAC_LUTR50:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR51:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER26_OFS 0x0534
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER26)
+REGDEF_BIT(CAC_LUTR50,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR51,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER26)
+
+
+/*
+    CAC_LUTR52:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR53:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER27_OFS 0x0538
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER27)
+REGDEF_BIT(CAC_LUTR52,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR53,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER27)
+
+
+/*
+    CAC_LUTR54:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR55:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER28_OFS 0x053c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER28)
+REGDEF_BIT(CAC_LUTR54,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR55,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER28)
+
+
+/*
+    CAC_LUTR56:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR57:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER29_OFS 0x0540
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER29)
+REGDEF_BIT(CAC_LUTR56,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR57,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER29)
+
+
+/*
+    CAC_LUTR58:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR59:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER30_OFS 0x0544
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER30)
+REGDEF_BIT(CAC_LUTR58,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR59,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER30)
+
+
+/*
+    CAC_LUTR60:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR61:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER31_OFS 0x0548
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER31)
+REGDEF_BIT(CAC_LUTR60,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR61,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER31)
+
+
+/*
+    CAC_LUTR62:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTR63:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLER32_OFS 0x054c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER32)
+REGDEF_BIT(CAC_LUTR62,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTR63,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER32)
+
+
+/*
+    CAC_LUTR64:    [0x0, 0x7ff],            bits : 10_0
+*/
+#define GEOMETRIC_LOOK_UP_TABLER33_OFS 0x0550
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLER33)
+REGDEF_BIT(CAC_LUTR64,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLER33)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED48_OFS 0x0554
+REGDEF_BEGIN(DCE_RESERVED48)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED48)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED49_OFS 0x0558
+REGDEF_BEGIN(DCE_RESERVED49)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED49)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED50_OFS 0x055c
+REGDEF_BEGIN(DCE_RESERVED50)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED50)
+
+
+/*
+    CAC_LUTB0:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTB1:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB1_OFS 0x0560
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB1)
+REGDEF_BIT(CAC_LUTB0,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB1,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB1)
+
+
+/*
+    CAC_LUTB2:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTB3:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB2_OFS 0x0564
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB2)
+REGDEF_BIT(CAC_LUTB2,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB3,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB2)
+
+
+/*
+    CAC_LUTB4:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTB5:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB3_OFS 0x0568
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB3)
+REGDEF_BIT(CAC_LUTB4,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB5,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB3)
+
+
+/*
+    CAC_LUTB6:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTB7:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB4_OFS 0x056c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB4)
+REGDEF_BIT(CAC_LUTB6,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB7,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB4)
+
+
+/*
+    CAC_LUTB8:    [0x0, 0x7ff],         bits : 10_0
+    CAC_LUTB9:    [0x0, 0x7ff],         bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB5_OFS 0x0570
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB5)
+REGDEF_BIT(CAC_LUTB8,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB9,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB5)
+
+
+/*
+    CAC_LUTB10:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB11:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB6_OFS 0x0574
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB6)
+REGDEF_BIT(CAC_LUTB10,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB11,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB6)
+
+
+/*
+    CAC_LUTB12:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB13:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB7_OFS 0x0578
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB7)
+REGDEF_BIT(CAC_LUTB12,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB13,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB7)
+
+
+/*
+    CAC_LUTB14:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB15:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB8_OFS 0x057c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB8)
+REGDEF_BIT(CAC_LUTB14,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB15,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB8)
+
+
+/*
+    CAC_LUTB16:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB17:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB9_OFS 0x0580
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB9)
+REGDEF_BIT(CAC_LUTB16,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB17,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB9)
+
+
+/*
+    CAC_LUTB18:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB19:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB10_OFS 0x0584
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB10)
+REGDEF_BIT(CAC_LUTB18,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB19,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB10)
+
+
+/*
+    CAC_LUTB20:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB21:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB11_OFS 0x0588
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB11)
+REGDEF_BIT(CAC_LUTB20,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB21,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB11)
+
+
+/*
+    CAC_LUTB22:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB23:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB12_OFS 0x058c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB12)
+REGDEF_BIT(CAC_LUTB22,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB23,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB12)
+
+
+/*
+    CAC_LUTB24:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB25:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB13_OFS 0x0590
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB13)
+REGDEF_BIT(CAC_LUTB24,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB25,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB13)
+
+
+/*
+    CAC_LUTB26:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB27:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB14_OFS 0x0594
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB14)
+REGDEF_BIT(CAC_LUTB26,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB27,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB14)
+
+
+/*
+    CAC_LUTB28:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB29:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB15_OFS 0x0598
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB15)
+REGDEF_BIT(CAC_LUTB28,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB29,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB15)
+
+
+/*
+    CAC_LUTB30:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB31:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB16_OFS 0x059c
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB16)
+REGDEF_BIT(CAC_LUTB30,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB31,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB16)
+
+
+/*
+    CAC_LUTB32:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB33:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB17_OFS 0x05a0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB17)
+REGDEF_BIT(CAC_LUTB32,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB33,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB17)
+
+
+/*
+    CAC_LUTB34:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB35:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB18_OFS 0x05a4
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB18)
+REGDEF_BIT(CAC_LUTB34,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB35,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB18)
+
+
+/*
+    CAC_LUTB36:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB37:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB19_OFS 0x05a8
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB19)
+REGDEF_BIT(CAC_LUTB36,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB37,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB19)
+
+
+/*
+    CAC_LUTB38:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB39:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB20_OFS 0x05ac
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB20)
+REGDEF_BIT(CAC_LUTB38,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB39,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB20)
+
+
+/*
+    CAC_LUTB40:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB41:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB21_OFS 0x05b0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB21)
+REGDEF_BIT(CAC_LUTB40,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB41,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB21)
+
+
+/*
+    CAC_LUTB42:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB43:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB22_OFS 0x05b4
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB22)
+REGDEF_BIT(CAC_LUTB42,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB43,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB22)
+
+
+/*
+    CAC_LUTB44:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB45:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB23_OFS 0x05b8
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB23)
+REGDEF_BIT(CAC_LUTB44,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB45,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB23)
+
+
+/*
+    CAC_LUTB46:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB47:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB24_OFS 0x05bc
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB24)
+REGDEF_BIT(CAC_LUTB46,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB47,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB24)
+
+
+/*
+    CAC_LUTB48:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB49:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB25_OFS 0x05c0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB25)
+REGDEF_BIT(CAC_LUTB48,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB49,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB25)
+
+
+/*
+    CAC_LUTB50:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB51:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB26_OFS 0x05c4
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB26)
+REGDEF_BIT(CAC_LUTB50,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB51,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB26)
+
+
+/*
+    CAC_LUTB52:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB53:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB27_OFS 0x05c8
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB27)
+REGDEF_BIT(CAC_LUTB52,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB53,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB27)
+
+
+/*
+    CAC_LUTB54:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB55:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB28_OFS 0x05cc
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB28)
+REGDEF_BIT(CAC_LUTB54,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB55,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB28)
+
+
+/*
+    CAC_LUTB56:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB57:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB29_OFS 0x05d0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB29)
+REGDEF_BIT(CAC_LUTB56,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB57,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB29)
+
+
+/*
+    CAC_LUTB58:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB59:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB30_OFS 0x05d4
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB30)
+REGDEF_BIT(CAC_LUTB58,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB59,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB30)
+
+
+/*
+    CAC_LUTB60:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB61:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB31_OFS 0x05d8
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB31)
+REGDEF_BIT(CAC_LUTB60,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB61,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB31)
+
+
+/*
+    CAC_LUTB62:    [0x0, 0x7ff],            bits : 10_0
+    CAC_LUTB63:    [0x0, 0x7ff],            bits : 26_16
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB32_OFS 0x05dc
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB32)
+REGDEF_BIT(CAC_LUTB62,        11)
+REGDEF_BIT(,        5)
+REGDEF_BIT(CAC_LUTB63,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB32)
+
+
+/*
+    CAC_LUTB64:    [0x0, 0x7ff],            bits : 10_0
+*/
+#define GEOMETRIC_LOOK_UP_TABLEB33_OFS 0x05e0
+REGDEF_BEGIN(GEOMETRIC_LOOK_UP_TABLEB33)
+REGDEF_BIT(CAC_LUTB64,        11)
+REGDEF_END(GEOMETRIC_LOOK_UP_TABLEB33)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED51_OFS 0x05e4
+REGDEF_BEGIN(DCE_RESERVED51)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED51)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED52_OFS 0x05e8
+REGDEF_BEGIN(DCE_RESERVED52)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED52)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED53_OFS 0x05ec
+REGDEF_BEGIN(DCE_RESERVED53)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED53)
+
+
+/*
+    DRAM_SAI2DLUT:    [0x0, 0x3fffffff],            bits : 31_2
+*/
+#define DMA_LUT2D_IN_ADDRESS_OFS 0x05f0
+REGDEF_BEGIN(DMA_LUT2D_IN_ADDRESS)
+REGDEF_BIT(,        2)
+REGDEF_BIT(DRAM_SAI2DLUT,        30)
+REGDEF_END(DMA_LUT2D_IN_ADDRESS)
+
+
+/*
+    LUT2D_XOFS_INT :    [0x0, 0x3f],            bits : 5_0
+    LUT2D_XOFS_FRAC:    [0x0, 0xffffff],            bits : 31_8
+*/
+#define LUT2D_REGISTER1_OFS 0x05f4
+REGDEF_BEGIN(LUT2D_REGISTER1)
+REGDEF_BIT(LUT2D_XOFS_INT,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(LUT2D_XOFS_FRAC,        24)
+REGDEF_END(LUT2D_REGISTER1)
+
+
+/*
+    LUT2D_YOFS_INT :    [0x0, 0x3f],            bits : 5_0
+    LUT2D_YOFS_FRAC:    [0x0, 0xffffff],            bits : 31_8
+*/
+#define LUT2D_REGISTER2_OFS 0x05f8
+REGDEF_BEGIN(LUT2D_REGISTER2)
+REGDEF_BIT(LUT2D_YOFS_INT,        6)
+REGDEF_BIT(,        2)
+REGDEF_BIT(LUT2D_YOFS_FRAC,        24)
+REGDEF_END(LUT2D_REGISTER2)
+
+
+/*
+    LUT2D_HFACT:    [0x0, 0xffffff],            bits : 23_0
+*/
+#define LUT2D_REGISTER3_OFS 0x05fc
+REGDEF_BEGIN(LUT2D_REGISTER3)
+REGDEF_BIT(LUT2D_HFACT,        24)
+REGDEF_END(LUT2D_REGISTER3)
+
+
+/*
+    LUT2D_VFACT           :    [0x0, 0xffffff],         bits : 23_0
+    LUT2D_NUMSEL          :    [0x0, 0x3],          bits : 29_28
+    LUT2D_TOP_YMIN_AUTO_EN:    [0x0, 0x1],          bits : 31
+*/
+#define LUT2D_REGISTER4_OFS 0x0600
+REGDEF_BEGIN(LUT2D_REGISTER4)
+REGDEF_BIT(LUT2D_VFACT,        24)
+REGDEF_BIT(,        4)
+REGDEF_BIT(LUT2D_NUMSEL,        2)
+REGDEF_BIT(,        1)
+REGDEF_BIT(LUT2D_TOP_YMIN_AUTO_EN,        1)
+REGDEF_END(LUT2D_REGISTER4)
+
+
+/*
+    Reserved:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_RESERVED54_OFS 0x0604
+REGDEF_BEGIN(DCE_RESERVED54)
+REGDEF_BIT(Reserved,        32)
+REGDEF_END(DCE_RESERVED54)
+
+
+/*
+    LL_CMD_START_ADDR_INFO:    [0x0, 0xffffffff],           bits : 31_0
+*/
+#define LINKED_LIST_REGISTER_1_OFS 0x0608
+REGDEF_BEGIN(LINKED_LIST_REGISTER_1)
+REGDEF_BIT(LL_CMD_START_ADDR_INFO,        32)
+REGDEF_END(LINKED_LIST_REGISTER_1)
+
+
+/*
+    LL_CMDPRS_CNT:    [0x0, 0xfffff],           bits : 19_0
+*/
+#define LINKED_LIST_REGISTER_2_OFS 0x060c
+REGDEF_BEGIN(LINKED_LIST_REGISTER_2)
+REGDEF_BIT(LL_CMDPRS_CNT,        20)
+REGDEF_END(LINKED_LIST_REGISTER_2)
+
+
+/*
+    DCE_VERSION:    [0x0, 0xffffffff],          bits : 31_0
+*/
+#define VERSION_REGISTER_OFS 0x0610
+REGDEF_BEGIN(VERSION_REGISTER)
+REGDEF_BIT(DCE_VERSION,        32)
+REGDEF_END(VERSION_REGISTER)
+
+
+/*
+    DCE_CHECKSUM_ICH:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_CHECKSUM_REGISTER_0_OFS 0x0614
+REGDEF_BEGIN(DCE_CHECKSUM_REGISTER_0)
+REGDEF_BIT(DCE_CHECKSUM_ICH,        32)
+REGDEF_END(DCE_CHECKSUM_REGISTER_0)
+
+
+/*
+    DCE_CHECKSUM_WDR:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_CHECKSUM_REGISTER_1_OFS 0x0618
+REGDEF_BEGIN(DCE_CHECKSUM_REGISTER_1)
+REGDEF_BIT(DCE_CHECKSUM_WDR,        32)
+REGDEF_END(DCE_CHECKSUM_REGISTER_1)
+
+
+/*
+    DCE_CHECKSUM_CFA:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_CHECKSUM_REGISTER_2_OFS 0x061c
+REGDEF_BEGIN(DCE_CHECKSUM_REGISTER_2)
+REGDEF_BIT(DCE_CHECKSUM_CFA,        32)
+REGDEF_END(DCE_CHECKSUM_REGISTER_2)
+
+
+/*
+    DCE_CHECKSUM_OCH:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_CHECKSUM_REGISTER_3_OFS 0x0620
+REGDEF_BEGIN(DCE_CHECKSUM_REGISTER_3)
+REGDEF_BIT(DCE_CHECKSUM_OCH,        32)
+REGDEF_END(DCE_CHECKSUM_REGISTER_3)
+
+
+/*
+    DCE_CHECKSUM_ICH2:    [0x0, 0xffffffff],            bits : 31_0
+*/
+#define DCE_CHECKSUM_REGISTER_4_OFS 0x0624
+REGDEF_BEGIN(DCE_CHECKSUM_REGISTER_4)
+REGDEF_BIT(DCE_CHECKSUM_ICH2,        32)
+REGDEF_END(DCE_CHECKSUM_REGISTER_4)
+
+
+/*
+    DCE_CHECKSUM_LLC:    [0x0, 0xffffffff],         bits : 31_0
+*/
+#define DCE_CHECKSUM_REGISTER_5_OFS 0x0628
+REGDEF_BEGIN(DCE_CHECKSUM_REGISTER_5)
+REGDEF_BIT(DCE_CHECKSUM_LLC,        32)
+REGDEF_END(DCE_CHECKSUM_REGISTER_5)
+
+
+typedef struct {
+	//0x0000
+	T_DCE_CONTROL_REGISTER
+	DCE_Register_0000;
+
+	//0x0004
+	T_DCE_FUNCTION_REGISTER
+	DCE_Register_0004;
+
+	//0x0008
+	T_DCE_INTERRUPT_ENABLE_REGISTER
+	DCE_Register_0008;
+
+	//0x000c
+	T_DCE_INTERRUPT_STATUS_REGISTER
+	DCE_Register_000c;
+
+	//0x0010
+	T_DCE_INPUT_SIZE_REGISTER
+	DCE_Register_0010;
+
+	//0x0014
+	T_LINKED_LIST_MODE_REGISTER
+	DCE_Register_0014;
+
+	//0x0018
+	T_DMA_OUTPUT_CHANNEL_ENABLE_REGISTER
+	DCE_Register_0018;
+
+	//0x001c
+	T_DRAM_LINKED_LIST_REGISTER
+	DCE_Register_001c;
+
+	//0x0020
+	T_DMA_INPUT_Y_CHANNEL_REGISTER
+	DCE_Register_0020;
+
+	//0x0024
+	T_DMA_INPUT_Y_CHANNEL_LINE_OFFSET_REGISTER
+	DCE_Register_0024;
+
+	//0x0028
+	T_DMA_INPUT_UV_CHANNEL_REGISTER
+	DCE_Register_0028;
+
+	//0x002c
+	T_DMA_INPUT_UV_CHANNEL_LINE_OFFSET_REGISTER
+	DCE_Register_002c;
+
+	//0x0030
+	T_DMA_OUTPUT_Y_CHANNEL_REGISTER
+	DCE_Register_0030;
+
+	//0x0034
+	T_DMA_OUTPUT_Y_CHANNEL_LINE_OFFSET_REGISTER
+	DCE_Register_0034;
+
+	//0x0038
+	T_DMA_OUTPUT_UV_CHANNEL_REGISTER
+	DCE_Register_0038;
+
+	//0x003c
+	T_DMA_OUTPUT_UV_CHANNEL_LINE_OFFSET_REGISTER
+	DCE_Register_003c;
+
+	//0x0040
+	T_DCE_STATUS_REGISTER
+	DCE_Register_0040;
+
+	//0x0044
+	T_DCE_HORIZONTAL_STRIPE_REGISTER0
+	DCE_Register_0044;
+
+	//0x0048
+	T_DCE_HORIZONTAL_STRIPE_REGISTER1
+	DCE_Register_0048;
+
+	//0x004c
+	T_DCE_HORIZONTAL_STRIPE_REGISTER2
+	DCE_Register_004c;
+
+	//0x0050
+	T_DCE_HORIZONTAL_STRIPE_REGISTER3
+	DCE_Register_0050;
+
+	//0x0054
+	T_DCE_HORIZONTAL_STRIPE_REGISTER4
+	DCE_Register_0054;
+
+	//0x0058
+	T_DCE_HORIZONTAL_STRIPE_REGISTER5
+	DCE_Register_0058;
+
+	//0x005c
+	T_DCE_HORIZONTAL_STRIPE_REGISTER6
+	DCE_Register_005c;
+
+	//0x0060
+	T_DCE_BUFFER_HEIGHT_STATUS_REGISTER
+	DCE_Register_0060;
+
+	//0x0064
+	T_DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_1
+	DCE_Register_0064;
+
+	//0x0068
+	T_DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_2
+	DCE_Register_0068;
+
+	//0x006c
+	T_DCE_HORIZONTAL_STRIPE_STATUS_REGISTER_3
+	DCE_Register_006c;
+
+	//0x0070
+	T_DMA_BURST_LENGTH_REGISTER
+	DCE_Register_0070;
+
+	//0x0074
+	T_SRAM_CONTROL_REGISTER
+	DCE_Register_0074;
+
+	//0x0078
+	T_DCE_RESERVED1
+	DCE_Register_0078;
+
+	//0x007c
+	T_DCE_RESERVED2
+	DCE_Register_007c;
+
+	//0x0080
+	T_DCE_RESERVED3
+	DCE_Register_0080;
+
+	//0x0084
+	T_DCE_RESERVED4
+	DCE_Register_0084;
+
+	//0x0088
+	T_DCE_RESERVED5
+	DCE_Register_0088;
+
+	//0x008c
+	T_OUTPUT_CROP_REGISTER_0
+	DCE_Register_008c;
+
+	//0x0090
+	T_OUTPUT_CROP_REGISTER_1
+	DCE_Register_0090;
+
+	//0x0094
+	T_DCE_RESERVED8
+	DCE_Register_0094;
+
+	//0x0098
+	T_DCE_RESERVED9
+	DCE_Register_0098;
+
+	//0x009c
+	T_DCE_RESERVED10
+	DCE_Register_009c;
+
+	//0x00a0
+	T_COLOR_INTERPOLATION_REGISTER_0
+	DCE_Register_00a0;
+
+	//0x00a4
+	T_DMA_CFA_IR_PLANE_OUTPUT_CHANNEL_REGISTER
+	DCE_Register_00a4;
+
+	//0x00a8
+	T_DMA_CFA_IR_PLANE_OUTPUT_CHANNEL_LINEOFFSET_REGISTER
+	DCE_Register_00a8;
+
+	//0x00ac
+	T_COLOR_INTERPOLATION_REGISTER1
+	DCE_Register_00ac;
+
+	//0x00b0
+	T_COLOR_INTERPOLATION_REGISTER2
+	DCE_Register_00b0;
+
+	//0x00b4
+	T_COLOR_INTERPOLATION_REGISTER3
+	DCE_Register_00b4;
+
+	//0x00b8
+	T_COLOR_INTERPOLATION_REGISTER4
+	DCE_Register_00b8;
+
+	//0x00bc
+	T_COLOR_INTERPOLATION_REGISTER5
+	DCE_Register_00bc;
+
+	//0x00c0
+	T_COLOR_INTERPOLATION_REGISTER6
+	DCE_Register_00c0;
+
+	//0x00c4
+	T_COLOR_INTERPOLATION_REGISTER7
+	DCE_Register_00c4;
+
+	//0x00c8
+	T_COLOR_INTERPOLATION_REGISTER8
+	DCE_Register_00c8;
+
+	//0x00cc
+	T_COLOR_INTERPOLATION_REGISTER9
+	DCE_Register_00cc;
+
+	//0x00d0
+	T_COLOR_INTERPOLATION_REGISTER10
+	DCE_Register_00d0;
+
+	//0x00d4
+	T_COLOR_INTERPOLATION_REGISTER11
+	DCE_Register_00d4;
+
+	//0x00d8
+	T_COLOR_INTERPOLATION_REGISTER12
+	DCE_Register_00d8;
+
+	//0x00dc
+	T_DCE_RESERVED11
+	DCE_Register_00dc;
+
+	//0x00e0
+	T_RGBIR_COLOR_INTERPOLATION_REGISTER0
+	DCE_Register_00e0;
+
+	//0x00e4
+	T_RGBIR_COLOR_INTERPOLATION_REGISTER1
+	DCE_Register_00e4;
+
+	//0x00e8
+	T_RGBIR_COLOR_INTERPOLATION_REGISTER2
+	DCE_Register_00e8;
+
+	//0x00ec
+	T_RGBIR_COLOR_INTERPOLATION_REGISTER3
+	DCE_Register_00ec;
+
+	//0x00f0
+	T_COLOR_GAIN_REGISTER_1
+	DCE_Register_00f0;
+
+	//0x00f4
+	T_COLOR_GAIN_REGISTER_2
+	DCE_Register_00f4;
+
+	//0x00f8
+	T_CFA_SATURATION_GAIN
+	DCE_Register_00f8;
+
+	//0x00fc
+	T_PINK_REDUCTION_REGISTER
+	DCE_Register_00fc;
+
+	//0x0100
+	T_DCE_RESERVED12
+	DCE_Register_0100;
+
+	//0x0104
+	T_DCE_RESERVED13
+	DCE_Register_0104;
+
+	//0x0108
+	T_DCE_RESERVED14
+	DCE_Register_0108;
+
+	//0x010c
+	T_DCE_RESERVED15
+	DCE_Register_010c;
+
+	//0x0110
+	T_DCE_RESERVED16
+	DCE_Register_0110;
+
+	//0x0114
+	T_DCE_RESERVED17
+	DCE_Register_0114;
+
+	//0x0118
+	T_DCE_RESERVED18
+	DCE_Register_0118;
+
+	//0x011c
+	T_DCE_RESERVED19
+	DCE_Register_011c;
+
+	//0x0120
+	T_WDR_SUBIMAGE_REGISTER_0
+	DCE_Register_0120;
+
+	//0x0124
+	T_WDR_SUBIMAGE_REGISTER_1
+	DCE_Register_0124;
+
+	//0x0128
+	T_WDR_SUBIMAGE_REGISTER_2
+	DCE_Register_0128;
+
+	//0x012c
+	T_WDR_SUBIMAGE_REGISTER_3
+	DCE_Register_012c;
+
+	//0x0130
+	T_WDR_SUBIMAGE_REGISTER_4
+	DCE_Register_0130;
+
+	//0x0134
+	T_WDR_SUBIMAGE_REGISTER_5
+	DCE_Register_0134;
+
+	//0x0138
+	T_WDR_SUBIMAGE_REGISTER_6
+	DCE_Register_0138;
+
+	//0x013c
+	T_WDR_SUBIMAGE_REGISTER_7
+	DCE_Register_013c;
+
+	//0x0140
+	T_DCE_RESERVED20
+	DCE_Register_0140;
+
+	//0x0144
+	T_WDR_INPUT_BLENDING_REGISTER0
+	DCE_Register_0144;
+
+	//0x0148
+	T_WDR_INPUT_BLENDING_REGISTER1
+	DCE_Register_0148;
+
+	//0x014c
+	T_WDR_INPUT_BLENDING_REGISTER2
+	DCE_Register_014c;
+
+	//0x0150
+	T_WDR_INPUT_BLENDING_REGISTER3
+	DCE_Register_0150;
+
+	//0x0154
+	T_WDR_INPUT_BLENDING_REGISTER4
+	DCE_Register_0154;
+
+	//0x0158
+	T_WDR_SUBIMG_LPF_REGISTER
+	DCE_Register_0158;
+
+	//0x015c
+	T_WDR_PARAMETER_REGISTER0
+	DCE_Register_015c;
+
+	//0x0160
+	T_WDR_PARAMETER_REGISTER1
+	DCE_Register_0160;
+
+	//0x0164
+	T_WDR_CONTROL_REGISTER
+	DCE_Register_0164;
+
+	//0x0168
+	T_WDR_TONE_CURVE_REGISTER0
+	DCE_Register_0168;
+
+	//0x016c
+	T_WDR_TONE_CURVE_REGISTER1
+	DCE_Register_016c;
+
+	//0x0170
+	T_WDR_TONE_CURVE_REGISTER2
+	DCE_Register_0170;
+
+	//0x0174
+	T_WDR_TONE_CURVE_REGISTER3
+	DCE_Register_0174;
+
+	//0x0178
+	T_WDR_TONE_CURVE_REGISTER4
+	DCE_Register_0178;
+
+	//0x017c
+	T_WDR_TONE_CURVE_REGISTER5
+	DCE_Register_017c;
+
+	//0x0180
+	T_WDR_TONE_CURVE_REGISTER6
+	DCE_Register_0180;
+
+	//0x0184
+	T_WDR_TONE_CURVE_REGISTER7
+	DCE_Register_0184;
+
+	//0x0188
+	T_WDR_TONE_CURVE_REGISTER8
+	DCE_Register_0188;
+
+	//0x018c
+	T_WDR_TONE_CURVE_REGISTER9
+	DCE_Register_018c;
+
+	//0x0190
+	T_WDR_TONE_CURVE_REGISTER10
+	DCE_Register_0190;
+
+	//0x0194
+	T_WDR_TONE_CURVE_REGISTER11
+	DCE_Register_0194;
+
+	//0x0198
+	T_WDR_TONE_CURVE_REGISTER12
+	DCE_Register_0198;
+
+	//0x019c
+	T_WDR_TONE_CURVE_REGISTER13
+	DCE_Register_019c;
+
+	//0x01a0
+	T_WDR_TONE_CURVE_REGISTER14
+	DCE_Register_01a0;
+
+	//0x01a4
+	T_WDR_TONE_CURVE_REGISTER15
+	DCE_Register_01a4;
+
+	//0x01a8
+	T_WDR_TONE_CURVE_REGISTER16
+	DCE_Register_01a8;
+
+	//0x01ac
+	T_WDR_TONE_CURVE_REGISTER17
+	DCE_Register_01ac;
+
+	//0x01b0
+	T_WDR_TONE_CURVE_REGISTER18
+	DCE_Register_01b0;
+
+	//0x01b4
+	T_WDR_TONE_CURVE_REGISTER19
+	DCE_Register_01b4;
+
+	//0x01b8
+	T_WDR_TONE_CURVE_REGISTER20
+	DCE_Register_01b8;
+
+	//0x01bc
+	T_WDR_TONE_CURVE_REGISTER21
+	DCE_Register_01bc;
+
+	//0x01c0
+	T_WDR_TONE_CURVE_REGISTER22
+	DCE_Register_01c0;
+
+	//0x01c4
+	T_WDR_TONE_CURVE_REGISTER23
+	DCE_Register_01c4;
+
+	//0x01c8
+	T_WDR_TONE_CURVE_REGISTER24
+	DCE_Register_01c8;
+
+	//0x01cc
+	T_WDR_TONE_CURVE_REGISTER25
+	DCE_Register_01cc;
+
+	//0x01d0
+	T_WDR_TONE_CURVE_REGISTER26
+	DCE_Register_01d0;
+
+	//0x01d4
+	T_WDR_TONE_CURVE_REGISTER27
+	DCE_Register_01d4;
+
+	//0x01d8
+	T_WDR_TONE_CURVE_REGISTER28
+	DCE_Register_01d8;
+
+	//0x01dc
+	T_WDR_TONE_CURVE_REGISTER29
+	DCE_Register_01dc;
+
+	//0x01e0
+	T_WDR_TONE_CURVE_REGISTER30
+	DCE_Register_01e0;
+
+	//0x01e4
+	T_WDR_TONE_CURVE_REGISTER31
+	DCE_Register_01e4;
+
+	//0x01e8
+	T_WDR_TONE_CURVE_REGISTER32
+	DCE_Register_01e8;
+
+	//0x01ec
+	T_WDR_TONE_CURVE_REGISTER33
+	DCE_Register_01ec;
+
+	//0x01f0
+	T_WDR_TONE_CURVE_REGISTER34
+	DCE_Register_01f0;
+
+	//0x01f4
+	T_WDR_TONE_CURVE_REGISTER35
+	DCE_Register_01f4;
+
+	//0x01f8
+	T_WDR_TONE_CURVE_REGISTER36
+	DCE_Register_01f8;
+
+	//0x01fc
+	T_WDR_TONE_CURVE_REGISTER37
+	DCE_Register_01fc;
+
+	//0x0200
+	T_WDR_TONE_CURVE_REGISTER38
+	DCE_Register_0200;
+
+	//0x0204
+	T_WDR_TONE_CURVE_REGISTER39
+	DCE_Register_0204;
+
+	//0x0208
+	T_WDR_TONE_CURVE_REGISTER40
+	DCE_Register_0208;
+
+	//0x020c
+	T_WDR_TONE_CURVE_REGISTER41
+	DCE_Register_020c;
+
+	//0x0210
+	T_WDR_TONE_CURVE_REGISTER42
+	DCE_Register_0210;
+
+	//0x0214
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER0
+	DCE_Register_0214;
+
+	//0x0218
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER1
+	DCE_Register_0218;
+
+	//0x021c
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER2
+	DCE_Register_021c;
+
+	//0x0220
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER3
+	DCE_Register_0220;
+
+	//0x0224
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER4
+	DCE_Register_0224;
+
+	//0x0228
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER5
+	DCE_Register_0228;
+
+	//0x022c
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER6
+	DCE_Register_022c;
+
+	//0x0230
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER7
+	DCE_Register_0230;
+
+	//0x0234
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER8
+	DCE_Register_0234;
+
+	//0x0238
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER9
+	DCE_Register_0238;
+
+	//0x023c
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER10
+	DCE_Register_023c;
+
+	//0x0240
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER11
+	DCE_Register_0240;
+
+	//0x0244
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER12
+	DCE_Register_0244;
+
+	//0x0248
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER13
+	DCE_Register_0248;
+
+	//0x024c
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER14
+	DCE_Register_024c;
+
+	//0x0250
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER15
+	DCE_Register_0250;
+
+	//0x0254
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER16
+	DCE_Register_0254;
+
+	//0x0258
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER17
+	DCE_Register_0258;
+
+	//0x025c
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER18
+	DCE_Register_025c;
+
+	//0x0260
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER19
+	DCE_Register_0260;
+
+	//0x0264
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER20
+	DCE_Register_0264;
+
+	//0x0268
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER21
+	DCE_Register_0268;
+
+	//0x026c
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER22
+	DCE_Register_026c;
+
+	//0x0270
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER23
+	DCE_Register_0270;
+
+	//0x0274
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER24
+	DCE_Register_0274;
+
+	//0x0278
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER25
+	DCE_Register_0278;
+
+	//0x027c
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER26
+	DCE_Register_027c;
+
+	//0x0280
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER27
+	DCE_Register_0280;
+
+	//0x0284
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER28
+	DCE_Register_0284;
+
+	//0x0288
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER29
+	DCE_Register_0288;
+
+	//0x028c
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER30
+	DCE_Register_028c;
+
+	//0x0290
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER31
+	DCE_Register_0290;
+
+	//0x0294
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER32
+	DCE_Register_0294;
+
+	//0x0298
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER33
+	DCE_Register_0298;
+
+	//0x029c
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER34
+	DCE_Register_029c;
+
+	//0x02a0
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER35
+	DCE_Register_02a0;
+
+	//0x02a4
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER36
+	DCE_Register_02a4;
+
+	//0x02a8
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER37
+	DCE_Register_02a8;
+
+	//0x02ac
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER38
+	DCE_Register_02ac;
+
+	//0x02b0
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER39
+	DCE_Register_02b0;
+
+	//0x02b4
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER40
+	DCE_Register_02b4;
+
+	//0x02b8
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER41
+	DCE_Register_02b8;
+
+	//0x02bc
+	T_WDR_OUTPUT_BLENDING_CURVE_REGISTER42
+	DCE_Register_02bc;
+
+	//0x02c0
+	T_WDR_OUTPUT_BLENDING_REGISTER
+	DCE_Register_02c0;
+
+	//0x02c4
+	T_WDR_SATURATION_REDUCTION_REGISTER
+	DCE_Register_02c4;
+
+	//0x02c8
+	T_DCE_RESERVED22
+	DCE_Register_02c8;
+
+	//0x02cc
+	T_DCE_RESERVED23
+	DCE_Register_02cc;
+
+	//0x02d0
+	T_HISTOGRAM_REGISTER0
+	DCE_Register_02d0;
+
+	//0x02d4
+	T_HISTOGRAM_REGISTER1
+	DCE_Register_02d4;
+
+	//0x02d8
+	T_HISTOGRAM_REGISTER2
+	DCE_Register_02d8;
+
+	//0x02dc
+	T_HISTOGRAM_REGISTER3
+	DCE_Register_02dc;
+
+	//0x02e0
+	T_HISTOGRAM_REGISTER4
+	DCE_Register_02e0;
+
+	//0x02e4
+	T_HISTOGRAM_REGISTER5
+	DCE_Register_02e4;
+
+	//0x02e8
+	T_HISTOGRAM_REGISTER6
+	DCE_Register_02e8;
+
+	//0x02ec
+	T_HISTOGRAM_REGISTER7
+	DCE_Register_02ec;
+
+	//0x02f0
+	T_HISTOGRAM_REGISTER8
+	DCE_Register_02f0;
+
+	//0x02f4
+	T_HISTOGRAM_REGISTER9
+	DCE_Register_02f4;
+
+	//0x02f8
+	T_HISTOGRAM_REGISTER10
+	DCE_Register_02f8;
+
+	//0x02fc
+	T_HISTOGRAM_REGISTER11
+	DCE_Register_02fc;
+
+	//0x0300
+	T_HISTOGRAM_REGISTER12
+	DCE_Register_0300;
+
+	//0x0304
+	T_HISTOGRAM_REGISTER13
+	DCE_Register_0304;
+
+	//0x0308
+	T_HISTOGRAM_REGISTER14
+	DCE_Register_0308;
+
+	//0x030c
+	T_HISTOGRAM_REGISTER15
+	DCE_Register_030c;
+
+	//0x0310
+	T_HISTOGRAM_REGISTER16
+	DCE_Register_0310;
+
+	//0x0314
+	T_HISTOGRAM_REGISTER17
+	DCE_Register_0314;
+
+	//0x0318
+	T_HISTOGRAM_REGISTER18
+	DCE_Register_0318;
+
+	//0x031c
+	T_HISTOGRAM_REGISTER19
+	DCE_Register_031c;
+
+	//0x0320
+	T_HISTOGRAM_REGISTER20
+	DCE_Register_0320;
+
+	//0x0324
+	T_HISTOGRAM_REGISTER21
+	DCE_Register_0324;
+
+	//0x0328
+	T_HISTOGRAM_REGISTER22
+	DCE_Register_0328;
+
+	//0x032c
+	T_HISTOGRAM_REGISTER23
+	DCE_Register_032c;
+
+	//0x0330
+	T_HISTOGRAM_REGISTER24
+	DCE_Register_0330;
+
+	//0x0334
+	T_HISTOGRAM_REGISTER25
+	DCE_Register_0334;
+
+	//0x0338
+	T_HISTOGRAM_REGISTER26
+	DCE_Register_0338;
+
+	//0x033c
+	T_HISTOGRAM_REGISTER27
+	DCE_Register_033c;
+
+	//0x0340
+	T_HISTOGRAM_REGISTER28
+	DCE_Register_0340;
+
+	//0x0344
+	T_HISTOGRAM_REGISTER29
+	DCE_Register_0344;
+
+	//0x0348
+	T_HISTOGRAM_REGISTER30
+	DCE_Register_0348;
+
+	//0x034c
+	T_HISTOGRAM_REGISTER31
+	DCE_Register_034c;
+
+	//0x0350
+	T_HISTOGRAM_REGISTER32
+	DCE_Register_0350;
+
+	//0x0354
+	T_HISTOGRAM_REGISTER33
+	DCE_Register_0354;
+
+	//0x0358
+	T_HISTOGRAM_REGISTER34
+	DCE_Register_0358;
+
+	//0x035c
+	T_HISTOGRAM_REGISTER35
+	DCE_Register_035c;
+
+	//0x0360
+	T_HISTOGRAM_REGISTER36
+	DCE_Register_0360;
+
+	//0x0364
+	T_HISTOGRAM_REGISTER37
+	DCE_Register_0364;
+
+	//0x0368
+	T_HISTOGRAM_REGISTER38
+	DCE_Register_0368;
+
+	//0x036c
+	T_HISTOGRAM_REGISTER39
+	DCE_Register_036c;
+
+	//0x0370
+	T_HISTOGRAM_REGISTER40
+	DCE_Register_0370;
+
+	//0x0374
+	T_HISTOGRAM_REGISTER41
+	DCE_Register_0374;
+
+	//0x0378
+	T_HISTOGRAM_REGISTER42
+	DCE_Register_0378;
+
+	//0x037c
+	T_HISTOGRAM_REGISTER43
+	DCE_Register_037c;
+
+	//0x0380
+	T_HISTOGRAM_REGISTER44
+	DCE_Register_0380;
+
+	//0x0384
+	T_HISTOGRAM_REGISTER45
+	DCE_Register_0384;
+
+	//0x0388
+	T_HISTOGRAM_REGISTER46
+	DCE_Register_0388;
+
+	//0x038c
+	T_HISTOGRAM_REGISTER47
+	DCE_Register_038c;
+
+	//0x0390
+	T_HISTOGRAM_REGISTER48
+	DCE_Register_0390;
+
+	//0x0394
+	T_HISTOGRAM_REGISTER49
+	DCE_Register_0394;
+
+	//0x0398
+	T_HISTOGRAM_REGISTER50
+	DCE_Register_0398;
+
+	//0x039c
+	T_HISTOGRAM_REGISTER51
+	DCE_Register_039c;
+
+	//0x03a0
+	T_HISTOGRAM_REGISTER52
+	DCE_Register_03a0;
+
+	//0x03a4
+	T_HISTOGRAM_REGISTER53
+	DCE_Register_03a4;
+
+	//0x03a8
+	T_HISTOGRAM_REGISTER54
+	DCE_Register_03a8;
+
+	//0x03ac
+	T_HISTOGRAM_REGISTER55
+	DCE_Register_03ac;
+
+	//0x03b0
+	T_HISTOGRAM_REGISTER56
+	DCE_Register_03b0;
+
+	//0x03b4
+	T_HISTOGRAM_REGISTER57
+	DCE_Register_03b4;
+
+	//0x03b8
+	T_HISTOGRAM_REGISTER58
+	DCE_Register_03b8;
+
+	//0x03bc
+	T_HISTOGRAM_REGISTER59
+	DCE_Register_03bc;
+
+	//0x03c0
+	T_HISTOGRAM_REGISTER60
+	DCE_Register_03c0;
+
+	//0x03c4
+	T_HISTOGRAM_REGISTER61
+	DCE_Register_03c4;
+
+	//0x03c8
+	T_HISTOGRAM_REGISTER62
+	DCE_Register_03c8;
+
+	//0x03cc
+	T_HISTOGRAM_REGISTER63
+	DCE_Register_03cc;
+
+	//0x03d0
+	T_HISTOGRAM_REGISTER64
+	DCE_Register_03d0;
+
+	//0x03d4
+	T_DCE_RESERVED24
+	DCE_Register_03d4;
+
+	//0x03d8
+	T_DCE_RESERVED25
+	DCE_Register_03d8;
+
+	//0x03dc
+	T_DCE_RESERVED26
+	DCE_Register_03dc;
+
+	//0x03e0
+	T_DCE_RESERVED27
+	DCE_Register_03e0;
+
+	//0x03e4
+	T_DCE_RESERVED28
+	DCE_Register_03e4;
+
+	//0x03e8
+	T_DCE_RESERVED29
+	DCE_Register_03e8;
+
+	//0x03ec
+	T_DCE_RESERVED30
+	DCE_Register_03ec;
+
+	//0x03f0
+	T_DCE_RESERVED31
+	DCE_Register_03f0;
+
+	//0x03f4
+	T_DCE_RESERVED32
+	DCE_Register_03f4;
+
+	//0x03f8
+	T_DCE_RESERVED33
+	DCE_Register_03f8;
+
+	//0x03fc
+	T_DCE_RESERVED34
+	DCE_Register_03fc;
+
+	//0x0400
+	T_GDC_REGISTER
+	DCE_Register_0400;
+
+	//0x0404
+	T_GEO_CENTER_REGISTER
+	DCE_Register_0404;
+
+	//0x0408
+	T_GEO_AXIS_DISTANCE_REGISTER
+	DCE_Register_0408;
+
+	//0x040c
+	T_GEO_DISTANCE_NORMALIZATION_REGISTER
+	DCE_Register_040c;
+
+	//0x0410
+	T_GDC_FOV_REGISTER
+	DCE_Register_0410;
+
+	//0x0414
+	T_GDC_FOV_BOUNDARY_REGISTER
+	DCE_Register_0414;
+
+	//0x0418
+	T_GEO_ABERRATION_REGISTER0
+	DCE_Register_0418;
+
+	//0x041c
+	T_GEO_ABERRATION_REGISTER1
+	DCE_Register_041c;
+
+	//0x0420
+	T_DCE_RESERVED37
+	DCE_Register_0420;
+
+	//0x0424
+	T_DCE_RESERVED38
+	DCE_Register_0424;
+
+	//0x0428
+	T_DCE_RESERVED39
+	DCE_Register_0428;
+
+	//0x042c
+	T_DCE_RESERVED40
+	DCE_Register_042c;
+
+	//0x0430
+	T_DCE_RESERVED41
+	DCE_Register_0430;
+
+	//0x0434
+	T_DCE_RESERVED42
+	DCE_Register_0434;
+
+	//0x0438
+	T_DCE_RESERVED43
+	DCE_Register_0438;
+
+	//0x043c
+	T_DCE_RESERVED44
+	DCE_Register_043c;
+
+	//0x0440
+	T_GEOMETRIC_LOOK_UP_TABLEG1
+	DCE_Register_0440;
+
+	//0x0444
+	T_GEOMETRIC_LOOK_UP_TABLEG2
+	DCE_Register_0444;
+
+	//0x0448
+	T_GEOMETRIC_LOOK_UP_TABLEG3
+	DCE_Register_0448;
+
+	//0x044c
+	T_GEOMETRIC_LOOK_UP_TABLEG4
+	DCE_Register_044c;
+
+	//0x0450
+	T_GEOMETRIC_LOOK_UP_TABLEG5
+	DCE_Register_0450;
+
+	//0x0454
+	T_GEOMETRIC_LOOK_UP_TABLEG6
+	DCE_Register_0454;
+
+	//0x0458
+	T_GEOMETRIC_LOOK_UP_TABLEG7
+	DCE_Register_0458;
+
+	//0x045c
+	T_GEOMETRIC_LOOK_UP_TABLEG8
+	DCE_Register_045c;
+
+	//0x0460
+	T_GEOMETRIC_LOOK_UP_TABLEG9
+	DCE_Register_0460;
+
+	//0x0464
+	T_GEOMETRIC_LOOK_UP_TABLEG10
+	DCE_Register_0464;
+
+	//0x0468
+	T_GEOMETRIC_LOOK_UP_TABLEG11
+	DCE_Register_0468;
+
+	//0x046c
+	T_GEOMETRIC_LOOK_UP_TABLEG12
+	DCE_Register_046c;
+
+	//0x0470
+	T_GEOMETRIC_LOOK_UP_TABLEG13
+	DCE_Register_0470;
+
+	//0x0474
+	T_GEOMETRIC_LOOK_UP_TABLEG14
+	DCE_Register_0474;
+
+	//0x0478
+	T_GEOMETRIC_LOOK_UP_TABLEG15
+	DCE_Register_0478;
+
+	//0x047c
+	T_GEOMETRIC_LOOK_UP_TABLEG16
+	DCE_Register_047c;
+
+	//0x0480
+	T_GEOMETRIC_LOOK_UP_TABLEG17
+	DCE_Register_0480;
+
+	//0x0484
+	T_GEOMETRIC_LOOK_UP_TABLEG18
+	DCE_Register_0484;
+
+	//0x0488
+	T_GEOMETRIC_LOOK_UP_TABLEG19
+	DCE_Register_0488;
+
+	//0x048c
+	T_GEOMETRIC_LOOK_UP_TABLEG20
+	DCE_Register_048c;
+
+	//0x0490
+	T_GEOMETRIC_LOOK_UP_TABLEG21
+	DCE_Register_0490;
+
+	//0x0494
+	T_GEOMETRIC_LOOK_UP_TABLEG22
+	DCE_Register_0494;
+
+	//0x0498
+	T_GEOMETRIC_LOOK_UP_TABLEG23
+	DCE_Register_0498;
+
+	//0x049c
+	T_GEOMETRIC_LOOK_UP_TABLEG24
+	DCE_Register_049c;
+
+	//0x04a0
+	T_GEOMETRIC_LOOK_UP_TABLEG25
+	DCE_Register_04a0;
+
+	//0x04a4
+	T_GEOMETRIC_LOOK_UP_TABLEG26
+	DCE_Register_04a4;
+
+	//0x04a8
+	T_GEOMETRIC_LOOK_UP_TABLEG27
+	DCE_Register_04a8;
+
+	//0x04ac
+	T_GEOMETRIC_LOOK_UP_TABLEG28
+	DCE_Register_04ac;
+
+	//0x04b0
+	T_GEOMETRIC_LOOK_UP_TABLEG29
+	DCE_Register_04b0;
+
+	//0x04b4
+	T_GEOMETRIC_LOOK_UP_TABLEG30
+	DCE_Register_04b4;
+
+	//0x04b8
+	T_GEOMETRIC_LOOK_UP_TABLEG31
+	DCE_Register_04b8;
+
+	//0x04bc
+	T_GEOMETRIC_LOOK_UP_TABLEG32
+	DCE_Register_04bc;
+
+	//0x04c0
+	T_GEOMETRIC_LOOK_UP_TABLEG33
+	DCE_Register_04c0;
+
+	//0x04c4
+	T_DCE_RESERVED45
+	DCE_Register_04c4;
+
+	//0x04c8
+	T_DCE_RESERVED46
+	DCE_Register_04c8;
+
+	//0x04cc
+	T_DCE_RESERVED47
+	DCE_Register_04cc;
+
+	//0x04d0
+	T_GEOMETRIC_LOOK_UP_TABLER1
+	DCE_Register_04d0;
+
+	//0x04d4
+	T_GEOMETRIC_LOOK_UP_TABLER2
+	DCE_Register_04d4;
+
+	//0x04d8
+	T_GEOMETRIC_LOOK_UP_TABLER3
+	DCE_Register_04d8;
+
+	//0x04dc
+	T_GEOMETRIC_LOOK_UP_TABLER4
+	DCE_Register_04dc;
+
+	//0x04e0
+	T_GEOMETRIC_LOOK_UP_TABLER5
+	DCE_Register_04e0;
+
+	//0x04e4
+	T_GEOMETRIC_LOOK_UP_TABLER6
+	DCE_Register_04e4;
+
+	//0x04e8
+	T_GEOMETRIC_LOOK_UP_TABLER7
+	DCE_Register_04e8;
+
+	//0x04ec
+	T_GEOMETRIC_LOOK_UP_TABLER8
+	DCE_Register_04ec;
+
+	//0x04f0
+	T_GEOMETRIC_LOOK_UP_TABLER9
+	DCE_Register_04f0;
+
+	//0x04f4
+	T_GEOMETRIC_LOOK_UP_TABLER10
+	DCE_Register_04f4;
+
+	//0x04f8
+	T_GEOMETRIC_LOOK_UP_TABLER11
+	DCE_Register_04f8;
+
+	//0x04fc
+	T_GEOMETRIC_LOOK_UP_TABLER12
+	DCE_Register_04fc;
+
+	//0x0500
+	T_GEOMETRIC_LOOK_UP_TABLER13
+	DCE_Register_0500;
+
+	//0x0504
+	T_GEOMETRIC_LOOK_UP_TABLER14
+	DCE_Register_0504;
+
+	//0x0508
+	T_GEOMETRIC_LOOK_UP_TABLER15
+	DCE_Register_0508;
+
+	//0x050c
+	T_GEOMETRIC_LOOK_UP_TABLER16
+	DCE_Register_050c;
+
+	//0x0510
+	T_GEOMETRIC_LOOK_UP_TABLER17
+	DCE_Register_0510;
+
+	//0x0514
+	T_GEOMETRIC_LOOK_UP_TABLER18
+	DCE_Register_0514;
+
+	//0x0518
+	T_GEOMETRIC_LOOK_UP_TABLER19
+	DCE_Register_0518;
+
+	//0x051c
+	T_GEOMETRIC_LOOK_UP_TABLER20
+	DCE_Register_051c;
+
+	//0x0520
+	T_GEOMETRIC_LOOK_UP_TABLER21
+	DCE_Register_0520;
+
+	//0x0524
+	T_GEOMETRIC_LOOK_UP_TABLER22
+	DCE_Register_0524;
+
+	//0x0528
+	T_GEOMETRIC_LOOK_UP_TABLER23
+	DCE_Register_0528;
+
+	//0x052c
+	T_GEOMETRIC_LOOK_UP_TABLER24
+	DCE_Register_052c;
+
+	//0x0530
+	T_GEOMETRIC_LOOK_UP_TABLER25
+	DCE_Register_0530;
+
+	//0x0534
+	T_GEOMETRIC_LOOK_UP_TABLER26
+	DCE_Register_0534;
+
+	//0x0538
+	T_GEOMETRIC_LOOK_UP_TABLER27
+	DCE_Register_0538;
+
+	//0x053c
+	T_GEOMETRIC_LOOK_UP_TABLER28
+	DCE_Register_053c;
+
+	//0x0540
+	T_GEOMETRIC_LOOK_UP_TABLER29
+	DCE_Register_0540;
+
+	//0x0544
+	T_GEOMETRIC_LOOK_UP_TABLER30
+	DCE_Register_0544;
+
+	//0x0548
+	T_GEOMETRIC_LOOK_UP_TABLER31
+	DCE_Register_0548;
+
+	//0x054c
+	T_GEOMETRIC_LOOK_UP_TABLER32
+	DCE_Register_054c;
+
+	//0x0550
+	T_GEOMETRIC_LOOK_UP_TABLER33
+	DCE_Register_0550;
+
+	//0x0554
+	T_DCE_RESERVED48
+	DCE_Register_0554;
+
+	//0x0558
+	T_DCE_RESERVED49
+	DCE_Register_0558;
+
+	//0x055c
+	T_DCE_RESERVED50
+	DCE_Register_055c;
+
+	//0x0560
+	T_GEOMETRIC_LOOK_UP_TABLEB1
+	DCE_Register_0560;
+
+	//0x0564
+	T_GEOMETRIC_LOOK_UP_TABLEB2
+	DCE_Register_0564;
+
+	//0x0568
+	T_GEOMETRIC_LOOK_UP_TABLEB3
+	DCE_Register_0568;
+
+	//0x056c
+	T_GEOMETRIC_LOOK_UP_TABLEB4
+	DCE_Register_056c;
+
+	//0x0570
+	T_GEOMETRIC_LOOK_UP_TABLEB5
+	DCE_Register_0570;
+
+	//0x0574
+	T_GEOMETRIC_LOOK_UP_TABLEB6
+	DCE_Register_0574;
+
+	//0x0578
+	T_GEOMETRIC_LOOK_UP_TABLEB7
+	DCE_Register_0578;
+
+	//0x057c
+	T_GEOMETRIC_LOOK_UP_TABLEB8
+	DCE_Register_057c;
+
+	//0x0580
+	T_GEOMETRIC_LOOK_UP_TABLEB9
+	DCE_Register_0580;
+
+	//0x0584
+	T_GEOMETRIC_LOOK_UP_TABLEB10
+	DCE_Register_0584;
+
+	//0x0588
+	T_GEOMETRIC_LOOK_UP_TABLEB11
+	DCE_Register_0588;
+
+	//0x058c
+	T_GEOMETRIC_LOOK_UP_TABLEB12
+	DCE_Register_058c;
+
+	//0x0590
+	T_GEOMETRIC_LOOK_UP_TABLEB13
+	DCE_Register_0590;
+
+	//0x0594
+	T_GEOMETRIC_LOOK_UP_TABLEB14
+	DCE_Register_0594;
+
+	//0x0598
+	T_GEOMETRIC_LOOK_UP_TABLEB15
+	DCE_Register_0598;
+
+	//0x059c
+	T_GEOMETRIC_LOOK_UP_TABLEB16
+	DCE_Register_059c;
+
+	//0x05a0
+	T_GEOMETRIC_LOOK_UP_TABLEB17
+	DCE_Register_05a0;
+
+	//0x05a4
+	T_GEOMETRIC_LOOK_UP_TABLEB18
+	DCE_Register_05a4;
+
+	//0x05a8
+	T_GEOMETRIC_LOOK_UP_TABLEB19
+	DCE_Register_05a8;
+
+	//0x05ac
+	T_GEOMETRIC_LOOK_UP_TABLEB20
+	DCE_Register_05ac;
+
+	//0x05b0
+	T_GEOMETRIC_LOOK_UP_TABLEB21
+	DCE_Register_05b0;
+
+	//0x05b4
+	T_GEOMETRIC_LOOK_UP_TABLEB22
+	DCE_Register_05b4;
+
+	//0x05b8
+	T_GEOMETRIC_LOOK_UP_TABLEB23
+	DCE_Register_05b8;
+
+	//0x05bc
+	T_GEOMETRIC_LOOK_UP_TABLEB24
+	DCE_Register_05bc;
+
+	//0x05c0
+	T_GEOMETRIC_LOOK_UP_TABLEB25
+	DCE_Register_05c0;
+
+	//0x05c4
+	T_GEOMETRIC_LOOK_UP_TABLEB26
+	DCE_Register_05c4;
+
+	//0x05c8
+	T_GEOMETRIC_LOOK_UP_TABLEB27
+	DCE_Register_05c8;
+
+	//0x05cc
+	T_GEOMETRIC_LOOK_UP_TABLEB28
+	DCE_Register_05cc;
+
+	//0x05d0
+	T_GEOMETRIC_LOOK_UP_TABLEB29
+	DCE_Register_05d0;
+
+	//0x05d4
+	T_GEOMETRIC_LOOK_UP_TABLEB30
+	DCE_Register_05d4;
+
+	//0x05d8
+	T_GEOMETRIC_LOOK_UP_TABLEB31
+	DCE_Register_05d8;
+
+	//0x05dc
+	T_GEOMETRIC_LOOK_UP_TABLEB32
+	DCE_Register_05dc;
+
+	//0x05e0
+	T_GEOMETRIC_LOOK_UP_TABLEB33
+	DCE_Register_05e0;
+
+	//0x05e4
+	T_DCE_RESERVED51
+	DCE_Register_05e4;
+
+	//0x05e8
+	T_DCE_RESERVED52
+	DCE_Register_05e8;
+
+	//0x05ec
+	T_DCE_RESERVED53
+	DCE_Register_05ec;
+
+	//0x05f0
+	T_DMA_LUT2D_IN_ADDRESS
+	DCE_Register_05f0;
+
+	//0x05f4
+	T_LUT2D_REGISTER1
+	DCE_Register_05f4;
+
+	//0x05f8
+	T_LUT2D_REGISTER2
+	DCE_Register_05f8;
+
+	//0x05fc
+	T_LUT2D_REGISTER3
+	DCE_Register_05fc;
+
+	//0x0600
+	T_LUT2D_REGISTER4
+	DCE_Register_0600;
+
+	//0x0604
+	T_DCE_RESERVED54
+	DCE_Register_0604;
+
+	//0x0608
+	T_LINKED_LIST_REGISTER_1
+	DCE_Register_0608;
+
+	//0x060c
+	T_LINKED_LIST_REGISTER_2
+	DCE_Register_060c;
+
+	//0x0610
+	T_VERSION_REGISTER
+	DCE_Register_0610;
+
+	//0x0614
+	T_DCE_CHECKSUM_REGISTER_0
+	DCE_Register_0614;
+
+	//0x0618
+	T_DCE_CHECKSUM_REGISTER_1
+	DCE_Register_0618;
+
+	//0x061c
+	T_DCE_CHECKSUM_REGISTER_2
+	DCE_Register_061c;
+
+	//0x0620
+	T_DCE_CHECKSUM_REGISTER_3
+	DCE_Register_0620;
+
+	//0x0624
+	T_DCE_CHECKSUM_REGISTER_4
+	DCE_Register_0624;
+
+	//0x0628
+	T_DCE_CHECKSUM_REGISTER_5
+	DCE_Register_0628;
+
+} NT98528_DCE_REG_STRUCT;
+
+#endif

@@ -1,0 +1,161 @@
+{
+    "event callback": "UIFlowSetupDateTimeEventCallback",
+    "name": "UIFlowSetupDateTime",
+    "screen color": "0x551f57",
+    "widgets": [
+        {
+            "button's ctrl": [
+                "4@LV_BTNMATRIX_CTRL_DISABLED@",
+                "7@LV_BTNMATRIX_CTRL_DISABLED@",
+                "10@LV_BTNMATRIX_CTRL_DISABLED@",
+                "11@LV_BTNMATRIX_CTRL_DISABLED@",
+                "12@LV_BTNMATRIX_CTRL_DISABLED@",
+                "15@LV_BTNMATRIX_CTRL_DISABLED@",
+                "18@LV_BTNMATRIX_CTRL_DISABLED@",
+                "19@LV_BTNMATRIX_CTRL_DISABLED@",
+                "20@LV_BTNMATRIX_CTRL_DISABLED@"
+            ],
+            "button's text": "1,9,8,6,/,0,7,/,2,1,\n, , , ,2,3,:,5,9, , , ,",
+            "button's width": [
+            ],
+            "class": "lv_btnmatrix",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "focus": 0,
+            "geometry": {
+                "height": 152,
+                "width": 268,
+                "x": 24,
+                "y": 43
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "button_matrix_datetime",
+            "one check": true,
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x0262b6",
+                        "bg_opa": 0
+                    },
+                    "Border": {
+                        "border_color": "0xdddddd",
+                        "border_width": 0
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Padding": {
+                        "pad_bottom": 3,
+                        "pad_inner": 0,
+                        "pad_left": 3,
+                        "pad_right": 3,
+                        "pad_top": 3
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x303030"
+                    },
+                    "Border": {
+                        "border_color": "0x0000ff",
+                        "border_side": 1,
+                        "border_width": 0
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Text": {
+                        "text_color": "0xb5b5b5",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 1,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_width": 0
+                    },
+                    "Text": {
+                        "text_font": "NotoSansCJKsc-Black 16 1bpp"
+                    },
+                    "part": 1,
+                    "state": 1
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x575757"
+                    },
+                    "Text": {
+                        "text_color": "0xf2f2f2",
+                        "text_font": "NotoSansCJKsc-Black 16 1bpp"
+                    },
+                    "part": 1,
+                    "state": 2
+                },
+                {
+                    "Text": {
+                        "text_font": "NotoSansCJKsc-Black 16 1bpp"
+                    },
+                    "part": 1,
+                    "state": 3
+                },
+                {
+                    "Text": {
+                        "text_font": "NotoSansCJKsc-Black 16 1bpp"
+                    },
+                    "part": 1,
+                    "state": 4
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x565656"
+                    },
+                    "Text": {
+                        "text_color": "0xf2f2f2",
+                        "text_font": "NotoSansCJKsc-Black 16 1bpp"
+                    },
+                    "part": 1,
+                    "state": 5
+                },
+                {
+                    "Text": {
+                        "text_font": "NotoSansCJKsc-Black 16 1bpp"
+                    },
+                    "part": 1,
+                    "state": 6
+                }
+            ],
+            "text align": "Center",
+            "text recolor": false,
+            "widget": "Button Matrix"
+        }
+    ]
+}

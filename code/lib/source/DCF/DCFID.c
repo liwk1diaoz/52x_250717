@@ -1,0 +1,34 @@
+#include "DCFID.h"
+//#include "SysKer.h"
+#include "DCF.h"
+#include "kwrap/semaphore.h"
+#include "kwrap/flag.h"
+
+//extern void DCF_RegCmdTab(void);
+ID SEMID_DCF_COMM = 0;
+ID SEMID_DCF[DCF_HANDLE_NUM] = {0};
+ID SEMID_DCFNEXTID[DCF_HANDLE_NUM] = {0};
+ID FLG_ID_DCF[DCF_HANDLE_NUM] = {0};
+
+void DCF_InstallID(void)
+{
+	OS_CONFIG_SEMPHORE(SEMID_DCF_COMM, 0, 1, 1);
+	OS_CONFIG_SEMPHORE(SEMID_DCF[0], 0, 1, 1);
+	OS_CONFIG_SEMPHORE(SEMID_DCFNEXTID[0], 0, 1, 1);
+	OS_CONFIG_FLAG(FLG_ID_DCF[0]);
+	OS_CONFIG_SEMPHORE(SEMID_DCF[1], 0, 1, 1);
+	OS_CONFIG_SEMPHORE(SEMID_DCFNEXTID[1], 0, 1, 1);
+	OS_CONFIG_FLAG(FLG_ID_DCF[1]);
+	//DCF_RegCmdTab();
+}
+
+void DCF_UnInstallID(void)
+{
+	SEM_DESTROY(SEMID_DCF_COMM);
+	SEM_DESTROY(SEMID_DCF[0]);
+	SEM_DESTROY(SEMID_DCFNEXTID[0]);
+	rel_flg(FLG_ID_DCF[0]);
+	SEM_DESTROY(SEMID_DCF[1]);
+	SEM_DESTROY(SEMID_DCFNEXTID[1]);
+	rel_flg(FLG_ID_DCF[1]);
+}

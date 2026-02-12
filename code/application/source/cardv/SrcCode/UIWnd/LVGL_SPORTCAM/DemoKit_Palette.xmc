@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UI_DESIGNER_PROJECT>
+	<!--Making by : UI Designer Studio-->
+	<ICON_DB>
+		<NAME>DemoKit_Palette</NAME>
+		<COUNT>256</COUNT>
+		<AUTHOR>Anonymous</AUTHOR>
+		<CREATE>09:55:19, Apr 21 2009</CREATE>
+		<MODIFY>15:18:20, Mar 22 2013</MODIFY>
+		<LIST>
+			<COLOR>
+				<!--ID = 00-->
+				<NAME/>
+				<DATA>R:55 G:1F B:57</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 01-->
+				<NAME/>
+				<DATA>R:00 G:00 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 02-->
+				<NAME/>
+				<DATA>R:FF G:FF B:FF</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 03-->
+				<NAME/>
+				<DATA>R:FF G:00 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 04-->
+				<NAME/>
+				<DATA>R:00 G:FF B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 05-->
+				<NAME/>
+				<DATA>R:00 G:FF B:FF</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 06-->
+				<NAME/>
+				<DATA>R:FF G:FF B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 07-->
+				<NAME/>
+				<DATA>R:80 G:80 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 08-->
+				<NAME/>
+				<DATA>R:80 G:80 B:80</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 09-->
+				<NAME/>
+				<DATA>R:C0 G:C0 B:C0</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 0A-->
+				<NAME/>
+				<DATA>R:80 G:00 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 0B-->
+				<NAME/>
+				<DATA>R:80 G:00 B:80</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 0C-->
+				<NAME/>
+				<DATA>R:FF G:00 B:FF</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 0D-->
+				<NAME/>
+				<DATA>R:00 G:80 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 0E-->
+				<NAME/>
+				<DATA>R:00 G:00 B:FF</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 0F-->
+				<NAME/>
+				<DATA>R:00 G:00 B:80</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 10-->
+				<NAME/>
+				<DATA>R:00 G:80 B:80</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 11-->
+				<NAME/>
+				<DATA>R:91 G:73 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 12-->
+				<NAME/>
+				<DATA>R:57 G:59 B:59</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 13-->
+				<NAME/>
+				<DATA>R:33 G:CC B:99</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 14-->
+				<NAME/>
+				<DATA>R:B7 G:96 B:2C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 15-->
+				<NAME/>
+				<DATA>R:C8 G:A6 B:3C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 16-->
+				<NAME/>
+				<DATA>R:AC G:AC B:AC</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 17-->
+				<NAME/>
+				<DATA>R:DE G:BA B:50</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 18-->
+				<NAME/>
+				<DATA>R:E9 G:C3 B:58</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 19-->
+				<NAME/>
+				<DATA>R:F4 G:CE B:61</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 1A-->
+				<NAME/>
+				<DATA>R:FF G:E5 B:77</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 1B-->
+				<NAME/>
+				<DATA>R:FF G:FA B:8B</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 1C-->
+				<NAME/>
+				<DATA>R:EC G:4E B:C5</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 1D-->
+				<NAME/>
+				<DATA>R:E2 G:74 B:E2</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 1E-->
+				<NAME/>
+				<DATA>R:E0 G:B0 B:E2</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 1F-->
+				<NAME/>
+				<DATA>R:ED G:9F B:95</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 20-->
+				<NAME/>
+				<DATA>R:00 G:80 B:6E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 21-->
+				<NAME/>
+				<DATA>R:00 G:82 B:6F</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 22-->
+				<NAME/>
+				<DATA>R:00 G:84 B:71</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 23-->
+				<NAME/>
+				<DATA>R:00 G:86 B:72</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 24-->
+				<NAME/>
+				<DATA>R:00 G:88 B:74</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 25-->
+				<NAME/>
+				<DATA>R:00 G:8A B:75</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 26-->
+				<NAME/>
+				<DATA>R:00 G:8C B:77</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 27-->
+				<NAME/>
+				<DATA>R:00 G:8E B:78</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 28-->
+				<NAME/>
+				<DATA>R:00 G:90 B:7A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 29-->
+				<NAME/>
+				<DATA>R:00 G:92 B:7B</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 2A-->
+				<NAME/>
+				<DATA>R:00 G:94 B:7D</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 2B-->
+				<NAME/>
+				<DATA>R:00 G:96 B:7E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 2C-->
+				<NAME/>
+				<DATA>R:00 G:98 B:80</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 2D-->
+				<NAME/>
+				<DATA>R:00 G:9A B:81</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 2E-->
+				<NAME/>
+				<DATA>R:00 G:9C B:83</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 2F-->
+				<NAME/>
+				<DATA>R:00 G:9E B:84</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 30-->
+				<NAME/>
+				<DATA>R:00 G:A0 B:86</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 31-->
+				<NAME/>
+				<DATA>R:00 G:A2 B:87</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 32-->
+				<NAME/>
+				<DATA>R:00 G:A4 B:89</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 33-->
+				<NAME/>
+				<DATA>R:00 G:A6 B:8A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 34-->
+				<NAME/>
+				<DATA>R:00 G:A8 B:8C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 35-->
+				<NAME/>
+				<DATA>R:00 G:AA B:8D</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 36-->
+				<NAME/>
+				<DATA>R:00 G:AC B:8F</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 37-->
+				<NAME/>
+				<DATA>R:00 G:AE B:90</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 38-->
+				<NAME/>
+				<DATA>R:00 G:B0 B:92</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 39-->
+				<NAME/>
+				<DATA>R:00 G:B2 B:93</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 3A-->
+				<NAME/>
+				<DATA>R:00 G:B4 B:95</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 3B-->
+				<NAME/>
+				<DATA>R:00 G:B6 B:96</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 3C-->
+				<NAME/>
+				<DATA>R:00 G:B8 B:98</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 3D-->
+				<NAME/>
+				<DATA>R:00 G:BA B:99</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 3E-->
+				<NAME/>
+				<DATA>R:00 G:BC B:9B</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 3F-->
+				<NAME/>
+				<DATA>R:00 G:BE B:9C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 40-->
+				<NAME/>
+				<DATA>R:00 G:C0 B:9E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 41-->
+				<NAME/>
+				<DATA>R:00 G:C2 B:9F</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 42-->
+				<NAME/>
+				<DATA>R:00 G:C4 B:A1</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 43-->
+				<NAME/>
+				<DATA>R:00 G:C6 B:A2</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 44-->
+				<NAME/>
+				<DATA>R:00 G:C8 B:A4</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 45-->
+				<NAME/>
+				<DATA>R:00 G:CA B:A5</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 46-->
+				<NAME/>
+				<DATA>R:00 G:CC B:A7</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 47-->
+				<NAME/>
+				<DATA>R:00 G:CE B:A8</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 48-->
+				<NAME/>
+				<DATA>R:00 G:D0 B:AA</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 49-->
+				<NAME/>
+				<DATA>R:00 G:D2 B:AB</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 4A-->
+				<NAME/>
+				<DATA>R:00 G:D4 B:AD</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 4B-->
+				<NAME/>
+				<DATA>R:00 G:D6 B:AE</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 4C-->
+				<NAME/>
+				<DATA>R:00 G:D8 B:B0</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 4D-->
+				<NAME/>
+				<DATA>R:00 G:DA B:B1</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 4E-->
+				<NAME/>
+				<DATA>R:00 G:DC B:B3</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 4F-->
+				<NAME/>
+				<DATA>R:00 G:DE B:B4</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 50-->
+				<NAME/>
+				<DATA>R:00 G:E0 B:B6</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 51-->
+				<NAME/>
+				<DATA>R:00 G:E2 B:B7</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 52-->
+				<NAME/>
+				<DATA>R:00 G:E4 B:B9</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 53-->
+				<NAME/>
+				<DATA>R:00 G:E6 B:BA</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 54-->
+				<NAME/>
+				<DATA>R:00 G:E8 B:BC</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 55-->
+				<NAME/>
+				<DATA>R:00 G:EA B:BD</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 56-->
+				<NAME/>
+				<DATA>R:00 G:EC B:BF</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 57-->
+				<NAME/>
+				<DATA>R:00 G:EE B:C0</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 58-->
+				<NAME/>
+				<DATA>R:00 G:F0 B:C2</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 59-->
+				<NAME/>
+				<DATA>R:00 G:F2 B:C3</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 5A-->
+				<NAME/>
+				<DATA>R:00 G:F4 B:C5</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 5B-->
+				<NAME/>
+				<DATA>R:00 G:F6 B:C6</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 5C-->
+				<NAME/>
+				<DATA>R:00 G:F8 B:C8</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 5D-->
+				<NAME/>
+				<DATA>R:00 G:FA B:C9</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 5E-->
+				<NAME/>
+				<DATA>R:00 G:FC B:CB</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 5F-->
+				<NAME/>
+				<DATA>R:00 G:FE B:CC</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 60-->
+				<NAME/>
+				<DATA>R:FF G:29 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 61-->
+				<NAME/>
+				<DATA>R:FF G:2A B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 62-->
+				<NAME/>
+				<DATA>R:FF G:2C B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 63-->
+				<NAME/>
+				<DATA>R:FF G:2E B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 64-->
+				<NAME/>
+				<DATA>R:FF G:30 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 65-->
+				<NAME/>
+				<DATA>R:FF G:33 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 66-->
+				<NAME/>
+				<DATA>R:FF G:34 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 67-->
+				<NAME/>
+				<DATA>R:FF G:35 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 68-->
+				<NAME/>
+				<DATA>R:FF G:38 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 69-->
+				<NAME/>
+				<DATA>R:FF G:3A B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 6A-->
+				<NAME/>
+				<DATA>R:FF G:3C B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 6B-->
+				<NAME/>
+				<DATA>R:FF G:3E B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 6C-->
+				<NAME/>
+				<DATA>R:FF G:40 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 6D-->
+				<NAME/>
+				<DATA>R:FF G:42 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 6E-->
+				<NAME/>
+				<DATA>R:FF G:45 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 6F-->
+				<NAME/>
+				<DATA>R:FF G:47 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 70-->
+				<NAME/>
+				<DATA>R:FF G:49 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 71-->
+				<NAME/>
+				<DATA>R:FF G:4B B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 72-->
+				<NAME/>
+				<DATA>R:FF G:4C B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 73-->
+				<NAME/>
+				<DATA>R:FF G:4E B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 74-->
+				<NAME/>
+				<DATA>R:FF G:50 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 75-->
+				<NAME/>
+				<DATA>R:FF G:52 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 76-->
+				<NAME/>
+				<DATA>R:FF G:55 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 77-->
+				<NAME/>
+				<DATA>R:FF G:57 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 78-->
+				<NAME/>
+				<DATA>R:FF G:58 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 79-->
+				<NAME/>
+				<DATA>R:FF G:5A B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 7A-->
+				<NAME/>
+				<DATA>R:FF G:5C B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 7B-->
+				<NAME/>
+				<DATA>R:FF G:5F B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 7C-->
+				<NAME/>
+				<DATA>R:FF G:61 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 7D-->
+				<NAME/>
+				<DATA>R:FF G:64 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 7E-->
+				<NAME/>
+				<DATA>R:FF G:67 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 7F-->
+				<NAME/>
+				<DATA>R:FF G:69 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 80-->
+				<NAME/>
+				<DATA>R:50 G:50 B:50</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 81-->
+				<NAME/>
+				<DATA>R:52 G:52 B:52</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 82-->
+				<NAME/>
+				<DATA>R:54 G:54 B:54</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 83-->
+				<NAME/>
+				<DATA>R:56 G:56 B:56</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 84-->
+				<NAME/>
+				<DATA>R:58 G:58 B:58</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 85-->
+				<NAME/>
+				<DATA>R:5A G:5A B:5A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 86-->
+				<NAME/>
+				<DATA>R:5C G:5C B:5C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 87-->
+				<NAME/>
+				<DATA>R:5E G:5E B:5E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 88-->
+				<NAME/>
+				<DATA>R:60 G:60 B:60</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 89-->
+				<NAME/>
+				<DATA>R:62 G:62 B:62</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 8A-->
+				<NAME/>
+				<DATA>R:64 G:64 B:64</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 8B-->
+				<NAME/>
+				<DATA>R:66 G:66 B:66</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 8C-->
+				<NAME/>
+				<DATA>R:68 G:68 B:68</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 8D-->
+				<NAME/>
+				<DATA>R:6A G:6A B:6A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 8E-->
+				<NAME/>
+				<DATA>R:6C G:6C B:6C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 8F-->
+				<NAME/>
+				<DATA>R:6E G:6E B:6E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 90-->
+				<NAME/>
+				<DATA>R:70 G:70 B:70</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 91-->
+				<NAME/>
+				<DATA>R:72 G:72 B:72</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 92-->
+				<NAME/>
+				<DATA>R:74 G:74 B:74</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 93-->
+				<NAME/>
+				<DATA>R:76 G:76 B:76</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 94-->
+				<NAME/>
+				<DATA>R:78 G:78 B:78</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 95-->
+				<NAME/>
+				<DATA>R:7A G:7A B:7A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 96-->
+				<NAME/>
+				<DATA>R:7C G:7C B:7C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 97-->
+				<NAME/>
+				<DATA>R:7E G:7E B:7E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 98-->
+				<NAME/>
+				<DATA>R:80 G:80 B:80</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 99-->
+				<NAME/>
+				<DATA>R:82 G:82 B:82</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 9A-->
+				<NAME/>
+				<DATA>R:84 G:84 B:84</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 9B-->
+				<NAME/>
+				<DATA>R:86 G:86 B:86</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 9C-->
+				<NAME/>
+				<DATA>R:88 G:88 B:88</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 9D-->
+				<NAME/>
+				<DATA>R:8A G:8A B:8A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 9E-->
+				<NAME/>
+				<DATA>R:8C G:8C B:8C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = 9F-->
+				<NAME/>
+				<DATA>R:8E G:8E B:8E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A0-->
+				<NAME/>
+				<DATA>R:34 G:24 B:23</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A1-->
+				<NAME/>
+				<DATA>R:4B G:23 B:23</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A2-->
+				<NAME/>
+				<DATA>R:68 G:24 B:24</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A3-->
+				<NAME/>
+				<DATA>R:86 G:24 B:24</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A4-->
+				<NAME/>
+				<DATA>R:A4 G:25 B:25</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A5-->
+				<NAME/>
+				<DATA>R:C1 G:25 B:25</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A6-->
+				<NAME/>
+				<DATA>R:D8 G:25 B:25</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A7-->
+				<NAME/>
+				<DATA>R:E9 G:25 B:25</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A8-->
+				<NAME/>
+				<DATA>R:EA G:36 B:36</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = A9-->
+				<NAME/>
+				<DATA>R:EB G:4F B:4F</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = AA-->
+				<NAME/>
+				<DATA>R:EB G:4F B:4F</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = AB-->
+				<NAME/>
+				<DATA>R:ED G:8B B:8B</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = AC-->
+				<NAME/>
+				<DATA>R:EE G:AA B:AB</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = AD-->
+				<NAME/>
+				<DATA>R:EF G:C8 B:C7</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = AE-->
+				<NAME/>
+				<DATA>R:F0 G:C8 B:C8</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = AF-->
+				<NAME/>
+				<DATA>R:F0 G:E0 B:E0</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B0-->
+				<NAME/>
+				<DATA>R:22 G:34 B:2D</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B1-->
+				<NAME/>
+				<DATA>R:21 G:4C B:3C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B2-->
+				<NAME/>
+				<DATA>R:20 G:69 B:4D</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B3-->
+				<NAME/>
+				<DATA>R:1F G:88 B:5F</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B4-->
+				<NAME/>
+				<DATA>R:1D G:A6 B:71</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B5-->
+				<NAME/>
+				<DATA>R:1C G:C3 B:83</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B6-->
+				<NAME/>
+				<DATA>R:1B G:DB B:91</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B7-->
+				<NAME/>
+				<DATA>R:1A G:EC B:9B</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B8-->
+				<NAME/>
+				<DATA>R:31 G:EE B:A5</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = B9-->
+				<NAME/>
+				<DATA>R:51 G:F1 B:B3</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = BA-->
+				<NAME/>
+				<DATA>R:78 G:F4 B:C4</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = BB-->
+				<NAME/>
+				<DATA>R:A1 G:F7 B:D6</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = BC-->
+				<NAME/>
+				<DATA>R:C8 G:FA B:E7</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = BD-->
+				<NAME/>
+				<DATA>R:C7 G:FB B:E7</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = BE-->
+				<NAME/>
+				<DATA>R:E8 G:FD B:F5</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = BF-->
+				<NAME/>
+				<DATA>R:E8 G:FD B:F6</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C0-->
+				<NAME/>
+				<DATA>R:EE G:50 B:2B</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C1-->
+				<NAME/>
+				<DATA>R:B9 G:56 B:37</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C2-->
+				<NAME/>
+				<DATA>R:D6 G:81 B:31</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C3-->
+				<NAME/>
+				<DATA>R:A2 G:5A B:0D</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C4-->
+				<NAME/>
+				<DATA>R:FF G:A8 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C5-->
+				<NAME/>
+				<DATA>R:FF G:B4 B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C6-->
+				<NAME/>
+				<DATA>R:F4 G:D3 B:2E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C7-->
+				<NAME/>
+				<DATA>R:42 G:AF B:29</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C8-->
+				<NAME/>
+				<DATA>R:24 G:FD B:0D</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = C9-->
+				<NAME/>
+				<DATA>R:69 G:BD B:8B</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = CA-->
+				<NAME/>
+				<DATA>R:00 G:AC B:5A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = CB-->
+				<NAME/>
+				<DATA>R:03 G:8E B:77</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = CC-->
+				<NAME/>
+				<DATA>R:02 G:62 B:B6</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = CD-->
+				<NAME/>
+				<DATA>R:1F G:48 B:9A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = CE-->
+				<NAME/>
+				<DATA>R:F3 G:60 B:6A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = CF-->
+				<NAME/>
+				<DATA>R:FF G:3F B:00</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D0-->
+				<NAME/>
+				<DATA>R:23 G:23 B:23</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D1-->
+				<NAME/>
+				<DATA>R:2A G:2A B:2A</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D2-->
+				<NAME/>
+				<DATA>R:30 G:30 B:30</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D3-->
+				<NAME/>
+				<DATA>R:3C G:3C B:3C</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D4-->
+				<NAME/>
+				<DATA>R:48 G:48 B:48</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D5-->
+				<NAME/>
+				<DATA>R:57 G:57 B:57</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D6-->
+				<NAME/>
+				<DATA>R:66 G:66 B:66</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D7-->
+				<NAME/>
+				<DATA>R:76 G:76 B:76</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D8-->
+				<NAME/>
+				<DATA>R:85 G:85 B:85</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = D9-->
+				<NAME/>
+				<DATA>R:91 G:91 B:91</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = DA-->
+				<NAME/>
+				<DATA>R:9F G:9F B:9F</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = DB-->
+				<NAME/>
+				<DATA>R:AA G:AA B:AA</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = DC-->
+				<NAME/>
+				<DATA>R:B5 G:B5 B:B5</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = DD-->
+				<NAME/>
+				<DATA>R:BB G:BB B:BB</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = DE-->
+				<NAME/>
+				<DATA>R:BC G:BC B:BC</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = DF-->
+				<NAME/>
+				<DATA>R:C1 G:C1 B:C1</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E0-->
+				<NAME/>
+				<DATA>R:C2 G:C2 B:C2</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E1-->
+				<NAME/>
+				<DATA>R:C6 G:C6 B:C6</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E2-->
+				<NAME/>
+				<DATA>R:CA G:CA B:CA</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E3-->
+				<NAME/>
+				<DATA>R:CB G:CB B:CB</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E4-->
+				<NAME/>
+				<DATA>R:D1 G:D1 B:D1</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E5-->
+				<NAME/>
+				<DATA>R:D3 G:D3 B:D3</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E6-->
+				<NAME/>
+				<DATA>R:D5 G:D5 B:D5</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E7-->
+				<NAME/>
+				<DATA>R:D9 G:D9 B:D9</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E8-->
+				<NAME/>
+				<DATA>R:DC G:DC B:DC</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = E9-->
+				<NAME/>
+				<DATA>R:DD G:DD B:DD</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = EA-->
+				<NAME/>
+				<DATA>R:E0 G:E0 B:E0</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = EB-->
+				<NAME/>
+				<DATA>R:E1 G:E1 B:E1</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = EC-->
+				<NAME/>
+				<DATA>R:E3 G:E3 B:E3</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = ED-->
+				<NAME/>
+				<DATA>R:E5 G:E5 B:E5</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = EE-->
+				<NAME/>
+				<DATA>R:E7 G:E7 B:E7</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = EF-->
+				<NAME/>
+				<DATA>R:E9 G:E9 B:E9</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F0-->
+				<NAME/>
+				<DATA>R:EA G:EA B:EA</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F1-->
+				<NAME/>
+				<DATA>R:ED G:ED B:ED</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F2-->
+				<NAME/>
+				<DATA>R:F0 G:F0 B:F0</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F3-->
+				<NAME/>
+				<DATA>R:F2 G:F2 B:F2</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F4-->
+				<NAME/>
+				<DATA>R:F4 G:F4 B:F4</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F5-->
+				<NAME/>
+				<DATA>R:F6 G:F6 B:F6</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F6-->
+				<NAME/>
+				<DATA>R:F8 G:F8 B:F8</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F7-->
+				<NAME/>
+				<DATA>R:F9 G:F9 B:F9</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F8-->
+				<NAME/>
+				<DATA>R:FD G:FD B:FD</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = F9-->
+				<NAME/>
+				<DATA>R:5E G:5E B:5E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = FA-->
+				<NAME/>
+				<DATA>R:66 G:66 B:66</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = FB-->
+				<NAME/>
+				<DATA>R:6E G:6E B:6E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = FC-->
+				<NAME/>
+				<DATA>R:76 G:76 B:76</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = FD-->
+				<NAME/>
+				<DATA>R:7E G:7E B:7E</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = FE-->
+				<NAME/>
+				<DATA>R:86 G:86 B:86</DATA>
+			</COLOR>
+			<COLOR>
+				<!--ID = FF-->
+				<NAME/>
+				<DATA>R:8E G:8E B:8E</DATA>
+			</COLOR>
+		</LIST>
+	</ICON_DB> 
+</UI_DESIGNER_PROJECT>

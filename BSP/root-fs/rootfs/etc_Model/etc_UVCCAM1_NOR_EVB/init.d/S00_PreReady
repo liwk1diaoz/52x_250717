@@ -1,0 +1,14 @@
+device_node_create()
+{
+	if [ ! -e /dev/$1 ]; then mknod /dev/$1 c `cat /sys/class/$1/$1/dev | sed "s/:/\ /g"`; fi
+}
+
+mkdir /var/run/lock
+
+mkdir /dev/pts
+mount -t devpts devpts /dev/pts
+
+KERVER=`cat /proc/version | awk -F'version ' '{print $2}' | awk -F' ' '{print $1}'`
+insmod /lib/modules/$KERVER/vos/kwrap/kwrap.ko
+insmod /lib/modules/$KERVER/hdal/comm/nvtmem/nvtmem.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_builtin/kdrv_builtin.ko &

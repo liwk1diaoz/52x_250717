@@ -1,0 +1,14 @@
+[ -f /etc/sysctl.conf ] && sysctl -p >&-
+#modprobe drvdump
+# coredump setting
+#echo 1 > /proc/sys/kernel/core_uses_pid
+#ulimit -c unlimited
+#echo "/var/log/core-%e-%p-%t" > /proc/sys/kernel/core_pattern
+
+#cardv &
+
+#echo 7  4  1 7 > /proc/sys/kernel/printk
+
+# cat /proc/{cardv_pid}/maps for debug purpose
+#sleep 0.2
+#cat /proc/$(ps | grep 'cardv' | awk 'NR==1{print $1}')/maps

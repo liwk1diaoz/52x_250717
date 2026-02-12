@@ -1,0 +1,40 @@
+
+CFLAGS_NORM  = -O2
+CFLAGS += -DGLIB -Wall -I. $(CFLAGS_NORM)
+CFLAGSDEPEND = -MM $(CFLAGS)                    # for make depend
+
+toolprefix = ${CROSS_COMPILE}
+
+CC = $(toolprefix)gcc
+AR = $(toolprefix)ar
+RANLIB = $(toolprefix)ranlib
+MAKEFILENAME = Makefile
+
+SPCLIB = librtsp.a
+INC =librtsp.h
+SPC_OBJS =  rtp-h264.o rtp-h265.o rtp-mp4.o rtp-jpeg.o rtp-mpa.o rtp-amr.o rtp-rawaudio.o rtp-g711.o rtp-g726.o rtp-aac.o \
+			tcp.o rtp.o rtsp.o http.o live.o session.o spook.o rtspman.o http-auth.o rtsp-md5.o \
+			stream.o event.o pmsg.o priv.o log.o gm_memory.o sdp_param_encode.o
+SPC_PROGS = rtp-h264.c rtp-h265.c rtp-mp4.c rtp-jpeg.c rtp-mpa.c rtp-aac.c rtp-amr.c rtp-rawaudio.c rtp-g711.c rtp-g726.c \
+			tcp.c rtp.c rtsp.c http.c live.c session.c spook.c rtspman.c http-auth.c rtsp-md5.c \
+			stream.c event.c pmsg.c priv.c log.c gm_memory.c sdp_param_encode.c
+
+copy = if [ ! -z "$(1)" -a "$(1)" != " " ]; then cp -avf $(1) $(2); fi
+
+spclib: $(SPC_OBJS)
+	$(AR) rc $(SPCLIB) $(SPC_OBJS)
+	$(RANLIB) $(SPCLIB)
+	cp $(SPCLIB) ../ 
+	@$(call copy, $(INC), $(INCLUDE_DIR))
+
+dep: $(SPC_PROGS)
+	$(CC) $(CFLAGSDEPEND) $^ > $@
+
+-include dep
+
+clean:
+	rm -f *.o core librtsp.a
+
+distclean: clean
+	rm -f dep
+

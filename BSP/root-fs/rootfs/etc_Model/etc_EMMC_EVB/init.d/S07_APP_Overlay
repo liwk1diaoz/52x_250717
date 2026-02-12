@@ -1,0 +1,12 @@
+#!/bin/sh
+num=0
+num=`if [ -f /proc/mtd ]; then cat /proc/mtd | grep \"app\" | awk -F' ' '{print $1}' | tr -d 'mtd' | tr -d ':'; fi`;
+if [ ! -z "$num" ]; then
+	echo "mount app partition mtdblock$num"
+	mount -t jffs2 /dev/mtdblock$num /mnt/app
+else
+	if [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_EXT4" ]; then
+		mount -t vfat /dev/mmcblk2p2 /mnt/cache
+	fi
+	mount -t ext4 /dev/mmcblk2p3 /mnt/app
+fi

@@ -1,0 +1,30 @@
+/ {
+	isp {
+		sensor@0 {
+			ae_path                 = "/isp/ae/imx415_ae_0";
+			awb_path                = "/isp/awb/imx415_awb_0";
+			iq_path                 = "/isp/iq/imx415_iq_0";
+			iq_cap_path				= "/isp/iq/imx415_iq_0";
+			iq_ldc_path				="/isp/iq/iq_off_iq_ldc";
+		};
+		sensor@1 {
+		};
+		/* label for ae, awb, iq table */
+		ae: ae {
+		};
+		awb: awb {
+		};
+		iq: iq {
+		};
+	};
+};
+
+
+#include "iq_off_iq_ldc.dtsi"
+
+/* Note: put include files in the tail since label should be declared first. */
+#include "imx415_ae_cam_0.dtsi"
+#include "imx415_awb_cam_0.dtsi"
+#include "imx415_iq_cam_0.dtsi"
+//#include "imx415_iq_0_cap.dtsi"
+

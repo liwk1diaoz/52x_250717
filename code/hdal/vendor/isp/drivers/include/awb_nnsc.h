@@ -1,0 +1,42 @@
+#ifndef _AWB_NNSC_H_
+#define _AWB_NNSC_H_
+
+#define AWB_NNSC_INFOR_ERR   0xFFFFFFFF
+
+typedef struct _AWB_NNSC_INFO_TAB {
+	UINT32 value;
+	UINT32 max_value;
+} AWB_NNSC_INFO_TAB;
+
+/**
+	AWB informatin selection index(awb_set_nnsc_info() or awb_get_nnsc_info())
+*/
+typedef enum _AWB_NNSC_ITEM {
+	AWB_NNSC_ITEM_GREEN_REMOVE,            ///<Green remove ratio, data type #AWB_NNSC_GREEN_REMOVE_RATIO
+	AWB_NNSC_ITEM_SKIN_REMOVE,             ///<Skin remove ratio, data type #AWB_NNSC_SKIN_REMOVE_RATIO
+	AWB_NNSC_ITEM_MAX_CNT,
+	ENUM_DUMMY4WORD(AWB_NNSC_ITEM)
+} AWB_NNSC_ITEM;
+
+/**
+	NNSC green remove
+*/
+typedef enum _AWB_NNSC_GREEN_REMOVE {
+	AWB_NNSC_GREEN_REMOVE_OFF,
+	AWB_NNSC_GREEN_REMOVE_ON,
+	AWB_NNSC_GREEN_REMOVE_MAX,
+	ENUM_DUMMY4WORD(AWB_NNSC_GREEN_REMOVE)
+} AWB_NNSC_GREEN_REMOVE;
+
+/**
+	NNSC skib remove
+*/
+typedef enum _AWB_NNSC_SKIN_REMOVE {
+	AWB_NNSC_SKIN_REMOVE_OFF,
+	AWB_NNSC_SKIN_REMOVE_ON,
+	AWB_NNSC_SKIN_REMOVE_MAX,
+	ENUM_DUMMY4WORD(AWB_NNSC_SKIN_REMOVE)
+} AWB_NNSC_SKIN_REMOVE;
+
+#endif
+

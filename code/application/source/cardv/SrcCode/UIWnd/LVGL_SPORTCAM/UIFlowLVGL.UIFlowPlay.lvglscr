@@ -1,0 +1,1682 @@
+{
+    "event callback": "UIFlowPlayEventCallback",
+    "name": "UIFlowPlay",
+    "screen color": "0x551f57",
+    "widgets": [
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 12,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_mode_playback",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_MODE_PLAYBACK",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 50,
+                "y": 4
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_file_attri",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_LOCK",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 28,
+                "width": 228,
+                "x": 88,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_file_name",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "FileName",
+            "widget": "Label"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 12,
+                "y": 38
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_file_ev",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_EV_P0P0",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 12,
+                "y": 70
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_file_wb",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_WB_AUTO",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 12,
+                "y": 104
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_file_flash",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_FLASH_OFF",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Left",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 30,
+                "width": 90,
+                "x": 225,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_play_time",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "Play Time",
+            "widget": "Label"
+        },
+        {
+            "children": [
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "auto size": true,
+                            "class": "lv_img",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "geometry": {
+                                "height": 28,
+                                "width": 28,
+                                "x": 1,
+                                "y": 1
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "name": "image_5",
+                            "offset": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "source": "ICON_DELETE",
+                            "styles": [
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "widget": "Image"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "button_del_event_callback",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 30,
+                        "width": 30,
+                        "x": 14,
+                        "y": 3
+                    },
+                    "hidden": false,
+                    "layout": "Center",
+                    "locked": false,
+                    "name": "button_up_bg",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x232323"
+                            },
+                            "Border": {
+                                "border_color": "0x009e84",
+                                "border_width": 0
+                            },
+                            "Mix": {
+                                "radius": 10
+                            },
+                            "Outline": {
+                                "outline_color": "0x5e5e5e",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e",
+                                "border_width": 3
+                            },
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xf4d32e"
+                            },
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e",
+                                "border_width": 3
+                            },
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e",
+                                "border_width": 3
+                            },
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xff4700"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e",
+                                "border_width": 3
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                },
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "auto size": true,
+                            "class": "lv_img",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "geometry": {
+                                "height": 28,
+                                "width": 28,
+                                "x": 1,
+                                "y": 1
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "name": "image_3",
+                            "offset": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "source": "ICON_PLAY_BACKWARD",
+                            "styles": [
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "widget": "Image"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "button_prev_event_callback",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 30,
+                        "width": 30,
+                        "x": 56,
+                        "y": 3
+                    },
+                    "hidden": false,
+                    "layout": "Center",
+                    "locked": false,
+                    "name": "button_left_bg",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x232323"
+                            },
+                            "Border": {
+                                "border_color": "0x009e84",
+                                "border_width": 0
+                            },
+                            "Mix": {
+                                "radius": 10
+                            },
+                            "Outline": {
+                                "outline_color": "0x00b495",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xf4d32e"
+                            },
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xff4700"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                },
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "auto size": true,
+                            "class": "lv_img",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "geometry": {
+                                "height": 28,
+                                "width": 28,
+                                "x": 1,
+                                "y": 1
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "name": "image_1",
+                            "offset": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "source": "ICON_PLAY_PLAY",
+                            "styles": [
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "widget": "Image"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "button_sel_event_callback",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 30,
+                        "width": 30,
+                        "x": 98,
+                        "y": 3
+                    },
+                    "hidden": false,
+                    "layout": "Center",
+                    "locked": false,
+                    "name": "button_select_bg",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x232323"
+                            },
+                            "Border": {
+                                "border_color": "0x009e84",
+                                "border_width": 0
+                            },
+                            "Mix": {
+                                "radius": 10
+                            },
+                            "Outline": {
+                                "outline_color": "0x00b495",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xf4d32e"
+                            },
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xff4700"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                },
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "auto size": true,
+                            "class": "lv_img",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "geometry": {
+                                "height": 28,
+                                "width": 28,
+                                "x": 1,
+                                "y": 1
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "name": "image_2",
+                            "offset": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "source": "ICON_PLAY_FORWARD",
+                            "styles": [
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "widget": "Image"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "button_next_event_callback",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 30,
+                        "width": 30,
+                        "x": 140,
+                        "y": 3
+                    },
+                    "hidden": false,
+                    "layout": "Center",
+                    "locked": false,
+                    "name": "button_right_bg",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x232323"
+                            },
+                            "Border": {
+                                "border_color": "0x009e84",
+                                "border_width": 0
+                            },
+                            "Mix": {
+                                "radius": 10
+                            },
+                            "Outline": {
+                                "outline_color": "0x00b495",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xf4d32e"
+                            },
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xff4700"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                },
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "auto size": true,
+                            "class": "lv_img",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "geometry": {
+                                "height": 28,
+                                "width": 28,
+                                "x": 1,
+                                "y": 1
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "name": "image_4",
+                            "offset": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "source": "ICON_MENU_RETURN",
+                            "styles": [
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "widget": "Image"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "button_home_event_callback",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 30,
+                        "width": 30,
+                        "x": 182,
+                        "y": 3
+                    },
+                    "hidden": false,
+                    "layout": "Center",
+                    "locked": false,
+                    "name": "button_down_bg",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x232323"
+                            },
+                            "Border": {
+                                "border_color": "0x009e84",
+                                "border_width": 0
+                            },
+                            "Mix": {
+                                "radius": 10
+                            },
+                            "Outline": {
+                                "outline_color": "0x00b495",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xf4d32e"
+                            },
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xff4700"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0xc2c2c2"
+                            },
+                            "Border": {
+                                "border_color": "0x6e6e6e"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                }
+            ],
+            "class": "lv_cont",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 37,
+                "width": 222,
+                "x": 47,
+                "y": 207
+            },
+            "hidden": false,
+            "layout": "Row Mid",
+            "locked": false,
+            "name": "container_bt_bar",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57",
+                        "bg_grad_color": "0x551f57",
+                        "bg_opa": 0
+                    },
+                    "Border": {
+                        "border_color": "0x551f57",
+                        "border_opa": 0,
+                        "border_width": 0
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x767676"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x767676"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x767676"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x767676"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x767676"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x767676"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Container"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 21,
+                "width": 128,
+                "x": 184,
+                "y": 180
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_file_time",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xf4d32e",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "File Time",
+            "widget": "Label"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 22,
+                "width": 114,
+                "x": 198,
+                "y": 151
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_file_date",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xf4d32e",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "File Date",
+            "widget": "Label"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 284,
+                "y": 58
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_quality",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_QUALITY_FINE",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 284,
+                "y": 86
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_sharpness",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_SHARPNESS_HIGH",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 285,
+                "y": 117
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_storage",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_SD_CARD",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 19,
+                "width": 146,
+                "x": 166,
+                "y": 33
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_file_size",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xf4d32e",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "File Size",
+            "widget": "Label"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 286,
+                "y": 212
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_battery",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_BATTERY_FULL",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        }
+    ]
+}

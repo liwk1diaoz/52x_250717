@@ -1,0 +1,2001 @@
+{
+    "event callback": "UIFlowPlayThumbEventCallback",
+    "name": "UIFlowPlayThumb",
+    "screen color": "0x551f57",
+    "widgets": [
+        {
+            "checkable": false,
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 4,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item1_lock",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_LOCK",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 52,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item1_filefmt",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_FILE_VIDEO",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_btn",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "fit": "None",
+            "geometry": {
+                "height": 64,
+                "width": 100,
+                "x": 4,
+                "y": 6
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "button_thumb_item1",
+            "state": "Released",
+            "style": "Custome Style",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57"
+                    },
+                    "Border": {
+                        "border_color": "0xf4d32e"
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Value": {
+                        "value_color": "0x3c3c3c",
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Button"
+        },
+        {
+            "checkable": false,
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 4,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item2_lock",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_LOCK",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 52,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item2_filefmt",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_FILE_VIDEO",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_btn",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "fit": "None",
+            "geometry": {
+                "height": 64,
+                "width": 100,
+                "x": 110,
+                "y": 6
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "button_thumb_item2",
+            "state": "Released",
+            "style": "Custome Style",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57"
+                    },
+                    "Border": {
+                        "border_color": "0xf4d32e"
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Value": {
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Button"
+        },
+        {
+            "checkable": false,
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 4,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item3_lock",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_LOCK",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 52,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item3_filefmt",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_FILE_VIDEO",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_btn",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "fit": "None",
+            "geometry": {
+                "height": 64,
+                "width": 100,
+                "x": 214,
+                "y": 6
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "button_thumb_item3",
+            "state": "Released",
+            "style": "Custome Style",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57"
+                    },
+                    "Border": {
+                        "border_color": "0xf4d32e"
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Value": {
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Button"
+        },
+        {
+            "checkable": false,
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 4,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item4_lock",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_LOCK",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 52,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item4_filefmt",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_FILE_VIDEO",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_btn",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "fit": "None",
+            "geometry": {
+                "height": 64,
+                "width": 100,
+                "x": 4,
+                "y": 76
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "button_thumb_item4",
+            "state": "Released",
+            "style": "Custome Style",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57"
+                    },
+                    "Border": {
+                        "border_color": "0xf4d32e"
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Value": {
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Button"
+        },
+        {
+            "checkable": false,
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 4,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item5_lock",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_LOCK",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 52,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item5_filefmt",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_FILE_VIDEO",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_btn",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "fit": "None",
+            "geometry": {
+                "height": 64,
+                "width": 100,
+                "x": 110,
+                "y": 76
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "button_thumb_item5",
+            "state": "Released",
+            "style": "Custome Style",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57"
+                    },
+                    "Border": {
+                        "border_color": "0xf4d32e"
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Value": {
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Button"
+        },
+        {
+            "checkable": false,
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 4,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item6_lock",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_LOCK",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 52,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item6_filefmt",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_FILE_VIDEO",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_btn",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "fit": "None",
+            "geometry": {
+                "height": 64,
+                "width": 100,
+                "x": 214,
+                "y": 76
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "button_thumb_item6",
+            "state": "Released",
+            "style": "Custome Style",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57"
+                    },
+                    "Border": {
+                        "border_color": "0xf4d32e"
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Value": {
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Button"
+        },
+        {
+            "checkable": false,
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 4,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item7_lock",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_LOCK",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 52,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item7_filefmt",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_FILE_VIDEO",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_btn",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "fit": "None",
+            "geometry": {
+                "height": 64,
+                "width": 100,
+                "x": 4,
+                "y": 146
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "button_thumb_item7",
+            "state": "Released",
+            "style": "Custome Style",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57"
+                    },
+                    "Border": {
+                        "border_color": "0xf4d32e"
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Value": {
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Button"
+        },
+        {
+            "checkable": false,
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 4,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item8_lock",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_LOCK",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 52,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item8_filefmt",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_FILE_VIDEO",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_btn",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "fit": "None",
+            "geometry": {
+                "height": 64,
+                "width": 100,
+                "x": 110,
+                "y": 146
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "button_thumb_item8",
+            "state": "Released",
+            "style": "Custome Style",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57"
+                    },
+                    "Border": {
+                        "border_color": "0xf4d32e"
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Value": {
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Button"
+        },
+        {
+            "checkable": false,
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 4,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item9_lock",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_LOCK",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 52,
+                        "y": 4
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_item9_filefmt",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_FILE_VIDEO",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x31404f"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0xffffff"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "Image": {
+                                "image_recolor": "0x888888"
+                            },
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_btn",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "fit": "None",
+            "geometry": {
+                "height": 64,
+                "width": 100,
+                "x": 214,
+                "y": 146
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "button_thumb_item9",
+            "state": "Released",
+            "style": "Custome Style",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x551f57"
+                    },
+                    "Border": {
+                        "border_color": "0xf4d32e"
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Value": {
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Border": {
+                        "border_color": "0x6e6e6e"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Button"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 26,
+                "width": 96,
+                "x": 216,
+                "y": 212
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_page_info",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xd9d9d9",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "Page",
+            "widget": "Label"
+        },
+        {
+            "align": "Left",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 26,
+                "width": 199,
+                "x": 7,
+                "y": 212
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_file_name",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xd9d9d9",
+                        "text_font": "NotoSans-Black 16 1bpp"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Text": {
+                        "text_color": "0xffffff"
+                    },
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "FileName",
+            "widget": "Label"
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+&top {
+lgpio22{gpio_config = <L_GPIO(22) 1>;};
+pgpio8{gpio_config = <P_GPIO(8) 1>;};
+};

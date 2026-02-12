@@ -1,0 +1,127 @@
+/*
+ * Novatek Ltd. NA51055 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+
+#include <dt-bindings/gpio/nvt-gpio.h>
+#include <dt-bindings/input/input.h>
+
+&i2c0 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	sen_imx335@0 {
+		compatible = "nvt,sen_imx335";
+		reg = <0x7F>;                       /* dummy addr */
+		path = <0>;
+		PRESET {
+			expt_time = <10000>;            /* 10000us */
+			gain_ratio = <1000>;            /* 1x gain */        
+		};
+		DIRECTION {
+			mirror = <0>;                   /* mirror */
+			flip = <0>;                     /* no flip */
+		};
+		POWER {
+			mclk = <0>;                     /* CTL_SEN_CLK_SEL_SIEMCLK */
+			pwdn_pin = <0xFFFFFFFF>;        /* no pwdn pin */   
+			rst_pin = <S_GPIO(5)>;          /* S_GPIO_4 */
+			rst_time = <1>;                 /* 1ms */
+			stable_time = <1>;              /* 1ms */
+		};
+		I2C {
+			i2c_id = <0>;                   /* SEN_I2C_ID_1 */
+			i2c_addr = <0x1A>;              /* 0x34 >> 1  = 0x1A */
+		};
+	};
+};
+
+&i2c1 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	ad_pr2100k@0 {
+		compatible = "nvt,ad_pr2100k.0";
+		reg = <0x5C>;
+		power_cfg {
+		//	mclk_sel = "MCLK3";
+		//	rst_pin = "S_GPIO_4";
+		//	pwdn_pin; 
+		//	rst_time = <500000>;
+	   //		stb_time = <500000>;
+	
+		  //// power on  ////
+			io_ctl0 = <0xfffe		0  0>;			// power on sqeuence indicator
+			// turn on power pin
+			io_ctl1 = <L_GPIO(2)	1 10000>;			// io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+			
+			// reset flow
+			//io_ctl2 = <P_GPIO(11)	1 100000>;
+			io_ctl3 = <P_GPIO(11)	0 20000>;		// io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+			io_ctl4 = <P_GPIO(11)   1 10000>;		// io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+
+			//// power off ////
+			io_ctl5 = <0xfffd		0 0>;			// power off sequence indicator
+			io_ctl6 = <P_GPIO(11)	0 10>;			// turn off AHD5V_EN
+			io_ctl7 = <L_GPIO(2)	0 10>;			// set tp9950 in reset state
+
+		};
+	outport@0 {
+		inport = <0 1>;
+		signal = <1>;///0:parallel 1:mipi
+		};
+	};
+
+
+//ad_pr2100k@0 {
+//		compatible = "nvt,ad_pr2100k.0";
+//		reg = <0x5C>;
+//		power_cfg {
+//			//mclk_sel = "MCLK3";
+//			rst_pin = "P_GPIO_11";
+//			pwdn_pin; 
+//			rst_time = <500000>;
+//			stb_time = <500000>;
+//		};
+//		outport@0 {
+		//for ns2 pr2100k dvp  1?
+		//inport = <0>;//
+		//signal = <0>; /*0:parallel 1:mipi*/
+
+		//for ns2 pr2100k mipi 2 ?
+//		inport = <0 1>;  //??????
+//		signal = <1>;  /*0:parallel 1:mipi*/
+//		};
+//	};
+};
+&i2c2 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	
+
+};
+
+&spi0 {
+	status = "okay";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+/*	dummy_spi_dev: dummy_spi_dev@0 {
+		compatible = "dummy_spi_dev.0";
+		reg = <0>; // Chip select 0
+		spi-max-frequency = <1000000>;
+		spi-cpol;
+        };
+*/
+};
+
+&spi1 {
+	status = "okay";
+};
+
+&spi2 {
+	status = "okay";
+};

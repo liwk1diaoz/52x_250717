@@ -1,0 +1,565 @@
+,EN,FR,DE,ES,IT,PO,SC,JP,TC,RU
+STRID_NULL_,,,,,,,,,,
+STRID_MODE,Mode,Mode,Modus,Modo,Modalità,Modo,拍摄模式,モード,模式,режим
+STRID_IMGSize,Image Size,Taille Im.,Auflösung,Tam. Imág.,Dim.Immag.,Image Size,分辨率,サイズ,影像尺寸,размер изображения 
+STRID_RESOLUTION,Resolution,Resolution,Auflösung,Resolución,Dimens. Immagine,Resolução,分辨率,解像度,解析度,разрешение
+STRID_12M,12M,12M,12M,12M,12M,12M,12M,12M,12M,12M
+STRID_10M,10M,10M,10M,10M,10M,10M,10M,10M,10M,10M
+STRID_9M,9M,9M,9M,9M,9M,9M,9M,9M,9M,9M
+STRID_8M,8M,8M,8M,8M,8M,8M,8M,8M,8M,8M
+STRID_7M,7M,7M,7M,7M,7M,7M,7M,7M,7M,7M
+STRID_6M,6M,6M,6M,6M,6M,6M,6M,6M,6M,6M
+STRID_5M,5M,5M,5M,5M,5M,5M,5M,5M,5M,5M
+STRID_4M,4M,4M,4M,4M,4M,4M,4M,4M,4M,4M
+STRID_3M,3M,3M,3M,3M,3M,3M,3M,3M,3M,3M
+STRID_2MHD,2MHD,2MHD,2MHD,2MHD,2MHD,2MHD,2MHD,2MHD,2MHD,2MHD
+STRID_2M,2M,2M,2M,2M,2M,2M,2M,2M,2M,2M
+STRID_1M,1.3M,1.3M,1.3M,1.3M,1.3M,1.3M,1.3M,1.3M,1.3M,1.3M
+STRID_VGA,VGA,VGA,VGA,VGA,VGA,VGA,VGA,VGA,VGA,VGA
+STRID_QVGA,QVGA,QVGA,QVGA,QVGA,QVGA,QVGA,QVGA,QVGA,QVGA,QVGA
+STRID_D1,D1,D1,D1,D1,D1,D1,D1,D1,D1,D1
+STRID_720P,720P,720P,720P,720P,720P,720P,720P,720P,720P,720P
+STRID_1080P,1080P,1080P,1080P,1080P,1080P,1080P,1080P,1080P,1080P,1080P
+STRID_1080FHD,1080FHD,1080FHD,1080FHD,1080FHD,1080FHD,1080FHD,1080FHD,1080FHD,1080FHD,1080FHD
+STRID_12MWxH,12M 4032x3024,12M 4032x3024,12M 4032x3024,12M 4032x3024,12M 4032x3024,12M 4032x3024,12M 4032x3024,12M 4032x3024,12M 4032x3024,12M 4032x3024
+STRID_10MWxH,10M 3648x2736,10M 3648x2736,10M 3648x2736,10M 3648x2736,10M 3648x2736,10M 3648x2736,10M 3648x2736,10M 3648x2736,10M 3648x2736,10M 3648x2736
+STRID_9MWxH,9M 3472x2604,9M 3472x2604,9M 3472x2604,9M 3472x2604,9M 3472x2604,9M 3472x2604,9M 3472x2604,9M 3472x2604,9M 3472x2604,9M 3472x2604
+STRID_8MWxH,8M 3264x2448,8M 3264x2448,8M 3264x2448,8M 3264x2448,8M 3264x2448,8M 3264x2448,8M 3264x2448,8M 3264x2448,8M 3264x2448,8M 3264x2448
+STRID_7MWxH,7M 3072x2304,7M 3072x2304,7M 3072x2304,7M 3072x2304,7M 3072x2304,7M 3072x2304,7M 3072x2304,7M 3072x2304,7M 3072x2304,7M 3072x2304
+STRID_6MWxH,6M 2816x2112,6M 2816x2112,6M 2816x2112,6M 2816x2112,6M 2816x2112,6M 2816x2112,6M 2816x2112,6M 2816x2112,6M 2816x2112,6M 2816x2112
+STRID_5MWxH,5M 2592x1944,5M 2592x1944,5M 2592x1944,5M 2592x1944,5M 2592x1944,5M 2592x1944,5M 2592x1944,5M 2592x1944,5M 2592x1944,5M 2592x1944
+STRID_4MWxH,4M 2272x1704,4M 2272x1704,4M 2272x1704,4M 2272x1704,4M 2272x1704,4M 2272x1704,4M 2272x1704,4M 2272x1704,4M 2272x1704,4M 2272x1704
+STRID_3MWxH,3M 2048x1536,3M 2048x1536,3M 2048x1536,3M 2048x1536,3M 2048x1536,3M 2048x1536,3M 2048x1536,3M 2048x1536,3M 2048x1536,3M 2048x1536
+STRID_2MHDWxH,2MHD 1920x1080,2MHD 1920x1080,2MHD 1920x1080,2MHD 1920x1080,2MHD 1920x1080,2MHD 1920x1080,2MHD 1920x1080,2MHD 1920x1080,2MHD 1920x1080,2MHD 1920x1080
+STRID_2MWxH,2M 1600x1200,2M 1600x1200,2M 1600x1200,2M 1600x1200,2M 1600x1200,2M 1600x1200,2M 1600x1200,2M 1600x1200,2M 1600x1200,2M 1600x1200
+STRID_1MWxH,1.3M 1280x960,1.3M 1280x960,1.3M 1280x960,1.3M 1280x960,1.3M 1280x960,1.3M 1280x960,1.3M 1280x960,1.3M 1280x960,1.3M 1280x960,1.3M 1280x960
+STRID_WVGAWxH,WVGA 848x480,WVGA 848x480,WVGA 848x480,WVGA 848x480,WVGA 848x480,WVGA 848x480,WVGA 848x480,WVGA 848x480,WVGA 848x480,WVGA 848x480
+STRID_VGAWxH,VGA 640x480,VGA 640x480,VGA 640x480,VGA 640x480,VGA 640x480,VGA 640x480,VGA 640x480,VGA 640x480,VGA 640x480,VGA 640x480
+STRID_QVGAWxH,QVGA 320x240,QVGA 320x240,QVGA 320x240,QVGA 320x240,QVGA 320x240,QVGA 320x240,QVGA 320x240,QVGA 320x240,QVGA 320x240,QVGA 320x240
+STRID_1080P60_D1P30,"1080P60,720x480P30","1080P60,720x480P30","1080P60,720x480P30","1080P60,720x480P30","1080P60,720x480P30","1080P60,720x480P30","1080P60,720x480P30","1080P60,720x480P30","1080P60,720x480P30","1080P60,720x480P30"
+STRID_D1WxH,D1 720x480,D1 720x480,D1 720x480,D1 720x480,D1 720x480,D1 720x480,D1 720x480,D1 720x480,D1 720x480,D1 720x480
+STRID_720PWxH,720P 1280x720,720P 1280x720,720P 1280x720,720P 1280x720,720P 1280x720,720P 1280x720,720P 1280x720,720P 1280x720,720P 1280x720,720P 1280x720
+STRID_1080PWxH,1080P 1440x1080,1080P 1440x1080,1080P 1440x1080,1080P 1440x1080,1080P 1440x1080,1080P 1440x1080,1080P 1440x1080,1080P 1440x1080,1080P 1440x1080,1080P 1440x1080
+STRID_1080FHDWxH,1080FHD 1920x1080,1080FHD 1920x1080,1080FHD 1920x1080,1080FHD 1920x1080,1080FHD 1920x1080,1080FHD 1920x1080,1080FHD 1920x1080,1080FHD 1920x1080,1080FHD 1920x1080,1080FHD 1920x1080
+STRID_COMPRESSION,Compression,Compression,Kompression,Compresión,Compress.imm.,Compressão,图像质量,圧縮率,壓縮率,Сжатие записи
+STRID_QUALITY,Quality,Qualité,Qualität,Calidad,Qualità,Quality,图象质量,画質,影像品質,качество 
+STRID_SUPER,Super Fine,Super Forte,Superfein,Calidad Extra,Molto forte,Super Fina,最佳,スーパーファイン,最佳,Наилучшее
+STRID_FINE,Fine,Forte,Fein,Alta,Forte,Fina,优质,ファイン,較佳,Высокое
+STRID_NORMAL,Normal,Normale,Normal,Normal,Normale,Normal,标准,ノーマル,一般,Стандартное
+STRID_ECONOMY,Economy,Économie,Sparsam,Económ.,Economia,Economy,经济,エコノミー,經濟,Экономичное
+STRID_WB,White Balance,Balance Blancs,Weissbalance,Balance Blanco,Bilanc.bianco,Balanço Brancos,白平衡,ホワイトバランス,白平衡,Баланс белого
+STRID_AUTO,Auto,Auto,Auto,Auto,Automatico,Auto,自动,オート,自動,Авто баланс
+STRID_WB_DAY,Daylight,Ensoleille,Sonnig,Sol,Luce Diurna,Sol,日光,晴天,日光,Солнечно
+STRID_WB_CLOUDY,Cloudy,Nuageux,Wolkig,Nubes,Nuvoloso,Enevoado,阴天,曇天,陰天,пасмурно
+STRID_WB_TUNGSTEN,Tungsten,Tungstene,Kunstlicht,Tungsteno,Tungsteno,Tungsténio,钨丝灯,タングステン,燈泡,Вольфрам
+STRID_WB_FLUORESCENT,Fluorescent,Fluor,Neonlicht,Fluoro,Illuminazione a fluorescenza,Fluore,荧光灯,蛍光灯,日光燈,Флуоресцент
+STRID_EXPOSURE,Exposure,Exposition,Belichtung,Exposición,Esposizione,Exposição,曝光补偿,露出,曝光,Экспозиция
+STRID_EV,EV,Exposition,Belichtungs-wert,Exposición,Esposizione,EV,曝光补偿,露出補正,曝光補償,EV
+STRID_ISO,ISO,ISO,ISO,ISO,ISO,ISO,ISO,ISO,ISO,ISO
+STRID_ISO50,50,50,50,50,50,50,50,50,50,50
+STRID_ISO100,100,100,100,100,100,100,100,100,100,100
+STRID_ISO200,200,200,200,200,200,200,200,200,200,200
+STRID_ISO400,400,400,400,400,400,400,400,400,400,400
+STRID_ISO800,800,800,800,800,800,800,800,800,800,800
+STRID_ISO1600,1600,1600,1600,1600,1600,1600,1600,1600,1600,1600
+STRID_ISO3200,3200,3200,3200,3200,3200,3200,3200,3200,3200,3200
+STRID_Metering,Metering,MesureExpos,Bel.Autom.,Medición AE,Misurazione AE,Medição,测光,メータ,測光,Метеринг
+STRID_Meter_Center,Center-Weighted,Centrale Pondérée,Mittenbetont,Ponderada Centro,Bilanciata al Centro,Center-Weighted,中央重点测光,センター加重,中央重點測光,По центру 
+STRID_Meter_Spot,Spot,Point,Spot,Puntual,Spot,Spot,定点,スポット,點測光,Пятно
+STRID_Meter_Avg,Average,Moyenne des,Durchschnittliche,Promedio,Media,Média,平均测光,アベレージ,平均測光,средний
+STRID_Cap_Mode,Capture Mode,Mode Capture,Aufnahme-modus,Modo grabación,Modalità Cattura,Capture Mode,拍摄方式,撮影モード,拍攝方式,Режим съемки
+STRID_Cap_Single,Single,Simple,Einzeln,único,Singolo,Single,单拍,単写,單張,Одиночный
+STRID_Cap_Burst,Burst,Continuer,Fortsetzen,continuo,Continuato,Sequence,连拍,連写,連拍,Серия
+STRID_Cap_Burst_3,Burst 3,3 Continuer,3 Fortsetzen,3 continuo,3 Continuato,3 Sequence,三连拍,3連写,三連拍,Серия 3 фото 
+STRID_Cap_Auto,AEB,AEB,AEB,AEB,AEB,AEB,三幅自动曝光,3次自動露出,三次自動曝光,Авто- экспозиция
+STRID_Cap_Timer2S,2S Timer,2s temporisateur,Timer 2s,2s contador de tiempo,2s temporizzatore,2S Timer,2秒定时,2S タイマー,2秒自拍,2 сек.
+STRID_Cap_Timer5S,5S Timer,5s temporisateur,Timer 5s,5s contador de tiempo,5s temporizzatore,5S Timer,5秒定时,5S タイマー,5秒自拍,5 сек.
+STRID_Cap_Timer10S,10S Timer,10s temporisateur,Timer 10s,10s contador de tiempo,10s temporizzatore,10S Timer,10秒定时,10S タイマー,10秒自拍,10 сек.
+STRID_Cap_Timer20S,20S Timer,20s temporisateur,Timer 20s,20s contador de tiempo,20s temporizzatore,20S Timer,20秒定时,20S タイマー,20秒自拍,20сек.
+STRID_FlashMode,Flash Mode,Mode instantané,Greller Modus,Modo de destello,Modo istantaneo,Flash Mode,闪光模式,拔け目がないモード,閃光模式,Вспышка
+STRID_FlashOn,Force On,Force dessus,Kraft an,Fuerza encendido,Forza sopra,Force On,強制闪光,カオン,強制閃光,Включено
+STRID_FlashOff,Force Off,Force au loin,Kraft weg,Fuerza apagado,Forza fuori,Force Off,不強制闪光,カオフ,關閉,Выключено
+STRID_FlashAuto,Auto,Auto,Auto,Auto,Auto,Auto,自动,オート,自動,Автомат
+STRID_RedEye,Red Eye Reduction,Rouge-oeil réduction,Rotauge verkleinerung,Rojo-ojo reducción,Rosso-occhio riduzione,Red Eye Reduction,軽减紅眼,ねたみ減少,防紅眼,"Фильтр ""красных глаз"""
+STRID_Av,Av,Av,Blendenwert,Va,Av,Av,Av,Av,Av,AV
+STRID_Tv,Tv,Tv,Zeitwert,Vt,Tv,Tv,Tv,Tv,Tv,TV
+STRID_AvTv,Av / Tv,Av / Tv,Bl.-/Zeitwert,Va/Vt,Av / Tv,Av / Tv,Av / Tv,Av / Tv,Av / Tv,AV / TV
+STRID_AvSetting,Av Setting:,Réglage Av:,Blenden-Einst.:,Ajuste Va:,Impostazione Av:,Av Setting:,Av 设置:,のAVセット,Av 設定:,AV настройки
+STRID_TvSetting,Tv Setting:,Réglage Tv:,Zeitwert-Einst.:,Ajuste Vt:,Impostazione Tv:,Tv Setting:,Tv 设置:,のTVセット,Tv 設定:,установка Tv
+STRID_AvTvSetting,Av/Tv Setting:,Réglage Av/Tv:,Bl./Zeit-Einst.:,Ajuste Va/Vt:,Impost. Av/TV:,Av/Tv Setting:,Av/Tv 设置:,のAV/TVセット,Av/Tv 設定:,AV / TV настройки
+STRID_SceneSetting,Scene Mode,Paysage,Landschaft,Paisaje,Paesaggio,Scenery,场景,景色,景色模式,Режим съемки
+STRID_Scene,Scene,Paysage,Landschaft,Paisaje,Paesaggio,Scenery,场景,景色,景色模式,Режим
+STRID_Landscape,Landscape,Paysage,Landschaft,Paisaje,Paesaggio,Scenery,风景,景色,風景,Пейзаж
+STRID_NightScene,Night Scene,Scène de nuit,Nachtszene,Escena de la noche,Scena di notte,Night Scene,夜景,夜場面,夜景,Ночь
+STRID_Sports,Sports,Sports,Sport,Deportes,Sport,Sports,运动,スポーツ,運動,Спорт
+STRID_Portrait,Portrait,Portrait,Porträt,Retrato,Ritratti,Portrait,人物,人々,人物,портрет
+STRID_Flower,Flower,Fleur,Blume,Flor,Fiore,Flower,花,花,花,Цветочная
+STRID_Smart,Smart Mode,Mode intelligent,Smart-Modus,Modo inteligente,Modalità intelligente,Modo Smart,智能模式,ロゴデバ,智能模式,Авто режим
+STRID_Backlight,Backlight,Backlight,Backlight,Backlight,Backlight,Backlight,背光,バックライト,背光,Подсветка
+STRID_Color,Color,Color,Farbe,Color,Colore,Color,色彩,カラー,色彩效果,Цветной
+STRID_Color_Full,Normal,Normal,Normal,Normal,Normale,Normal,正常,ノーマル,彩色,Стандарт
+STRID_Color_BW,Black & White,N/B,S/W,B/N,Bianco/nero,Black & White,黑白,白黑,黑白,Черно белый
+STRID_Color_Sepia,Sepia,Sépia,Sepia,Sepia,Sepia,Sepia,棕褐色,タン,復古,Коричневый
+STRID_SHARPNESS,Sharpness,Nettete,Schärfe,Definición,Nitidezza,Acuidade,锐度,シャープネス,銳利度,Резкий
+STRID_STRONG,Strong,Forte,Stark,Alta,Forte,Forte,强烈,ストロング,强烈,Сильный
+STRID_SOFT,Soft,Douce,Weich,Baja,Leggera,Suave,柔和,ソフト,柔和,Мягкий
+STRID_Low,Low,Faible,Gering,Baja,Bassa,Low,低,低い,低,Низкий
+STRID_Med,Medium,Moyen,Mittel,Media,Media,Medium,中,ミディアム,中,Средний
+STRID_High,High,Supérieur,Hoch,Alta,Alta,High,高,高い,高,Высокий
+STRID_DATE_STAMP,Date Stamp,Marque Date,Datumsanzeige,Impresión Fecha,Stampa Data,Impressão data,日期标签,日付表示,日期記錄,Штамп дата/время
+STRID_DATE_TIME,Date/Time,Date/Heure,Datum/Uhrzeit,Fecha/Hora,Data/Ora,Data/Hora,日期/时间,日/時刻,日期/時間,Дата / время
+STRID_DATE,Date,Date,Datum,Fecha,Data,Data,日期,日時,日期,Дата
+STRID_TIME,Time,Reglage Heure,Zeit Einstellen,Configurar Hora,Imp.ora,Acert hora,时间设置,時間設定,時間,Время
+STRID_y_m_d,y/m/d,a/m/j,j/m/t,a/m/d,a/m/g,y/m/d,y/m/d,y/m/d,y/m/d,ГГ/ММ/ДД
+STRID_d_m_y,d/m/y,j/m/a,t/m/j,d/m/a,g/m/a,d/m/y,d/m/y,d/m/y,d/m/y,ДД/ММ/ГГ
+STRID_m_d_y,m/d/y,m/j/a,m/t/j,m/d/a,m/g/a,m/d/y,m/d/y,m/d/y,m/d/y,ММ/ДД/ГГ
+STRID_ON,On,Active,An,Encendido,On,On,开,オン,開,Вкл.
+STRID_OFF,Off,Desactive,Aus,Apagado,OFF,Off,关,オフ,關,Выкл.
+STRID_DZ,Digital Zoom,Zoom Numér.,Digitalzoom,Zoom Digital,Zoom Digitale,Digital Zoom,数码变焦,デジタルズーム,數位變焦,Цифровой зум
+STRID_QUICK_VIEW,Quick Review,Bilan Rapide,Schnelldurchlauf,Revisión Rápida,Visualizz. Rapida,Revisão rápida,快速预览,クイックレビュー,快速檢視,Быстрый просмотр
+STRID_Saturation,Saturation,Saturation,Sättigung,Saturación,Saturazione,Saturation,饱和度,彩度,彩度,Контрастность
+STRID_Movie,Video,Vidéo,Video,Vídeo,Filmati,Video,视频,ビデオ,視訊,Видео
+STRID_FrameRate,Frame Rate,Taux d'armature,Rahmenrate,Tarifa del macro,Tasso della struttura,Frame Rate,帧频,フレーム率,格數,Частота съемки 
+STRID_30fps,30 fps,30 fps,30 fps,30 fps,30 fps,30 fps,30 fps,30 fps,30 fps,30 к/сек
+STRID_15fps,15 fps,15 fps,15 fps,15 fps,15 fps,15 fps,15 fps,15 fps,15 fps,15 к/сек
+STRID_Video,Video,Vidéo,Video,Vídeo,Filmati,Video,视频,ビデオ,視訊,Видео
+STRID_Audio,Audio,Audio,Audio,Sonido,Audio,Audio,录音,オーデイオ,錄音,Аудио
+STRID_SETUP,Setup,Reglages,Einstellungen,Configuración,Impostazioni,Configuração,设置,設定,設定,Настройки
+STRID_Frequency,Frequency,Fréquence,Frequenz,Frecuencia,Frequenza,Frequency,光源频率,明滅の頻度,頻率,Частота освещения
+STRID_50Hz,50 Hz,50 Hz,50 Hz,50 Hz,50 Hz,50 Hz,50 Hz,50 Hz,50 Hz,50 Hz
+STRID_60Hz,60 Hz,60 Hz,60 Hz,60 Hz,60 Hz,60 Hz,60 Hz,60 Hz,60 Hz,60 Hz
+STRID_Media,Media Select,Médias choisis,Mittel auserwählt,Medios selectos,Mezzi prescelti,Media Select,介质选择,選り拔き媒体,媒體選擇,Выбор памяти
+STRID_STORAGE,Storage Media,Stockage Media,Speichermedium,Medio de almacenamiento,Salvataggio,Memória,存储媒体,保存メディア,儲存媒體,Выбор места хранения
+STRID_INT_FLASH,Internal Memory,Memoire Interne,Interner Speicher,Memoria Interna,Memoria Interna,Mem Interna,内存,内部メモリ,內建記憶體,Внутренняя память
+STRID_EXT_CARD,SD Card,Carte SD,SD Karte,Tarjeta SD,Scheda SD,SD Card,SD 卡,SDカード,記憶卡,SD карта
+STRID_LOGO_DISPLAY,Logo Display,Affichage de logo,Firmenzeichenanzeige,Exhibición de la insignia,Esposizione di marchio,Logo Display,开机画面,ロゴの表示,開機畫面,Показывать заставку
+STRID_OPENING,Opening,Ouverture,Öffnen,Apertura,Apertura,Abertura,开机画面,開始,開機畫面,Открыть 
+STRID_FORMAT,Format,Format,Format,Formato,Formattazione,Formatar,格式化,フォーマット,格式化,Формат
+STRID_OK,OK,OK,OK,OK,OK,OK,确认,確認,確認,ОК
+STRID_CANCEL,Cancel,Annuler,Abbrechen,Cancelar,Annulla,Cancelar,取消,キャンセル,取消,Отмена
+STRID_BEEPER,Beep Sound,Bip Sonore,Akustisches Signal,Sonido Bip,Segnale acust.,Som de beep,按键声音,電子音,提示音,Звук клавиш
+STRID_Beep_Loud,Louder,#NAME?,Lauter,Alto,Forte,Louder,大,大な,高音量,Громко
+STRID_Beep_Soft,Soft,Faible,Soft,Suave,Piano,Soft,小,小さな,柔和,Тихо
+STRID_LANGUAGE,Language,Langues,Sprache,Idioma,Lingua,Idioma,语言设置,言語,語系,Язык
+STRID_LANG_EN,English,English,English,English,English,English,English,English,English,English
+STRID_LANG_FR,Français,Français,Français,Français,Français,Français,Français,Français,Français,Français
+STRID_LANG_ES,Español,Español,Español,Español,Español,Español,Español,Español,Español,Español
+STRID_LANG_DE,Deutsch,Deutsch,Deutsch,Deutsch,Deutsch,Deutsch,Deutsch,Deutsch,Deutsch,Deutsch
+STRID_LANG_IT,Italiano,Italiano,Italiano,Italiano,Italiano,Italiano,Italiano,Italiano,Italiano,Italiano
+STRID_LANG_TC,繁體中文,繁體中文,繁體中文,繁體中文,繁體中文,繁體中文,繁體中文,繁體中文,繁體中文,繁體中文
+STRID_LANG_SC,简体中文,简体中文,简体中文,简体中文,简体中文,简体中文,简体中文,简体中文,简体中文,简体中文
+STRID_LANG_JP,日本語,日本語,日本語,日本語,日本語,日本語,日本語,日本語,日本語,日本語
+STRID_LANG_PO,Português,Português,Português,Português,Português,Português,Português,Português,Português,Português
+STRID_LANG_RU,Русский,Русский,Русский,Русский,Русский,Русский,Русский,Русский,Русский,Русский
+STRID_USB,USB,USB,USB,USB,USB,USB,USB,USB,USB,USB
+STRID_PC_MODE,PC Mode,Mode de PC,Modo de la PC,Modo de la PC,Modo del PC,PC Mode,PC模式,PCモード,PC模式,Режим РС
+STRID_MSDC,Mass Storage,Mémoire de masse,Massenspeicher,Memoria de masa,Memoria di massa,Mass Storage,存储器,ディスク,磁碟機,Флэш-память
+STRID_PCC,PC Camera,Caméra PC,PC-Kamera,Cámara PC,PC Camera,PC Camera,摄像头,PCカメラ,網路攝影機,PC камера
+STRID_PICTBRIDGE,Pictbridge,Pictbridge,Pictbridge,Traspasar Fotos,Pictbridge,Pictbridge,PICTBRIDGE,ピクトブリッジ,PictBridge,Pictbridge
+STRID_USBCHARGE,Power Charging,Power Charging,Power Charging,Power Charging,Power Charging,Power Charging,充电中,Power Charging,充電中,Поручать силы 
+STRID_TV_MODE,TV Mode,Mode de TV,TV-Modus,Modo de la TV,Modo della TV,TV Mode,TV模式,TVモード,電視輸出,режим TV
+STRID_TV_NTSC,NTSC,NTSC,NTSC,NTSC,NTSC,NTSC,NTSC,NTSC,NTSC,NTSC
+STRID_TV_PAL,PAL,PAL,PAL,PAL,PAL,PAL,PAL,PAL,PAL,PAL
+STRID_BRIGHTNESS,LCD Brightness,LCD Brightness,LCD Helligkeit,Luminosidad LCD,Luminosità LCD,Brilho LCD,LCD亮度调节,LCD輝度,LCD亮度,Яркость
+STRID_AUTO_OFF,Auto Power Off,Arret Auto,Auto Aus,Desconexión Automática,Spegnim. aut.,Auto power off,自动关机,オートパワーOFF,自動關機,Авто выключение
+STRID_AUTO_OFF_1MIN,1 Minute,1 Min,1 Min,1 Min,1 Min,1 Min,1 分钟,1 分,1 分鐘,1 мин.
+STRID_AUTO_OFF_2MIN,2 Minutes,2 Mins,2 Min,2 Min,2 Min,2 Min,2 分钟,2 分,2 分鐘,2 мин.
+STRID_AUTO_OFF_3MIN,3 Minutes,3 Mins,3 Min,3 Min,3 Min,3 Min,3 分钟,3 分,3 分鐘,3 мин.
+STRID_AUTO_OFF_5MIN,5 Minutes,5 Mins,5 Min,5 Min,5 Min,5 Min,5 分钟,5 分,5 分鐘,5 мин.
+STRID_AUTO_OFF_10MIN,10 Minutes,10 Mins,10 Min,10 Min,10 Min,10 Min,10 分钟,10 分,10 分鐘,10 мин.
+STRID_1MIN,1 Minute,1 Min,1 Min,1 Min,1 Min,1 Min,1 分钟,1 分,1 分鐘,1 мин.
+STRID_2MIN,2 Minutes,2 Mins,2 Min,2 Min,2 Min,2 Min,2 分钟,2 分,2 分鐘,2 мин.
+STRID_3MIN,3 Minutes,3 Mins,3 Min,3 Min,3 Min,3 Min,3 分钟,3 分,3 分鐘,3 мин.
+STRID_5MIN,5 Minutes,5 Mins,5 Min,5 Min,5 Min,5 Min,5 分钟,5 分,5 分鐘,5 мин.
+STRID_10MIN,10 Minutes,10 Mins,10 Min,10 Min,10 Min,10 Min,10 分钟,10 分,10 分鐘,10 мин.
+STRID_15MIN,15 Minutes,15 Mins,15 Min,15 Min,15 Min,15 Min,15 分钟,15 分,15 分鐘,15 мин.
+STRID_20MIN,20 Minutes,20 Mins,20 Min,20 Min,20 Min,20 Min,20 分钟,20 分,20 分鐘,20 мин.
+STRID_25MIN,25 Minutes,25 Mins,25 Min,25 Min,25 Min,25 Min,25 分钟,25 分,25 分鐘,25 мин.
+STRID_30MIN,30 Minutes,30 Mins,30 Min,30 Min,30 Min,30 Min,30 分钟,30 分,30 分鐘,30 мин.
+STRID_60MIN,60 Minutes,60 Mins,60 Min,60 Min,60 Min,60 Min,60 分钟,60 分,60 分鐘,60 мин.
+STRID_SCREEN_SAVE,Screen Save,Screen Save,Screen Save,Screen Save,Screen Save,Screen Save,Screen Save,Screen Save,Screen Save,Screen Save
+STRID_CYCLIC_REC,Loop recording, Enregistrement continu,Loop-Aufnahme , Grabación continua,Loop di registrazione , Gravação contínua,循环录影,ループ録画,循環錄影,Цикл записи (мин)
+STRID_FLASH_REC,Flash Record,Flash Record,Flash Record,Flash Record,Flash Record,Flash Record,Flash Record,Flash Record,預錄,Flash Record
+STRID_GOLF_REC,Golf Shot,Golf Shot,Golf Shot,Golf Shot,Golf Shot,Golf Shot,Golf Shot,Golf Shot,高速錄影,Golf Shot
+STRID_DUAL_REC,Dual Record,Dual Record,Dual Record,Dual Record,Dual Record,Dual Record,Dual Record,Dual Record,雙路錄影,Dual Record
+STRID_TIMELAPSE_REC,Time-lapse Record,Intervalle,Zeitraffer,Lapso de tiempo,Intervallo,Intervalo,间隔录像,インターバル撮影,間隔錄影,Интервальная съемка
+STRID_TIMELAPSE_CAP,Time-lapse Capture,Intervalle,Zeitraffer,Lapso de tiempo,Intervallo,Intervalo,间隔拍照,インターバル撮影,間隔拍照,Интервальная съемка
+STRID_MAKE_MOVIE,Make Movie by Photo,Make Movie by Photo,Make Movie by Photo,Make Movie by Photo,Make Movie by Photo,Make Movie by Photo,照片合成影片,Make Movie by Photo,照片合成影片,Make Movie by Photo
+STRID_PROCESSING,Processing…,En cours…,Verarbeitung läuft…,Procesando…,Elaborazione in corso…,Processando…,处理中…,処理中…,處理中…,Обработка…
+STRID_NONE,None,Keine,Aucun,Ningunos,Nessun,None,无,どれも,無,Нет
+STRID_RESET_NUM,Reset Number,Réini.Nb,Nr. Rücks.,Rest. Núm.,Azz.Numero,Reset Number,数字归零,デジタルゼロ,重設數字,Сбросить номер
+STRID_DEFAULT_SETTING,Default Setting,Regl. Defaut,Standard Einstell,Configuración por defecto,Impost.predef.,Conf por def,默认设置,デフォルト設定,預設值,Перезагрузить
+STRID_YES,Yes,Oui,Ja,Sí,Sì,Yes,是,はい,是,Да
+STRID_NO,No,Non,Ein,No,No,No,否,いいえ,否,Нет
+STRID_VERSION,Version,Version,Version,Versión,Versione,Version,版本,バージョン,版本,Версия ПО
+STRID_PLAYBACK,Playback,de lecture,Wiedergabe,playback,Riproduzione,reprodução,回放,再生モード,播放,Воспроизведение
+STRID_THUMBNAIL,Thumbnail,Ongle du pouce,Thumbnail,Thumbnail,Thumbnail,Thumbnail,缩略图,サムネイル,縮圖,Ракурс 
+STRID_SET_LOGO,Set Logo,Placez le logo,Foto ein,Fije la insignia,Regoli il marchio,Set Logo,设置开机画面,ロゴを置きなさい,自定開機畫面,Установка  логотипа
+STRID_ROTATE,Rotate,Tournez,Drehen Sie sich,Rote,Ruoti,Rotate,旋转,回しなさい,旋轉,Повернуть
+STRID_ROTATE_S,Rotate,Tourne,Drehen,Rote,Ruoti,Rotate,旋转,回しなさい,旋轉,Повернуть
+STRID_ROTATE_90,Rotate 90°,Tourne 90°,Drehen 90°,Rote 90°,Ruoti 90°,Rotate 90°,旋转 90°,回しなさい 90°,旋轉 90°,Повернуть 90°
+STRID_ROTATE_180,Rotate 180°,Tourne 180°,Drehen 180°,Rote 180°,Ruoti 180°,Rotate 180°,旋转 180°,回しなさい 180°,旋轉 180°,Повернуть 180°
+STRID_ROTATE_270,Rotate 270°,Tourne 270°,Drehen 270°,Rote 270°,Ruoti 270°,Rotate 270°,旋转 270°,回しなさい 270°,旋轉 270°,Повернуть 270°
+STRID_CROP,Crop,Récolte,Getreide,Cosecha,il raccolto,Crop,修剪,剪る,裁切,Обрезать
+STRID_CROP_S,Crop,Emblav,Saatbe,Cultiv,Coltiva,Crop,修剪,剪る,裁切,Обрезать
+STRID_SLIDE_SHOW,Slide Show,Diaporama,Diashow,Ver Diapositivas,Mostra Diapositive,Slide show,幻灯片播放,スライドショー,幻燈片,Слайд-шоу
+STRID_2SEC,2 Seconds,2 Secondes,2 Sek,2 Segundos,2 Secondi,2 Segundos,2 秒,2 秒,2 秒,2 сек.
+STRID_3SEC,3 Seconds,3 Secondes,3 Sek,3 Segundos,3 Secondi,3 Segundos,3 秒,3 秒,3 秒,3 сек.
+STRID_5SEC,5 Seconds,5 Secondes,5 Sek,5 Segundos,5 Secondi,5 Segundos,5 秒,5 秒,5 秒,5 сек.
+STRID_8SEC,8 Seconds,8 Secondes,8 Sek,8 Segundos,8 Secondi,8 Segundos,8 秒,8 秒,8 秒,8 сек.
+STRID_10SEC,10 Seconds,10 Secondes,10 Sek,10 Segundos,10 Secondi,10 Segundos,10 秒,10 秒,10 秒,10 сек.
+STRID_PROTECT,Protect,Protection,Schutz,Proteger,Protezione,Proteger,保护,保護,保護,Защита
+STRID_ProtectOne,Protect One,Protéger Une,Eins Schütz.,Proteger Una,Proteggi Una,Protect One,保护单张,保護のリーフレット,保護單張,Защитить одну
+STRID_ProtectAll,Protect All,Protége Ttes,Alle Schütz.,Prot. Todas,Prot. Tutte,Protect All,保护全部,保護のすべての,保護所有,Защитить все
+STRID_Lock,Lock,Vérouillé,Verriegelung,Bloquear,Blocca,Lock,加锁,ロック,保護,Блокировка
+STRID_LockOne,Lock Current,Verouillez le courant,Eins Schütz.,Trabe el actual,Blocchi la corrente,Lock Current,加锁当前,現在を締めなさい,保護目前檔案,Заблокировать  фотографию
+STRID_LockAll,Lock All,Verouiller Tout,Alle Schütz.,Blog. Todo,Blocca tutto,Lock All,全部加锁,全コマロック,保護所有檔案,Заблок.все изображ
+STRID_LockSelected,Lock Selected,Serrure Choisie,Wählte Schütz.,Blog. Seleccionado,Blocca selez.,Lock Selected,锁定选择,ロックは選んだ,保護選擇,Заблокировать  
+STRID_Unlock,Unlock,Déverrouil,Öffnen,Desbloq.,Sblocca,Unlock,解锁,ロック解除,未鎖定,Разблокировка
+STRID_UnlockOne,Unlock Current,Ouverz le courant,Eins Öffnen,Abra el actual,Sblocchi la corrente,Unlock Current,解锁当前,現用の鍵を開けなさい,解除保護目前檔案,Разблокировать фотографию 
+STRID_UnlockAll,Unlock All,Déverrouiller Tout,Alle Öffnen,Desblog. Todo,Sblocca tutto,Unlock All,全部解锁,全コマロック解除,解除保護所有檔案,Разблок. все изображ
+STRID_UnlockSelected,Unlock Selected,Ouvrez Choisi,Wählte Öffnen,Abra Seleccionado,Sblocca selez.,Unlock Selected,解锁选择,選ばれるロック解除,解除保護,Разблокировать выбранный
+STRID_DPOF,DPOF,DPOF,DPOF,DPOF,DPOF,DPOF,DPOF,DPOF,DPOF,DPOF
+STRID_OneImage,One  Image,Une Image,Ein Bild,Una Imagen,Una Immag.,One  Image,单张照片,一枚画像,一張相片,Одно изображение
+STRID_ALL_IMAGES,All Images,Toutes Images,Alle Bilder,Todas las imágenes,Tutte le imm.,Todas imagens,全部,全ての画像,所有相片,Все изображения
+STRID_THIS_IMAGE,This Image,Cette Image,Dieses Bild,Esta Imagen,Questa immagine,Esta imagem,单张,この画像,此影像,Данное изображение
+STRID_THIS_VIDEO,This Video,Cette Image,Dieses Video,Esta Imagen,Immagine Corr.,Esta Imagem,此档案,このビデオ,此影片,Данное видео
+STRID_SELECT_IMAGES,Select Images,Select. Images,Bilder auswählen,Seleccionar Imagen,Seleziona immagini,Selec imagens,选择图片,画像を選択,選擇圖片,Выбрать изображение
+STRID_ALL_INDEX,All Index,Tout Index,Alle Index,Todo el índice,Tutta la selezione,Todo índice,索引,全インデックス,索引,Все индексы
+STRID_ALL,All,Toutes,Alle,Todas,Tutte,Todas,全部,全ての,全部,Все
+STRID_ResetAll,Reset All,Annuler Tout,Zurücksetzen,Formate. Todo,Ripristina Tutte,Reset All,全部复位,すべてのリセット,重新設定,Переустановить все
+STRID_Copies,Quantity,Quantité,Anzahl,Cantidad,Quantità,Quantity,数量,数量,數量,Количество
+STRID_Return,Return,Retour,Zurück,Volver,Ritorna,Return,返回,後ろの,返回,Вернуться
+STRID_Resize,Resize,Rogner,Größe ändern,Cambio Dimens.,Ridimensiona,Resize,调整尺寸,サイズを変更する,調整尺寸 ,Изменение размера
+STRID_QualityChange,Quality Change,Redimensionner,Qualität änd.,Cambio Calidad,Cambia Qualità,Quality Change,更改画质,画質の変更,更改畫質,Изменение качества
+STRID_COPY_TO_CARD,Copy To Card,Copie Sur Carte,Auf Karte kopieren,Copia a tarjeta,Copia sulla scheda,Ópia p/ cartão,复制到卡,カードにコピーする,複製到記憶卡,Копировать на карту
+STRID_COPY_FROM_CARD,Copy From Card,Copie De Carte,Von Karte kopieren,Copia de tarjeta,Copia dalla scheda,Cópia do cartão,从卡复制,カードからコピーする,從記憶卡複製,Копировать с карты
+STRID_Copy,Copy,Copy,Copy,Copy,Copy,Copy,拷贝,コピー,複製,Копировать
+STRID_ToSD,To SD,ÁL'Écart-type,Zu Sd,Al Sd,Ad Sd,To SD,Sd 卡,SDに,記憶卡,На SD карту памяти
+STRID_ToInternal,To Internal,Á Interne,Zu Internem,A Interno,Ad Interno,To Internal,內存,內部に,內建記憶體,На внутреннюю память
+STRID_Delete,Delete,Effacer,Löschen,Borrar,Elimina,Delete,刪除,消去,删除,Удалить
+STRID_DeleteCurrent,Delete Current,Supprime le courant,Löschungen z.Z.,Suprime el actual,Cancella la corrente,Delete Current,刪除当前,現用ファイルを削除する,目前檔案,Удалить зту фотографию
+STRID_DeleteAll,Delete All,Effacer tont,Alle löschen,Borrar todo,Elimina tutto,Delete All,全部刪除,全コマ消去,全部檔案,Удалить все
+STRID_DeleteSelected,Delete Selected,Effacement choisi,Löschen auserwählt,Borrar selecta,Elimina prescelta,Delete Selected,刪除选择,選り拔き削除,删除選擇,Удалить  выбранное
+STRID_DataProcessed,Data Processed,Les données traitées,Verarbeitete Daten,Los datos ya procesados,Dati trattati,Dados Transformados,资料处理,データ加工,資料處理,Обработка данных
+STRID_Select,Select,Sélect.,Wählen,Selecc.,Selez.,Select,选择,選り拔き,選擇,Выберите
+STRID_PAGE,Page,Page,Seite,Página,Pagina,Pág,页数,ページ,頁數,Страница
+STRID_PrintModeSel,Printing Mode Select ,Sélection mode impression,Druckmodus,Selecc. modo impr.,Sel. modo stampa,Printing Mode Select ,打印模式选择,印刷モードを選択する,列印模式選擇,Выбрать режим печати
+STRID_SIZE,Size,Taille,Grösse,Tamaño,Dimensioni,Tamanho,尺寸大小,サイズ,尺寸,Размер  
+STRID_Standard,Standard,Standard,Standard,Estándar,Standard,Standard,标准,標準,標準,Стандарт
+STRID_CONTINUE,Continue,Suite,Weiter,Continuar,Continuare,Continuar,继续,続りなさい,繼續,Продолжить
+STRID_Without,Without,Sans,Ohne ,Sin,Senza,Without,不包括,を除く,不包含,Без 
+STRID_With,With,Avec,Mit,Con,Con,With,包括,を含む,包含,С
+STRID_NAME,File Name,Nom Fichier,Dateiname,Nombre de archivo,Nome File,Nome de ficheiro,文件名称,ファイル名,檔名,Наименование файла
+STRID_NO_IMAGE,No Image,Aucune Image ,Kein Bild,Ninguna Imagen,Nessun'Immagine,Nenhuma Imagem,没有照片,イメージ無し,無相片,Нет изображения
+STRID_Set,Set,Définir,Einst.,Definir,Impo.,Set,设置,セットする,設定,Настройки
+STRID_MEMORY_FULL,Internal Memory Full,Mémoire Interne Complètement,Inner Speicher Voll,Memoria Interna Completo,Memoria Interna completo,Memória Interna Completamente,内存已满,内部のメモリが一杯い,記憶體已滿,Внутренняя память полная
+STRID_CARD_FULL,Card Full,Carte Complètement,Karte Voll,Tarjeta Completo,Carta completo,Cartão Completamente,卡已满,カードが一杯い,記憶卡已滿,Карта памяти заполнена
+STRID_FolderFull,Folder full,Dossier plein,Ordner voll,Carpeta llena,Cartella piena,Folder full,文件夹满,フォルダマン,檔案夾已滿,Папка заполнена
+STRID_CardError,Card error,Erreur carte,Kartenfehler,Error de tarjeta,Errore scheda,Card error,存储卡错误,カードエラー,記憶卡錯誤,Ошибка карты
+STRID_MemoryError,Memory error,Erreur memoire,Speicherfehler,Error de memoria,Errore memoria,Memory error,内存错误,メモリエラー,記憶體錯誤,Ошибка памяти
+STRID_LensError,Lens error,Erreur objectif,Objektivfehler,Error en el objetivo,Errore dell'obiettivo,Lens error,镜头错误,レンズエラー,鏡頭錯誤,Ошибка объектива
+STRID_CARD_LOCKED,Card Protected,Carte Protégée,Karte Hat Geschützt,Tarjeta Protegió,Carta Protetto,Cartão Protegeu,卡已写保护,カードは保護された,卡片鎖定,Карта памяти защищена
+STRID_FILE_PROTECT,Protected!,Protégé !,Geschützt!,Protegido!,Protetto!,Protegido!,已保护!,保護された,檔案保護,Защищено!
+STRID_PictureError,Picture error,Erreur d'image,Bildfehler,Error de imagen,Errore foto,Picture error,影像错误,ファイルエラー,影像錯誤,Ошибка изображения
+STRID_BATTERY_LOW,Low Battery,Pile basse,Niedrige Batterie,Batería Baja,Batteria bassa,Bateria baixa,电量不足,電源不足   ,電量不足 ,Батарея разряжена
+STRID_OneMoment,One moment,Un moment,Bitte warten,Un momento,Un momento,One moment,请稍等,お待ちください,請稍等,Подождите …
+STRID_NoConnection,No connection,Non connecté,Keine verbindung,Sin conexión,Non connesso,No connection,未连接,無接続,未連接,Нет соединения
+STRID_Transferring,Transferring,Transfert,Übertragung,Transfiriendo,Trasferim.,Transferring,正在传输,送信される,正在傳送,Идет передача …
+STRID_ConnectedToPC,Connected to PC,Connecté au PC,Anschluss am PC,Conexión al PC,Connessione al PC,Connected to PC,连接到计算机,コンピュータに接続,與PC連接中,Соединение с ПК
+STRID_RemoveUSBCable,Remove USB cable,Retirer câble USB,USB-Kab. entf.,Quitar cable USB,Rimuovere cavo USB,Remove USB cable,断开USB,切断は、USB,移除USB線,Извлечь USB кабель
+STRID_Total,Total,Total,Gesamt,Total,Totale,Total,总计,合計,總計,Всего
+STRID_DATE_STAMPING,Date Stamping,Marque Date,Datumsanzeige,Impresión fecha,Stampa Data,Impressão data,日期标签,日付表示,日期記錄,Штамп даты
+STRID_FILE_NAME,File Name,Nom Fichier,Dateiname,Nombre de archivo,Nome File,Nome de ficheiro,文件名称,ファイル名,檔名,Имя файла
+STRID_NO_OF_COPY,No.Of Copy,No. De Copies,Anzahl der Kopien,No. de copia,N. di copie,Nº. de cópia,打印数量,枚数,列印數量,Количество копий
+STRID_DEFAULT,Default,Défaut,Rückstellung,Predeterminado,Predefinite,Default,默认设置,初期設定,預設值,По умолчанию
+STRID_Menu,Menu,Menu,Menü,Menú,Menu,Menu,菜单,メニュー,選單,Меню
+STRID_EXIT,Exit,Quitter,Zurück,Salir,Esci,Sair,退出,終了,結束,Выход
+STRID_PLEASE_WAIT,Please wait,Patientez,Bitte Warten,Por favor espere,Attendere,Aguarde,请稍候,お待ちください,請稍待,"Пожалуйста, подождите"
+STRID_StartShutter,Start: Shutter,Début: Shutter,Anfang: Shutter,Comienzo: Shutter,Inizio: Shutter,Start: Shutter,开始: 快门,開始: シャッター,開始: 快門,Начать: затвор 
+STRID_StopShutter,Stop: Shutter,Arrét: Shutter,Anschlag: Shutter,Parada: Shutter,Arresto: Shutter,Stop: Shutter,停止: 快门,停止: シャッター,停止: 快門,Остановить : затвор
+STRID_NO_FILE,No File,Pas de fichier,Keine Datei,Sin archivo,Assenza file,No File,没有文件,ファイルがありません,沒有檔案,Нет файла
+STRID_NO_CARD,No Card,Aucune Carte,Keine Karte,Ninguna Tarjeta,Nessuna Carta,Nenhum Cartão,未插入卡,カード無し,沒有記憶卡,Нет карты
+STRID_NO_PHOTO,No Photo,Aucune image,Kein Bild im Speicher,Sin imagen,Nessuna immagine ,No Photo,无相片,画像がありません,無相片,Нет фото
+STRID_NOT_JPEG,Not JPEG File,Aucun fichier JPEG,Keine JPEG-Datei,No hay archivo JPEG,Non è un file JPEG,Not JPEG File,不是JPEG文件,JPEGファイルがない,不是JPEG檔,Файл не JPEG формата
+STRID_FlashNotReady,Flash not ready,Flash not ready,Flash not ready,Flash not ready,Flash not ready,Flash not ready,闪光灯充电中,内のFlash担当,閃光燈充電中,Вспышка не готова 
+STRID_UpdateBG,Update Graph,Update Graph,Update Graph,Update Graph,Update Graph,Update Graph,Update Graph,Update Graph,Update Graph,Обновление граф.
+STRID_CheckVersion,Check Version,Check Version,Check Version,Check Version,Check Version,Check Version,Check Version,Check Version,Check Version,Проверить версию
+STRID_PStoreErr,PStore Error,PStore Error,PStore Error,PStore Error,PStore Error,PStore Error,PStore Error,PStore Error,PStore Error,Ошибка Pcstore
+STRID_Play,Play,Jeu.,Spiel,Juego,Gioco,Play,播放,再生,播放,Воспроизвести
+STRID_PAUSE,Pause,Palse,Pause,Palse,Pausa,Pause,暫停,休止,暫停,Пауза
+STRID_Stop,Stop,Arrêt,Stopp,Stop,Stop,Stop,停止,停止,停止,Стоп
+STRID_Move,Move,Move,Move,Mover,Sposta,Move,移动,移動,移動,Двигать
+STRID_Save,Save,Éccnow,Auber,Except,Rispar,Save,保存,保存,保存,Сохранить
+STRID_Next,Next,Aprés,Zunächst,Después,Dopo,Next,下一項,次に,下一項,Следующий
+STRID_Change,Change,Changement,Änderung,Cambio,Cambiamento,Change,更改,变更,更改,Изменить
+STRID_VOLUME,Volume,Volume,Lautstärke,Volumen,Volume,Volume,音量调节,音量,音量,Громкость
+STRID_STILL,Still,fixe,Standbild,inmóvil,Immagine fissa,fixa,拍照,静止画像,拍照,Фотографировать
+STRID_BATTERY_TYPE,Battery Type,Battery Type,Battery Type,Battery Type,Battery Type,Battery Type,Battery Type,Battery Type,Battery Type,Тип батареи
+STRID_ALKALINE,Alkaline,Alkaline,Alkaline,Alkaline,Alkaline,Alkaline,Alkaline,Alkaline,Alkaline,Alkaline
+STRID_NIMH,NiMH,NiMH,NiMH,NiMH,NiMH,NiMH,NiMH,NiMH,NiMH,NiMH
+STRID_DELETE_WARNING,All data will be deleted,Format memoire\nefface toutes\ndonnees,Speicher formatieren\nAlle Daten löschen,Formatear memoria\nSe borrarán todos los datos,Formattazione mem.\ntutti i dati verranno cancellati,Format memória\ndados perdidos!,格式化记忆体\n将刪除所有数据,メモリをフォーマ\nットする全てのデ\nータが消去されます,格式化記憶體\n將删除所有資料,Все данные будут удалены
+STRID_SEQUENCE_NO,Sequence No.,Sequence No,Fortlaufende Numerierung,Num. Secuencia,Sequenza n.,Sequência nº,档案编号,連続NO,檔案編號,Номер серии
+STRID_RESET_WARNING,Return menu setting\nto defaults,Retour reglages\npar defaut,Auf Standardeinstellungen\nzurücksetzen,Reconfigurar el menú\npor defecto,Torna alle impostazioni\ndi menu predefinite,Menu por defin,恢复默认设置,メニュー設定を\nデフォルトに戻す,恢复默认设置,Сброс на заводские установки 
+STRID_ERASE_THIS,Erase This?,Effacer Ceci,Dieses löschen?,Borrar Ésta,Cancella questa,Apagar esta,刪除单张,この画像を消去する,删除單張,Удалить выбранный ?
+STRID_ERASE_ALL,Erase All Images?,Efface nefface Images?,Dieses Alle Bilder?,Borrar ndados imágenes?,Cancella Tutte immagini?,Apagar ndados imagens?,刪除所有?,この画像を消去全てする?,删除全部?,Удалить все изображения ?
+STRID_IMAGES,Images,Images,Bilder,imágenes,immagini,imagens,张,画像,張,Изображение
+STRID_CONNECT_TO_DEVICE,Please connect to device,Connecter appareil,Bitte an Gerät\nanschliessen,"Por favor, conectar\nal dispositivo",Colleg. alla per.,Ligue aparelho,请连接设备,デバイスに接続し\nてください,請連接裝置,Подключите устройство
+STRID_DEVICE_IS_CONNECTED,Device is connected,Appareil connecte,Gerät ist\nangeschlossen,Dispositivo\nconectado,Periferica coll.,Aparelho ligado,设备已连接,デバイスに\n接続されました,裝置已連接,Подключено
+STRID_LINK_ERROR,Link Error,Erreur de lien,Link-Fehler,Error de vínculo,Errore link,Erro na ligação,连机错误,リンクエラー,連接錯誤,Ошибка соединения
+STRID_USB_ERROR,USB Error,Erreur USB,USB-Fehler,Error USB.,Errore USB,Erro USB,USB 错误,USBエラー,USB 錯誤,Ошибка USB 
+STRID_DUMMY,X\\,a\\,a\\,a\\,a\\,X\\,a\\,a\\,a\\,a\\
+STRID_EV_M0P3,-0.333333333,-0.333333333,-0.333333333,-0.333333333,-0.333333333,-0.333333333,-0.333333333,-0.333333333,-0.333333333,-0.333333333
+STRID_EV_M0P6,-0.666666667,-0.666666667,-0.666666667,-0.666666667,-0.666666667,-0.666666667,-0.666666667,-0.666666667,-0.666666667,-0.666666667
+STRID_EV_M1P0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+STRID_EV_M1P3,-1.333333333,-1.333333333,-1.333333333,-1.333333333,-1.333333333,-1.333333333,-1.333333333,-1.333333333,-1.333333333,-1.333333333
+STRID_EV_M1P6,-1.666666667,-1.666666667,-1.666666667,-1.666666667,-1.666666667,-1.666666667,-1.666666667,-1.666666667,-1.666666667,-1.666666667
+STRID_EV_M2P0,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2
+STRID_EV_P0P0,0,0,0,0,0,0,0,0,0,0
+STRID_EV_P0P3,0.333333333,0.333333333,0.333333333,0.333333333,0.333333333,0.333333333,0.333333333,0.333333333,0.333333333,0.333333333
+STRID_EV_P0P6,0.666666667,0.666666667,0.666666667,0.666666667,0.666666667,0.666666667,0.666666667,0.666666667,0.666666667,0.666666667
+STRID_EV_P1P0,1,1,1,1,1,1,1,1,1,1
+STRID_EV_P1P3,1.333333333,1.333333333,1.333333333,1.333333333,1.333333333,1.333333333,1.333333333,1.333333333,1.333333333,1.333333333
+STRID_EV_P1P6,1.666666667,1.666666667,1.666666667,1.666666667,1.666666667,1.666666667,1.666666667,1.666666667,1.666666667,1.666666667
+STRID_EV_P2P0,2,2,2,2,2,2,2,2,2,2
+STRID_PRINT_ALL,Print All,TOUTES LES PHOTOS,ALLE BILDER,TODAS LAS FOTOS,TUTTE LE FOTO,WSZYSTKIE ZDJĘCIA,打印全部照片,全ての画像,列印所有照片,Печатать все
+STRID_PRINT_INDEX,Print Index,Tout Index,Alle Index,Todo el índice,Tutta la selezione,Todo índice,索引,全インデックス,索引,Печатать индексы
+STRID_PRINT_DPOF,Print DPOF,Imprimer avec DPOF,DPOF-Druck,Impr. con DPOF,Stampa con DPOF,Print With DPOF,采用DPOF打印,使用 DPOF 列印,DPOF 列印,DPOF  печать
+STRID_PRINT_SETTING,Print Setting,Réglage de Imprimez,Drucken Einstellungen,Ajustes el impresión,Impostazioni del impronta,Definições do imprimir,打印设定,印刷の設定,列印設定,Настройка печати
+STRID_DPOF_RESTART,DPOF Restart,DPOF Restart,DPOF Redémarrez,Reinicie DPOF,DPOF Riavviare,DPOF Restart,DPOF重新开始,DPOF設定を再起動します,DPOF重新開始,перезапуск DPOF 
+STRID_PRINT,Print,Imprimer,Drucken,Imprimir,Stampa,Print,打印,プリント,列印,Печать
+STRID_START_PRINTING,Start Printing,Commencez Á Imprimer,Druck,Comience A Imprimir,Inizi A Stampare,Iniciar Impressão,开始打印,スタートプリント,開始列印,Начало печати
+STRID_PRINTING,Printing..,Impression..,Drucken..,Imprimiendo..,Stampa..,Imprensa..,打印中..,印刷中..,正在列印..,Идет печать…
+STRID_PRINT_CANCELED,Print Canceled,Print Canceled,Ausdruck Abgebrochen,Impresión cancelada,Print canceled,Imprimir Cancelado,打印停止,印刷がキャ ンセルされました,打印停止,Печать отменена
+STRID_PRINT_FINISHED,Print Finished,Imprime Termine,Drucken Abgeschlossen,Impresión Terminada,Stampa terminata,Impressão Terminada,打印完成,終了,列印結束,Печать закончена
+STRID_OK_TO_PRINT,Press OK to Print,Appuyer OK pour imprimer,Drucken OK Drücken,Pulse OK para imprimir,Premi OK per stamp.,OK p/ imprimir,按确认键开始打印,OKを押してプリントする,按確認鍵開始列印,Для печати нажмите ОК
+STRID_PAPER_SIZE,Paper Size,Format Papier,Papier Format,Tamaño Del Papel,Formato Carta,Tamanho do papel,纸张大小,用紙寸法機構,紙張大小,Размер бумаги
+STRID_L,L,L,L,L,L,L,L,L,L,L
+STRID_2L,2L,2L,2L,2L,2L,2L,2L,2L,2L,2L
+STRID_POSTCARD,Postcard ,Carte postale,Postkarte ,Postal,Cartolina ,Postal,明信片,明信片,明信片,Открытка
+STRID_CARD,Card,Carte,Karte,Tarjeta,Scheda,Cartão,存储卡,存储卡,卡片,Карта памяти 
+STRID_100x150,100x150,100x150,100x150,100x150,100x150,100x150,100x150,100x150,100x150,100x150
+STRID_4x6,"4""x6""","4""x6""","4""x6""","4""x6""","4""x6""","4""x6""","4""x6""","4""x6""","4""x6""","4""x6"""
+STRID_8x10,"8""x10""","8""x10""","8""x10""","8""x10""","8""x10""","8""x10""","8""x10""","8""x10""","8""x10""","8""x10"""
+STRID_LETTER,Letter,Lettre ,Letter ,Carta,Lettera ,Carta,信封,Letter ,信封,Письмо
+STRID_11x17,"11""x17""","11""x17""","11""x17""","11""x17""","11""x17""","11""x17""","11""x17""","11""x17""","11""x17""","11""x17"""
+STRID_A0,A0,A0,A0,A0,A0,A0,A0,A0,A0,A0
+STRID_A1,A1,A1,A1,A1,A1,A1,A1,A1,A1,A1
+STRID_A2,A2,A2,A2,A2,A2,A2,A2,A2,A2,A2
+STRID_A3,A3,A3,A3,A3,A3,A3,A3,A3,A3,A3
+STRID_A4,A4,A4,A4,A4,A4,A4,A4,A4,A4,A4
+STRID_A5,A5,A5,A5,A5,A5,A5,A5,A5,A5,A5
+STRID_A6,A6,A6,A6,A6,A6,A6,A6,A6,A6,A6
+STRID_A7,A7,A7,A7,A7,A7,A7,A7,A7,A7,A7
+STRID_A8,A8,A8,A8,A8,A8,A8,A8,A8,A8,A8
+STRID_A9,A9,A9,A9,A9,A9,A9,A9,A9,A9,A9
+STRID_B0,B0,B0,B0,B0,B0,B0,B0,B0,B0,B0
+STRID_B1,B1,B1,B1,B1,B1,B1,B1,B1,B1,B1
+STRID_B2,B2,B2,B2,B2,B2,B2,B2,B2,B2,B2
+STRID_B3,B3,B3,B3,B3,B3,B3,B3,B3,B3,B3
+STRID_B4,B4,B4,B4,B4,B4,B4,B4,B4,B4,B4
+STRID_B5,B5,B5,B5,B5,B5,B5,B5,B5,B5,B5
+STRID_B6,B6,B6,B6,B6,B6,B6,B6,B6,B6,B6
+STRID_B7,B7,B7,B7,B7,B7,B7,B7,B7,B7,B7
+STRID_B8,B8,B8,B8,B8,B8,B8,B8,B8,B8,B8
+STRID_B9,B9,B9,B9,B9,B9,B9,B9,B9,B9,B9
+STRID_L_ROLLS,L Rolls,Rouleau L,L rolls,Rollo L,Rullo L,L Rolls,L尺寸卷筒紙,L 尺寸捲筒紙,L 尺寸捲筒紙,Крен L
+STRID_2L_ROLLS,2L Rolls,Rouleau 2L,2L rolls,Rollo 2L,Rullo 2L,2L Rolls,2L卷筒紙,2L 捲筒紙,2L 捲筒紙,Крен 2L
+STRID_4_ROLLS,"4"" Rolls",Roul.10x15,"4"" rolls",Rollo 4L,"Rullo 4""","4"" Rolls",4英寸卷筒紙,4 英吋捲筒紙,4 英吋捲筒紙,Крен 4
+STRID_A4_ROLLS,A4 Rolls,Rouleau A4,A4 rolls,Rollo A4,Rullo A4,A4 Rolls,A4卷筒紙,A4 捲筒紙,A4 捲筒紙,Крен A4
+STRID_PAPER_TYPE,Paper Type,Type De Papier,Papier Sorte,Tipo De Papel,Tipo Di Carta,Paper Type,纸张类型,ペーパータイプ,紙張類型,Тип бумаги
+STRID_PHOTO_PAPER,Photo,Photo,Photo,Photo,Photo,Photo,照片纸,写真,相片紙,Фотобумага
+STRID_PLAIN_PAPER,Plain,Plain,Plain,Plain,Plain,Plain,普通纸,Plain,普通紙,Обычная бумага
+STRID_FAST_PHOTO,Fast Photo,Fast Photo,Fast Photo,Fast Photo,Fast Photo,Fast Photo,快速相片纸,Fast Photo,快速相片紙,Быстрое фото
+STRID_FILE_TYPE,File Type,Type De Dossier,Akte Art,Tipo De Archivo,Tipo Dalla Lima,File Type,文件类型,ファイルタイプ,文件類型,Тип файла
+STRID_EXIF_JPEG,Exif/JPEG,Exif/JPEG,Exif/JPEG,Exif/JPEG,Exif/JPEG,Exif/JPEG,Exif/JPEG,Exif/JPEG,Exif/JPEG,Exif/JPEG
+STRID_EXIF,Exif,Exif,Exif,Exif,Exif,Exif,Exif,Exif,Exif,Exif
+STRID_JPEG,JPEG,JPEG,JPEG,JPEG,JPEG,JPEG,JPEG,JPEG,JPEG,JPEG
+STRID_DATE_PRINT,Date Print,Impression De La Date,Druck Des Datums,Impresión De La Fecha,Stampa Della Data,Data de impressão,打印日期,日付の印刷,列印日期,Печатать дату
+STRID_FILENAME_PRINT,Filename Print,Impression De La Nom,Druck Des Dateinamens,Impresión De La Nombre,Stampa Della Nome,Filename Print,打印文件名,ファイル名の印刷,列印檔名,Печатать наименование файла
+STRID_IMAGE_OPTIMIZE,Image Optimize,L'Image Optimisent,Bild Optimieren,La Imagen Optimiza,L'Immagine Ottimizza,Image Optimize,图像最佳化,画像の最適化,圖像最佳化,Оптимизировать изображение
+STRID_LAYOUT,N-UP Layout,N-UP Layout,N-UP Layout,N-diseño superior,N-up layout,Disposição n-up,打印版面,N-UPレイアウト,佈局,Разметка страниц
+STRID_1UP,1-UP,1-UP,1-UP,1-UP,1-UP,1-UP,1-UP,1-UP,1-UP,STRID_1UP
+STRID_2UP,2-UP,2-UP,2-UP,2-UP,2-UP,2-UP,2-UP,2-UP,2-UP,STRID_2UP
+STRID_3UP,3-UP,3-UP,3-UP,3-UP,3-UP,3-UP,3-UP,3-UP,3-UP,STRID_3UP
+STRID_4UP,4-UP,4-UP,4-UP,4-UP,4-UP,4-UP,4-UP,4-UP,4-UP,STRID_4UP
+STRID_5UP,5-UP,5-UP,5-UP,5-UP,5-UP,5-UP,5-UP,5-UP,5-UP,STRID_5UP
+STRID_6UP,6-UP,6-UP,6-UP,6-UP,6-UP,6-UP,6-UP,6-UP,6-UP,STRID_6UP
+STRID_7UP,7-UP,7-UP,7-UP,7-UP,7-UP,7-UP,7-UP,7-UP,7-UP,STRID_7UP
+STRID_8UP,8-UP,8-UP,8-UP,8-UP,8-UP,8-UP,8-UP,8-UP,8-UP,STRID_8UP
+STRID_9UP,9-UP,9-UP,9-UP,9-UP,9-UP,9-UP,9-UP,9-UP,9-UP,STRID_9UP
+STRID_10UP,10-UP,10-UP,10-UP,10-UP,10-UP,10-UP,10-UP,10-UP,10-UP,STRID_10UP
+STRID_250UP,250-UP,250-UP,250-UP,250-UP,250-UP,250-UP,250-UP,250-UP,250-UP,STRID_250UP
+STRID_INDEX,Index,Index,Index,índice,selezione,índice,索引,インデックス,索引,Индек
+STRID_1UP_BORDERLESS,Borderless,Borderless,Borderless,Randlos,Borderless,obramowania,满版列印,フチなし,滿版列印,Без полей
+STRID_FIXED_SIZE,Fixed Size,Taille Fixe,Fixed Size,Tamaño Fijo,Formato Fisso,Fixed Size,固定大小,固定サイズ,固定大小,Установленный размер
+STRID_25x325,"2.5""x3.25""","2.5""x3.25""","2.5""x3.25""","2.5""x3.25""","2.5""x3.25""","2.5""x3.25""","2.5""x3.25""","2.5""x3.25""","2.5""x3.25""","2.5""x3.25"""
+STRID_35x5,"3.5""x5""","3.5""x5""","3.5""x5""","3.5""x5""","3.5""x5""","3.5""x5""","3.5""x5""","3.5""x5""","3.5""x5""","3.5""x5"""
+STRID_254x178,254x178,254x178,254x178,254x178,254x178,254x178,254x178,254x178,254x178,254x178
+STRID_110x74,110x74,110x74,110x74,110x74,110x74,110x74,110x74,110x74,110x74,110x74
+STRID_89x55,89x55,89x55,89x55,89x55,89x55,89x55,89x55,89x55,89x55,89x55
+STRID_6x8,6x8,6x8,6x8,6x8,6x8,6x8,6x8,6x8,6x8,6x8
+STRID_7x10,7x10,7x10,7x10,7x10,7x10,7x10,7x10,7x10,7x10,7x10
+STRID_9x13,9x13,9x13,9x13,9x13,9x13,9x13,9x13,9x13,9x13,9x13
+STRID_13x18,13x18,13x18,13x18,13x18,13x18,13x18,13x18,13x18,13x18,13x18
+STRID_15x21,15x21,15x21,15x21,15x21,15x21,15x21,15x21,15x21,15x21,15x21
+STRID_18x24,18x24,18x24,18x24,18x24,18x24,18x24,18x24,18x24,18x24,18x24
+STRID_CROPPING,Cropping,Emblavage,Saatbestellung,Cultivo,Coltivazione,Recorte,剪切,作付,剪切,Вырезать
+STRID_PRINT_ERROR,Print Error,Erreur impression,Druck fehler,Error de impresión,Stampa errore,Print Error,打印错误,印刷エラー,列印錯誤,Ошибка печати
+STRID_PRINTER_DISCONNECTABLE,Printer can be Disconnected.,Printer can be Disconnected.,Imprimante peut être débranché.,La impresora se puede desconectar.,Stampante può essere disconnesso.,Impressora pode ser desligado,打印机连结可移除,プリンタを切断することができます,印表機連結可移除,Принтер может быть отключен
+STRID_PAPER_ERROR,Paper Error,Probleme De Papier,Papierfehler,Error De Papel,Errore Carta,Erro De Papel,纸张错误,ペーパーエラー,紙張錯誤,Ошибка бумаги
+STRID_PAPER_OUT,Paper is Empty,Impression Annulee,Papierfach ist leer,Papel Vacío,Stampa annullata,Impressão cancelada,纸张耗尽,用紙が空です,無紙張,Бумага закончилась 
+STRID_PAPER_LOAD_ERROR,Paper is not Loaded,Il n'y a plus de papier,Kein papier eingelegt,No se ha cargado papel,Mancanza carta,Sem papel,纸张未加载,用紙がセットさ   れていません,紙張未裝載,Бумага не загружена
+STRID_PAPER_EJECT_ERROR,Paper is not Ejected,Probleme De Papier,Papierfehler,Error De Papel,Errore Carta,Erro De Papel,纸张未弹出,ペーパーエラー,紙張未彈出,Бумана не выпущена
+STRID_PAPER_MEDIA_ERROR,Paper is not Detected,Probleme De Papier,Papierfehler,Error De Papel,Errore Carta,Erro De Papel,纸张未侦测,ペーパーエラー,紙張未偵測,Бумага не распознана
+STRID_PAPER_JAMMED,Paper is Jammed,Erreur de support,Papierstau,Papel atascado,Errore supporto,Erro no suporte de dados,纸张堵塞, 用紙詰まりです,夾紙,Зажатие бумаги
+STRID_PAPER_NEAR_EMPTY,Paper is Nearly Empty,Bourrage du papier,Papierfach ist fast leer,Poco papel,Carta inceppata,Papel encravado,纸张将要耗尽,用紙がほと    んど空です,紙張將要耗盡,Бумага заканчивается
+STRID_PAPER_NOT_SUPPORT,Paper Type is not Supported,Il n'y a presque plus de papier,Papiersorte nicht unterstützt,Tipo de papel no compatible,Carta in fase di esaurimento,Quase sem papel,纸张规格不支持,サポートされてい  ない用紙タイプ,紙張規格不支持,Формат бумаги не поддерживается
+STRID_INK_ERROR,Ink Error,Probleme D'encre,Tintenfehler,Error De Tinta,Errore Inchiostro,Erro De Tinteiro,墨水错误,印刷エラー,墨水错误,Ошибка краски 
+STRID_INK_EMPTY,Ink is Empty,Ce type de papier ne convient pas,Tinte ist leer,Tinta vacía,Tipo di carta non supportato,Tipo de papel não suportado,墨水耗尽, インクが空です,無墨水,Краска закончилась
+STRID_INK_LOW,Ink is Low,Il n'y a plus d'encre,Tinte ist fast leer,Poca tinta,Mancanza inchiostro,Tinteiro vazio,墨水将要耗尽,インクが少なく   なっています,墨水將要耗盡,Краска заканчивается
+STRID_INK_WASTE,Waste Ink Reservoir Full,Probleme D'encre,Tintenfehler,Error De Tinta,Errore Inchiostro,Erro De Tinteiro,墨水错误,インク消耗エラー,墨水錯誤,Ошибка краски 
+STRID_HW_ERROR,Hardware Error,Erreur matérielle d'imprimante,Hardware-Fehler des Druckers,Error en hardware de la impresora,Errore hardware stampante,Erro de hardware,打印机错误,プリンター ハードウェアエラ,印表機錯誤,Ошибка принтера
+STRID_HW_FATAL,Fatal Error,Erreur fatale,Schwerwiegender Fehler,Error grave,Errore irreversibile,Erro Fatal,严重打印机错误,致命的エラー,嚴重印表機錯誤,Среьезная ошибка принтера
+STRID_HW_SERVICE_CALL,Service Call,Maintenance requise,Kundendienst anrufen,Llame al servicio técnico,Contattare assistenza tecnica,Chamada de serviço,请联络硬体厂商,カスタマーサービスに 連絡してください,請聯絡印表機廠商,Свяжитесь с центром по ремонту
+STRID_HW_UNAVAILABLE,Printer Unavailable,Imprimante indisponible,Drucker ist nicht verfügbar,Impresora no disponible,Stampante non disponibile,Impressora não está disponível,找不到打印机,プリンターを使用できません,找不到印表機,Принтер не доступен
+STRID_HW_BUSY,Printer is Busy,Imprimante occupée,Drucker ist ausgelastet,Impresora ocupada,Stampante in uso,A impressora está ocupada,打印机忙碌中,プリンタービジー,印表機忙碌中,Принтер занят
+STRID_HW_LEVER,Lever Error,Erreur de levier,Hebelfehler,Error de la palanca,Errore leva,Alavanca de erro,打印机错误,レバーエラー,印表機錯誤,Ошибка принтера
+STRID_HW_COVER_OPEN,Cover is Open,Position Défectueuse,Abdeckungoffen,Cubierta abierta,Posizione livello non corretta,Nível posição não correcto,封盖未闭合,カバーが開    いています,印表機上蓋未關閉,Открыта крышка
+STRID_HW_NO_MARKING_AGENT,No Marking Agent,Aucun agent de marquage,Kein Kennzeichnungsmittel vorhanden,No hay agente de marca,Nessun agente di marcatura,Brak czynnika znakującego,打印机错误,印刷エラー,印表機錯誤,Ошибка принтера
+STRID_HW_INK_COVER_OPEN,Ink Cover is Open,de marquage,Tintenklappe offen,Cubierta para tinta abierta,Nessun agente di marcatura,Nenhum agente detectado,墨水盒盖未闭合,インクカバーが   開いています,墨水盒蓋未關閉,Крышка краски открыта
+STRID_HW_NO_INK_CARTRIDGE,Ink Cartridge is not Set,Couvercle d'encre ouvert,Keine tintenpatrone,No hay cartucho de tinta,Coperchio inchiostro aperto,Tampa tinteiro aberta,墨粉盒未装载,インクカート    リッジなし,墨水盒未裝載,Картридж краски не установлен
+STRID_FILE_ERROR,File Error,Erreur De Fichier,Dateifehler,Error De Archivo,Errore File,Erro de arquivo,照片错误,ファイルエラー,照片錯誤,Ошибка файла
+STRID_FILE_PRINT_INFO,Print Info Error,Info Impr,Druckinfo,Inf. Impr.,Info Stmp,Info Print Error,打印信息错误,ファイルが大きすぎます,列印資訊錯誤,Ошибка информации печати
+STRID_FILE_DECODE_ERROR,File Decode Error,Erreur de décodage du fichier,Fehler bei der De-kodierung der Datei,Error de decodif. de archivo,Errore decodifica file,Print Error,档案解码错误,ファイルデコードエラー,檔案解碼錯誤,Ошибка раскодирования файла
+STRID_UNKNOW_ERROR,Unknow Error,Erreur impression,Druck fehler,Error de impresión,Stampa errore,Print Error,未知错误,印刷エラー,未知錯誤,Неизвестная ошибка
+STRID_XML_SYNTAX_ERROR,XML Syntax Error,Erreur impression,Druck fehler,Error de impresión,Stampa errore,Print Error,XML语法错误,XMLエラー,XML語法錯誤,Ошибка  XML
+STRID_MOTION_DET,Motion Detection,Détection de mouvement,Movement Detection,Detección de movimiento,Movement Detection,Detecção de Movimento,运动检测,こン檢測,運動檢測,Распознавание движения
+STRID_FACE_DET,Face Detection,Détection de visage,Gesichtserkennung,Detección de la cara,VoltoRilevamento,Detecção de Rosto,人脸识别,顔検出,人臉偵測,Распознавание лица
+STRID_SMILE_DET,Smile Detection,Détection de Smiley ,Smile-Erkennung,Detección de sonrisas,Sorriso di rilevamento,Detecção de sorriso,笑脸识别,笑質檢測,笑臉偵測,Распознавание улыбки
+STRID_ANTI_SHAKING,Anti-Shaking,Stabilisation,Stabilisierung,Estabilización,Stabilizzazione,Anti-Vibração,防手震,シェイク,防手震,Стабилизация
+STRID_NO_MOVIE,No Movie,Aucun Film,Nr. Movie,Ninguna película,Nessuna Movie ,No Filme,无影片,いいえムービー,無錄影,Нет видео
+STRID_MP3PLAY,MP3,MP3,MP3,MP3,MP3,MP3,MP3,MP3,MP3,MP3
+STRID_NO_MP3FILE,No MP3 File,Aucun fichier MP3,Kein MP3-Datei,N de archivos MP3,Nessun file MP3,Nenhum arquivo MP3,没有MP3文件,いいえMP3ファイル,沒有MP3檔案,Нет МР3 файла
+STRID_SENSOR_ROTATE,Image rotation,Rotation de l'image ,Bilddrehung ,Rotación de imagen ,Rotazione immagine ,Rotação de imagem ,影像旋转,画像回転,影像旋轉,Поворот изображения
+STRID_RECORD,Video Record,Disque de vidéo,Videoaufzeichnung,Expediente del vídeo,Registrazione televisiva,Registro do vídeo,录影,録画,錄影,Показатель видео
+STRID_RECORD_AUDIO,Record Audio,Acoustique record,Rekordaudio,Audio de registro,Audio record,Áudio gravado,录影音频,録画な音声,錄影聲音,Рекордное аудио
+STRID_LED_SETTING,Lamp setting,Arrangement de lampe,Het plaatsen van de lamp,Ajuste de la lámpara,Regolazione della lampada,Ajuste da lâmpada,夜光灯设定,ランプの設定,夜光燈設定,Установка светильника
+STRID_GOOD_BYE,Goodbye,AU REVOIR,Wiedersehen,ADIÓS,arriverderci,Até logo,再见,さようなら,再見,до свидания
+STRID_PLEASE_INSERT_SD,PLEASE INSERT SD CARD,S'IL VOUS PLAÎT INSERT SD CARD,SETZEN SIE BITTE SD-KARTE EIN,Inserte tarjeta SD,SI PREGA DI INSERIRE SCHEDA SD,INTRODUZA POR FAVOR O CARTÃO DO SD,请插入SD卡,SDカードを挿入してください,請插入SD卡,"Пожалуйста, вставьте SD-КАРТЫ"
+STRID_IR_LED,IR LED,IR LED,IR LED,IR LED,IR LED,IR LED,IR LED,IR LED,IR LED,IR LED
+STRID_Microphone,Microphone,microphone,Mikrofon,micrófono,microfono,microfone,microfone,microfone,microfone,микрофон
+STRID_CLUSTER_WRONG,Custer size wrong.\nPlease format,Custer size wrong.\nPlease format,Custer size wrong.\nPlease format,Custer size wrong.\nPlease format,Custer size wrong.\nPlease format,Custer size wrong.\nPlease format,Custer size wrong.\nPlease format,Custer size wrong.\nPlease format,Custer size wrong.\nPlease format,Custer size wrong.\nPlease format
+STRID_SD_CLASS6,Need Class6 or Higher SD Card,Need Class6 or Higher SD Card,Need Class6 or Higher SD Card,Need Class6 or Higher SD Card,Need Class6 or Higher SD Card,Need Class6 or Higher SD Card,Need Class6 or Higher SD Card,Need Class6 or Higher SD Card,Need Class6 or Higher SD Card,Need Class6 or Higher SD Card
+STRID_SD_CLASS4,Need Class4 or Higher SD Card,Need Class4 or Higher SD Card,Need Class4 or Higher SD Card,Need Class4 or Higher SD Card,Need Class4 or Higher SD Card,Need Class4 or Higher SD Card,Need Class4 or Higher SD Card,Need Class4 or Higher SD Card,Need Class4 or Higher SD Card,Need Class4 or Higher SD Card
+STRID_HDR,HDR,HDR,HDR,HDR,HDR,HDR,HDR,HDR,HDR,HDR
+STRID_TIME_LPASE,Time Lapse,Time Lapse,Time Lapse,Time Lapse,Time Lapse,Time Lapse,Time Lapse,Time Lapse,Time Lapse,Time Lapse
+STRID_100ms,100 ms,100 ms,100 ms,100 ms,100 ms,100 ms,100 ms,100 ms,100 ms,100 ms
+STRID_200ms,200 ms,200 ms,200 ms,200 ms,200 ms,200 ms,200 ms,200 ms,200 ms,200 ms
+STRID_500ms,500 ms,500 ms,500 ms,500 ms,500 ms,500 ms,500 ms,500 ms,500 ms,500 ms
+STRID_UNDERSCORE,_,_,_,_,_,_,_,_,_,_
+STRID_WIFI,WiFi,WiFi,WiFi,WiFi,WiFi,WiFi,WiFi,WiFi,WiFi,WiFi
+STRID_WIFI_OFF,WiFi_OFF,WiFi_OFF,WiFi_OFF,WiFi_OFF,WiFi_OFF,WiFi_OFF,WiFi_OFF,WiFi_OFF,WiFi_OFF,WiFi_OFF
+STRID_REFRESH,Refresh,Refresh,Refresh,Refresh,Refresh,Refresh,Refresh,Refresh,Refresh,Refresh
+STRID_WIFI_AP_MODE,AP mode,AP mode,AP mode,AP mode,AP mode,AP mode,AP mode,AP mode,AP mode,AP mode
+STRID_WIFI_ClIENT_MODE,Client mode,Client mode,Client mode,Client mode,Client mode,Client mode,Client mode,Client mode,Client mode,Client mode
+STRID_FILL_ASCII,"q1234567890~!@#$%^&*()-_=+[]{}|\/:;'"",.<>?",,,,,,,,,
+STRID_MODE_SWITCH,Switch Mode,Switch Mode,Switch Mode,Switch Mode,Switch Mode,Switch Mode,Switch Mode,Switch Mode,Switch Mode,Switch Mode
+STRID_2880x2160P24,2880x2160P24,2880x2160P24,2880x2160P24,2880x2160P24,2880x2160P24,2880x2160P24,2880x2160P24,2880x2160P24,2880x2160P24,2880x2160P24
+STRID_2560X1440P30,2560x1440P30,2560x1440P30,2560x1440P30,2560x1440P30,2560x1440P30,2560x1440P30,2560x1440P30,2560x1440P30,2560x1440P30,2560x1440P30
+STRID_2304x1296P30,2304x1296P30,2304x1296P30,2304x1296P30,2304x1296P30,2304x1296P30,2304x1296P30,2304x1296P30,2304x1296P30,2304x1296P30,2304x1296P30
+STRID_1080P96,1080P96,1080P96,1080P96,1080P96,1080P96,1080P96,1080P96,1080P96,1080P96,1080P96
+STRID_1080P60,1080P60,1080P60,1080P60,1080P60,1080P60,1080P60,1080P60,1080P60,1080P60,1080P60
+STRID_1080P_DUAL,1080P_DUAL,1080P_DUAL,1080P_DUAL,1080P_DUAL,1080P_DUAL,1080P_DUAL,1080P_DUAL,1080P_DUAL,1080P_DUAL,1080P_DUAL
+STRID_720P120WXH,720P120,720P120,720P120,720P120,720P120,720P120,720P120,720P120,720P120,720P120
+STRID_WDR,WDR,WDR,WDR,WDR,WDR,WDR,WDR,WDR,WDR,WDR
+STRID_RSC,RSC,RSC,RSC,RSC,RSC,RSC,RSC,RSC,RSC,RSC
+STRID_G_SENSOR,G Sensor,G Sensor,G Sensor,G Sensor,G Sensor,G Sensor,G Sensor,G Sensor,G Sensor,G Sensor
+STRID_1SEC,1 Sec,1 Sec,1 Sec,1 Sec,1 Sec,1 Sec,1 Sec,1 Sec,1 Sec,1 Sec
+STRID_30SEC,30 Sec,30 Sec,30 Sec,30 Sec,30 Sec,30 Sec,30 Sec,30 Sec,30 Sec,30 Sec
+STRID_1HOUR,1 Hour,1 Hour,1 Hour,1 Hour,1 Hour,1 Hour,1 Hour,1 Hour,1 Hour,1 Hour
+STRID_2HOUR,2 Hour,2 Hour,2 Hour,2 Hour,2 Hour,2 Hour,2 Hour,2 Hour,2 Hour,2 Hour
+STRID_3HOUR,3 Hour,3 Hour,3 Hour,3 Hour,3 Hour,3 Hour,3 Hour,3 Hour,3 Hour,3 Hour
+STRID_1DAY,1 Day,1 Day,1 Day,1 Day,1 Day,1 Day,1 Day,1 Day,1 Day,1 Day
+STRID_IRCUT,IR Cut,IR Cut,IR Cut,IR Cut,IR Cut,IR Cut,IR Cut,IR Cut,IR Cut,IR Cut
+STRID_DUAL_CAM,Dual Cam Display,Dual Cam Display,Dual Cam Display,Dual Cam Display,Dual Cam Display,Dual Cam Display,Dual Cam Display,Dual Cam Display,Dual Cam Display,Dual Cam Display
+STRID_FRONT,Front,Front,Front,Front,Front,Front,Front,Front,Front,Front
+STRID_BEHIND,Behind,Behind,Behind,Behind,Behind,Behind,Behind,Behind,Behind,Behind
+STRID_BOTH,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both
+STRID_PTZ,PTZ,PTZ,PTZ,PTZ,PTZ,PTZ,PTZ,PTZ,PTZ,PTZ
+STRID_URGENT_PROTECT_AUTO,Auto Urgent Protect,Auto Urgent Protect,Auto Urgent Protect,Auto Urgent Protect,Auto Urgent Protect,Auto Urgent Protect,Auto Urgent Protect,Auto Urgent Protect,Auto Urgent Protect,Auto Urgent Protect
+STRID_URGENT_PROTECT_MANUAL,Manual Urgent Protect,Manual Urgent Protect,Manual Urgent Protect,Manual Urgent Protect,Manual Urgent Protect,Manual Urgent Protect,Manual Urgent Protect,Manual Urgent Protect,Manual Urgent Protect,Manual Urgent Protect
+STRID_PIM,PIM,PIM,PIM,PIM,PIM,PIM,PIM,PIM,PIM,PIM
+STRID_FCW,FCW,FCW,FCW,FCW,FCW,FCW,FCW,FCW,FCW,FCW
+STRID_LDWS,LDWS,LDWS,LDWS,LDWS,LDWS,LDWS,LDWS,LDWS,LDWS,LDWS
+STRID_DDD,DDD,DDD,DDD,DDD,DDD,DDD,DDD,DDD,DDD,DDD
+STRID_ADAS,ADAS,ADAS,ADAS,ADAS,ADAS,ADAS,ADAS,ADAS,ADAS,ADAS
+STRID_REC_RECOVERY,File Recovery,File Recovery,File Recovery,File Recovery,File Recovery,File Recovery,File Recovery,File Recovery,File Recovery,File Recovery
+STRID_SELFTIMER,Self Timer,Self Timer,Self Timer,Self Timer,Self Timer,Self Timer,Self Timer,Self Timer,Self Timer,Self Timer
+STRID_PORTRIAL,Portrial,Portrial,Portrial,Portrial,Portrial,Portrial,Portrial,Portrial,Portrial,Portrial
+STRID_LANDSCPE,Landscpe,Landscpe,Landscpe,Landscpe,Landscpe,Landscpe,Landscpe,Landscpe,Landscpe,Landscpe
+STRID_0,0,0,0,0,0,0,0,0,0,0
+STRID_1,1,1,1,1,1,1,1,1,1,1
+STRID_2,2,2,2,2,2,2,2,2,2,2
+STRID_3,3,3,3,3,3,3,3,3,3,3
+STRID_4,4,4,4,4,4,4,4,4,4,4
+STRID_5,5,5,5,5,5,5,5,5,5,5
+STRID_6,6,6,6,6,6,6,6,6,6,6
+STRID_7,7,7,7,7,7,7,7,7,7,7
+STRID_8,8,8,8,8,8,8,8,8,8,8
+STRID_9,9,9,9,9,9,9,9,9,9,9
+STRID_10,10,10,10,10,10,10,10,10,10,10
+STRID_CLOUD,Cloud,Cloud,Cloud,Cloud,Cloud,Cloud,Cloud,Cloud,Cloud,Cloud
+STRID_FW_UPDATE,Firmware Update,Firmware Update,Firmware Update,Firmware Update,Firmware Update,Firmware Update,Firmware Update,Firmware Update,Firmware Update,Firmware Update
+STRID_UVC,UVC,UVC,UVC,UVC,UVC,UVC,UVC,UVC,UVC,UVC
+STRID_RESUME,Resume,Resume,Resume,Resume,Resume,Resume,Resume,Resume,Resume,Resume
+STRID_MCTF,MCTF,,,,,,,,,
+STRID_EDGE,Edge,,,,,,,,,
+STRID_NR,NR,,,,,,,,,
+STRID_WIFI_ETH,WiFi/ETH,,,,,,,,,
+STRID_ISO6400,6400,,,,,,,,,
+STRID_ISO12800,12800,,,,,,,,,
+STRID_FRONT_2880x2160P50,UHD P50,,,,,,,,,
+STRID_FRONT_3840x2160P30,UHD P30,,,,,,,,,
+STRID_FRONT_2880x2160P24,UHD P24,,,,,,,,,
+STRID_FRONT_2704x2032P60,2.7K P60,,,,,,,,,
+STRID_FRONT_2560x1440P80,QHD P80,,,,,,,,,
+STRID_FRONT_2560x1440P60,QHD P60,,,,,,,,,
+STRID_FRONT_2560x1440P30,QHD P30,,,,,,,,,
+STRID_FRONT_2304x1296P30,3MHD P30,,,,,,,,,
+STRID_FRONT_1920x1080P120,FHD P120,,,,,,,,,
+STRID_FRONT_1920x1080P96,FHD P96,,,,,,,,,
+STRID_FRONT_1920x1080P60,FHD P60,,,,,,,,,
+STRID_FRONT_1920x1080P30,FHD P30,,,,,,,,,
+STRID_FRONT_1280x720P240,HD P240,,,,,,,,,
+STRID_FRONT_1280x720P120,HD P120,,,,,,,,,
+STRID_FRONT_1280x720P60,HD P60,,,,,,,,,
+STRID_FRONT_1280x720P30,HD P30,,,,,,,,,
+STRID_FRONT_848x480P30,WVGA P30,,,,,,,,,
+STRID_FRONT_640x480P240,VGA P240,,,,,,,,,
+STRID_FRONT_640x480P30,VGA P30,,,,,,,,,
+STRID_FRONT_320x240P30,QVGA P30,,,,,,,,,
+STRID_DUAL_2560x1440P30_1280x720P30,QHD P30+HD P30,,,,,,,,,
+STRID_DUAL_2560x1440P30_1920x1080P30,QHD P30+FHD P30,,,,,,,,,
+STRID_DUAL_2304x1296P30_1280x720P30,3MHD P30+HD P30,,,,,,,,,
+STRID_DUAL_1080P30_1080P30,FHD P30+FHD P30,,,,,,,,,
+STRID_DUAL_1920x1080P30_1280x720P30,FHD P30+HD P30,,,,,,,,,
+STRID_DUAL_1920x1080P30_848x480P30,FHD P30+WVGA P30,,,,,,,,,
+STRID_CLONE_1920x1080P30_1920x1080P30,FHD P30+FHD P30,,,,,,,,,
+STRID_CLONE_1920x1080P30_1280x720P30,FHD P30+HD P30,,,,,,,,,
+STRID_CLONE_2560x1440P30_848x480P30,QHD P30+WVGA P30,,,,,,,,,
+STRID_CLONE_2304x1296P30_848x480P30,3MHD P30+WVGA P30,,,,,,,,,
+STRID_CLONE_1920x1080P60_848x480P30,FHD P60+WVGA P30,,,,,,,,,
+STRID_CLONE_1920x1080P60_640x360P30,FHD P60+VGA P30,,,,,,,,,
+STRID_CLONE_1920x1080P30_848x480P30,FHD P30+WVGA P30,,,,,,,,,
+STRID_CLONE_2048x2048P30_480x480P30,2048x2048 P30 + 480x480 P30,,,,,,,,,
+STRID_BOTH2,Both2,,,,,,,,,
+STRID_CAP_SIDE,SideBySide,,,,,,,,,
+STRID_CAP_BURST_30,Burst 30,,,,,,,,,
+STRID_5MWXH_USR,5M 2992x1696,,,,,,,,,
+STRID_CODEC,Codec,,,,,,,,,
+STRID_MJPG,MJPG,,,,,,,,,
+STRID_H264,H264,,,,,,,,,
+STRID_H265,H265,,,,,,,,,
+STRID_2880X2160P50,,,,,,,,,,
+STRID_3840X2160P30,,,,,,,,,,

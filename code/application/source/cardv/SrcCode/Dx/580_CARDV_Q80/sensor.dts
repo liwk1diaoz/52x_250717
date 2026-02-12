@@ -1,0 +1,47 @@
+/*
+ * Novatek Ltd. NA51055 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+/dts-v1/;
+
+/ {
+	sensor_ssenif {
+		ssenif@0 {
+			if_type                 = <0x05>;                           /* HD_COMMON_VIDEO_IN_MIPI_CSI */
+			sensor_pinmux           = <0x220>;                           /*PIN_SENSOR_CFG_MIPI | PIN_SENSOR_CFG_MCLK*/
+			serial_if_pinmux        = <0xF01>;                           /*PIN_MIPI_LVDS_CFG_CLK0 | PIN_MIPI_LVDS_CFG_DAT0|PIN_MIPI_LVDS_CFG_DAT1 | PIN_MIPI_LVDS_CFG_DAT2 | PIN_MIPI_LVDS_CFG_DAT3*/
+			cmd_if_pinmux           = <0x00>;                           /*PIN_I2C_CFG_CH1*/
+			clk_lane_sel            = <0x00>;                           /* HD_VIDEOCAP_SEN_CLANE_SEL_CSI0_USE_C0 */
+			sen_2_serial_pin_map    = <0x00000000 0x00000001 0x00000002 0x00000003 0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF>;
+			senout_pxlfmt           = <0x410c0000>;                     /* HD_VIDEO_PXLFMT_RAW12=0x410c0000;HD_VIDEO_PXLFMT_YUV422=0x52100422;HD_VIDEO_PXLFMT_YUV420=0x520c0420*/
+			capout_pxlfmt           = <0x410c0000>;                     /* HD_VIDEO_PXLFMT_RAW12=0x410c0000;HD_VIDEO_PXLFMT_YUV422=0x52100422;HD_VIDEO_PXLFMT_YUV420=0x520c0420*/
+			data_lane               = <0x04>;
+		};		
+		ssenif@1 {
+			if_type                 = <0x09>;                           /* HD_COMMON_VIDEO_IN_P_AHD */
+			sensor_pinmux           = <0x808>;                           /*PIN_SENSOR2_CFG_CCIR8BITS | PIN_SENSOR2_CFG_SN3_MCLK*/
+			serial_if_pinmux        = <0x00>;                           /*PIN_MIPI_LVDS_CFG_CLK0 | PIN_MIPI_LVDS_CFG_DAT0|PIN_MIPI_LVDS_CFG_DAT1 | PIN_MIPI_LVDS_CFG_DAT2 | PIN_MIPI_LVDS_CFG_DAT3*/
+			cmd_if_pinmux           = <0x00>;                           /*PIN_I2C_CFG_CH3*/
+			clk_lane_sel            = <0x00>;                           /* HD_VIDEOCAP_SEN_CLANE_SEL_CSI0_USE_C0 */
+			sen_2_serial_pin_map    = <0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF>;
+			senout_pxlfmt           = <0x52100422>;                     /* HD_VIDEO_PXLFMT_RAW12=0x410c0000;HD_VIDEO_PXLFMT_YUV422=0x52100422;HD_VIDEO_PXLFMT_YUV420=0x520c0420*/
+			capout_pxlfmt           = <0x520c0420>;                     /* HD_VIDEO_PXLFMT_RAW12=0x410c0000;HD_VIDEO_PXLFMT_YUV422=0x52100422;HD_VIDEO_PXLFMT_YUV420=0x520c0420*/
+			data_lane               = <0x00>;
+		};
+	};
+	sensor {
+		/* label for sensor_cfg */
+		sen_cfg: sen_cfg {
+		};
+	};
+};
+
+#if defined(__FREERTOS)
+/* Note: put include files in the tail since label should be declared first. */
+#include <dt-bindings/gpio/nvt-gpio.h>
+#include "sen_imx335.dtsi"
+#endif
+

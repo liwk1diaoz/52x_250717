@@ -1,0 +1,87 @@
+#include "U2UvacID.h"
+#include "UVAC.h"
+#include "U2UvacVideoTsk.h"
+#include "U2UvacIsoInTsk.h"
+
+
+ID SEMID_U2UVC_QUEUE = 0;
+ID SEMID_U2UVC_READ_CDC = 0;
+ID SEMID_U2UVC_WRITE_CDC = 0;
+ID SEMID_U2UVC_READ2_CDC = 0;
+ID SEMID_U2UVC_WRITE2_CDC = 0;
+
+ID SEMID_U2UVC_WRITE_HID = 0;
+ID SEMID_U2UVC_READ_HID = 0;
+
+ID FLG_ID_U2UVAC = 0;
+ID FLG_ID_U2UVAC_UAC = 0;
+ID FLG_ID_U2UVAC_FRM = 0;
+THREAD_HANDLE U2UVACVIDEOTSK_ID = 0;
+//THREAD_HANDLE U2UVACISOINTSK_ID = 0;
+THREAD_HANDLE U2UVACVIDEOTSK_ID2 = 0;
+THREAD_HANDLE U2UVAC_TX_VDO1_ID = 0;
+THREAD_HANDLE U2UVAC_TX_VDO2_ID = 0;
+THREAD_HANDLE U2UVAC_TX_AUD1_ID = 0;
+THREAD_HANDLE U2UVAC_TX_AUD2_ID = 0;
+
+extern UINT32 gU2UvacChannel;
+extern BOOL gU2UvacCdcEnabled;
+extern UVAC_HID_INFO g_hid_info;
+
+
+ID FLG_ID_U2UVAC_UAC_RX = 0;
+ID SEMID_U2UVC_UAC_QUEUE = 0;
+THREAD_HANDLE U2UVAC_UAC_RX_ID = 0;
+
+void U2UVAC_InstallID(void)
+{
+	//usb_installID();
+	OS_CONFIG_SEMPHORE(SEMID_U2UVC_QUEUE, 0, 1, 1);
+	if (gU2UvacCdcEnabled) {
+		OS_CONFIG_SEMPHORE(SEMID_U2UVC_READ_CDC, 0, 1, 1);
+		OS_CONFIG_SEMPHORE(SEMID_U2UVC_READ2_CDC, 0, 1, 1);
+		OS_CONFIG_SEMPHORE(SEMID_U2UVC_WRITE_CDC, 0, 1, 1);
+		OS_CONFIG_SEMPHORE(SEMID_U2UVC_WRITE2_CDC, 0, 1, 1);
+	}
+	if(g_hid_info.en) {
+		OS_CONFIG_SEMPHORE(SEMID_U2UVC_READ_HID, 0, 1, 1);
+		OS_CONFIG_SEMPHORE(SEMID_U2UVC_WRITE_HID, 0, 1, 1);
+	}
+	OS_CONFIG_SEMPHORE(SEMID_U2UVC_UAC_QUEUE, 0, 1, 1);
+	OS_CONFIG_FLAG(FLG_ID_U2UVAC);
+	OS_CONFIG_FLAG(FLG_ID_U2UVAC_UAC_RX);
+	OS_CONFIG_FLAG(FLG_ID_U2UVAC_UAC);
+	OS_CONFIG_FLAG(FLG_ID_U2UVAC_FRM);
+}
+void U2UVAC_UnInstallID(void)
+{
+	vos_sem_destroy(SEMID_U2UVC_QUEUE);
+	if (gU2UvacCdcEnabled) {
+		vos_sem_destroy(SEMID_U2UVC_READ_CDC);
+		vos_sem_destroy(SEMID_U2UVC_READ2_CDC);
+		vos_sem_destroy(SEMID_U2UVC_WRITE_CDC);
+		vos_sem_destroy(SEMID_U2UVC_WRITE2_CDC);
+	}
+	if(g_hid_info.en) {
+		vos_sem_destroy(SEMID_U2UVC_READ_HID);
+		vos_sem_destroy(SEMID_U2UVC_WRITE_HID);
+	}
+	vos_sem_destroy(SEMID_U2UVC_UAC_QUEUE);
+	vos_flag_destroy(FLG_ID_U2UVAC);
+	vos_flag_destroy(FLG_ID_U2UVAC_UAC);
+	vos_flag_destroy(FLG_ID_U2UVAC_FRM);
+	vos_flag_destroy(FLG_ID_U2UVAC_UAC_RX);
+	vos_task_destroy(U2UVACVIDEOTSK_ID);
+	//vos_task_destroy(U2UVACISOINTSK_ID);
+	vos_task_destroy(U2UVAC_TX_VDO1_ID);
+	vos_task_destroy(U2UVAC_TX_AUD1_ID);
+	if (gU2UvacChannel > UVAC_CHANNEL_1V1A) {
+		vos_task_destroy(U2UVACVIDEOTSK_ID2);
+		vos_task_destroy(U2UVAC_TX_VDO2_ID);		
+	}
+	if (gU2UvacChannel == UVAC_CHANNEL_2V2A) {
+		vos_task_destroy(U2UVAC_TX_AUD2_ID);
+	}
+}
+
+

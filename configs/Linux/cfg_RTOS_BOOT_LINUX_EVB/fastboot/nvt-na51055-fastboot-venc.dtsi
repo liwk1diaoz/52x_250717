@@ -1,0 +1,17 @@
+&fastboot {
+	venc {
+		codectype = <1>;
+		framerate = <15>;
+		sec = <5>;
+		yuv_one_src = <1>;
+		jpeg_en = <1>;
+		jpeg_quality = <50>;
+		jpeg_fps = <5>;
+		sub_en = <0>;
+		sub_codectype = <0>;
+		main_gop = <15>;
+		sub_gop = <30>;
+		main_qp = <30>;
+		sub_qp = <30>;
+	};
+};

@@ -1,0 +1,99 @@
+#!/bin/sh
+echo "sys2" > /proc/nvt_info/bootts
+
+#KERVER=`cat /proc/version | awk -F'version ' '{print $2}' | awk -F' ' '{print $1}'`
+KERVER=4.19.91
+#for iOS APP
+insmod /lib/modules/$KERVER/extra/crypto/cryptodev-linux/cryptodev.ko
+
+insmod /lib/modules/$KERVER/hdal/comm/kdrv_comm.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_gfx2d/kdrv_gfx2d.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_videocapture/kdrv_videocapture.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_videoprocess/kdrv_videoprocess.ko
+insmod /lib/modules/$KERVER/hdal/kflow_common/kflow_common.ko
+insmod /lib/modules/$KERVER/hdal/kflow_gfx/videosprite/nvt_videosprite.ko
+insmod /lib/modules/$KERVER/hdal/kflow_videocapture/kflow_videocapture.ko
+insmod /lib/modules/$KERVER/hdal/kflow_videoprocess/kflow_videoprocess.ko
+
+# kdrv_gfx2d
+insmod /lib/modules/$KERVER/hdal/kdrv_gfx2d/kdrv_affine/affine_neon/kdrv_afn_neon.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_gfx2d/kdrv_affine/kdrv_afn.ko
+insmod /lib/modules/$KERVER/hdal/kflow_gfx/nvt_gfx.ko
+
+#SDE
+#insmod /lib/modules/$KERVER/hdal/kdrv_videoprocess/kdrv_sde/kdrv_sde.ko
+
+# motor & sensor
+if [ "${SENSOR1}" != "sen_off" ]; then
+    if [ "${SENSOR1_CFG}" != "sen_off" ]; then
+        insmod /lib/modules/$KERVER/hdal/${SENSOR1}/nvt_${SENSOR1}.ko sen_cfg_path=/etc/sensor/${SENSOR1_CFG}.cfg
+    else
+        insmod /lib/modules/$KERVER/hdal/${SENSOR1}/nvt_${SENSOR1}.ko
+    fi
+fi
+if [ "${SENSOR2}" != "sen_off" ] && [ "${SENSOR1}" != "${SENSOR2}" ]; then
+    if [ "${SENSOR2_CFG}" != "sen_off" ]; then
+        insmod /lib/modules/$KERVER/hdal/${SENSOR2}/nvt_${SENSOR2}.ko sen_cfg_path=/etc/sensor/${SENSOR2_CFG}.cfg
+    else
+        insmod /lib/modules/$KERVER/hdal/${SENSOR2}/nvt_${SENSOR2}.ko
+    fi
+fi
+
+# nvt_jpg
+#insmod /lib/modules/$KERVER/extra/vcodec/jpeg/nvt_jpg.ko
+#insmod /lib/modules/$KERVER/hdal/kdrv_videocodec/jpeg/kdrv_jpg.ko
+
+# nvt_h26x
+#insmod /lib/modules/$KERVER/extra/vcodec/h26x/nvt_h26x.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_videocodec/kdrv_h26x.ko
+insmod /lib/modules/$KERVER/hdal/nvt_vencrc/nvt_vencrc.ko
+
+# isf vdoenc
+insmod /lib/modules/$KERVER/hdal/kflow_videoenc/unit/kflow_videoenc.ko
+
+# iq, 3a
+if [ ${NVT_CHIP_ID} == "CHIP_NA51084" ]; then
+#echo "isp_id_list: 0x1B, ae_id_list: 0x1B, awb_id_list: 0x1B, iq_id_list 0x1B"
+insmod /lib/modules/$KERVER/hdal/isp/nvt_isp.ko isp_id_list=0x1B
+insmod /lib/modules/$KERVER/hdal/awb/nvt_awb.ko awb_id_list=0x1B
+insmod /lib/modules/$KERVER/hdal/iq/nvt_iq.ko iq_id_list=0x1B
+insmod /lib/modules/$KERVER/hdal/ae/nvt_ae.ko ae_id_list=0x1B
+else
+#echo "isp_id_list: 0x3, ae_id_list: 0x3, awb_id_list: 0x3, iq_id_list 0x3"
+insmod /lib/modules/$KERVER/hdal/isp/nvt_isp.ko
+insmod /lib/modules/$KERVER/hdal/awb/nvt_awb.ko
+insmod /lib/modules/$KERVER/hdal/iq/nvt_iq.ko
+insmod /lib/modules/$KERVER/hdal/ae/nvt_ae.ko
+fi
+#insmod /lib/modules/$KERVER/hdal/af/nvt_af.ko
+#insmod /lib/modules/$KERVER/hdal/dr/nvt_dr.ko
+#insmod /lib/modules/$KERVER/hdal/vpe/nvt_vpe.ko
+#insmod /lib/modules/$KERVER/hdal/sde/nvt_sde.ko
+
+if [ ${NVT_CHIP_ID} == "CHIP_NA51084" ]; then
+    insmod /lib/modules/$KERVER/hdal/comm/usb2dev8/nvt_usb2dev8.ko
+else
+    insmod /lib/modules/$KERVER/hdal/comm/usb2dev/nvt_usb2dev.ko
+fi
+
+#iio & adc (for keyscan)
+insmod /lib/modules/$KERVER/kernel/drivers/iio/industrialio.ko
+#insmod /lib/modules/$KERVER/kernel/drivers/iio/industrialio-configfs.ko
+insmod /lib/modules/$KERVER/kernel/drivers/iio/adc/nvt_adc.ko
+
+#tse
+if [ "${TSE}" == "enable" ]; then
+    insmod /lib/modules/$KERVER/hdal/comm/tse/nvt_tse.ko
+fi
+
+if [[ ! -d /sys/firmware/devicetree/base/hd_devnum ]]; then
+mknod /dev/nvt_vos c `cat /sys/class/nvt_vos/nvt_vos/dev | sed "s/:/\ /g"`
+mknod /dev/log_vg c `cat /sys/class/log_vg/log_vg/dev | sed "s/:/\ /g"`
+mknod /dev/nvtmpp c `cat /sys/class/nvtmpp/nvtmpp/dev | sed "s/:/\ /g"`
+mknod /dev/isf_flow0 c `cat /sys/class/isf_flow/isf_flow0/dev | sed "s/:/\ /g"`
+mknod /dev/isf_flow1 c `cat /sys/class/isf_flow/isf_flow1/dev | sed "s/:/\ /g"`
+mknod /dev/nvt_isp c `cat /sys/class/nvt_isp/nvt_isp/dev | sed "s/:/\ /g"`
+mknod /dev/null c 1 3
+fi
+
+echo "sys2" > /proc/nvt_info/bootts

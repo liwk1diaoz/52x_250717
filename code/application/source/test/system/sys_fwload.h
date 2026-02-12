@@ -1,0 +1,22 @@
+#ifndef SYS_FWLOAD_H
+#define SYS_FWLOAD_H
+
+typedef enum {
+	CODE_SECTION_01 = 0,
+	CODE_SECTION_02,
+	CODE_SECTION_03,
+	CODE_SECTION_04,
+	CODE_SECTION_05,
+	CODE_SECTION_06,
+	CODE_SECTION_07,
+	CODE_SECTION_08,
+	CODE_SECTION_09,
+	CODE_SECTION_10,
+	ENUM_DUMMY4WORD(_CODE_SECTION_),
+} CODE_SECTION;
+
+void fwload_init(void);
+void fwload_set_done(CODE_SECTION section);
+void fwload_wait_done(CODE_SECTION section);
+
+#endif

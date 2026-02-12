@@ -1,0 +1,36 @@
+#include "UsockIpc/UsockIpcAPI.h"
+
+#if (USE_IPC)
+#include "SysKer.h"
+#include "UsockIpcInt.h"
+#include "UsockIpcID.h"
+#include "UsockIpcTsk.h"
+
+#define PRI_USOCKIPC                10
+#define STKSIZE_USOCKIPC            2048
+
+UINT32 USOCKIPC_FLG_ID_0 = 0;
+UINT32 USOCKIPC_SEM_ID_0 = 0;
+UINT32 USOCKIPC_TSK_ID_0 = 0;
+UINT32 USOCKIPC_FLG_ID_1 = 0;
+UINT32 USOCKIPC_SEM_ID_1 = 0;
+UINT32 USOCKIPC_TSK_ID_1 = 0;
+
+void UsockIpc_InstallID(void)
+{
+	OS_CONFIG_FLAG(USOCKIPC_FLG_ID_0);
+	OS_CONFIG_SEMPHORE(USOCKIPC_SEM_ID_0, 0, 1, 1);
+	OS_CONFIG_TASK(USOCKIPC_TSK_ID_0, PRI_USOCKIPC,  STKSIZE_USOCKIPC,  UsockIpc_Tsk_0);
+
+#if (MAX_USOCKET_NUM >= 2)
+	OS_CONFIG_FLAG(USOCKIPC_FLG_ID_1);
+	OS_CONFIG_SEMPHORE(USOCKIPC_SEM_ID_1, 0, 1, 1);
+	OS_CONFIG_TASK(USOCKIPC_TSK_ID_1, PRI_USOCKIPC,  STKSIZE_USOCKIPC,  UsockIpc_Tsk_1);
+#endif
+
+}
+#else
+void UsockIpc_InstallID(void)
+{
+}
+#endif

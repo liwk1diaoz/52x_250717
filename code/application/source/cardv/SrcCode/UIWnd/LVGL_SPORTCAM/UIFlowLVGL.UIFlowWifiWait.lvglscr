@@ -1,0 +1,377 @@
+{
+    "event callback": "UIFlowWifiWaitEventCallback",
+    "name": "UIFlowWifiWait",
+    "screen color": "0x232323",
+    "widgets": [
+        {
+            "class": "lv_cont",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 57,
+                "width": 171,
+                "x": 74,
+                "y": 94
+            },
+            "hidden": false,
+            "layout": "Row Mid",
+            "locked": false,
+            "name": "container_1",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_opa": 0
+                    },
+                    "Border": {
+                        "border_color": "0xdddddd",
+                        "border_opa": 0
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Padding": {
+                        "pad_inner": 30
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Container"
+        },
+        {
+            "arc length": 30,
+            "class": "lv_spinner",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 32,
+                "width": 30,
+                "x": 282,
+                "y": 200
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "spinner_1",
+            "spin dir": "Forward",
+            "spin time(ms)": 1000,
+            "spin type": "Fill Spin",
+            "styles": [
+                {
+                    "Line": {
+                        "line_color": "0xffffff",
+                        "line_opa": 0,
+                        "line_width": 5
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                },
+                {
+                    "Line": {
+                        "line_color": "0xfdfdfd",
+                        "line_opa": 255,
+                        "line_width": 5
+                    },
+                    "part": 1,
+                    "state": 0
+                },
+                {
+                    "part": 1,
+                    "state": 1
+                },
+                {
+                    "part": 1,
+                    "state": 2
+                },
+                {
+                    "part": 1,
+                    "state": 3
+                },
+                {
+                    "part": 1,
+                    "state": 4
+                },
+                {
+                    "part": 1,
+                    "state": 5
+                },
+                {
+                    "part": 1,
+                    "state": 6
+                }
+            ],
+            "widget": "Spinner"
+        },
+        {
+            "children": [
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 14,
+                        "y": 14
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_cap",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_MODE_CAPTURE",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 66,
+                        "y": 14
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_con",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_WIFI_CONNECTING3",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 118,
+                        "y": 14
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_wifi",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_WIFI_ON",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_cont",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 50,
+                "width": 161,
+                "x": 84,
+                "y": 102
+            },
+            "hidden": false,
+            "layout": "Pretty Mid",
+            "locked": false,
+            "name": "container_2",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_opa": 0
+                    },
+                    "Border": {
+                        "border_color": "0xdddddd",
+                        "border_opa": 0,
+                        "border_width": 0
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Container"
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+#!/bin/sh
+#KERVER=`cat /proc/version | awk -F'version ' '{print $2}' | awk -F' ' '{print $1}'`
+KERVER=4.19.91
+
+# fd for nvt_Fb and kdrv_videoout
+insmod /lib/modules/$KERVER/kernel/drivers/video/fbdev/core/fb.ko
+
+# kdrv_vdoout
+insmod /lib/modules/$KERVER/hdal/kdrv_videoout/ide/nvt_ide.ko
+#insmod /lib/modules/$KERVER/hdal/kdrv_videoout/mi/nvt_mi.ko
+#insmod /lib/modules/$KERVER/hdal/kdrv_videoout/dsi/nvt_dsi.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_videoout/display_obj/kdrv_videoout.ko
+
+# kflow_videoout
+insmod /lib/modules/$KERVER/hdal/kflow_videoout/unit/kflow_videoout.ko
+
+# panel device
+insmod /lib/modules/$KERVER/hdal/display_panel/nvt_dispdev_panel.ko
+case "${LCD1}" in
+	disp_off)
+		;;
+	disp_if8b_lcd1_pw35p00)
+		insmod /lib/modules/$KERVER/hdal/display_panel/${LCD1}_hx8238d/$LCD1.ko
+		;;
+	*)
+		insmod /lib/modules/$KERVER/hdal/display_panel/${LCD1}/${LCD1}.ko
+		;;
+esac
+#insmod /lib/modules/$KERVER/hdal/kdrv_gfx2d/kdrv_rotation/kdrv_rotation.ko
+
+# audio
+insmod /lib/modules/$KERVER/hdal/kdrv_audioio/audio_common/nvt_audio.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_audioio/kdrv_audio/nvt_kdrv_audio.ko
+insmod /lib/modules/$KERVER/hdal/kflow_audiocapture/unit/kflow_audiocap.ko
+insmod /lib/modules/$KERVER/hdal/kflow_audioout/unit/kflow_audioout.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_audioio/audlib_aec/nvt_audlib_aec.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_audioio/audlib_anr/nvt_audlib_anr.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_audioio/audlib_src/nvt_audlib_src.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_audioio/audlib_aac/nvt_audlib_aac.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_audioio/audlib_g711/nvt_audlib_g711.ko
+
+# isf audenc
+insmod /lib/modules/$KERVER/hdal/kflow_audioenc/unit/kflow_audioenc.ko
+
+# isf vdodec
+insmod /lib/modules/$KERVER/hdal/kflow_videodec/unit/kflow_videodec.ko
+
+# isf auddec
+insmod /lib/modules/$KERVER/hdal/kflow_audiodec/unit/kflow_audiodec.ko
+
+#ai
+insmod /lib/modules/$KERVER/hdal/kdrv_ai/kdrv_ai.ko
+insmod /lib/modules/$KERVER/hdal/net_flow_sample/netflowsample.ko
+
+#fb
+#insmod /lib/modules/$KERVER/kernel/drivers/video/fbdev/core/fb.ko
+insmod /lib/modules/$KERVER/kernel/drivers/video/fbdev/core/cfbcopyarea.ko
+insmod /lib/modules/$KERVER/kernel/drivers/video/fbdev/core/cfbfillrect.ko
+insmod /lib/modules/$KERVER/kernel/drivers/video/fbdev/core/cfbimgblt.ko
+insmod /lib/modules/$KERVER/hdal/kdrv_videoout/fbdev/nvt_fb.ko

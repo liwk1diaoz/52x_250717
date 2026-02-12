@@ -1,0 +1,29 @@
+/*
+ * Novatek Ltd. NA51055 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+#include <dt-bindings/gpio/nvt-gpio.h>
+#include <dt-bindings/pinctrl/nvt_lcd.h>
+
+ /* PWM on uboot (nvt_fr_pwm.c) */
+ /* "Note:\n"
+  * "Defalut freq is 250KHz,\n"
+  * "therefore each unit of [period_ns] and [duty_ns] should be 4000 ns,\n"
+  * "for channel 0 to 7 the maximum unit is 65535, so legal range of [period_ns] is 8000 to 262140000 ns,\n"
+  * "for other channels the maximum unit is 255, so legal range of [period_ns] is 8000 to 1020000 ns.\n" 
+  */
+/* lcd_bl_gpio = <gpio level>;  ==> if the controlled method is GPIO of lcd backlight */
+/* lcd_bl2_gpio = <gpio level>;  ==> optional for the circuit design */  
+/* lcd_bl_pwm  = <pwm_id inv period duty>; ==> if the controlled method is PWM of lcd backlight*/
+/* lcd_rotate  = <0>; ==> 0:rotate 90; 1:rotate 90; 270:rotate 270*/
+/* lcd_enable  = <gpio level>; ==> optional for the circuit design*/
+/* lcd_power  = <gpio level>; ==> optional for the circuit design*/
+/* lcd_standby  = <gpio level>; ==> optional for the circuit design*/
+
+/ {
+	display { type = "lcd"; lcd_ctrl = <1>; sif_channel = <2>; gpio_cs = <L_GPIO(22)>; gpio_clk = <L_GPIO(23)>; gpio_data = <L_GPIO(24)>; };
+  logo { enable = <0>; lcd_type = <PINMUX_LCD_SEL_GPIO>; lcd_rotate = <0>; lcd_reset = <P_GPIO(0)>; lcd_bl_pwm = <P_GPIO(3) 0 1000000 500000>;};		
+};
+

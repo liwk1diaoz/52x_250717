@@ -1,0 +1,186 @@
+{
+    "event callback": "UIFlowWrnMsgEventCallback",
+    "name": "UIFlowWrnMsg",
+    "screen color": "0x551f57",
+    "widgets": [
+        {
+            "add buttons": [
+            ],
+            "animation time": 500,
+            "button's text": "OK,",
+            "class": "lv_msgbox",
+            "click": true,
+            "content": "",
+            "drag": false,
+            "event callback": "message_box_wrnmsg_event_callback",
+            "font type(bg)": "Font_Type0",
+            "font type(btn)": "Font_Type0",
+            "font type(btn_bg)": "Font_Type0",
+            "geometry": {
+                "height": 118,
+                "width": 200,
+                "x": 60,
+                "y": 58
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "message_box_1",
+            "recolor": false,
+            "string id": "STRID_NULL_",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x1f489a"
+                    },
+                    "Border": {
+                        "border_color": "0xdddddd",
+                        "border_width": 0
+                    },
+                    "Mix": {
+                        "radius": 10
+                    },
+                    "Shadow": {
+                        "shadow_opa": 0,
+                        "shadow_width": 0
+                    },
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp",
+                        "text_sel_bg_color": "0x00b495",
+                        "text_sel_color": "0x3c3c3c"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "Border": {
+                        "border_color": "0x01a2b1"
+                    },
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "Border": {
+                        "border_color": "0x44d1b6"
+                    },
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "Background": {
+                        "bg_color": "0x0262b6"
+                    },
+                    "part": 0,
+                    "state": 6
+                },
+                {
+                    "part": 64,
+                    "state": 0
+                },
+                {
+                    "part": 64,
+                    "state": 1
+                },
+                {
+                    "part": 64,
+                    "state": 2
+                },
+                {
+                    "part": 64,
+                    "state": 3
+                },
+                {
+                    "part": 64,
+                    "state": 4
+                },
+                {
+                    "part": 64,
+                    "state": 5
+                },
+                {
+                    "part": 64,
+                    "state": 6
+                },
+                {
+                    "Border": {
+                        "border_color": "0x00b495",
+                        "border_width": 3
+                    },
+                    "Mix": {
+                        "radius": 10
+                    },
+                    "Outline": {
+                        "outline_color": "0x00b495",
+                        "outline_width": 0
+                    },
+                    "Text": {
+                        "text_color": "0x3c3c3c",
+                        "text_font": "NotoSans-Black 16 1bpp",
+                        "text_sel_bg_color": "0x00b495",
+                        "text_sel_color": "0x3c3c3c"
+                    },
+                    "Value": {
+                        "value_font": "montserrat 16 4bpp"
+                    },
+                    "part": 65,
+                    "state": 0
+                },
+                {
+                    "Outline": {
+                        "outline_opa": 127
+                    },
+                    "part": 65,
+                    "state": 1
+                },
+                {
+                    "Outline": {
+                        "outline_color": "0x44d1b6"
+                    },
+                    "part": 65,
+                    "state": 2
+                },
+                {
+                    "Outline": {
+                        "outline_opa": 127
+                    },
+                    "part": 65,
+                    "state": 3
+                },
+                {
+                    "Outline": {
+                        "outline_opa": 127
+                    },
+                    "part": 65,
+                    "state": 4
+                },
+                {
+                    "Background": {
+                        "bg_color": "0xc7fbe7"
+                    },
+                    "part": 65,
+                    "state": 5
+                },
+                {
+                    "Outline": {
+                        "outline_opa": 127
+                    },
+                    "part": 65,
+                    "state": 6
+                }
+            ],
+            "widget": "Message box"
+        }
+    ]
+}

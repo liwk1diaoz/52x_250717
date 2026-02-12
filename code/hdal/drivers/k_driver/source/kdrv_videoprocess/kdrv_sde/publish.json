@@ -1,0 +1,10 @@
+{
+	"jsontype": "module_publish",
+	"publish_src": [
+		"sde_main.c", 
+		"sde_drv.c", 
+		"sde_platform.c", 
+		"sde_proc.c", 
+		"sde_api.c"
+	]
+}

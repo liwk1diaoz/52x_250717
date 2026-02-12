@@ -1,0 +1,41 @@
+&fastboot {
+	venc {
+		venc0 {
+			enable = <1>;
+			codectype = <1>;
+			vprc_src_dev = <0>;
+			vprc_src_path = <0>;
+			init_byte_rate = <1228800>;
+			framerate = <30>;
+			sec = <3>;
+			gop = <15>;
+			rc = <1>;
+			init_i_qp = <26>;
+			min_i_qp = <10>;
+			max_i_qp = <40>;
+			init_p_qp = <26>;
+			min_p_qp = <10>;
+			max_p_qp = <40>;
+			rc_byte_rate = <1228800>;
+			static_time = <4>;
+			ip_weight = <0x0>;
+			key_p_period = <0>;
+			kp_weight = <0x0>;
+			p2_weight = <0x0>;
+			p3_weight = <0x0>;
+			lt_weight = <0x0>;
+			motion_aq_str = <0x0>;
+			svc_weight_mode = <0x0>;
+			svc_layer = <1>;
+			ltr_interval = <0>;
+			d2d = <0>;
+			gdc = <0>;
+			colmv = <1>;
+			qualitylv = <0>;
+			isp_id = <0>;
+			h26x_rotate = <0>;
+			srcout_size = <0>;
+		};
+
+	};
+};

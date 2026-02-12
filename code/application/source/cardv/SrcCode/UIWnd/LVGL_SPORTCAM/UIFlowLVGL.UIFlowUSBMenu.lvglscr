@@ -1,0 +1,658 @@
+{
+    "event callback": "UIFlowUSBMenuEventCallback",
+    "name": "UIFlowUSBMenu",
+    "screen color": "0x551f57",
+    "widgets": [
+        {
+            "children": [
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "align": "Left",
+                            "class": "lv_label",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "font type": "Font_Type0",
+                            "geometry": {
+                                "height": 19,
+                                "width": 32,
+                                "x": 33,
+                                "y": 13
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "long mode": "Expand",
+                            "name": "label_usbt",
+                            "recolor": false,
+                            "string id": "STRID_USB",
+                            "styles": [
+                                {
+                                    "Text": {
+                                        "text_color": "0xffa800",
+                                        "text_font": "NotoSans-Black 16 1bpp",
+                                        "text_sel_bg_color": "0x00b495",
+                                        "text_sel_color": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "text": "USB",
+                            "widget": "Label"
+                        },
+                        {
+                            "auto size": true,
+                            "class": "lv_img",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "geometry": {
+                                "height": 28,
+                                "width": 28,
+                                "x": 81,
+                                "y": 8
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "name": "image_1",
+                            "offset": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "source": "ICON_USB_ON",
+                            "styles": [
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "widget": "Image"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 45,
+                        "width": 255,
+                        "x": 26,
+                        "y": 0
+                    },
+                    "hidden": false,
+                    "layout": "Row Mid",
+                    "locked": false,
+                    "name": "button_1",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x232323"
+                            },
+                            "Border": {
+                                "border_color": "0x303030"
+                            },
+                            "Mix": {
+                                "radius": 0
+                            },
+                            "Outline": {
+                                "outline_color": "0x00b495",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                },
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "align": "Left",
+                            "class": "lv_label",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "font type": "Font_Type0",
+                            "geometry": {
+                                "height": 19,
+                                "width": 109,
+                                "x": 33,
+                                "y": 12
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "long mode": "Expand",
+                            "name": "label_msdc",
+                            "recolor": false,
+                            "string id": "STRID_MSDC",
+                            "styles": [
+                                {
+                                    "Text": {
+                                        "text_color": "0xeaeaea",
+                                        "text_font": "NotoSans-Black 16 1bpp",
+                                        "text_sel_bg_color": "0x00b495",
+                                        "text_sel_color": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0xffb400"
+                                    },
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "text": "Mass Storage",
+                            "widget": "Label"
+                        },
+                        {
+                            "auto size": true,
+                            "class": "lv_img",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "geometry": {
+                                "height": 28,
+                                "width": 28,
+                                "x": 158,
+                                "y": 12
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "name": "image_2",
+                            "offset": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "source": "ICON_USB_MSDC",
+                            "styles": [
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "widget": "Image"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "btn_msdc_event_callback",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 45,
+                        "width": 255,
+                        "x": 26,
+                        "y": 45
+                    },
+                    "hidden": false,
+                    "layout": "Row Top",
+                    "locked": false,
+                    "name": "button_msdc",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x232323"
+                            },
+                            "Border": {
+                                "border_color": "0x303030"
+                            },
+                            "Mix": {
+                                "radius": 0
+                            },
+                            "Outline": {
+                                "outline_color": "0x00b495",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0x505050"
+                            },
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0x505050"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                },
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "align": "Left",
+                            "class": "lv_label",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "font type": "Font_Type0",
+                            "geometry": {
+                                "height": 19,
+                                "width": 87,
+                                "x": 33,
+                                "y": 12
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "long mode": "Expand",
+                            "name": "label_pcc",
+                            "recolor": false,
+                            "string id": "STRID_PCC",
+                            "styles": [
+                                {
+                                    "Text": {
+                                        "text_color": "0xeaeaea",
+                                        "text_font": "NotoSans-Black 16 1bpp",
+                                        "text_sel_bg_color": "0x00b495",
+                                        "text_sel_color": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0xffb400"
+                                    },
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "text": "PC Camera",
+                            "widget": "Label"
+                        },
+                        {
+                            "auto size": true,
+                            "class": "lv_img",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "geometry": {
+                                "height": 28,
+                                "width": 28,
+                                "x": 136,
+                                "y": 12
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "name": "image_3",
+                            "offset": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "source": "ICON_USB_UVC",
+                            "styles": [
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Image": {
+                                        "image_recolor": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "widget": "Image"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "btn_pcc_event_callback",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 45,
+                        "width": 255,
+                        "x": 26,
+                        "y": 90
+                    },
+                    "hidden": false,
+                    "layout": "Row Top",
+                    "locked": false,
+                    "name": "button_pcc",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x232323"
+                            },
+                            "Border": {
+                                "border_color": "0x303030"
+                            },
+                            "Mix": {
+                                "radius": 0
+                            },
+                            "Outline": {
+                                "outline_color": "0x00b495",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0x505050"
+                            },
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                }
+            ],
+            "class": "lv_cont",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 163,
+                "width": 307,
+                "x": 7,
+                "y": 56
+            },
+            "hidden": false,
+            "layout": "Column Mid",
+            "locked": false,
+            "name": "container_usbmenu",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_opa": 0
+                    },
+                    "Border": {
+                        "border_color": "0xdddddd",
+                        "border_opa": 0
+                    },
+                    "Padding": {
+                        "pad_bottom": 0,
+                        "pad_inner": 0,
+                        "pad_left": 0,
+                        "pad_right": 0,
+                        "pad_top": 0
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Container"
+        }
+    ]
+}

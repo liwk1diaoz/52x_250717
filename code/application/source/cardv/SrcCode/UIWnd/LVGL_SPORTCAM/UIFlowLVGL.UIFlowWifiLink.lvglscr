@@ -1,0 +1,826 @@
+{
+    "event callback": "UIFlowWifiLinkEventCallback",
+    "name": "UIFlowWifiLink",
+    "screen color": "0x232323",
+    "widgets": [
+        {
+            "children": [
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "align": "Left",
+                            "class": "lv_label",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "font type": "Font_Type0",
+                            "geometry": {
+                                "height": 19,
+                                "width": 64,
+                                "x": 31,
+                                "y": 8
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "long mode": "Expand",
+                            "name": "label_ref",
+                            "recolor": false,
+                            "string id": "STRID_REFRESH",
+                            "styles": [
+                                {
+                                    "Text": {
+                                        "text_color": "0xeaeaea",
+                                        "text_font": "NotoSans-Black 16 1bpp",
+                                        "text_sel_bg_color": "0x00b495",
+                                        "text_sel_color": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0xffb400"
+                                    },
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "text": "Refresh",
+                            "widget": "Label"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "btn_ref_event_callback",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 35,
+                        "width": 126,
+                        "x": 15,
+                        "y": 0
+                    },
+                    "hidden": false,
+                    "layout": "Center",
+                    "locked": false,
+                    "name": "button_ref",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x484848"
+                            },
+                            "Border": {
+                                "border_color": "0x303030",
+                                "border_width": 0
+                            },
+                            "Mix": {
+                                "radius": 10
+                            },
+                            "Outline": {
+                                "outline_color": "0x00b495",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "Outline": {
+                                "outline_color": "0xffff00",
+                                "outline_opa": 255
+                            },
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0x505050"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                },
+                {
+                    "checkable": false,
+                    "children": [
+                        {
+                            "align": "Left",
+                            "class": "lv_label",
+                            "click": false,
+                            "drag": false,
+                            "event callback": "",
+                            "font type": "Font_Type0",
+                            "geometry": {
+                                "height": 19,
+                                "width": 75,
+                                "x": 25,
+                                "y": 8
+                            },
+                            "hidden": false,
+                            "locked": false,
+                            "long mode": "Expand",
+                            "name": "label_wifioff",
+                            "recolor": false,
+                            "string id": "STRID_WIFI_OFF",
+                            "styles": [
+                                {
+                                    "Text": {
+                                        "text_color": "0xeaeaea",
+                                        "text_font": "NotoSans-Black 16 1bpp",
+                                        "text_sel_bg_color": "0x00b495",
+                                        "text_sel_color": "0x3c3c3c"
+                                    },
+                                    "part": 0,
+                                    "state": 0
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0xffffff"
+                                    },
+                                    "part": 0,
+                                    "state": 1
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0xffb400"
+                                    },
+                                    "part": 0,
+                                    "state": 2
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 3
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 4
+                                },
+                                {
+                                    "part": 0,
+                                    "state": 5
+                                },
+                                {
+                                    "Text": {
+                                        "text_color": "0x888888"
+                                    },
+                                    "part": 0,
+                                    "state": 6
+                                }
+                            ],
+                            "text": "WiFi_OFF",
+                            "widget": "Label"
+                        }
+                    ],
+                    "class": "lv_btn",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "btn_wifioff_event_callback",
+                    "fit": "None",
+                    "geometry": {
+                        "height": 35,
+                        "width": 125,
+                        "x": 167,
+                        "y": 0
+                    },
+                    "hidden": false,
+                    "layout": "Center",
+                    "locked": false,
+                    "name": "button_wifioff",
+                    "state": "Released",
+                    "style": "Custome Style",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0x484848"
+                            },
+                            "Border": {
+                                "border_color": "0x303030",
+                                "border_width": 0
+                            },
+                            "Mix": {
+                                "radius": 10
+                            },
+                            "Outline": {
+                                "outline_color": "0x00b495",
+                                "outline_width": 0
+                            },
+                            "Value": {
+                                "value_color": "0x3c3c3c",
+                                "value_font": "montserrat 16 4bpp"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "Outline": {
+                                "outline_color": "0xffff00"
+                            },
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "Background": {
+                                "bg_color": "0x505050"
+                            },
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Button"
+                }
+            ],
+            "class": "lv_cont",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 40,
+                "width": 307,
+                "x": 6,
+                "y": 189
+            },
+            "hidden": false,
+            "layout": "Pretty Mid",
+            "locked": false,
+            "name": "container_select",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_opa": 0
+                    },
+                    "Border": {
+                        "border_color": "0xdddddd",
+                        "border_opa": 0
+                    },
+                    "Mix": {
+                        "radius": 0
+                    },
+                    "Padding": {
+                        "pad_bottom": 0,
+                        "pad_inner": 0,
+                        "pad_left": 15,
+                        "pad_right": 15,
+                        "pad_top": 0
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Container"
+        },
+        {
+            "children": [
+                {
+                    "align": "Left",
+                    "class": "lv_label",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "font type": "Font_Type0",
+                    "geometry": {
+                        "height": 19,
+                        "width": 37,
+                        "x": 23,
+                        "y": 90
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "long mode": "Expand",
+                    "name": "label_1",
+                    "recolor": false,
+                    "string id": "None",
+                    "styles": [
+                        {
+                            "Text": {
+                                "text_color": "0xffa800",
+                                "text_font": "NotoSans-Black 16 1bpp",
+                                "text_sel_bg_color": "0x00b495",
+                                "text_sel_color": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "text": "SSID",
+                    "widget": "Label"
+                },
+                {
+                    "align": "Left",
+                    "class": "lv_label",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "font type": "Font_Type0",
+                    "geometry": {
+                        "height": 19,
+                        "width": 27,
+                        "x": 23,
+                        "y": 127
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "long mode": "Expand",
+                    "name": "label_2",
+                    "recolor": false,
+                    "string id": "None",
+                    "styles": [
+                        {
+                            "Text": {
+                                "text_color": "0xffa800",
+                                "text_font": "NotoSans-Black 16 1bpp",
+                                "text_sel_bg_color": "0x00b495",
+                                "text_sel_color": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "text": "PW",
+                    "widget": "Label"
+                },
+                {
+                    "align": "Left",
+                    "class": "lv_label",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "font type": "Font_Type0",
+                    "geometry": {
+                        "height": 19,
+                        "width": 25,
+                        "x": 101,
+                        "y": 90
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "long mode": "Expand",
+                    "name": "label_ssid",
+                    "recolor": false,
+                    "string id": "None",
+                    "styles": [
+                        {
+                            "Text": {
+                                "text_color": "0xfdfdfd",
+                                "text_font": "NotoSans-Black 16 1bpp",
+                                "text_sel_bg_color": "0x00b495",
+                                "text_sel_color": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "text": "NA",
+                    "widget": "Label"
+                },
+                {
+                    "align": "Left",
+                    "class": "lv_label",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "font type": "Font_Type0",
+                    "geometry": {
+                        "height": 19,
+                        "width": 25,
+                        "x": 103,
+                        "y": 128
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "long mode": "Expand",
+                    "name": "label_pwa2",
+                    "recolor": false,
+                    "string id": "None",
+                    "styles": [
+                        {
+                            "Text": {
+                                "text_color": "0xfdfdfd",
+                                "text_font": "NotoSans-Black 16 1bpp",
+                                "text_sel_bg_color": "0x00b495",
+                                "text_sel_color": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "text": "NA",
+                    "widget": "Label"
+                },
+                {
+                    "align": "Left",
+                    "class": "lv_label",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "font type": "Font_Type0",
+                    "geometry": {
+                        "height": 19,
+                        "width": 46,
+                        "x": 23,
+                        "y": 50
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "long mode": "Expand",
+                    "name": "label_3",
+                    "recolor": false,
+                    "string id": "None",
+                    "styles": [
+                        {
+                            "Background": {
+                                "bg_color": "0xffb400"
+                            },
+                            "Text": {
+                                "text_color": "0xffa800",
+                                "text_font": "NotoSans-Black 16 1bpp",
+                                "text_sel_bg_color": "0x00b495",
+                                "text_sel_color": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "text": "Mode",
+                    "widget": "Label"
+                },
+                {
+                    "align": "Left",
+                    "class": "lv_label",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "font type": "Font_Type0",
+                    "geometry": {
+                        "height": 19,
+                        "width": 72,
+                        "x": 101,
+                        "y": 50
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "long mode": "Expand",
+                    "name": "label_wifimode",
+                    "recolor": false,
+                    "string id": "STRID_WIFI_AP_MODE",
+                    "styles": [
+                        {
+                            "Text": {
+                                "text_color": "0xfdfdfd",
+                                "text_font": "NotoSans-Black 16 1bpp",
+                                "text_sel_bg_color": "0x00b495",
+                                "text_sel_color": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "text": "AP mode",
+                    "widget": "Label"
+                },
+                {
+                    "auto size": true,
+                    "class": "lv_img",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 28,
+                        "width": 28,
+                        "x": 23,
+                        "y": 3
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "image_wifista",
+                    "offset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "source": "ICON_WIFI_ON",
+                    "styles": [
+                        {
+                            "Image": {
+                                "image_recolor": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Image"
+                }
+            ],
+            "class": "lv_cont",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 158,
+                "width": 316,
+                "x": 3,
+                "y": 8
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "container_1",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_color": "0x232323",
+                        "bg_opa": 0
+                    },
+                    "Border": {
+                        "border_color": "0xdddddd",
+                        "border_opa": 0,
+                        "border_width": 0
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Container"
+        }
+    ]
+}

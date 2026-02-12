@@ -1,0 +1,5 @@
+[ -f /etc/sysctl.conf ] && sysctl -p >&-
+echo 3 > /proc/sys/vm/drop_caches
+sleep 1
+free
+echo 7  4  1 7 > /proc/sys/kernel/printk

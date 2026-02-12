@@ -1,0 +1,26 @@
+#!/bin/bash
+SDK_ROOT=${PWD}
+SDK_SRC="${PWD}/NA51023_BSP"
+SDK_PKG="${SDK_SRC}/packages"
+
+echo ">>>>> MD5 checksum compare"
+PKGD=`find . -type f ! -name nvt.md5 -exec md5sum {} \; | awk '{print $1}'`
+for PKGSUM in ${PKGD}
+do
+	RES=`grep ${PKGSUM} nvt.md5`
+	if [ "${RES}" == "" ]; then
+		echo "Not Match:"
+		find . -type f ! -name nvt.md5 -exec md5sum {} \; | grep ${PKGSUM}
+		exit 0;
+	fi
+done
+echo ">>>>> Install SDK"
+
+PKGD=`find ${SDK_PKG} -type f | awk '{print $1}'`
+for PKGF in ${PKGD}
+do
+	echo ${PKGF}
+	tar -jxf ${PKGF} -C ${SDK_SRC}
+done
+
+echo "Install SDK done"

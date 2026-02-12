@@ -1,0 +1,241 @@
+diff --git a/lib/source/heifnvt/heif/srcs/CMakeLists.txt b/lib/source/heifnvt/heif/srcs/CMakeLists.txt
+old mode 100644
+new mode 100755
+index 5852e519..746482b7
+--- a/lib/source/heifnvt/heif/srcs/CMakeLists.txt
++++ b/lib/source/heifnvt/heif/srcs/CMakeLists.txt
+@@ -143,7 +143,7 @@ add_subdirectory(common)
+ add_subdirectory(reader)
+ 
+ add_subdirectory(writer)
+-if (NOT IOS)
++if ((NOT IOS) AND (NOT WITHOUT_EXAMPLE))
+   add_subdirectory(examples)
+ endif()
+ 
+diff --git a/lib/source/heifnvt/heif/srcs/api/common/nvt_wrapper.h b/lib/source/heifnvt/heif/srcs/api/common/nvt_wrapper.h
+new file mode 100755
+index 00000000..f8f38e96
+--- /dev/null
++++ b/lib/source/heifnvt/heif/srcs/api/common/nvt_wrapper.h
+@@ -0,0 +1,8 @@
++#ifndef NVT_WRAPPTER_H
++#define NVT_WRAPPTER_H
++
++#include "hdal.h"
++
++extern UINT32 heif_create_heic(HD_VIDEOENC_BS *pvenc_data, char *filename);
++
++#endif  // NVT_WRAPPTER_H
+\ No newline at end of file
+diff --git a/lib/source/heifnvt/heif/srcs/common/CMakeLists.txt b/lib/source/heifnvt/heif/srcs/common/CMakeLists.txt
+old mode 100644
+new mode 100755
+index 7d15aead..14dfb388
+--- a/lib/source/heifnvt/heif/srcs/common/CMakeLists.txt
++++ b/lib/source/heifnvt/heif/srcs/common/CMakeLists.txt
+@@ -127,6 +127,7 @@ set(COMMON_SRCS
+     videomediaheaderbox.cpp
+     visualequivalenceentry.cpp
+     visualsampleentrybox.cpp
++    nvt_wrapper.cpp
+     )
+ 
+ set(COMMON_HDRS
+diff --git a/lib/source/heifnvt/heif/srcs/common/decodepts.cpp b/lib/source/heifnvt/heif/srcs/common/decodepts.cpp
+old mode 100644
+new mode 100755
+index b0563127..1bb18a33
+--- a/lib/source/heifnvt/heif/srcs/common/decodepts.cpp
++++ b/lib/source/heifnvt/heif/srcs/common/decodepts.cpp
+@@ -371,7 +371,7 @@ bool DecodePts::unravel()
+     mediaPtsTS.reserve(mediaDtsTS.size());
+     if (mCompositionOffsetBox != nullptr)
+     {
+-        Vector<std::int32_t> ptsDelta;
++        Vector<int> ptsDelta;
+         ptsDelta = mCompositionOffsetBox->getSampleCompositionOffsets();
+ 
+         if (ptsDelta.size() == mediaDtsTS.size())
+diff --git a/lib/source/heifnvt/heif/srcs/common/nvt_wrapper.cpp b/lib/source/heifnvt/heif/srcs/common/nvt_wrapper.cpp
+new file mode 100755
+index 00000000..da0b128c
+--- /dev/null
++++ b/lib/source/heifnvt/heif/srcs/common/nvt_wrapper.cpp
+@@ -0,0 +1,161 @@
++#include <iostream>
++#include <cstring>
++extern "C" {
++#include <stdio.h>
++#include <stdint.h>
++#include "hdal.h"
++#include <kwrap/debug.h>
++#include <kwrap/perf.h>
++}
++#include "heifwriter.h"
++#include "heifreader.h"
++
++using namespace std;
++using namespace HEIF;
++
++static UINT32 _pa_mmap_va(UINT32 pa, UINT32 size, UINT32 *ppage_pa, UINT32 *ppage_va, UINT32 *pmmap_size)
++{
++	UINT32 page_pa, page_va, va;
++	UINT32 page_size = 0, mmap_size = 0;
++
++	#if defined(__FREERTOS)
++	page_size = 0x400;
++	#else
++	page_size = getpagesize();
++	#endif
++
++	page_pa   = ALIGN_FLOOR(pa, page_size);
++	mmap_size = ALIGN_CEIL(pa - page_pa + size, page_size);
++	page_va   = (UINT32)hd_common_mem_mmap(HD_COMMON_MEM_MEM_TYPE_CACHE, page_pa, mmap_size);
++	va        = page_va ? (page_va + pa - page_pa) : 0;
++
++	if (ppage_pa) {
++		*ppage_pa = page_pa;
++	}
++	if (ppage_va) {
++		*ppage_va = page_va;
++	}
++	if (pmmap_size) {
++		*pmmap_size = mmap_size;
++	}
++	return va;
++}
++
++extern "C" UINT32 heif_create_heic(HD_VIDEOENC_BS *pvenc_data, char *filename)
++{
++	UINT32 page_va, va;
++	UINT32 mmap_size;
++
++	if (!filename) {
++		DBG_ERR("filename is NULL\r\n");
++		return FALSE;
++	}
++	if (!pvenc_data) {
++		DBG_ERR("pvenc_data is NULL\r\n");
++		return FALSE;
++	}
++	if (pvenc_data->vcodec_format != HD_CODEC_TYPE_H265) {
++		DBG_ERR("pvenc_data is not H.265 (type=%d)\r\n", pvenc_data->vcodec_format);
++		return FALSE;
++	}
++	if ((pvenc_data->pack_num != 4) || (pvenc_data->frame_type != HD_FRAME_TYPE_IDR)) {
++		DBG_ERR("pvenc_data is not a I frame (pack_num=%d, frame_type=%d)\r\n", pvenc_data->pack_num, pvenc_data->frame_type);
++		return FALSE;
++	}
++
++
++
++	// create writer instances
++	auto* writer = Writer::Create();
++
++	// partially configure writer output
++	OutputConfig writerOutputConf{};
++	writerOutputConf.fileName        = filename;
++	writerOutputConf.progressiveFile = true;
++
++	// add major brand to writer config
++	writerOutputConf.majorBrand = HEIF::FourCC("mif1");
++
++	writerOutputConf.compatibleBrands = Array<FourCC>(1);
++	writerOutputConf.compatibleBrands[0] = HEIF::FourCC("heic");
++
++	// initialize writer now that we have all the needed information from reader
++	if (writer->initialize(writerOutputConf) != ErrorCode::OK) {
++		return FALSE;
++	}
++
++	DecoderConfiguration inputdecoderConfig{};
++	DecoderConfigId outputDecoderConfigId;
++
++	inputdecoderConfig.decoderSpecificInfo = Array<DecoderSpecificInfo>(3);
++
++	inputdecoderConfig.decoderSpecificInfo[0].decSpecInfoType = DecoderSpecInfoType::HEVC_VPS;
++	inputdecoderConfig.decoderSpecificInfo[0].decSpecInfoData = Array<uint8_t>(pvenc_data->video_pack[0].size);
++	va = _pa_mmap_va(pvenc_data->video_pack[0].phy_addr, pvenc_data->video_pack[0].size, NULL, &page_va, &mmap_size);
++	if (va) {
++		std::memcpy((void *)&(inputdecoderConfig.decoderSpecificInfo[0].decSpecInfoData[0]), (void *)va, pvenc_data->video_pack[0].size);
++		hd_common_mem_munmap((void *)page_va, mmap_size);
++	} else {
++		DBG_ERR("vps: hd_common_mem_mmap() fail");
++		return FALSE;
++	}
++
++	inputdecoderConfig.decoderSpecificInfo[1].decSpecInfoType = DecoderSpecInfoType::HEVC_SPS;
++	inputdecoderConfig.decoderSpecificInfo[1].decSpecInfoData = Array<uint8_t>(pvenc_data->video_pack[1].size);
++	va = _pa_mmap_va(pvenc_data->video_pack[1].phy_addr, pvenc_data->video_pack[1].size, NULL, &page_va, &mmap_size);
++	if (va) {
++		std::memcpy((void *)&(inputdecoderConfig.decoderSpecificInfo[1].decSpecInfoData[0]), (void *)va, pvenc_data->video_pack[1].size);
++		hd_common_mem_munmap((void *)page_va, mmap_size);
++	} else {
++		DBG_ERR("sps: hd_common_mem_mmap() fail");
++		return FALSE;
++	}
++
++	inputdecoderConfig.decoderSpecificInfo[2].decSpecInfoType = DecoderSpecInfoType::HEVC_PPS;
++	inputdecoderConfig.decoderSpecificInfo[2].decSpecInfoData = Array<uint8_t>(pvenc_data->video_pack[2].size);
++	va = _pa_mmap_va(pvenc_data->video_pack[2].phy_addr, pvenc_data->video_pack[2].size, NULL, &page_va, &mmap_size);
++	if (va) {
++		std::memcpy((void *)&(inputdecoderConfig.decoderSpecificInfo[2].decSpecInfoData[0]), (void *)va, pvenc_data->video_pack[2].size);
++		hd_common_mem_munmap((void *)page_va, mmap_size);
++	} else {
++		DBG_ERR("pps: hd_common_mem_mmap() fail");
++		return FALSE;
++	}
++
++	writer->feedDecoderConfig(inputdecoderConfig.decoderSpecificInfo, outputDecoderConfigId);
++
++	Data imageData{};
++	imageData.size = pvenc_data->video_pack[3].size;
++	va = _pa_mmap_va(pvenc_data->video_pack[3].phy_addr, pvenc_data->video_pack[3].size, NULL, &page_va, &mmap_size);
++	if (va) {
++		imageData.data = (uint8_t *)va;
++		imageData.data[0] = ((pvenc_data->video_pack[3].size - 4) & 0xff000000) >> 24;
++		imageData.data[1] = ((pvenc_data->video_pack[3].size - 4) & 0x00ff0000) >> 16;
++		imageData.data[2] = ((pvenc_data->video_pack[3].size - 4) & 0x0000ff00) >>  8;
++		imageData.data[3] = ((pvenc_data->video_pack[3].size - 4) & 0x000000ff) >>  0;
++	} else {
++		DBG_ERR("bs: hd_common_mem_mmap() fail");
++		return FALSE;
++	}
++
++	// feed image data to writer
++	imageData.mediaFormat     = MediaFormat::HEVC;
++	imageData.decoderConfigId = 1000;
++	MediaDataId outputMediaId;
++
++	writer->feedMediaData(imageData, outputMediaId);
++
++	// create new image based on that data:
++	ImageId outputImageId;
++	writer->addImage(outputMediaId, outputImageId);
++	writer->setPrimaryItem(outputImageId);
++
++    writer->finalize();
++
++	hd_common_mem_munmap((void *)page_va, mmap_size);
++
++    Writer::Destroy(writer);
++
++    return TRUE;
++}
++
+diff --git a/lib/source/heifnvt/heif/srcs/reader/heifreaderimpl.cpp b/lib/source/heifnvt/heif/srcs/reader/heifreaderimpl.cpp
+old mode 100644
+new mode 100755
+index 5dd3363f..94bf6fe9
+--- a/lib/source/heifnvt/heif/srcs/reader/heifreaderimpl.cpp
++++ b/lib/source/heifnvt/heif/srcs/reader/heifreaderimpl.cpp
+@@ -2853,7 +2853,7 @@ namespace HEIF
+         const CompositionOffsetBox* ctts = stblBox.getCompositionOffsetBox().get();
+         if (ctts != nullptr)
+         {
+-            const Vector<int32_t>& offsets = ctts->getSampleCompositionOffsets();
++            const Vector<int>& offsets = ctts->getSampleCompositionOffsets();
+             const int32_t min              = std::numeric_limits<int32_t>::min();
+             for (size_t i = 0; i < offsets.size(); i++)
+             {

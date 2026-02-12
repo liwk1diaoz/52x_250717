@@ -1,0 +1,256 @@
+/*
+/*
+ * Novatek Ltd. NA51055 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+/ {
+	nvt_info {						/* Get from ModelConfig.txt */
+		BIN_NAME = "FW96580A";//"FW96580A";
+		BIN_NAME_T = "FW96580T";//"FW96580T";
+		RTOS_APP_MAIN = "cardv"; /* Optional, if OS type is Linux, dont care it. */
+		/* EMBMEM_BLK_SIZE, Normally, 2KPageNand=0x20000, 512PageNand=0x4000, SPI=0x10000 */
+		EMBMEM_BLK_SIZE = "0x20000";
+
+		/**
+		 * [EMBMEM]
+		 * EMBMEM_NONE
+		 * EMBMEM_NAND
+		 * EMBMEM_SPI_NOR
+		 * EMBMEM_SPI_NAND
+		 * EMBMEM_EMMC
+		 */
+		EMBMEM = "EMBMEM_SPI_NAND";
+
+		/**
+		 * [FW_TYPE]
+		 * FW_TYPE_NORMAL
+		 * FW_TYPE_COMPRESS
+		 * FW_TYPE_PARTIAL
+		 * FW_TYPE_PARTIAL_COMPRESS
+		 * FW_TYPE_LZMA
+		 */
+		FW_TYPE = "FW_TYPE_NORMAL";
+
+		/**
+		 * [LCD1]
+		 * disp_off
+		 * disp_if8b_lcd1_wm08001_sn75lvds83b
+		 * disp_if8b_lcd1_aucn01
+		 * disp_ifdsi_lcd1_nt35510
+		 * disp_if8b_lcd1_pw35p00
+		 * disp_if8b_lcd1_psd300_ili8961
+		 * disp_ifdsi_lcd1_st7701_c300
+		 * disp_ifdsi_lcd1_wtl096602g02_24m
+		 * disp_ifdsi_lcd1_tb118
+		 * disp_ifdsi_lcd1_LX118FHDB4098_OTA7290B
+		 * disp_ifdsi_lcd1_sc7707_wtb112601g01_16m_z
+		 * disp_ifdsi_lcd1_icnl9707_wtb112601g03_16m
+		 * disp_if8b_lcd1_st7789_c300		 
+		 */
+		LCD1 = "disp_if8b_lcd1_st7789_c300";
+
+		/**
+		 * [SENSOR]
+		 * sen_off
+		 * sen_ar0237ir
+		 * sen_os02k10
+		 * sen_ov2715
+		 * sen_ar0237
+		 * sen_imx290
+		 * sen_os05a10
+		 * sen_imx415
+		 * sen_imx335
+		 */
+		SENSOR1     = "sen_imx335";
+		SENSOR1_CFG = "sen_imx335_c300";
+		SENSOR2     = "sen_off";
+		SENSOR2_CFG = "sen_off";
+		SENSOR3     = "sen_off";
+		SENSOR3_CFG = "sen_off";
+		
+		/**
+		 * [UI_STYLE]
+		 * UI_STYLE_LVGL
+		 */
+		UI_STYLE = "UI_STYLE_SPORTCAM";
+
+		/**
+		 * [TSE]
+		 * enable
+		 * disable
+		 */
+		TSE = "disable";
+
+		/**
+		 * [TOUCH]
+		 * TOUCH_ON
+		 * TOUCH_OFF
+		 */
+		TOUCH = "TOUCH_ON";
+		
+		/**
+		 * ======= Linux common =========
+		 * application/external
+		 */
+		NVT_CFG_APP_EXTERNAL = "hostapd wireless_tool iperf-3 libiconv dosfstools wpa_supplicant";
+		/* application include list */
+		NVT_CFG_APP = "hfs lviewd nvtrtspd msdcnvt arm_neon_perf mem test cardv memcpy drystone-2.0";
+		/* rootfs etc folder */
+		NVT_ROOTFS_ETC = "SDV_580_SJ10";
+		/* strip executable binary and library files: yes/no */
+		NVT_BINARY_FILE_STRIP = "yes";
+		/* Using customized kernel config */
+		NVT_CFG_KERNEL_CFG = "na51055_evb_cardv_defconfig_release";
+		/* run script befor making rootfs for 'make post' */
+		NVT_MAKE_POST = "make_post.sh";
+		/* disable make install on sample, hdal/samples, hdal/test_cases */
+		NVT_SAMPLES_INSTALL = "DISABLE";
+
+		/**
+		 * ======= Linux for different code setting =========
+		 * [NVT_LINUX_SMP]
+		 * NVT_LINUX_SMP_ON
+		 * NVT_LINUX_SMP_OFF
+		 */
+		NVT_LINUX_SMP = "NVT_LINUX_SMP_ON";
+		
+		/**
+		 * [NVT_CHIP_ID]
+		 * CHIP_NA51055
+		 * CHIP_NA51084
+		 */
+		NVT_CHIP_ID = "CHIP_NA51084";
+
+		/**
+		 * [NVT_LINUX_COMPRESS]
+		 * NVT_LINUX_COMPRESS_AUTO , by linux config
+		 * NVT_LINUX_COMPRESS_GZ , for rtos boot linux only
+		 */
+		NVT_LINUX_COMPRESS = "NVT_LINUX_COMPRESS_AUTO";
+
+		/**
+		 * [NVT_DEFAULT_NETWORK_BOOT_PROTOCOL]
+		 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_SERVER
+		 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_CLIENT
+		 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP
+		 */
+		NVT_DEFAULT_NETWORK_BOOT_PROTOCOL = "NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP";
+
+		/**
+		 * [NVT_ROOTFS_TYPE]
+		 * NVT_ROOTFS_TYPE_NAND_UBI
+		 * NVT_ROOTFS_TYPE_SQUASH
+		 * NVT_ROOTFS_TYPE_NAND_JFFS2
+		 * NVT_ROOTFS_TYPE_NOR_JFFS2
+		 * NVT_ROOTFS_TYPE_RAMDISK
+		 * NVT_ROOTFS_TYPE_EXT4
+		 */
+		NVT_ROOTFS_TYPE = "NVT_ROOTFS_TYPE_NAND_UBI";
+
+		/**
+		 * [NVT_ROOTFS_RW_PART_EN]
+		 * NVT_ROOTFS_RW_PART_EN_OFF
+		 * NVT_ROOTFS_RW_PART_EN_ON
+		 */
+		NVT_ROOTFS_RW_PART_EN = "NVT_ROOTFS_RW_PART_EN_OFF";
+
+		/**
+		 * [NVT_ETHERNET]
+		 * NVT_ETHERNET_NONE
+		 * NVT_ETHERNET_EQOS
+		 */
+		NVT_ETHERNET = "NVT_ETHERNET_NONE";
+
+		/**
+		 * [NVT_SDIO_WIFI]: Remember to update root-fs/rootfs/etc/init.d/S05_Net
+		 * NVT_SDIO_WIFI_NONE
+		 * NVT_SDIO_WIFI_RTK
+		 * NVT_SDIO_WIFI_BRCM
+		 * NVT_SDIO_WIFI_NVT
+		 */
+		NVT_SDIO_WIFI = "NVT_SDIO_WIFI_RTK";
+
+		/**
+		 * [NVT_USB_WIFI]
+		 * NVT_USB_WIFI_NONE
+		 */
+		NVT_USB_WIFI = "NVT_USB_WIFI_NONE";
+
+		/**
+		 * [NVT_USB_4G]
+		 * NVT_USB_4G_NONE
+		 */
+		NVT_USB_4G = "NVT_USB_4G_NONE";
+
+		/**
+		 * [WIFI_RTK_MDL]  : sub item for NVT_SDIO_WIFI_RTK
+		 * WIFI_RTK_MDL_NONE
+		 * WIFI_RTK_MDL_8189
+		 * WIFI_RTK_MDL_8821CS
+		 * WIFI_RTK_MDL_8189ETV
+		 */
+		WIFI_RTK_MDL = "WIFI_RTK_MDL_8821CS";
+
+		/**
+		 * [WIFI_BRCM_MDL]  : sub item for NVT_SDIO_WIFI_BRCM
+		 * WIFI_BRCM_MDL_43438a1_ampk6212axtal26
+		 * WIFI_BRCM_MDL_43455c0_ampk6255c0
+		 * WIFI_BRCM_MDL_43456c5_ampk6256c5
+		 */
+		WIFI_BRCM_MDL = "WIFI_BRCM_MDL_43456c5_ampk6256c5";
+
+		/**
+		 * [WIFI_NVT_MDL]  : sub item for NVT_SDIO_WIFI_NVT
+		 * WIFI_NVT_MDL_18202
+		 * WIFI_NVT_MDL_18211
+		 */
+		WIFI_NVT_MDL = "WIFI_NVT_MDL_18211";
+
+		/**
+		 * [NVT_CURL_SSL]
+		 * NVT_CURL_SSL_OPENSSL
+		 * NVT_CURL_SSL_WOLFSSL
+		 */
+		NVT_CURL_SSL = "NVT_CURL_SSL_OPENSSL";
+
+		/**
+		 * [NVT_UBOOT_ENV_IN_STORG_SUPPORT]
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NAND
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NOR
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_MMC
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_OFF
+		 */
+		NVT_UBOOT_ENV_IN_STORG_SUPPORT = "NVT_UBOOT_ENV_IN_STORG_SUPPORT_OFF";
+
+		/**
+		 * [BT_MDL]
+		 * BT_MDL_NONE
+		 * BT_MDL_RTK_8821CS
+		 */
+		BT_MDL = "BT_MDL_NONE";
+
+		/**
+		 * [BT_HCI_IF] :
+		 * BT_HCI_IF_NONE
+		 * BT_HCI_IF_UART
+		 */
+		BT_HCI_IF = "BT_HCI_IF_NONE";
+
+		/**
+		 * [BT_STACK] 
+		 * BT_STACK_NONE
+		 * BT_STACK_BLUEZ
+		 */
+		BT_STACK = "BT_STACK_NONE";
+		
+		/**
+		 * [LIVESTREAM] 
+		 * LIVESTREAM_ON
+		 * LIVESTREAM_OFF
+		 */
+		LIVESTREAM_FUNC = "LIVESTREAM_ON";		
+	};
+};

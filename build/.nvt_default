@@ -1,0 +1,3 @@
+export NVT_PRJCFG_CFG=Linux
+export NVT_CROSS=arm-ca9-linux-gnueabihf-6.5
+export NVT_PRJCFG_MODEL_CFG=${CONFIG_DIR}/${NVT_PRJCFG_CFG}/cfg_529_CARDV_V70/ModelConfig.mk

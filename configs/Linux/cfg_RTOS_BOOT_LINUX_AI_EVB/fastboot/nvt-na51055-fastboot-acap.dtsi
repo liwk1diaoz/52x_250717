@@ -1,0 +1,13 @@
+&fastboot {
+	acap {
+		samplerate = <48000>;
+		channel = <2>;
+		bufnum = <5>;
+		bufsamplecnt = <1024>;
+		vol = <100>;
+		recsrc = <0>;
+		aec = <0>;
+		txchannel = <0>;
+		defaultsetting = <0>;
+	};
+};

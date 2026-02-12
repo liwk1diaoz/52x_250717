@@ -1,0 +1,11 @@
+How to compiler this RTSP library for GM:
+
+1.	GM8126 linux-2.6.28: 
+	a) ./switch 8126_28
+	b) make
+	c) output a librtsp.a to ../simple_ipc/lib
+
+2.	GM8181 linux-2.6.14
+	a) ./switch 8181_14
+	b) make
+	c) output a librtsp.a to ../simple_dvr 

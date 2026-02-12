@@ -1,0 +1,30 @@
+&top {
+/*
+sgpio5{gpio_config = <S_GPIO(5) 0>;};
+sgpio6{gpio_config = <S_GPIO(6) 0>;};
+pgpio19{gpio_config = <P_GPIO(19) 1>;};
+lgpio2{gpio_config = <L_GPIO(2) 0>;};
+lgpio3{gpio_config = <L_GPIO(3) 1>;};
+lgpio5{gpio_config = <L_GPIO(5) 1>;};
+lgpio8{gpio_config = <L_GPIO(8) 1>;};
+lgpio9{gpio_config = <L_GPIO(9) 1>;};
+lgpio10{gpio_config = <L_GPIO(10) 1>;};
+lgpio12{gpio_config = <L_GPIO(12) 0>;};
+lgpio13{gpio_config = <L_GPIO(13) 0>;};
+lgpio15{gpio_config = <L_GPIO(15) 1>;};
+lgpio17{gpio_config = <L_GPIO(17) 0>;};
+
+
+lgpio21{gpio_config = <L_GPIO(21) 0>;};
+lgpio23{gpio_config = <L_GPIO(23) 1>;};
+lgpio24{gpio_config = <L_GPIO(24) 0>;};
+dgpio0{gpio_config = <D_GPIO(0) 1>;};
+dgpio9{gpio_config = <D_GPIO(9) 1>;};    //GPIO_WIFI_PWR_ON,high active
+dgpio10{gpio_config = <D_GPIO(10) 1>;};  //GPIO_WIFI_REG_ON,high active
+*/
+lgpio1{gpio_config = <L_GPIO(1) 1>;};
+lgpio15{pad_config = <0xFE 0x1 0xFE 0x0>;};
+lgpio19{gpio_config = <L_GPIO(19) 0>;};
+dgpio9{gpio_config = <D_GPIO(9) 1>;};
+dgpio10{gpio_config = <D_GPIO(10) 1>;};
+};

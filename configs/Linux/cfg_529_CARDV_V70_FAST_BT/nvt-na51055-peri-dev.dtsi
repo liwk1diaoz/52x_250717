@@ -1,0 +1,108 @@
+/*
+ * Novatek Ltd. NA51055 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+
+#include <dt-bindings/gpio/nvt-gpio.h>
+
+&i2c0 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	sen_imx415@0 {
+		compatible = "nvt,sen_imx415";
+		reg = <0x7F>;                       /* dummy addr */
+		path = <0>;
+		PRESET {
+			expt_time = <10000>;            /* 10000us */
+			gain_ratio = <1000>;            /* 1x gain */        
+		};
+		DIRECTION {
+			mirror = <1>;                   /* mirror */
+			flip = <1>;                     /* no flip */
+		};
+		POWER {
+			mclk = <0>;                     /* CTL_SEN_CLK_SEL_SIEMCLK */
+			pwdn_pin = <0xFFFFFFFF>;        /* no pwdn pin */   
+			rst_pin = <S_GPIO(4)>;          /* S_GPIO_4 */
+			rst_time = <1>;                 /* 1ms */
+			stable_time = <1>;              /* 1ms */
+		};
+		I2C {
+			i2c_id = <0>;                   /* SEN_I2C_ID_1 */
+			i2c_addr = <0x1A>;              /* 0x34 >> 1  = 0x1A */
+		};
+	};
+};
+
+&i2c1 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+};
+
+&i2c2 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	
+	ad_tp9950@0 {
+		compatible = "nvt,ad_tp9950.0";
+		reg = <0x44>;
+		power_cfg {
+			mclk_sel = "MCLK3";						// ex : "MCLK" or "MCLK2" or "MCLK3"
+
+			///////////////////////////////////////////////////////////////////////////////////////////////////
+			// io control description                                                                        //
+			// io_ctl0@0~19(max) = <io_pin      level   hold time>                                              //
+			//   io_pin - (3 types)                                                                          //
+			//     1. pin name (ex. S_GPIO(4), PGPIO(0), ...)                                                //
+			//     2. 0xfffe: the following commands will only applied on 'power on' sequence (default)      //
+			//     3. 0xfffd: the following commands will only applied on 'power off' sequence               //
+			//   level - 1: pull high, 0: pull low                                                           //
+			//   hold time - delay time (us)                                                                 //
+			///////////////////////////////////////////////////////////////////////////////////////////////////
+			//// power on ////
+			io_ctl0 = <0xfffe		0 0>;			// power on sqeuence indicator
+			// turn on power pin
+			io_ctl1 = <D_GPIO(8)	1 10000>;			// io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+			io_ctl2 = <L_GPIO(20)	1 10000>;			// io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+
+			// reset flow
+			io_ctl3 = <P_GPIO(11)	0 20000>;		// io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+			io_ctl4 = <P_GPIO(11)	1 10000>;		// io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+
+			//// power off ////
+			io_ctl5 = <0xfffd		0 0>;			// power off sequence indicator
+			io_ctl6 = <D_GPIO(8)	0 10>;			// turn off AHD5V_EN
+			io_ctl7 = <P_GPIO(11)	0 10>;			// set tp9950 in reset state
+			io_ctl8 = <L_GPIO(20)	0 10>;
+		};
+		outport@0 {
+		inport = <0>;
+		signal = <0>;/*0:parallel 1:mipi*/
+		};
+	};
+};
+
+&spi0 {
+	status = "okay";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+/*	dummy_spi_dev: dummy_spi_dev@0 {
+		compatible = "dummy_spi_dev.0";
+		reg = <0>; // Chip select 0
+		spi-max-frequency = <1000000>;
+		spi-cpol;
+        };
+*/
+};
+
+&spi1 {
+	status = "okay";
+};
+
+&spi2 {
+	status = "okay";
+};

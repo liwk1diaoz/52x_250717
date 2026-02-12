@@ -1,0 +1,12 @@
+#!/bin/sh
+# System Daemon Run
+echo "nvtapp" > /proc/nvt_info/bootts
+# mmc hot plug
+echo "/sbin/mdev" > /proc/sys/kernel/hotplug
+mdev -s
+inetd
+crond
+echo "nvtapp" > /proc/nvt_info/bootts
+
+# disable childless pll
+echo d > /proc/nvt_info/nvt_clk/clk_childless

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+echo "bt" > /proc/nvt_info/bootts
+
+/usr/share/btscripts/init.sh
+
+while :
+do
+	rst=`hciconfig`
+	case "${rst}" in
+	*hci0*) echo "detect hci0"; sleep 1 ; hciconfig hci0 up; break ;;
+	*) sleep 1  ;;
+	esac
+
+done
+
+/usr/share/btscripts/up.sh
+
+echo "bt" > /proc/nvt_info/bootts
+

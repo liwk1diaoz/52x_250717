@@ -1,0 +1,33 @@
+{
+	"jsontype": "module_publish",
+	"publish_src": [
+		"kdrv_videoprocess_main.c",
+		"kdrv_ife/ife_main.c",
+		"kdrv_ife/ife_drv.c",
+		"kdrv_ife/ife_kit.c",
+		"kdrv_ife/ife_platform.c",
+		"kdrv_ife/ife_proc.c",
+		"kdrv_dce/dce_main.c",
+		"kdrv_dce/dce_drv.c",
+		"kdrv_dce/dce_kit.c",
+		"kdrv_dce/dce_debug_cmd.c",
+		"kdrv_dce/dce_api.c",
+		"kdrv_dce/dce_proc.c",
+		"kdrv_dce/dce_platform.c",
+		"kdrv_ipe/ipe_main.c",
+		"kdrv_ipe/ipe_api.c",
+		"kdrv_ipe/ipe_drv.c",
+		"kdrv_ipe/ipe_kit.c",
+		"kdrv_ipe/ipe_platform.c",
+		"kdrv_ipe/ipe_proc.c",
+		"kdrv_ipe/ipe_debug_cmd.c",
+		"kdrv_ife2/ife2_main.c",
+		"kdrv_ife2/ife2_api.c",
+		"kdrv_ife2/ife2_drv.c",
+		"kdrv_ife2/ife2_kit.c",
+		"kdrv_ife2/ife2_platform.c",
+		"kdrv_ife2/ife2_proc.c",
+		"kdrv_ife2/ife2_dbg_cmd.c",
+		"kdrv_vpe_if/kdrv_vpe_if_export.c"
+	]
+}

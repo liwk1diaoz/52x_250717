@@ -1,0 +1,22 @@
+&fastboot {
+	ai_model {
+		load_dst = <0x1389c000 0x148a6c>;
+	};
+
+	ai_buf {
+		kerl_parm = <0x1389c000 0x9a5d0>;
+		user_model = <0x139365d0 0xae49c>;
+		pd_buff = <0x139e4a80 0x6780>;
+		fboot_rslt = <0x139eb200 0x11d00>;
+		io_buff = <0x139fcf00 0x364800>;
+	};
+
+	mem_in_kerl {
+		kerl_parm = <0x1389c000 0x93b00000>;
+		io_buff = <0x139fcf00 0xa1c00f00>;
+	};
+
+	user_set {
+		proc_period = <2>;
+	};
+};

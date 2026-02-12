@@ -1,0 +1,26 @@
+#!/bin/sh
+KERVER=`cat /proc/version | awk -F'version ' '{print $2}' | awk -F' ' '{print $1}'`
+
+# Setup mdev
+echo "fs" > /proc/nvt_info/bootts
+
+insmod /lib/modules/$KERVER/kernel/fs/fat/fat.ko
+insmod /lib/modules/$KERVER/kernel/fs/fat/vfat.ko
+INDEX=1
+while [ $INDEX -le 10 ]
+do
+	if [ -d "/sys/class/block/mmcblk0" ]; then
+		mknod /dev/mmcblk0 b `cat /sys/class/block/mmcblk0/dev | sed "s/:/\ /g"`		
+		sleep 0.001
+		if [ -d "/sys/class/block/mmcblk0p1" ]; then
+			mknod /dev/mmcblk0p1 b `cat /sys/class/block/mmcblk0p1/dev | sed "s/:/\ /g"`
+			mount -t vfat /dev/mmcblk0p1 /mnt/sd
+		else
+			mount -t vfat /dev/mmcblk0 /mnt/sd
+		fi
+		break
+	fi
+	sleep 0.001
+	INDEX=$(( INDEX+1 ))
+done
+echo "fs" > /proc/nvt_info/bootts

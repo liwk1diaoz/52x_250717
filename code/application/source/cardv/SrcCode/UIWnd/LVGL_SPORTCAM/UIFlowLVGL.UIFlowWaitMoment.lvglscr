@@ -1,0 +1,209 @@
+{
+    "event callback": "UIFlowWaitMomentEventCallback",
+    "name": "UIFlowWaitMoment",
+    "screen color": "0x232323",
+    "widgets": [
+        {
+            "children": [
+                {
+                    "align": "Center",
+                    "class": "lv_label",
+                    "click": false,
+                    "drag": false,
+                    "event callback": "",
+                    "font type": "Font_Type0",
+                    "geometry": {
+                        "height": 93,
+                        "width": 210,
+                        "x": 50,
+                        "y": 14
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "long mode": "Crop",
+                    "name": "label_1",
+                    "recolor": false,
+                    "string id": "STRID_NULL_",
+                    "styles": [
+                        {
+                            "Text": {
+                                "text_color": "0xffffff",
+                                "text_font": "NotoSans-Black 16 1bpp",
+                                "text_sel_bg_color": "0x00b495",
+                                "text_sel_color": "0x3c3c3c"
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        }
+                    ],
+                    "text": "",
+                    "widget": "Label"
+                },
+                {
+                    "arc length": 30,
+                    "class": "lv_spinner",
+                    "click": true,
+                    "drag": false,
+                    "event callback": "",
+                    "geometry": {
+                        "height": 52,
+                        "width": 53,
+                        "x": 129,
+                        "y": 119
+                    },
+                    "hidden": false,
+                    "locked": false,
+                    "name": "spinner_1",
+                    "spin dir": "Forward",
+                    "spin time(ms)": 1000,
+                    "spin type": "Fill Spin",
+                    "styles": [
+                        {
+                            "Line": {
+                                "line_color": "0xffffff",
+                                "line_opa": 0,
+                                "line_width": 5
+                            },
+                            "part": 0,
+                            "state": 0
+                        },
+                        {
+                            "part": 0,
+                            "state": 1
+                        },
+                        {
+                            "part": 0,
+                            "state": 2
+                        },
+                        {
+                            "part": 0,
+                            "state": 3
+                        },
+                        {
+                            "part": 0,
+                            "state": 4
+                        },
+                        {
+                            "part": 0,
+                            "state": 5
+                        },
+                        {
+                            "part": 0,
+                            "state": 6
+                        },
+                        {
+                            "Line": {
+                                "line_color": "0xfdfdfd",
+                                "line_opa": 255,
+                                "line_width": 7
+                            },
+                            "part": 1,
+                            "state": 0
+                        },
+                        {
+                            "part": 1,
+                            "state": 1
+                        },
+                        {
+                            "part": 1,
+                            "state": 2
+                        },
+                        {
+                            "part": 1,
+                            "state": 3
+                        },
+                        {
+                            "part": 1,
+                            "state": 4
+                        },
+                        {
+                            "part": 1,
+                            "state": 5
+                        },
+                        {
+                            "part": 1,
+                            "state": 6
+                        }
+                    ],
+                    "widget": "Spinner"
+                }
+            ],
+            "class": "lv_cont",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 174,
+                "width": 311,
+                "x": 5,
+                "y": 60
+            },
+            "hidden": false,
+            "layout": "Column Mid",
+            "locked": false,
+            "name": "container_1",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_opa": 0
+                    },
+                    "Border": {
+                        "border_color": "0xdddddd",
+                        "border_opa": 0
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Container"
+        }
+    ]
+}

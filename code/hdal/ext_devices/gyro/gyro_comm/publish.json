@@ -1,0 +1,12 @@
+{
+	"jsontype": "module_publish",
+	"publish_src": [
+		"gyro_comm_main.c",
+		"gyro_comm_proc.c",
+		"gyro_comm_drv.c",
+		"gyro_comm_api.c",
+		"gyro_comm_platform.c",
+		"gyro_comm.c",
+		"gyro_comm_export.c"
+	]
+}

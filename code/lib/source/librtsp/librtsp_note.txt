@@ -1,0 +1,982 @@
+1. Test
+	Result	Case
+	---------------------------------------------------------------------------
+	OK		Init the server.
+	OK		Start the server.
+	OK		Stop the server.
+	OK		Reset the server.
+	OK		Force reset the server.
+	OK		Allocate queues.
+	OK		Release queues.
+	OK		Register streams.
+	OK		Deregister a stream with/without ongoing streaming.
+	OK		Set the file path.
+	OK		VLC.
+	OK		QuickTime player.
+	OK		rtsp_test.
+	OK		Live 1-1
+	OK		Live 1-M
+	OK		Live multiple 1-1
+	OK		Live multiple 1-M
+	OK		Live teardown
+	OK		File 1-1
+	OK		File 1-M
+	OK		File multiple 1-1
+	OK		File multiple 1-M
+			File pause (not supported by spook)
+	OK		File teardown
+	OK		Abnormal connection termination by clients.
+	OK		Deregister corresponding file stream even if abnormal connection
+			termination by clients.
+	OK		135 clients for 47832 seconds.
+	OK		Client listing test.
+	OK		Client listing test with 1 consistent and 19 dynamic clients for
+			XXXXX seconds.
+
+2.  Done by the streaming server:
+ 	(1) Close the usock & unlink the file.
+	(2) STREAM_THREAD_START, STREAM_THREAD_STOP, STREAM_THREAD_RESET.
+	(3) media enqueue, media flush.
+	(4) stream deregistration.
+	(5) SIGKILL.
+
+3. utility functions
+	global:
+		config_port
+		config_rtprange
+		config_frameheap
+	rtsp:
+		set_track
+		set_path
+		set_qos
+	http:
+		set_input
+		set_path
+		set_mode
+		set_max_cache_time
+		
+4. FStreamer.conf	(OV7725, 3CH, H264_MP2_640x480_30FPS, MP4_AMR_640x480_30FPS, MJPEG_MP2_640x480_30FPS)
+	FrameHeap 300 300;
+	FrameHeap 20 4096;
+	FrameHeap 20 40000;
+	FrameHeap 10 80000;
+	FrameHeap 2 400000;
+
+	Port 554;
+
+	Authentication 0 10;
+
+	RtpRange 50000 60000;
+
+							external.c ---
+	Input External {		start_block::ext=(struct ext_input *)malloc()
+		Format "h264";
+		CallNumber 201;
+		Framerate 1 30;
+		Output h264v1;		set_output::struct stream *new_stream(...,ext)
+	}
+
+	Input External {
+		Format "mpeg4";
+		CallNumber 202;
+		Framerate 1 30;
+		Output mpeg4v2;
+	}
+
+	Input External {
+		Format "jpeg";
+		CallNumber 203;
+		Framerate 1 30;
+		Output mjpegv3;
+	}
+
+	Input DSP2 {
+		AudioOutput pcm2;
+		AudioRate 16000;
+		AudioChannels 1;
+	}
+
+	Filter Resample2 {
+		Input "pcm2";
+		Output "pcm2-8k";
+		Rate 8000;
+		Channels 1;
+	}
+
+	Encoder AMRv2 {
+		Input "pcm2-8k";
+		Mode MR515;
+		Output "amrv2";
+	}
+
+	Encoder MP2v2 {
+		Input "pcm2";
+		Bitrate 32000;
+		Output "mp2v2";
+	}
+
+	Record-ch1 Record {
+		Format "AVI";
+		Path /mnt/sd/recording ;
+		Track "h264v1";
+		Track "mp2v2";
+	}
+
+	Record-ch2 Record {
+		Format "AVI";
+		Path /mnt/sd/recording ;
+		Track "mpeg4v2";
+		Track "mp2v2";
+	}
+
+	Record-ch3 Record {
+		Format "AVI";
+		Path /mnt/sd/recording ;
+		Track "mjpegv3";
+		Track "mp2v2";
+	}
+
+							live.c ---
+	RTSP-Handler Live {		start_block::(struct live_source *)malloc()
+		Path / ;			set_path::new_rtsp_location(...,live_open,..)::(struct rtsp_location *)malloc()
+		Track "h264v1";		set_track::struct stream_destination *connect_to_stream()
+							           struct rtp_media *new_rtp_media_XXX()
+		Track "mp2v2";
+	}
+
+							live_open() ---
+								ls = (struct live_session *)malloc()
+								ls->sess = new_session();
+							
+	RTSP-Handler Live {
+		Path /3g ;
+		Track "h264v1";
+		Track "amrv2";
+	}
+
+	RTSP-Handler Live {
+		Path /v2 ;
+		Track "mpeg4v2";
+		Track "mp2v2";
+	}
+
+	RTSP-Handler Live {
+		Path /3gv2 ;
+		Track "mpeg4v2";
+		Track "amrv2";
+	}
+
+	RTSP-Handler Live {
+		Path /v3 ;
+		Track "mjpegv3";
+		Track "mp2v2";
+	}
+
+	RTSP-Handler Live {
+		Path /3gv3 ;
+		Track "mjpegv3";
+		Track "amrv2";
+	}
+	
+5.
+	live_init
+	start_block, 0x7fd800
+	start_block, thread 114696
+	set_path, /, 0x7fd800
+	set_track, h264v1, 0x7fd800
+	set_track, mp2v2, 0x7fd800
+	end_block, 0x7fd800
+	start_block, 0x801198
+	set_path, /3g, 0x801198
+	set_track, h264v1, 0x801198
+	set_track, amrv2, 0x801198
+	end_block, 0x801198
+	next_live_frame
+	live_loop
+	next_live_frame
+	next_live_frame
+	next_live_frame
+
+6.
+	Defined in conf_parse.h:
+    	RTCP_ENABLE
+		GM
+	
+	STRUCTURE
+		struct rtsp_location {
+			struct loc_node node;
+			char realm[128];
+			char username[128];
+			char password[128];
+			open_func open;
+			void *private;
+		};
+		
+		struct live_source {
+			struct live_session *sess_list;
+			struct live_track track[MAX_TRACKS];
+			int qos;
+			int safe_I_num;
+			int curr_I_num;
+			int I_frame_only;
+			pthread_t live_thread;
+		};
+
+		struct live_track {
+			int index;
+			struct live_source *source;
+			struct stream_destination *stream;
+			int ready;
+			struct rtp_media *rtp;
+		};
+		
+		struct live_session {
+			struct live_session *next;
+			struct live_session *prev;
+			struct session *sess;
+			struct live_source *source;
+			int playing;
+			int delay;
+		};
+
+		struct rtsp_session {
+			struct rtsp_session *next;
+			struct rtsp_session *prev;
+			char id[32];
+			struct session *sess;
+		};
+
+		struct session {
+			struct session *next;
+			struct session *prev;
+			get_sdp_func get_sdp;
+			setup_func setup;
+			play_func play;
+			pause_func pause;
+			teardown_func teardown;
+			void *private;
+			session_close_func control_close;
+			void *control_private;
+			struct timeval open_time;
+			char addr[64];
+			struct rtp_endpoint *ep[MAX_TRACKS];
+			int stream_num;
+		};
+		
+		struct stream {
+			struct stream *next;
+			struct stream *prev;
+			char name[256];
+			int format;
+			struct stream_destination *dest_list;
+			void (*get_framerate)( struct stream *s, int *fincr, int *fbase );
+			void (*get_bitrate)( struct stream *s, int *bitrate );
+			void (*get_framesize)( struct stream *s, int *framesize );	
+			void (*set_running)( struct stream *s, int running );
+			void *src_private;
+		};
+
+		struct stream_destination {
+			struct stream_destination *next;
+			struct stream_destination *prev;
+			struct stream *stream;
+			int waiting;
+			frame_deliver_func process_frame;
+			void *d;
+		};
+
+		struct rtp_endpoint {
+			struct session *session;
+			int payload;
+			int max_data_size;
+			unsigned int ssrc;
+			unsigned int start_timestamp;
+			unsigned int last_timestamp;
+			unsigned int sync_timestamp;
+			unsigned int pre_sync_timestamp;
+			unsigned int timebase;	
+			short packetskip;
+			unsigned int delay_time;
+			short stopdetect;
+			int seqnum;
+			int packet_count;
+			int octet_count;
+			struct event *rtcp_send_event;
+			int enable_send_rtcp; //kevin 2007.1.17
+			int force_rtcp;
+			int event_enabled;//kevin rtcp enabling flag
+			struct timeval last_rtcp_recv;
+			int retry;
+			int trans_type;
+			union {
+				struct {
+					char sdp_addr[48];
+					int sdp_port;
+					int rtp_fd;
+					struct event *rtp_event;
+					int rtcp_fd;
+					struct event *rtcp_event;
+					struct conn *conn;
+					int rtp_chan;
+				} udp;
+				struct {
+					struct conn *conn;
+					int rtp_chan;
+					int rtcp_chan;
+				} inter;
+			} trans;
+	
+			int enable_send_rtcp_app_motionNty;
+			int timeSec_rtcp_app_motionNty;
+			int flyKey;
+		};
+		
+		struct conn {
+			struct conn *next;
+			struct conn *prev;
+			int fd;
+			int second_fd; /* QuickTime uses two TCP connections for tunneling */
+			struct sockaddr_in client_addr;
+			struct event *read_event;
+			struct event *second_read_event; /* for second_fd */
+			struct event *write_event;
+			int proto;
+			char http_tunnel_cookie[128]; /* used to identify QuickTime tunnels */
+			int base64_count; /* QuickTime uses base64 when tunneling over HTTP */
+			unsigned char req_buf[4096];
+			int req_len;
+			struct req *req_list;
+			#ifdef NO_MM
+				unsigned char send_buf[16384];
+			//	unsigned char send_buf[PACKET_SIZE+500];
+			#else
+				unsigned char send_buf[65536];
+			#endif
+			int send_buf_r;
+			int send_buf_w;
+			int drop_after;
+			void *proto_state;
+		};
+	
+	GLOBAL
+    	struct loc_node *rtsp_loc_list
+    	struct stream	*stream_list
+		struct session	*sess_list
+
+	LOCAL
+		struct rtsp_session	*sess_list;		// rtsp.c
+		
+    	
+	// spook_log_init(): Init spook log.
+
+	// acl_init(): Init access control list.
+
+	// control_init(): Init an unix socket as the control channel.
+	
+	external_init(): Init external input module.
+		input	external
+			start_block(): Allocate struct ext_input
+			set_output():
+				ext_input.output = (struct stream *) new_stream();
+					Allocate struct stream.
+	+				Add allocated struct stream to stream_list.
+					stream.src_private = &ext_input;
+				ext_input.output->get_framerate = get_framerate;
+				ext_input.output->set_running = [static] set_running;
+			set_format(): Set format (h264/mp4/mjpeg/mpa/amr...).
+			set_framerate()
+			set_callnumber(): Set call number (data channel number).
+
+	// access_log_init(): Init access log.
+	
+	dsp1_init(): Init 1st audio channel.
+		input	DSP1
+			start_block():
+				Allocate a struct v4l_input.
+				v4l_input.format = FORMAT_PCM;
+			set_aout()
+				v4l_input.aout = (struct stream *) new_stream(..., FORMAT_PCM, &v4l_input);
+					Allocate struct stream.
+	+				Add allocated struct stream to stream_list.
+					stream.src_private = &v4l_input;
+			set_audiorate()
+			set_audiochannels()
+			end_block():
+				audio = open(AUDIO1, O_RDONLY, 0);
+				v4l_input.aq = new_soft_queue( 10 );
+				add_softqueue_event(v4l_input.aq, 0, get_back_audio_frame, &v4l_input);
+				pthread_create(&v4l_input.audio_thread, NULL, audio_loop, &v4l_input);
+
+	dsp2_init(): Init 2nd audio channel
+		input	DSP2
+			set_aout()
+			set_audiorate()
+			set_audiochannels()
+
+	// scull_init(all audio channels):
+		input	SCULL1,SCULL2
+			start_block():
+				Allocate a struct v4l_input.
+				v4l_input.format = FORMAT_PCM;
+			set_aout()
+				v4l_input.aout = (struct stream *) new_stream(..., FORMAT_PCM, &v4l_input);
+					Allocate struct stream.
+	+				Add allocated struct stream to stream_list.
+					stream.src_private = &v4l_input;
+			set_audiorate()
+			set_audiochannels()
+			end_block():
+				audio = open(SCULL1, O_RDWR, 0);
+				v4l_input.aq = new_soft_queue( 10 );
+				add_softqueue_event(v4l_input.aq, 0, get_back_audio_frame, &v4l_input);
+				pthread_create(&v4l_input.audio_thread, NULL, audio_loop, &v4l_input);
+		
+	// mp2_v2_init() as
+	mp2_init_ext(all audio channels):
+		encoder	mp2v1,mp2v2
+			start_block():
+				Allocate a struct mp2_encoder.
+			set_input():
+				mp2_encoder.input = (stream_destination *) connect_to_stream(..., mp2_encode, &mp2_encoder, ...);
+					Find stream.
+					new_dest(&stream, mp2_encode, &mp2_encoder)
+						Allocate a struct stream_destination.
+	+					Add stream_destination to stream.dest_list.
+						stream_destination.stream = &stream;
+						stream_destination.process_frame = mp2_encode;
+						stream_destination.d = &mp2_encoder;
+			set_output():
+				mp2_encoder.output = new_stream(..., FORMAT_MPA, &mp2_encoder);
+					Allocate struct stream.
+	+				Add allocated struct stream to stream_list.
+					stream.src_private = &mp2_encoder;
+				mp2_encoder.output->get_framerate = [static] get_framerate;
+				mp2_encoder.output->get_bitrate = [static] get_bitrate;
+				mp2_encoder.output->set_running = [static] set_running;
+			set_bitrate():
+			end_block():
+				MPA_encode_init(&mp2_encoder.ctx, ...);
+				mp2_encoder.inq = new_soft_queue(16);
+				mp2_encoder.outq = new_soft_queue(16);
+				add_softqueue_event(mp2_encoder.outq, 0, [static] get_back_frame, &mp2_encoder);
+				pthread_create(&mp2_encoder.thread, NULL, mp2_loop, &mp2_encoder);
+
+	amr_init_ext(all audio channels):
+		encoder	amrv1,amrv2
+			start_block():
+				Allocate a struct amr_encoder.
+			set_input():
+				amr_encoder.input = (stream_destination *) connect_to_stream(..., amr_encode, &amr_encoder, ...);
+					Find stream.
+					new_dest(&stream, amr_encode, &amr_encoder)
+						Allocate a struct stream_destination.
+	+					Add stream_destination to stream.dest_list.
+						stream_destination.stream = &stream;
+						stream_destination.process_frame = amr_encode;
+						stream_destination.d = &amr_encoder;
+			set_output():
+				mp2_encoder.output = new_stream(..., FORMAT_AMR, &amr_encoder);
+					Allocate struct stream.
+	+				Add allocated struct stream to stream_list.
+					stream.src_private = &amr_encoder;
+				amr_encoder.output->set_running = [static] set_running;
+			set_mode(): AMR475,MR515,MR59,MR67,MR74,MR795,MR102,MR122
+			end_block():
+				Speech_Encode_Frame_init(&amr_encoder.speech_encoder_state, ...)
+				sid_sync_init(&sid_state)
+				amr_encoder.inq = new_soft_queue(16);
+				amr_encoder.outq = new_soft_queue(16);
+				add_softqueue_event(amr_encoder.outq, 0, [static] get_back_frame, &amr_encoder);
+				pthread_create(&amr_encoder.thread, NULL, amr_loop, &amr_encoder);
+	
+	live_init()
+		rtsp-handler	live
+			start_block():
+				Allocate a struct live_source.
+				live_source.track[i].index = i;
+				live_source.track[i].source = &live_source;
+				if([static] live_loop_thread_created == 0)
+					pthread_create(&live_source.live_thread), NULL, live_loop, &live_source);
+			set_path(..., &live_source):
+				new_rtsp_location(..., live_open, &live_source);
+					Allocate a struct rtsp_location.
+	+				Add rtsp_location to rtsp_loc_list.
+					rtsp_location.open = live_open;
+					rtsp_location.private = &live_source;
+			set_track(..., &live_source):
+				live_source.track[t].stream = (stream_destination *) connect_to_stream(..., next_live_frame, &live_source.track[t],...)
+					Find stream.
+					new_dest(&stream, next_live_frame, &live_source.track[t])
+						Allocate a struct stream_destination.
+	+					Add stream_destination to stream.dest_list.
+						stream_destination.stream = &stream;
+						stream_destination.process_frame = next_live_frame;
+						stream_destination.d = &live_source.track[t];
+						case FORMAT_MPEG4:
+							live_source.track[t].rtp = new_rtp_media_mpeg4();
+								Allocate a struct rtp_mpeg4.
+								new_rtp_media(mpeg4_get_sdp, mpeg4_get_payload, mpeg4_process_frame, mpeg4_send, &rtp_mpeg4);
+									Allocate a struct rtp_media.
+									...
+									rtp_media.private = &rtp_mpeg4;
+						case FORMAT_H264:
+							live_source.track[t].rtp = new_rtp_media_h264(live_source.track[t].stream->stream);
+								Allocate a struct rtp_h264.
+								new_rtp_media(h264_get_sdp, h264_get_payload, h264_process_frame, h264_send, &rtp_h264);
+									Allocate a struct rtp_media.
+									...
+									rtp_media.private = &rtp_h264;
+						case FORMAT_JPEG:
+							live_source.track[t].rtp = new_rtp_media_jpeg_stream(live_source.track[t].stream->stream);
+								Allocate a struct rtp_jpeg.
+								new_rtp_media(jpeg_get_sdp, jpeg_get_payload, jpeg_process_frame, jpeg_send, &rtp_jpeg);
+									Allocate a struct rtp_media.
+									...
+									rtp_media.private = &rtp_jpeg;
+						case FORMAT_MPA:
+							live_source.track[t].rtp = new_rtp_media_mpa(live_source.track[t].stream->stream);
+								Allocate a struct rtp_mpa.
+								new_rtp_media(mpa_get_sdp, mpa_get_payload, mpa_process_frame, mpa_send, &rtp_mpa);
+									Allocate a struct rtp_media.
+									...
+									rtp_media.private = &rtp_mpa;
+						case FORMAT_AMR:
+							live_source.track[t].rtp = new_rtp_media_amr(live_source.track[t].stream->stream);
+								Allocate a struct rtp_amr.
+								new_rtp_media(amr_get_sdp, amr_get_payload, amr_process_frame, amr_send, &rtp_amr);
+									Allocate a struct rtp_media.
+									...
+									rtp_media.private = &rtp_amr;
+			set_qos(..., &live_source):
+			end_block(..., &live_source);
+				Check live_source.track[0].rtp != NULL.
+
+	http_init()
+		output	http
+			start_block():
+				Allocate a struct http_location.
+	+			Add http_location to http_loc_list.
+			set_input():
+				http_location.input = connect_to_stream(..., jpeg_next_frame, &http_location, FORMAT_JPEG)
+					Find stream.
+					new_dest(&stream, jpeg_next_frame, &http_location)
+						Allocate a struct stream_destination.
+	+					Add stream_destination to stream.dest_list.
+						stream_destination.stream = &stream;
+						stream_destination.process_frame = jpeg_next_frame;
+						stream_destination.d = &http_location;
+			set_path():
+			set_mode():
+				http_location.streaming = 0 "single" or 1 "stream".
+			set_max_cache_time():
+			end_block():
+				Check http_location.input, http_location.node.path.
+
+	read_config_file()
+	event_loop(0)
+
+	handle_OPTIONS():
+		DESCRIBE, SETUP, TEARDOWN, PLAY
+	
+	handle_DESCRIBE():
+		loc = (rtsp_location *) find_rtsp_location(req->req->sl.req.uri, path, NULL)
+		sess = (struct session *) rtsp_location.open(path, (live_source *)loc->private)
+		if (0 < sess->get_sdp()) {
+			if (0 <= tcp_send_pmsg(req->conn, req->resp, sdp_len))
+				send_data(req->conn, sdp, sdp_len);
+		}
+		sess->teardown(sess, NULL);
+	
+	handle_SETUP():
+		loc = (rtsp_location *) find_rtsp_location( req->req->sl.req.uri, path, &track)
+		if SESSION
+			rs = (struct rtsp_session *) get_session(SESSION)
+			s = rs->sess
+		else
+			s = (structure session *) loc->open(path, (live_source *) loc->private)	[live_open]
+				Allocate a struct live_session.
+				live_source.sess_list = &live_session;
+				live_session.sess = new_session();
+					Allocate a struct session.
+	+				Add session to sess_list.
+				live_session.source = &live_source;
+				...
+				live_session.sess->private = &live_session;
+				return live_session.sess;
+        s->setup(s, track)	[live_setup]
+			s->ep[t] = new_rtp_endpoint(payload);
+				Allocate a struct rtp_endpoint.
+				if RTCP_ENABLE & Video
+					rtp_endpoint.rtcp_send_event = add_timer_event(30000, 0, rtcp_app_fire, &rtp_endpoint);
+					set_event_enabled(rtp_endpoint.rtcp_send_event, 0 );
+			s->ep[t]->session = s;
+			s->ep[t]->flyKey = getFlyKey(ls->source->track[t].stream->stream->name);
+		if RTP/AVP/TCP
+			ret = rtsp_interleave_setup(s, track, req, t);
+				Allocate a struct rtsp_conn.
+				req->conn->proto_state = &rtsp_conn;
+				rtsp_conn.ichan[rtp_chan].ep = s->ep[track];
+				rtsp_conn.ichan[rtp_chan].rtcp = 0;
+				if RTCP_ENABLE
+					rtsp_conn.ichan[rtcp_chan].ep = s->ep[track];
+					rtsp_conn.ichan[rtcp_chan].rtcp = 1;
+				endif
+				connect_interleaved_endpoint(s->ep[track], req->conn, rtp_chan, rtcp_chan);
+		else
+			ret = rtsp_udp_setup(s, track, req, t);
+		if (ret < 0)
+			s->teardown(s, s->ep[track]);	[live_teardown]
+		else
+			tcp_send_pmsg(req->conn, req->resp, -1);
+			if(!rs) rs = new_rtsp_session(struct session *);
+                Allocate a struct rtsp_session.
+                Add rtsp_session to sess_list[local].
+                rtsp.session.sess = &session;
+                session->control_private = &rtsp_session;
+                session->control_close = rtsp_session_close();
+				
+	handle_SET_PARAMETER():
+	
+	handle_GET_PARAMETER():
+	
+	handle_PLAY():
+		rs = (struct rtsp_session *) get_session(get_header(req->req, "Session"))
+		rs->sess->play(rs->sess, have_start ? &start : NULL);	[live_play]
+			ls = (struct live_session *)s->private;
+			For each active tracks
+				set_waiting(ls->source->track[t].stream, 1);
+		tcp_send_pmsg(req->conn, req->resp, -1);
+	
+	handle_PAUSE():
+	
+	handle_TEARDOWN():
+		loc = (rtsp_location *) find_rtsp_location( req->req->sl.req.uri, NULL, &track)
+		rs = (struct rtsp_session *) get_session(get_header( req->req, "Session"))
+		tcp_send_pmsg(req->conn, req->resp, -1);
+		rs->sess->teardown( rs->sess, track < 0 ? NULL : rs->sess->ep[track]);	[live_teardown]
+			ls = (struct live_session *)s->private;
+			For each ative track
+				del_rtp_endpoint(s->ep[i]);
+					if RTCP_ENABLE
+						remove_event(ep->rtcp_send_event);
+					case RTP_TRANS_UDP:
+						remove_event(ep->trans.udp.rtp_event);
+						close(ep->trans.udp.rtp_fd);
+						if RTCP_ENABLE
+							remove_event(ep->trans.udp.rtcp_event);
+							close(ep->trans.udp.rtcp_fd);
+						interleave_disconnect(ep->trans.udp.conn, ep->trans.udp.rtp_chan);
+					case RTP_TRANS_INTER:
+						interleave_disconnect(ep->trans.inter.conn, ep->trans.inter.rtp_chan);
+						ifd RTCP_ENABLE
+							interleave_disconnect(ep->trans.inter.conn, ep->trans.inter.rtcp_chan);
+					free( ep );
+				track_check_running(ls->source, i);
+			if (remaining == 0)
+				Free ls.
+				del_session((struct session *) sess);
+					Remove sess from sess_list.
+					sess->control_close(sess);	[rtsp_session_close]
+						rs = (struct rtsp_session *) sess->control_private;
+						Remove sess from sess_list ???
+						Free rs.
+					Free sess.
+	
+7. RTSP session examples
+	(1) VLC
+	
+		OPTIONS rtsp://192.168.68.236:554/live/ch09 RTSP/1.0
+		CSeq: 7
+		User-Agent: VLC media player (LIVE555 Streaming Media v2009.04.20)
+
+		RTSP/1.0 200 OK
+		CSeq: 7
+		Server: VStream Streaming Server V1.0
+		Public: DESCRIBE, SETUP, TEARDOWN, PLAY
+
+		DESCRIBE rtsp://192.168.68.236:554/live/ch09 RTSP/1.0
+		CSeq: 8
+		Accept: application/sdp
+		User-Agent: VLC media player (LIVE555 Streaming Media v2009.04.20)
+
+		RTSP/1.0 200 OK
+		CSeq: 8
+		Server: VStream Streaming Server V1.0
+		Content-Base: rtsp://192.168.68.236:554/live/ch09/
+		Content-Type: application/sdp
+		Content-Length: 355
+
+		SETUP rtsp://192.168.68.236:554/live/ch09/trackID=0 RTSP/1.0
+		CSeq: 9
+		Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+		User-Agent: VLC media player (LIVE555 Streaming Media v2009.04.20)
+
+		RTSP/1.0 200 OK
+		CSeq: 9
+		Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+		Session: A6843ED31907451D9E91
+
+		SETUP rtsp://192.168.68.236:554/live/ch09/trackID=1 RTSP/1.0
+		CSeq: 10
+		Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+		Session: A6843ED31907451D9E91
+		User-Agent: VLC media player (LIVE555 Streaming Media v2009.04.20)
+
+		RTSP/1.0 200 OK
+		CSeq: 10
+		Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+		Session: A6843ED31907451D9E91
+
+		PLAY rtsp://192.168.68.236:554/live/ch09/ RTSP/1.0
+		CSeq: 11
+		Session: A6843ED31907451D9E91
+		Range: npt=0.000-
+		User-Agent: VLC media player (LIVE555 Streaming Media v2009.04.20)
+
+		RTSP/1.0 200 OK
+		CSeq: 11
+		Session: A6843ED31907451D9E91
+		Range: npt=now-
+		RTP-Info: url=rtsp://192.168.68.236:554/live/ch09//trackID=0;seq=14535;rtptime=0,url=rtsp://192.168.68.236:554/live/ch09//trackID=1;seq=6167;rtptime=0
+
+		TEARDOWN rtsp://192.168.68.236:554/live/ch09/ RTSP/1.0
+		CSeq: 12
+		Session: A6843ED31907451D9E91
+		User-Agent: VLC media player (LIVE555 Streaming Media v2009.04.20)
+
+		RTSP/1.0 200 OK
+		CSeq: 12
+		Session: A6843ED31907451D9E91
+
+	(2) QuickTime
+
+		DESCRIBE rtsp://192.168.68.236:554/file/2009-12-14.avi RTSP/1.0
+		CSeq: 1
+		Accept: application/sdp
+		Bandwidth: 2147483647
+		Accept-Language: en-GB
+		User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+
+		RTSP/1.0 200 OK
+		CSeq: 1
+		Server: VStream Streaming Server V1.0
+		Content-Base: rtsp://192.168.68.236:554/file/2009-12-14.avi/
+		Content-Type: application/sdp
+		Content-Length: 351
+
+		SETUP rtsp://192.168.68.236:554/file/2009-12-14.avi/trackID=0 RTSP/1.0
+		CSeq: 2
+		Transport: RTP/AVP/TCP;unicast
+		x-dynamic-rate: 1
+		x-transport-options: late-tolerance=2.900000
+		User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+		Accept-Language: en-GB
+
+		RTSP/1.0 200 OK
+		CSeq: 2
+		Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+		Session: C85B60A2961D9DE3AC08
+
+		SETUP rtsp://192.168.68.236:554/file/2009-12-14.avi/trackID=1 RTSP/1.0
+		CSeq: 3
+		Transport: RTP/AVP/TCP;unicast
+		x-dynamic-rate: 1
+		x-transport-options: late-tolerance=2.900000
+		Session: C85B60A2961D9DE3AC08
+		User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+		Accept-Language: en-GB
+
+		RTSP/1.0 200 OK
+		CSeq: 3
+		Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+		Session: C85B60A2961D9DE3AC08
+
+		PLAY rtsp://192.168.68.236:554/file/2009-12-14.avi RTSP/1.0
+		CSeq: 4
+		Range: npt=0.000000-
+		x-prebuffer: maxtime=2.000000
+		Session: C85B60A2961D9DE3AC08
+		User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+
+		RTSP/1.0 200 OK
+		CSeq: 4
+		Session: C85B60A2961D9DE3AC08
+		Range: npt=now-
+		RTP-Info: url=rtsp://192.168.68.236:554/file/2009-12-14.avi/trackID=0;seq=9332;rtptime=0,url=rtsp://192.168.68.236:554/file/2009-12-14.avi/trackID=1;seq=1469;rtptime=0
+
+		PAUSE rtsp://192.168.68.236:554/file/2009-12-14.avi RTSP/1.0
+		CSeq: 5
+		Session: C85B60A2961D9DE3AC08
+		User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+
+		RTSP/1.0 200 OK
+		CSeq: 5
+		Session: C85B60A2961D9DE3AC08
+
+		PLAY rtsp://192.168.68.236:554/file/2009-12-14.avi RTSP/1.0
+		CSeq: 6
+		Range: npt=8.753333-
+		x-prebuffer: maxtime=2.000000
+		Session: C85B60A2961D9DE3AC08
+		User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+
+		RTSP/1.0 200 OK
+		CSeq: 6
+		Session: C85B60A2961D9DE3AC08
+		Range: npt=now-
+		RTP-Info: url=rtsp://192.168.68.236:554/file/2009-12-14.avi/trackID=0;seq=10048;rtptime=0,url=rtsp://192.168.68.236:554/file/2009-12-14.avi/trackID=1;seq=2058;rtptime=0
+
+		PAUSE rtsp://192.168.68.236:554/file/2009-12-14.avi RTSP/1.0
+		CSeq: 7
+		Session: C85B60A2961D9DE3AC08
+		User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+
+		RTSP/1.0 200 OK
+		CSeq: 7
+		Session: C85B60A2961D9DE3AC08
+
+		TEARDOWN rtsp://192.168.68.236:554/file/2009-12-14.avi RTSP/1.0
+		CSeq: 8
+		Session: C85B60A2961D9DE3AC08
+		User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+
+		RTSP/1.0 200 OK
+		CSeq: 8
+		Session: C85B60A2961D9DE3AC08
+
+8.
+
+
+-------------------------------------------------------------------------------
+1. QT PLAY->PAUSE
+		handle_DESCRIBE
+		describe the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi'
+		handle_SETUP
+		handle_SETUP
+		handle_PLAY
+		play the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi'
+		handle_PAUSE
+		handle_TEARDOWN
+		drop_conn(RTSP)
+		drop_conn: ep NULL
+
+   QT PLAY->QUIT
+		handle_DESCRIBE
+		describe the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi'
+		handle_SETUP
+		handle_SETUP
+		handle_PLAY
+		play the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi'
+		handle_PAUSE
+		handle_TEARDOWN
+		drop_conn(RTSP)
+		drop_conn: ep NULL
+
+   VLC PLAY->PAUSE
+		handle_DESCRIBE
+		handle_SETUP
+		handle_SETUP
+		handle_PLAY
+		play the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi/'
+
+   VLC PLAY->STOP
+		handle_DESCRIBE
+		describe the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi'
+		handle_SETUP
+		handle_SETUP
+		handle_PLAY
+		play the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi/'
+		handle_TEARDOWN
+		before teardown()
+		stop the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi/'
+		exec_ipc_cmd: GMSS_CMD_DEREG(16)
+		drop_conn(RTSP)
+		drop_conn: ep NULL
+
+   VLC PLAY->QUIT
+		handle_DESCRIBE
+		describe the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi'
+		handle_SETUP
+		handle_SETUP
+		handle_PLAY
+		play the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi/'
+		handle_TEARDOWN
+		before teardown()
+		stop the file 'rtsp://192.168.68.236:554/file/2009-12-02.avi/'
+		exec_ipc_cmd: GMSS_CMD_DEREG(16)
+		drop_conn(RTSP)
+		drop_conn: ep NULL
+
+   rtsp_test PLAY->QUIT
+		handle_DESCRIBE
+		describe the file 'rtsp://127.0.0.1:554/file/2009-12-02.avi'
+		handle_SETUP
+		handle_SETUP
+		handle_PLAY
+		play the file 'rtsp://127.0.0.1:554/file/2009-12-02.avi'
+		drop_conn(RTSP)
+		drop_conn: live_source 0x9bf6208
+		rtsp_conn_disconnect:ichan[0].ep 0x9bf4ee8, rtcp 0
+		rtsp_conn_disconnect:ichan[2].ep 0x9b58a68, rtcp 0
+
+2.
+	PLAY rtsp://192.168.68.236:554/file/20091201.avi RTSP/1.0
+	CSeq: 4
+	Range: npt=0.000000-
+	x-prebuffer: maxtime=2.000000
+	Session: E6D2932B527898EF618A
+	User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+
+
+	RTSP/1.0 200 OK
+	CSeq: 4
+	Session: E6D2932B527898EF618A
+	Range: npt=now-
+	RTP-Info: url=rtsp://192.168.68.236:554/file/20091201.avi/trackID=0;seq=25237;rtptime=0,url=rtsp://192.168.68.236:554/file/20091201.avi/trackID=1;seq=5581;rtptime=0
+
+
+	PAUSE rtsp://192.168.68.236:554/file/20091201.avi RTSP/1.0
+	CSeq: 5
+	Session: E6D2932B527898EF618A
+	User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+
+
+	RTSP/1.0 200 OK
+	CSeq: 5
+	Session: E6D2932B527898EF618A
+
+
+	PLAY rtsp://192.168.68.236:554/file/20091201.avi RTSP/1.0
+	CSeq: 6
+	Range: npt=74.141667-
+	x-prebuffer: maxtime=2.000000
+	Session: E6D2932B527898EF618A
+	User-Agent: QuickTime/7.5.5 (qtver=7.5.5;os=Windows NT 5.1Service Pack 3)
+
+
+	RTSP/1.0 200 OK
+	CSeq: 6
+	Session: E6D2932B527898EF618A
+	Range: npt=74.141667-
+	RTP-Info: url=rtsp://192.168.68.236:554/file/20091201.avi/trackID=0;seq=30225,url=rtsp://192.168.68.236:554/file/20091201.avi/trackID=1;seq=6679
+
+
+
+===============================================================================
+
+event.c
+	static struct event *time_event_list = NULL;
+	static struct event *fd_event_list = NULL;
+	static struct event *always_event_list = NULL;
+http.c
+	static struct http_location *http_loc_list = NULL;
+rtsp.c
+	static struct rtsp_location *rtsp_loc_list = NULL;
+	static struct rtsp_session *sess_list = NULL;
+session.c
+	static struct session *sess_list = NULL;
+stream.c
+	static struct stream *stream_list = NULL;
+tcp.c
+	struct listener *listener	= NULL;
+	static struct conn *conn_list = NULL;

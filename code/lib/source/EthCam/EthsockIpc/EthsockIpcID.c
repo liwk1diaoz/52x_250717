@@ -1,0 +1,56 @@
+#include "EthCam/EthsockIpcAPI.h"
+
+#if 1//(USE_IPC)
+//#include "SysKer.h"
+#include "EthsockIpcInt.h"
+#include "EthsockIpcID.h"
+#include "EthsockIpcTsk.h"
+
+#define PRI_ETHSOCKIPC_0                4 //10
+#define STKSIZE_ETHSOCKIPC_0            2048
+
+#define PRI_ETHSOCKIPC_1                4 //10
+#define STKSIZE_ETHSOCKIPC_1            2048
+
+#define PRI_ETHSOCKIPC_2               6//10
+#define STKSIZE_ETHSOCKIPC_2            4*2048
+
+ID ETHSOCKIPC_FLG_ID_0 = 0;
+ID ETHSOCKIPC_SEM_ID_0 = 0;
+THREAD_HANDLE ETHSOCKIPC_TSK_ID_0 = 0;
+ID ETHSOCKIPC_FLG_ID_1 = 0;
+ID ETHSOCKIPC_SEM_ID_1 = 0;
+THREAD_HANDLE ETHSOCKIPC_TSK_ID_1 = 0;
+ID ETHSOCKIPC_FLG_ID_2 = 0;
+ID ETHSOCKIPC_SEM_ID_2 = 0;
+THREAD_HANDLE ETHSOCKIPC_TSK_ID_2 = 0;
+
+void EthsockIpc_InstallID(void)
+{
+	OS_CONFIG_FLAG(ETHSOCKIPC_FLG_ID_0);
+	OS_CONFIG_SEMPHORE(ETHSOCKIPC_SEM_ID_0, 0, 1, 1);
+	//OS_CONFIG_TASK(ETHSOCKIPC_TSK_ID_0, PRI_ETHSOCKIPC_0,  STKSIZE_ETHSOCKIPC_0,  EthsockIpc_Tsk_0);
+	ETHSOCKIPC_TSK_ID_0=vos_task_create(EthsockIpc_Tsk_0,  0, "EthsockIpc_0",   PRI_ETHSOCKIPC_0,	STKSIZE_ETHSOCKIPC_0);
+
+#if (MAX_ETHSOCKET_NUM >= 2)
+	OS_CONFIG_FLAG(ETHSOCKIPC_FLG_ID_1);
+	OS_CONFIG_SEMPHORE(ETHSOCKIPC_SEM_ID_1, 0, 1, 1);
+	//OS_CONFIG_TASK(ETHSOCKIPC_TSK_ID_1, PRI_ETHSOCKIPC_1,  STKSIZE_ETHSOCKIPC_1,  EthsockIpc_Tsk_1);
+	ETHSOCKIPC_TSK_ID_1=vos_task_create(EthsockIpc_Tsk_1,  0, "EthsockIpc_1",   PRI_ETHSOCKIPC_1,	STKSIZE_ETHSOCKIPC_1);
+
+	OS_CONFIG_FLAG(ETHSOCKIPC_FLG_ID_2);
+	OS_CONFIG_SEMPHORE(ETHSOCKIPC_SEM_ID_2, 0, 1, 1);
+	//OS_CONFIG_TASK(ETHSOCKIPC_TSK_ID_2, PRI_ETHSOCKIPC_2,  STKSIZE_ETHSOCKIPC_2,  EthsockIpc_Tsk_2);
+	ETHSOCKIPC_TSK_ID_2=vos_task_create(EthsockIpc_Tsk_2,  0, "EthsockIpc_2",   PRI_ETHSOCKIPC_2,	STKSIZE_ETHSOCKIPC_2);
+#endif
+
+}
+#else
+void EthsockIpc_InstallID(void)
+{
+}
+void EthsockUdpIpc_InstallID(void)
+{
+}
+#endif
+

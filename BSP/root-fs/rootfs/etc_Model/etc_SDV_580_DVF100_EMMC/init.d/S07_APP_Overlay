@@ -1,0 +1,37 @@
+#!/bin/sh
+wait_dev_or_exit()
+{
+	x=0
+	timeout=5
+	while [ "$x" -lt "$timeout" -a ! -e $1 ]; do
+		x=$((x+1))
+		sleep .1
+	done
+	if [ "$x" -ge "$timeout" ]; then
+		echo "[app overlay] $1 not found"
+		exit -1
+	fi
+}
+
+# mount app partition by type
+if [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_UBI" ]; then
+	echo "[app overlay] ubi mount app"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi1_0
+	mount -t ubifs /dev/ubi1_0 /mnt/app;
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_SQUASH" ] && [ "$EMBMEM" != "EMBMEM_SPI_NOR" ]; then
+	echo "[app overlay] squash mount app"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi1_0
+	mount -t ubifs /dev/ubi1_0 /mnt/app;
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_RAMDISK" ] && [ "$EMBMEM" != "EMBMEM_NONE" ]; then
+	echo "[app overlay] ramdisk mount app"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi1_0
+	mount -t ubifs /dev/ubi1_0 /mnt/app;
+else
+    mount -t ext4 /dev/mmcblk2p3 /mnt/app
+	mount -t vfat /dev/mmcblk2p5 /mnt/emmc1
+fi
+
+

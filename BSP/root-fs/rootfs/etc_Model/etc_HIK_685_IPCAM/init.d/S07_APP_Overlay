@@ -1,0 +1,7 @@
+#!/bin/sh
+num=0
+num=`if [ -f /proc/mtd ]; then cat /proc/mtd | grep \"app\" | awk -F' ' '{print $1}' | tr -d 'mtd' | tr -d ':'; fi`;
+if [ ! -z "$num" ]; then
+	echo "mount app partition mtdblock$num"
+	mount -t jffs2 /dev/mtdblock$num /mnt/app
+fi

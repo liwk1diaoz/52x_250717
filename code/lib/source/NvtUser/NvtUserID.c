@@ -1,0 +1,7 @@
+void NvtUser_InstallID(void)
+{
+    #if 0
+	OS_CONFIG_TASK(NVTUSER_TSK_ID, PRI_NVTUSER, STKSIZE_NVTUSER, UIFrameworkTsk);
+	OS_CONFIG_MAILBOX(NVTUSER_MBX_ID);
+    #endif
+}

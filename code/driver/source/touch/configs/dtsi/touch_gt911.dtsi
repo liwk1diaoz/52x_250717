@@ -1,0 +1,19 @@
+&touch_cfg {
+	touch_gt911 {
+		i2c_cfg {
+			id = <2>;                    /* I2C_ID_3 */
+			addr = <0x5d>;				/*0xba>>1 = 0x5d */
+		};
+		
+		gpio_cfg {
+			pwr_pin = <0xFF>;				/* C_GPIO:+0 / P_GPIO:+32 / S_GPIO:+64 / L_GPIO:+96 / D_GPIO:+128 / H_GPIO:+160 /A_GPIO:+192 */
+			rst_pin = <51>;               /* C_GPIO:+0 / P_GPIO:+32 / S_GPIO:+64 */
+			int_pin = <128>;
+		};
+		
+		rst_cfg {
+			rst_time = <50>;			/*50ms */
+		};
+	};
+};
+

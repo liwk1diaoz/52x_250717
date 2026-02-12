@@ -1,0 +1,25 @@
+&top {
+cgpio5{pad_config = <0xA 0x1 0xA 0x0>;};
+cgpio6{pad_config = <0xC 0x1 0xC 0x0>;};
+cgpio7{pad_config = <0xE 0x1 0xE 0x0>;};
+sgpio3{pad_config = <0x66 0x1 0x66 0x2>;};
+sgpio5{pad_config = <0x1000006A 0x10 0x6A 0x0>;};
+lgpio0{pad_config = <0xE0 0x1 0xE0 0x0>;};
+lgpio1{pad_config = <0xE2 0x1 0xE2 0x0>;};
+lgpio2{pad_config = <0xE4 0x1 0xE4 0x0>;};
+dgpio3{pad_config = <0x10000126 0x10 0x126 0x0>;};
+dgpio4{pad_config = <0x10000128 0x10 0x128 0x0>;};
+dgpio5{pad_config = <0x1000012A 0x10 0x12A 0x0>;};
+dgpio6{pad_config = <0x1000012C 0x10 0x12C 0x0>;};
+cgpio5{gpio_config = <C_GPIO(5) 1>;};
+cgpio6{gpio_config = <C_GPIO(6) 1>;};
+cgpio7{gpio_config = <C_GPIO(7) 1>;};
+sgpio5{gpio_config = <S_GPIO(5) 1>;};
+lgpio0{gpio_config = <L_GPIO(0) 1>;};
+lgpio1{gpio_config = <L_GPIO(1) 1>;};
+lgpio2{gpio_config = <L_GPIO(2) 1>;};
+dgpio3{gpio_config = <D_GPIO(3) 1>;};
+dgpio4{gpio_config = <D_GPIO(4) 1>;};
+dgpio5{gpio_config = <D_GPIO(5) 1>;};
+dgpio6{gpio_config = <D_GPIO(6) 1>;};
+};

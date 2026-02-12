@@ -1,0 +1,864 @@
+{
+    "event callback": "UIFlowPhotoEventCallback",
+    "name": "UIFlowPhoto",
+    "screen color": "0x551f57",
+    "widgets": [
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 10,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_mode_photo",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_MODE_CAPTURE",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 11,
+                "y": 115
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_iso",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_ISO_AUTO",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 9,
+                "y": 43
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_ev",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_EV_M0P3",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 11,
+                "y": 80
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_wb",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_WB_AUTO",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 284,
+                "y": 206
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_battery",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_BATTERY_FULL",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 284,
+                "y": 166
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_storage",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_SD_CARD",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 283,
+                "y": 66
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_quality",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_QUALITY_NORMAL",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 19,
+                "width": 135,
+                "x": 173,
+                "y": 35
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_size",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp",
+                        "text_sel_bg_color": "0x00b495",
+                        "text_sel_color": "0x3c3c3c"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "Size",
+            "widget": "Label"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 52,
+                "y": 5
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_self_timer",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_SELFTIMER_OFF",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 19,
+                "width": 135,
+                "x": 174,
+                "y": 9
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_free_pic",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp",
+                        "text_sel_bg_color": "0x00b495",
+                        "text_sel_color": "0x3c3c3c"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "Free Pic",
+            "widget": "Label"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 169,
+                "y": 4
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_hdr",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_HDR",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 130,
+                "y": 3
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_bust",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_BUST",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "align": "Left",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 19,
+                "width": 9,
+                "x": 61,
+                "y": 11
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Expand",
+            "name": "label_self_timer_cnt",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp",
+                        "text_sel_bg_color": "0x00b495",
+                        "text_sel_color": "0x3c3c3c"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "5",
+            "widget": "Label"
+        },
+        {
+            "auto size": true,
+            "class": "lv_img",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 28,
+                "width": 28,
+                "x": 91,
+                "y": 3
+            },
+            "hidden": false,
+            "locked": false,
+            "name": "image_fd",
+            "offset": {
+                "X": 0,
+                "Y": 0
+            },
+            "source": "ICON_FACE_ON",
+            "styles": [
+                {
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Image"
+        },
+        {
+            "class": "lv_cont",
+            "click": true,
+            "drag": false,
+            "event callback": "",
+            "geometry": {
+                "height": 100,
+                "width": 100,
+                "x": 92,
+                "y": 82
+            },
+            "hidden": false,
+            "layout": "Off",
+            "locked": false,
+            "name": "container_fd_frame",
+            "styles": [
+                {
+                    "Background": {
+                        "bg_opa": 0
+                    },
+                    "Border": {
+                        "border_color": "0xff3f00"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "widget": "Container"
+        },
+        {
+            "align": "Right",
+            "class": "lv_label",
+            "click": false,
+            "drag": false,
+            "event callback": "",
+            "font type": "Font_Type0",
+            "geometry": {
+                "height": 19,
+                "width": 91,
+                "x": 217,
+                "y": 121
+            },
+            "hidden": false,
+            "locked": false,
+            "long mode": "Crop",
+            "name": "label_dzoom",
+            "recolor": false,
+            "string id": "None",
+            "styles": [
+                {
+                    "Text": {
+                        "text_color": "0xffffff",
+                        "text_font": "NotoSans-Black 16 1bpp",
+                        "text_sel_bg_color": "0x00b495",
+                        "text_sel_color": "0x3c3c3c"
+                    },
+                    "part": 0,
+                    "state": 0
+                },
+                {
+                    "part": 0,
+                    "state": 1
+                },
+                {
+                    "part": 0,
+                    "state": 2
+                },
+                {
+                    "part": 0,
+                    "state": 3
+                },
+                {
+                    "part": 0,
+                    "state": 4
+                },
+                {
+                    "part": 0,
+                    "state": 5
+                },
+                {
+                    "part": 0,
+                    "state": 6
+                }
+            ],
+            "text": "DZoom",
+            "widget": "Label"
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+/*
+ * Novatek Ltd. NA51055 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+
+#include <dt-bindings/gpio/nvt-gpio.h>
+
+&i2c0 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+/*	dummy_i2c_dev: dummy_i2c@1a {
+		compatible = "nvt,dummy_i2c_dev";
+		reg = <0x1a>;
+	};
+*/
+};
+
+&i2c1 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+};
+
+&i2c2 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+  
+  ad_tp9950@0 {
+		compatible = "nvt,ad_tp9950.0";
+		reg = <0x44>;					//7-bit slave register
+		power_cfg {
+			mclk_sel = "MCLK3";				// ex : "MCLK" or "MCLK2"
+			io_ctl0 = <S_GPIO(5) 1 10>;	//io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+			io_ctl1 = <C_GPIO(4) 1 10>;	//io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+			io_ctl2 = <P_GPIO(11) 0 10>;	//io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+			io_ctl3 = <P_GPIO(11) 1 10>;	//io control description @0~19(max) = <io_pin, level(high(1) or low(0), hold time(us)>
+		};
+
+		outport@0 {
+			inport = <0>;
+			signal = <0>;			// 0: parallel, 1:mipi
+		}; 
+	};
+};
+
+&spi0 {
+	status = "okay";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+/*	dummy_spi_dev: dummy_spi_dev@0 {
+		compatible = "dummy_spi_dev.0";
+		reg = <0>; // Chip select 0
+		spi-max-frequency = <1000000>;
+		spi-cpol;
+        };
+*/
+};
+
+&spi1 {
+	status = "okay";
+};
+
+&spi2 {
+	status = "okay";
+};

@@ -1,0 +1,312 @@
+GxGfx Note
+
+(一)Brush weight and type
+
+設定功能:
+(A) 控制畫線段的粗細 
+BRUSHWEIGHT(Radius) …..可指定線段粗細=Radius*2+1 pixels, (NOTE: 0<=Radius<=15)
+default = BRUSHWEIGHT(0) (預設粗細只有1pixel)
+(B) 控制畫線段的筆頭
+BRUSHTYPE_CIRCLE or BRUSHTYPE_SQUARE  …..可指定圓形筆頭或方形筆頭
+default = BRUSHTYPE_CIRCLE(預設筆頭為圓形)
+
+支援上述新設定的drawing API有:
+RESULT GxGfx_Point          (DC* pDestDC, LVALUE x, LVALUE y);
+RESULT GxGfx_LineTo         (DC* pDestDC, LVALUE x, LVALUE y);
+RESULT GxGfx_Line           (DC* pDestDC, LVALUE x1, LVALUE y1, LVALUE x2, LVALUE y2);
+RESULT GxGfx_FrameRect      (DC* pDestDC, LVALUE x1, LVALUE y1, LVALUE x2, LVALUE y2);
+RESULT GxGfx_Rectangle      (DC* pDestDC, LVALUE x1, LVALUE y1, LVALUE x2, LVALUE y2);
+RESULT GxGfx_Ellipse        (DC* pDestDC, LVALUE x1, LVALUE y1, LVALUE x2, LVALUE y2);
+RESULT GxGfx_RoundRect      (DC* pDestDC, LVALUE x1, LVALUE y1, LVALUE x2, LVALUE y2, LVALUE rw, LVALUE rh);
+
+
+下面是<畫粗框的圓角矩形>範例
+
+int Radius = 2
+//框線樣式=連續線段|框線粗細(Radius)|圓形筆頭, 填充樣式=填滿內部|畫出框線
+GxGfx_SetShapeStroke(LINESTYLE_LINE|BRUSHWEIGHT(Radius)|BRUSHTYPE_CIRCLE, (FILLSTYLE_FILL|FILLSTYLE_BORDER));
+//框線顏色=白色, 內部顏色=黑色
+GxGfx_SetShapeColor(COLOR_INDEX8_WHITE, COLOR_INDEX8_BLACK, 0);
+//畫出圓角矩形, 圓角直徑為20
+GxGfx_RoundRect(pDC[0], x1, y1, x2, y2, 20, 20);
+
+//回復成預設樣式
+GxGfx_SetShapeStroke(SHAPELINESTYLE_DEFAULT, SHAPEFILLSTYLE_DEFAULT);
+
+
+(二) Text Color
+GxGfx_SetTextColor(c1,c2,c3);
+第一個參數代表 : 字的顏色
+第二個參數代表 : 框線的顏色
+第三個參數代表 : 底線的顏色 (目前無作用)
+
+如果某區域不想畫出來  (不想影響現有畫面上已經畫的顏色)
+請使用 COLOR_TRANSPARENT 來代表
+
+範例:
+//只畫出字的部份, 但是不畫出框線的部份
+GxGfx_SetTextColor(COLOR_WHITE_INDEX8, COLOR_TRANSPARENT, COLOR_TRANSPARENT);
+//畫出字的部份, 也畫出框線的部份
+GxGfx_SetTextColor(COLOR_WHITE_INDEX8, COLOR_RED_INDEX8, COLOR_TRANSPARENT);
+//不畫出字的部份, 但畫出框線的部份
+GxGfx_SetTextColor(COLOR_TRANSPARENT, COLOR_RED_INDEX8, COLOR_TRANSPARENT);
+
+
+
+
+(三) Font Effect 
+可以動態地在使用的字型加上陰影特效, 或加上外框特效
+
+//total 6 effects now
+FONTEFFECT_SHADOW	//右下角陰影
+FONTEFFECT_SHADOW2	//右下角陰影(粗)
+FONTEFFECT_HIGHLIGHT	//左上角陰影
+FONTEFFECT_HIGHLIGHT2 	//左上角陰影(粗)
+FONTEFFECT_OUTLINE	//外框
+FONTEFFECT_OUTLINE2	//外框(粗)
+
+使用範例如下:
+
+//no effect
+GxGfx_SetTextStroke(pFont, FONTEFFECT_NONE,TEXTSCALE_DEFAULT);
+GxGfx_SetTextColor(COLOR_WHITE_INDEX8, COLOR_TRANSPARENT, COLOR_TRANSPARENT);
+GxGfx_Text(pDC, 0, 0, “This is a font effect test.”);
+
+//using shadow effect (in red color)
+GxGfx_SetTextStroke(pFont, FONTEFFECT_SHADOW,TEXTSCALE_DEFAULT);
+GxGfx_SetTextColor(COLOR_WHITE_INDEX8, COLOR_RED_INDEX8, COLOR_TRANSPARENT);
+GxGfx_Text(pDC, 0, 0, “This is a font effect test.”);
+
+//using outline effect (in red color)
+GxGfx_SetTextStroke(pFont, FONTEFFECT_OUTLINE,TEXTSCALE_DEFAULT);
+GxGfx_SetTextColor(COLOR_WHITE_INDEX8, COLOR_RED_INDEX8, COLOR_TRANSPARENT);
+GxGfx_Text(pDC, 0, 0, “This is a font effect test.”);
+
+注意: 如果想要使用font effect, 請事先指定一塊記憶體給GxGfx作為temp buffer (至少4K)
+GxGfx_AssignTempPool (pBuf, 0x4000);
+如果缺少這的buffer, 字型將會畫不出來
+
+
+
+
+(四) GxGfx_ImageInRect
+可以畫 Image在指定的Rect內部, 並指定上下對齊, 左右對齊的格式 (很像GxGfx_TextInRect的用法)
+
+使用範例如下:
+
+//draw image and align to rect - left and top
+GxGfx_SetImageLayout(IMAGELAYOUT_DEFAULT, ALIGN_LEFT| ALIGN_TOP);
+GxGfx_ImageInRect(pDC, 0, 0, 320-1, 240-1, GxGfx_GetImageID(ICONID_PLAY));
+
+//draw image and align to rect - right and middle
+GxGfx_SetImageLayout(IMAGELAYOUT_DEFAULT, ALIGN_RIGHT| ALIGN_MIDDLE);
+GxGfx_ImageInRect(pDC, 0, 0, 320-1, 240-1, GxGfx_GetImageID(ICONID_STOP));
+
+注意:原先畫出放大縮小Image的功能, 已經改名為 GxGfx_ImageScale();
+
+
+
+(五) GxGfx_Image, GxGfx_ImageScale 對 ROP的支援
+
+ROP		Formula
+==========================
+ROP_COPY	A’ = B					
+ROP_AND		A’ = A & B
+ROP_OR		A’ = A | B
+ROP_XOR		A’ = A ^ B
+ROP_NOT		A’ = ~B
+ROP_DESTNOT	A’ = ~A
+ROP_KEY		A’ = (B==ColorKey)?A:B
+ROP_DESTKEY	A’ = (A==ColorKey)?B:A
+ROP_DESTFILL	A’ = FillColor
+ROP_ADD		A’ = A+(B>>src_div)
+ROP_SUB		A’ = A-(B>>src_div)
+ROP_ABSSUB	A’ = abs(A-(B>>src_div))
+ROP_MUL		A’ = (A*B) >> out_div
+ROP_BLEND 	A’ = (1-alpha)*A + (alpha)*B ... alpha = (src_alpha+1)/8
+
+
+
+Normal MODE (Pxlfmt of src DC and dest DC are the same)
+==============================================================================
+			Image 						ImageScale			
+Pxlfmt of DC		INDEX1/2/4	INDEX8		YUV444/422/420	INDEX1/2/4	INDEX8		YUV444/422/420	YUV444/422/420+FILTER_LINEAR
+ROP_COPY		Yes		Yes(GE)		Yes(GE)		Yes		Yes		Yes		Yes(IME)
+ROP_KEY			Yes		Yes		Yes		Yes		Yes		-		-
+ROP_DESTKEY		Yes		Yes(GE)		Yes(GE)		Yes		Yes		-		-	
+ROP_NOT			Yes		Yes(GE)		Yes(GE)		Yes		Yes		-		-
+ROP_AND			Yes		Yes(GE)		Yes(GE)		Yes		Yes		-		-
+ROP_OR			Yes		Yes(GE)		Yes(GE)		Yes		Yes		-		-
+ROP_XOR			Yes		Yes(GE)		Yes(GE)		Yes		Yes		-		-
+ROP_DESTFILL		Yes		Yes(GE)		Yes(GE)		Yes		Yes		-		-
+ROP_DESTNOT		Yes		Yes(GE)		Yes(GE)		Yes		Yes		-		-
+ROP_ADD 		-		-		Yes(GE)		-		-		-		-
+ROP_SUB 		-		-		Yes(GE)		-		-		-		-
+ROP_ABSSUB		-		-		Yes(GE)		-		-		-		-	
+ROP_MUL			-		-		Yes(GE)		-		-		-		-
+ROP_BLEND		-		-		Yes(GE)		-		-		-		-
+
+NOTE: GE,IME : h/w name
+
+
+NOTE: MAPPING is only work if rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY)
+
+Convert MODE (Pxlfmt of src DC and dest DC are NOT the same)
+==============================================================================
+Image INDEX to INDEX (_DC_BitBlt_INDEX_sw)
+//rcDC ->destDC		condition
+INDEX1->INDEX1		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX1->INDEX2		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX1->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX1->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX2->INDEX2		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX2->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX2->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX4->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX4->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX8->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+
+INDEX1->INDEX2		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX1->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX1->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX2->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX2->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX4->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+
+Image INDEX to YUV (_DC_BitBlt_INDEX2YUV_sw) 
+//rcDC ->destDC		condition
+INDEX1->YUV444		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX1->YUV422		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX1->YUV420		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX1->RGB888		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX2->YUV444		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX2->YUV422		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX2->YUV420		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX2->RGB888		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX4->YUV444		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX4->YUV422		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX4->YUV420		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX4->RGB888		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX8->YUV444		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX8->YUV422		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX8->YUV420		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+INDEX8->RGB888		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=PALETTE
+
+Image RGB_PK to RGB_PK (_DC_BitBlt_INDEX)
+//rcDC ->destDC		condition
+RGB888_PK->RGB888_PK	rop=ROP_COPY
+RGB565_PK->RGB565_PK	rop=ROP_COPY
+RGB555_PK->RGB555_PK	rop=ROP_COPY
+RGBD8888_PK->RGBD8888_PK	rop=ROP_COPY
+
+Image RGB_PK to RGB (_DC_ConvetBlt_RGBToRGB_sw)
+Image RGB to RGB_PK (_DC_ConvetBlt_RGBToRGB_sw)
+//rcDC ->destDC		condition
+RGB888->RGB888_PK	rop=ROP_COPY, same size
+RGB888->RGBD8888_PK	rop=ROP_COPY, same size
+RGB888_PK->RGB888	rop=ROP_COPY, same size
+RGBD8888_PK->RGB888	rop=ROP_COPY, same size
+
+ImageScale INDEX to INDEX (_DC_StretchBlt_INDEX)
+//rcDC ->destDC		condition
+INDEX1->INDEX1		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX1->INDEX2		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX1->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX1->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX2->INDEX2		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX2->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX2->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX4->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX4->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+INDEX8->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY,ROP_NOT,ROP_AND,ROP_OR,ROP_XOR,ROP_DESTFILL,ROP_DESTNOT), pTable=0
+
+INDEX1->INDEX2		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX1->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX1->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX2->INDEX4		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX2->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+INDEX4->INDEX8		rop=(ROP_COPY,ROP_KEY,ROP_DESTKEY), pTable=MAPPING
+
+ImageScale INDEX to YUV 
+(Not support yet)
+
+ImageScale YUV to YUV (_DC_StretchBlt_YUV)
+//rcDC ->destDC		condition
+YUV444->YUV422		rop=ROP_COPY, FILTER_LINEAR
+YUV444->YUV420		rop=ROP_COPY, FILTER_LINEAR
+YUV444->RGB888		rop=ROP_COPY, FILTER_LINEAR
+YUV422->YUV444		rop=ROP_COPY, FILTER_LINEAR	
+YUV422->YUV420		rop=ROP_COPY, FILTER_LINEAR
+YUV422->RGB888		rop=ROP_COPY, FILTER_LINEAR
+YUV420->YUV444		rop=ROP_COPY, FILTER_LINEAR
+YUV420->YUV422		rop=ROP_COPY, FILTER_LINEAR
+YUV420->RGB888		rop=ROP_COPY, FILTER_LINEAR
+RGB888->YUV444		rop=ROP_COPY, FILTER_LINEAR
+RGB888->YUV422		rop=ROP_COPY, FILTER_LINEAR
+RGB888->YUV420		rop=ROP_COPY, FILTER_LINEAR
+
+
+
+
+INTERNAL-PATH
+==============================================================================
+GxGfx_Convert
+
+GxGfx_Image
+//support clipping window
+_DC_BitBlt_INDEX		--> by GE
+_DC_BitBlt_INDEX_sw		(if not INDEX8, or special ROP)
+_DC_FillRect_INDEX_sw		(only DESTFILL and DESTNOT path)
+_DC_BitBlt_INDEX2YUV_sw
+_DC_BitBlt_YUV			--> by GE
+_DC_BitBlt_YUV_Jpeg (JPEG2YUV)	--> by JPEG->GE
+
+GxGfx_ImageScale
+//not support clipping window
+_DC_StretchBlt_INDEX (sw)  	--> by IME ????? (FILTER_NONE)
+_DC_StretchBlt_YUV		--> by IME (FILTER_LINER or FILTER_NONE)
+_DC_StretchBlt_YUV_sw		(just for FILTER_NONE)
+
+
+
+
+
+(六) 對h/w的一些想法???
+
+
+HW-TODO
+==============================================================================
+DMA bandwidth
+GE : 
+	no word alignment limit in addr
+	+AOP srckey : dest=(A==cky)?B:A
+     	add format for per-pixel alpha blending
+	RGB888_PK
+	RGB565_PK
+	ARGB8888_PK
+	ARGB1555_PK
+	ARGB4444_PK
+
+IME : 
+	no word alignment limit in w,h,addr
+	filter = none, pixel, linear
+
+IDE : 	
+	photoshop-like layer blending
+	add format.
+	RGB888_PK, 
+	RGB565_PK, 
+	ARGB8888_PK
+	ARGB1555_PK
+	ARGB4444_PK
+	
+JPEG : 
+	support decode with pitch setting
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+&fastboot {
+	hdal-mem {
+		vcap_blk_cnt = <2>;
+		vcap_blk_0 = <0x12802000 0x5200>;
+		vcap_blk_1 = <0x12808000 0x5200>;
+		vprc_blk_cnt = <2>;
+		vprc_blk_0 = <0x1280f000 0x2f7800>;
+		vprc_blk_1 = <0x12b07000 0x2f7800>;
+		vprc_p2_blk_cnt = <3>;
+		vprc_p2_blk_0 = <0x12e00000 0x2f7800>;
+		vprc_p2_blk_1 = <0x130f8000 0x2f7800>;
+		vprc_p2_blk_2 = <0x133f0000 0x2f7800>;
+		vprc_p3_blk_cnt = <2>;
+		vprc_p3_blk_0 = <0x136e9000 0xd8200>;
+		vprc_p3_blk_1 = <0x137c2000 0xd8200>;
+		misc_cpool0_pool_type = <106>;
+		misc_cpool0_blk_cnt = <1>;
+		misc_cpool0_blk_0 = <0x1389c000 0x55fcdc>;
+		vprc_ctrl_0 = <0x13dfd000 0x2c540>;
+		venc_max_0 = <0x13e2b000 0xa28C24>;
+	};
+};

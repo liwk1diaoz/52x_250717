@@ -1,0 +1,9 @@
+#!/bin/sh
+# fstab devices create
+mount -a
+
+write /proc/nvt_info/bootts ker
+write /proc/nvt_info/bootts rcS1
+/etc/init.d/T00_PreReady
+/etc/init.d/T05_SysInit
+write /proc/nvt_info/bootts rcS1

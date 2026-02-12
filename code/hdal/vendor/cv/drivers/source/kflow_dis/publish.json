@@ -1,0 +1,9 @@
+{
+	"jsontype": "module_publish",
+	"publish_src": [
+		 "dis_alg_ioctl.c",
+		 "dis_alg_proc.c",
+		 "dis_alg_flow_api.c",
+		 "dis_alg_platform.c"
+	]
+}

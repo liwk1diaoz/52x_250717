@@ -1,0 +1,111 @@
+#!/bin/sh
+KERVER=`cat /proc/version | awk -F'version ' '{print $2}' | awk -F' ' '{print $1}'`
+
+overlay_files()
+{
+	if [ ! -f /mnt/overlay_rw0/rootfs/.fileexisted ]; then
+		mkdir /mnt/overlay_rw0/rootfs
+		cp -arf /etc /mnt/overlay_rw0/rootfs
+		cp -arf /var /mnt/overlay_rw0/rootfs
+		sync
+		mkdir /mnt/overlay_rw0/rootfs/lib
+		cp -arf /lib/modules /mnt/overlay_rw0/rootfs/lib/modules
+		sync;
+		touch /mnt/overlay_rw0/rootfs/.fileexisted
+		sync;
+	fi
+	mount /mnt/overlay_rw0/rootfs/etc /etc
+	mount /mnt/overlay_rw0/rootfs/var /var
+	mount /mnt/overlay_rw0/rootfs/lib/modules /lib/modules
+}
+
+wait_dev_or_exit()
+{
+	x=0
+	timeout=1000
+	while [ "$x" -lt "$timeout" -a ! -e $1 ]; do
+		x=$((x+1))
+		sleep .001
+	done
+	if [ "$x" -ge "$timeout" ]; then
+		echo "[app mount] $1 not found"
+		exit -1
+	fi
+}
+
+#echo "/sbin/mdev" > /proc/sys/kernel/hotplug
+#mdev -s
+
+if [ "$EMBMEM" == "EMBMEM_EMMC" ]; then
+	# if /proc/mtd not exist, exit
+	wait_dev_or_exit /proc/nvt_info/emmc
+	if [ ! -f /proc/nvt_info/emmc ]; then
+		echo "[fs overlay] /proc/nvt_info/emmc not ready"
+		exit -1
+	fi
+	mmcblkpn=`cat /proc/nvt_info/emmc | grep '^rootfs1 ' | awk -F' ' '{print $NF}'`;
+	mmcblkn=`echo $mmcblkpn | sed 's/.*\(mmcblk.\)p.*/\1/g'`
+	wait_dev_or_exit /sys/class/block/$mmcblkn/dev
+	mknod /dev/$mmcblkn b `cat /sys/class/block/$mmcblkn/dev | sed "s/:/\ /g"`
+	mknod /dev/$mmcblkpn b `cat /sys/class/block/$mmcblkpn/dev | sed "s/:/\ /g"`
+else
+	# if /proc/mtd not exist, exit
+	if [ ! -f /proc/mtd ]; then
+		echo "[fs overlay] /proc/mtd not ready"
+		exit -1
+	fi
+
+	# if the partition not found, exit
+	num=`cat /proc/mtd | grep \"rootfs1\" | awk -F' ' '{print $1}' | tr -d 'mtd' | tr -d ':'`;
+	if [ -z "$num" ]; then
+		echo "[fs overlay] no rootfs1 partition"
+		exit 0
+	fi
+
+	mknod /dev/mtdblock$num b `cat /sys/block/mtdblock$num/dev | sed "s/:/\ /g"`
+fi
+
+
+if [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_UBI" ]; then
+	echo "[fs overlay] ubi mount rootfs"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi1_0
+	mount -t ubifs /dev/ubi1_0 /mnt/overlay_rw0;
+	overlay_files;
+	sync
+	echo 1 > /proc/sys/vm/drop_caches
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_SQUASH" ] && [ "$EMBMEM" != "EMBMEM_NONE" ]; then
+	echo "[fs overlay] squash mount rootfs"
+	if [ "$EMBMEM" == "EMBMEM_SPI_NAND" ]; then
+		ubiattach /dev/ubi_ctrl -m $num
+		wait_dev_or_exit /dev/ubi1_0
+		mount -t ubifs /dev/ubi1_0 /lib/modules;
+	elif [ "$EMBMEM" == "EMBMEM_EMMC" ]; then
+		mount -t ext4 /dev/$mmcblkpn /lib/modules;
+	else
+		mount -t squashfs /dev/mtdblock$num /lib/modules;
+	fi
+	mount /lib/modules/usr/bin/ /usr/bin/;
+	mount /lib/modules/usr/lib/ /usr/lib/;
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_RAMDISK" ] && [ "$EMBMEM" != "EMBMEM_NONE" ]; then
+	if [ "$EMBMEM" == "EMBMEM_SPI_NAND" ]; then
+		echo "[fs overlay] ubi mount rootfs1"
+		mknod /dev/ubi_ctrl c `cat /sys/class/misc/ubi_ctrl/dev | sed "s/:/\ /g"`
+		ubiattach /dev/ubi_ctrl -m $num
+		mknod /dev/ubi0_0 c `cat /sys/class/ubi/ubi0_0/dev | sed "s/:/\ /g"`
+		wait_dev_or_exit /dev/ubi0_0
+		mount -t ubifs /dev/ubi0_0 /lib/modules;
+	elif [ "$EMBMEM" == "EMBMEM_EMMC" ]; then
+		echo "[fs overlay] ext4 mount rootfs1"
+		mount -t ext4 /dev/$mmcblkpn /lib/modules;
+	else
+		echo "[fs overlay] squash  mount rootfs1"
+		mount -t squashfs /dev/mtdblock$num /lib/modules;
+	fi
+	mount /lib/modules/usr/bin/ /usr/bin/;
+	mount /lib/modules/usr/lib/ /usr/lib/;
+else
+	echo "[fs overlay] jffs2 mount rootfs1"
+	mount -t jffs2 /dev/mtdblock$num /mnt/overlay_rw0
+	overlay_files;
+fi
