@@ -359,9 +359,7 @@ extern void     GPIOMap_TurnOffCCDPower(void);
 extern UINT8    GPIOMap_IsCCDPowerOn(void);
 extern void     GPIOMap_SleepCCDPower(void);
 extern void     GPIOMap_WakeUpCCDPower(void);
-extern void Dx_TurnOnLED(UINT32 pin);
-extern void Dx_TurnOffLED(UINT32 pin);
-extern BOOL Dx_IsLEDOn(UINT32 pin);
+
 //--------------------------------------------------------------------
 // Storbe device
 //--------------------------------------------------------------------

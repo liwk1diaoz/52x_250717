@@ -26,9 +26,6 @@ extern void IO_InitGPIO(void);
 extern void IO_InitADC(void);
 extern void IO_InitNet(void);
 
-extern void Dx_TurnOnLED(UINT32 pin);
-extern void Dx_TurnOffLED(UINT32 pin);
-extern BOOL Dx_IsLEDOn(UINT32 pin);
 #endif //IOINIT
 //@}
 

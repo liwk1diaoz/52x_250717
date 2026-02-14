@@ -91,7 +91,7 @@ static MOVIE_SIZE_ITEM g_MovieSizeTable[] = {
 #if (defined(_NVT_ETHREARCAM_RX_))
 		{3840, 2160, 30, 3900 * 1024, MEDIAREC_DAR_DEFAULT, IMAGERATIO_16_9},
 		{1, 3, 36, 8, -8, 0},
-		{1, 4, 30, 3900 * 1024, 15, 26, 10, 50, 26, 10, 50, 0, 1, 8, 4},
+		{1, 4, 30, 3900 * 1024, 30, 26, 10, 50, 26, 10, 50, 0, 1, 8, 4},
 #elif (defined(_NVT_ETHREARCAM_TX_))
 		{3840, 2160, 30, 3900 * 1024, MEDIAREC_DAR_DEFAULT, IMAGERATIO_16_9},
 		{1, 3, 36, 8, -8, 0},
@@ -99,7 +99,7 @@ static MOVIE_SIZE_ITEM g_MovieSizeTable[] = {
 #else
 		{3840, 2160, 30, 3900 * 1024, MEDIAREC_DAR_DEFAULT, IMAGERATIO_16_9},
 		{1, 3, 36, 8, -8, 0},
-		{1, 4, 30, 3900 * 1024, 15, 26, 10, 40, 26, 10, 40, 0, 1, 8, 4},
+		{1, 4, 30, 3900 * 1024, 30, 26, 10, 40, 26, 10, 40, 0, 1, 8, 4},
 #endif
 	},
 

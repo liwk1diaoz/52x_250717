@@ -164,19 +164,3 @@ void Dx_UninitIO(void)  // Config IO for external device
 {
 }
 
-void Dx_TurnOnLED(UINT32 pin)
-{
-	gpio_setPin(pin);
-}
-
-void Dx_TurnOffLED(UINT32 pin)
-{
-	 gpio_clearPin(pin);
-}
-
-BOOL Dx_IsLEDOn(UINT32 pin)
-{
-	return gpio_getPin(pin);
-}
-
-

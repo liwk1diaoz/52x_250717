@@ -3592,10 +3592,12 @@ static void sen_set_gain_imx678(CTL_SEN_ID id, void *param)
 		total_frame = mode_basic_param[cur_sen_mode[id]].frame_num;
 	}
 
+	sensor_ctrl->gain_ratio[0] = (sensor_ctrl->gain_ratio[0]) * (compensation_ratio[id][0]) / 100;
+	sensor_ctrl->gain_ratio[1] = (sensor_ctrl->gain_ratio[0]) * (compensation_ratio[id][1]) / 100;
 	for (frame_cnt = 0; frame_cnt < total_frame; frame_cnt++) {
-		if (100 <= (compensation_ratio[id][frame_cnt])) {
+		/*if (100 <= (compensation_ratio[id][frame_cnt])) {
 			sensor_ctrl->gain_ratio[frame_cnt] = (sensor_ctrl->gain_ratio[frame_cnt]) * (compensation_ratio[id][frame_cnt]) / 100;
-		}
+		}*/
 		if (sensor_ctrl->gain_ratio[frame_cnt] < (mode_basic_param[cur_sen_mode[id]].gain.min)) {
 			sensor_ctrl->gain_ratio[frame_cnt] = (mode_basic_param[cur_sen_mode[id]].gain.min);
 		} else if (sensor_ctrl->gain_ratio[frame_cnt] > (mode_basic_param[cur_sen_mode[id]].gain.max)) {
@@ -3952,11 +3954,10 @@ static void sen_set_expt_imx678(CTL_SEN_ID id, void *param)
 			if (shr0 > (fsc - 2)) {
 				shr0 = fsc - 2;
 			}
-           // compensation_ratio[id][0] =  1000 * sensor_ctrl->exp_time[0]/sen_calc_expt_by_expline((fsc - shr0), t_row);
-           // compensation_ratio[id][1] =  1000 * sensor_ctrl->exp_time[1]/sen_calc_expt_by_expline((rhs1 - shr1), t_row);
-
-            compensation_ratio[id][0] =  100 * temp_line[0] / (fsc - shr0);
-            compensation_ratio[id][1] =  100 * temp_line[1] / (rhs1 - shr1);
+			compensation_ratio[id][0] =  100 * temp_line[0] / (fsc - shr0);
+            //compensation_ratio[id][1] =  100 * temp_line[1] / (rhs1 - shr1);
+			compensation_ratio[id][1] =  (100 * (fsc - shr0) / (rhs1 - shr1))/16;
+			//DBG_WRN("actual line: %d %d compensation: %d %d\r\n", (fsc - shr0), (rhs1 - shr1),compensation_ratio[id][0],compensation_ratio[id][1]);
 
 			cmd = sen_set_cmd_info_imx678(0x3052, 1, (shr0 >> 16) & 0x0F, 0x0);
 			rt |= sen_write_reg_imx678(id, &cmd);
